@@ -3,75 +3,33 @@
  <head>
   <meta charset="UTF-8">
   <title>Reference Page</title>
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="framework/style.css" type="text/css" />
  </head>
 
  <body>
 
- <!-- reference for forms -->
- <form action="#">
-  <fieldset><legend>Example Fieldset 1</legend>
+ <div id="siteHeader"><div class="fixed_width">
+  <a href="/" id="title">
+   <img src="framework/logo.png" id="logo" alt="logo"/>
+   <span>Webknife</span>
+  </a>
+ </div></div>
 
-   <p>Example fieldset description</p>
+ <div id="content"><div class="fixed_width">
 
-   <div class="formField">
-    <label for="name">Text input</label>
-    <input type="text" name="name" />
-    <p>Example field description</p>
-   </div>
+ <a href="reference.html">Reference Page</a>
 
-   <div  class="formField error">
-    <label for="error">Text input (error)</label> 
-    <input type="text" name="error" />    
-	<p>Example error message</p>
-   </div>
+ </div></div> 
 
-   <div class="formField">
-    <label for="password">Password input</label> 
-    <input type="password" name="password" />
-   </div>
+ <div id="base"><div class="fixed_width">
+  <span>&nbsp;</span>
+ </div></div>
 
-   <div class="formField">
-    <label for="choices">Selection input</label> 
-    <select name="choices">
-     <option>Choice 1</option>
-     <option>Choice 2</option>
-     <option>Choice 3</option>
-    </select>
-   </div>
-   
-   <div class="formField">
-    <label for="description">Textarea input</label> 
-    <textarea name="description">Example text</textarea>
-   </div> 
-
-   <p>Example question or further fieldset description</p>
-
-   <div class="formField">
-	<ul>
-     <li><label for="A">Choice A</label><input type="radio" name="option" value="A" checked="checked"></li>
-     <li><label for="B">Choice B</label><input type="radio" name="option" value="B"></li>
-     <li><label for="C">Choice C</label><input type="radio" name="option" value="C"></li>
-	</ul>
-   </div>
-
-  </fieldset>
-
-  <fieldset><legend>Example Fieldset 2</legend>
-
-   <div class="formField">
-	<ul>
-     <li><label for="One">Choice One</label><input type="checkbox" name="selections" value="One" checked="checked"></li>
-     <li><label for="Two">Choice Two</label><input type="checkbox" name="selections" value="Two"></li>
-     <li><label for="Three">Choice Three</label><input type="checkbox" name="selections" value="Three"></li>
-	</ul>
-   </div>
-
-  </fieldset>
-
-  <div><input type="submit" value="Submit" /></div>
-  
- </form>
-
+ <div id="footer"><div class="fixed_width">
+  <div>&copy;2011 The Webknife Project</div>
+  <p>Licensed under the MIT license.</p>
+ </div></div>
+ 
  </body>
 </html>
+

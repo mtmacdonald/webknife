@@ -1,0 +1,254 @@
+﻿/*
+ * Webknife web presentation framework
+ * 
+ * Copyright 2011, The Webknife Project
+ * Licensed under the MIT license.
+ * http://webknife.assembla.com/
+ *
+ * Includes CSS reset (taken from http://meyerweb.com/eric/tools/css/reset/ - v2.0 | 20110126 - license: none - public domain) 
+ *
+ */
+
+/******************************** CSS RESET ***********************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {  /* HTML5 display-role reset for older browsers */
+ display: block;
+}
+body {
+ line-height: 1;
+}
+ol, ul {
+ list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+/******************************** PAGE ****************************************/
+
+/*make short pages appear to stretch to bottom. Note - prevents use of margin on 
+top-level blocks (delete this feature if these margins are needed)*/
+html 
+{
+ background-color:#385691;
+}
+
+body
+{
+ min-width:1024px;
+ font-family:verdana;
+ font-size:14px;
+ text-align:center;
+}
+
+/*any block that should be fixed width (centered) should have this class*/
+.fixed_width 
+{
+ padding: 0 15px 0 15px; /*stop text touching window edge when window is small*/
+ margin: 0 auto; /*cause fixed width*/
+ width: 1024px;
+ text-align:left;
+}
+
+/******************************** SITE HEADER **********************************/
+
+#siteHeader
+{
+padding: 30px 0px 30px 0px;
+background-color:white;
+height: 75px; /*set to same as logo height*/
+line-height: 75px; /*set to same as logo height*/
+border-bottom: 1px solid #385691;
+border-top: 3px solid #4d4d4d;
+}
+
+#logo
+{
+ float:left;
+}
+
+#title
+{
+ text-decoration:none; 
+ padding:0 0 0 30px;
+ font-weight: bold;
+ color: #385691;
+ font-size:14px;
+}
+
+/*end of site header - start of content
+ FOR CONTENT STYLES SEE SEPARATE STYLE SHEETS
+end of content - start of base*/
+
+/******************************** BASED AND FOOTER *****************************/
+
+#base
+{
+ background-color:#c4c4c4;
+ color: #555;
+ border-top: 1px solid #888;
+ padding:15px 0 15px 0;
+ font-size:11px;
+}
+
+#footer
+{
+ background-color:#385691;
+ height:70px;
+ line-height: 70px;
+ border-top: 1px solid #888;
+ font-size:12px;
+ color:white;
+}
+#footer div
+{ 
+ text-align:center;
+}
+#footer p
+{ 
+ padding: 0 0 15px 0;
+ font-size:9px;
+ line-height: 15px;
+}
+
+/*********************************  GENERAL  ***********************************/
+
+#content
+{
+ background-color:white;
+ padding:25px 0 50px 0;
+ font-family: verdana;
+ font-size: 11px;
+ line-height: 20px;
+}
+
+#error
+{
+ color:red;
+ border: 1px solid red;
+ padding: 15px;
+ margin: 30px;
+}
+
+/*********************************  HEADINGS ***********************************/
+
+#content h1
+{
+ text-decoration:none;
+ margin: 32px 0 30px 0; 
+ font-weight: bold;
+ color: #003972;
+ font-size:18px;
+}
+
+#navigation
+{
+ border: 1px solid #999;
+ padding:10px;
+ background-color: #eee;
+}
+
+#pageHeader
+{
+ margin: 10px 0 30px 0; 
+}
+
+/*********************************  FORMS **************************************/
+
+form {
+ width: 700px;
+ background-color:#f6f6f6;
+ color: #666;
+}
+form div { /*right-align submit buttons*/
+ text-align:right;
+}
+form p {
+ padding: 15px 10px 15px 10px;
+ font-weight: bold; 
+}
+fieldset {
+ margin: 0 20px 0 20px;
+ padding: 0 30px 0 30px;
+ border-top: 1px solid #666;
+ text-align: left;
+}
+legend {
+ font-size:125%;
+ font-weight:bold;
+ padding: 10px 10px 10px 10px;
+}
+
+.formField{
+ text-align: left;
+ clear:both;
+ padding: 20px 0 20px 0;
+}
+.formField p {
+ float:right;
+ font-size: 80%;
+ font-style: italic;
+ font-weight: normal;
+ margin-right:5%;
+ padding: 5px 0 5px 0;
+ width:67%;
+}
+label {
+ float: left;
+ text-align: right;
+ margin-right: 15px;
+ width: 25%;
+}
+.error input {
+ background-color:#ffd6d6;
+}
+.error p{
+ color:red;
+}
+
+textarea, input[type=text], input[type=password]{
+ width:70%; 
+}
+textarea { max-width: 70%;}
+input[type=submit]{
+ color:white;
+ font-size:110%;
+ background-color:#666;
+ border:solid 1px #eee;
+ padding: 3px 10px 3px 10px;
+ margin: 0 15px 15px 0;
+}
+input[type=submit]:hover{
+ background-color:#999;
+}
+
