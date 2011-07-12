@@ -131,11 +131,11 @@ end of content - start of base*/
  color:white;
 }
 #footer div
-{ 
+{
  text-align:center;
 }
 #footer p
-{ 
+{
  padding: 0 0 15px 0;
  font-size:9px;
  line-height: 15px;
@@ -183,11 +183,33 @@ end of content - start of base*/
  margin: 10px 0 30px 0; 
 }
 
+/********************************* BUTTONS *************************************/
+
+button, input[type=submit], input[type=button]{
+  outline: 0; /*removes dotted outline in some browsers*/
+  height: 28px; /*set the height and line-height to avoid inconsistency across browsers (noteably IE)*/
+  line-height: 14px;
+  cursor:pointer;
+  padding: 5px 9px 5px 9px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  font-family: verdana;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+button:hover, input[type=submit]:hover, input[type=button]:hover{
+ border: 1px solid #aaa;
+}
+button:active, input[type=submit]:active, input[type=button]:active{
+ border: 1px solid #888;
+}
+
 /*********************************  FORMS **************************************/
 
 form {
  width: 700px;
- background-color:#f6f6f6;
+ background-color:#f9f9f9;
  color: #666;
 }
 form div { /*right-align submit buttons*/
@@ -240,15 +262,9 @@ textarea, input[type=text], input[type=password]{
  width:70%; 
 }
 textarea { max-width: 70%;}
+
 input[type=submit]{
- color:white;
- font-size:110%;
- background-color:#666;
- border:solid 1px #eee;
- padding: 3px 10px 3px 10px;
  margin: 0 15px 15px 0;
 }
-input[type=submit]:hover{
- background-color:#999;
-}
+
 
