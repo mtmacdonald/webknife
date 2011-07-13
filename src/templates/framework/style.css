@@ -54,6 +54,9 @@ table {
  border-spacing: 0;
 }
 
+/*additional resets*/
+a, button, input { outline: 0; /*removes dotted outline in some browsers*/ }
+
 /******************************** PAGE ****************************************/
 
 /*make short pages appear to stretch to bottom. Note - prevents use of margin on 
