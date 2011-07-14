@@ -266,7 +266,7 @@ label {
 textarea, input[type=text], input[type=password]{
  width:70%; 
 }
-textarea { max-width: 70%;}
+textarea { resize: vertical; }
 
 input[type=submit]{
  margin: 0 15px 15px 0;
