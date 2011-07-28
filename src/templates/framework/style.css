@@ -219,7 +219,6 @@ button.colored, input[type=submit].colored, input[type=button].colored {color: w
 button.small, input[type=submit].small, input[type=button].small {height: 22px; line-height:11px; padding: 0 6px 0 6px;}
 button.large, input[type=submit].large, input[type=button].large {height: 46px; line-height:23px; font-size: 14px; padding: 0 20px 0 20px; border-width:2px; border-radius: 8px;}
 		button.large:hover, input[type=submit].large:hover, input[type=button].large:hover { box-shadow: 0 1px 2px #aaa;}
-}
 
 /*********************************  FORMS **************************************/
 
