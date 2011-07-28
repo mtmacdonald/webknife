@@ -32,21 +32,39 @@
  <button class="large colored" type="button">Colored</button>
  
  <h1>Reference for forms</h1>
- <form action="#">
-  <fieldset><legend><p>Example Fieldset 1</p></legend>
+ 
+  <form style="width: 450px;" action="#">
+  <fieldset><legend><p>Simple Form</p></legend><div>
 
-   <p>Example fieldset description</p>
+   <div class="formField">
+    <label for="name">Username</label> 
+    <input type="text" name="name" />
+   </div>
+
+   <div class="formField">
+    <label for="password">Password</label> 
+    <input type="password" name="password" />
+   </div>
+
+  </div></fieldset>
+  <div><input type="submit" value="Login" /></div>
+ </form>
+  
+ <form style="width: 700px;" action="#">
+  <fieldset><legend><p>Advanced form</p></legend><div>
+
+   <p>Describe what this form is about?</p>
 
    <div class="formField">
     <label for="name">Text input</label>
     <input type="text" name="name" />
-    <p>Example field description</p>
+    <p>Describe what this field is about?</p>
    </div>
 
    <div  class="formField error">
     <label for="error">Text input (error)</label> 
-    <input type="text" name="error" /> * 
-	<p>Example error message</p>
+    <input type="text" name="error" />
+	<p>Describe an error</p>
    </div>
 
    <div class="formField">
@@ -65,22 +83,22 @@
    
    <div class="formField">
     <label for="description">Textarea input</label> 
-    <textarea name="description">Example text</textarea>
-   </div> 
+    <textarea name="description" rows="6">Example text</textarea>
+   </div>
 
-   <p>Example question or further fieldset description</p>
+   <div style="clear:both;">&nbsp;</div><p>Another user question?</p>
 
    <div class="formField">
 	<ul>
      <li><label for="A">Choice A</label><input type="radio" name="option" value="A" checked="checked"></li>
      <li><label for="B">Choice B</label><input type="radio" name="option" value="B"></li>
-     <li><label for="C">Choice C</label><input type="radio" name="option" value="C"></li>
+     <li><label for="C">Choice C</label><input type="radio" name="option" value="C"></li> 
 	</ul>
    </div>
 
-  </fieldset>
+  </div></fieldset>
 
-  <fieldset><legend><p>Example Fieldset 2</p></legend>
+  <br/><fieldset><legend><p>Example Fieldset 2</p></legend><div>
 
    <div class="formField">
 	<ul>
@@ -90,10 +108,8 @@
 	</ul>
    </div>
 
-  </fieldset>
-
+  </div></fieldset>
   <div><input type="submit" value="Submit" /></div>
-  
  </form>
 
  </div></div> 

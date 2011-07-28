@@ -223,18 +223,24 @@ button.large, input[type=submit].large, input[type=button].large {height: 46px; 
 /*********************************  FORMS **************************************/
 
 form {
- width:700px;
+ margin: 25px 0 25px 0;
  background-color:#f9f9f9;
  color: #666;
 }
 form div { /*right-align submit buttons*/
  text-align:right;
 }
-form p {
- font-weight: bold;
- padding: 15px 25px 15px 25px;
-}
+
 fieldset {
+ text-align: left;
+}
+fieldset > div { /*select the whole group of inputs in a fieldset*/
+ padding: 15px 20px 0 15px; /*cannot use bottom padding because floated elements collapse children*/
+}
+fieldset > div > p { font-weight: bold; } /*select the heading questions*/
+fieldset > div > p, .formField p, textarea, input[type=text], select, input[type=password]{ 
+ float:right;
+ width: 75%;
  text-align: left;
 }
 legend { /*do not apply padding to the legend, use legend p instead*/ 
@@ -243,7 +249,7 @@ legend { /*do not apply padding to the legend, use legend p instead*/
  font-weight:bold;
 }
 legend p {
- padding: 14px 25px 14px 25px;
+ padding: 14px 20px 14px 20px;
  background-color: #f1f1f1;
  border-bottom: 1px solid #ccc;
  border-top: 1px solid #ccc;
@@ -252,37 +258,41 @@ legend p {
 .formField{
  text-align: left;
  clear:both;
- padding: 15px 50px 15px 50px;
+ padding: 15px 0 15px 0;
 }
 .formField p {
- float:right;
- font-size: 80%;
+ font-size: 90%;
  font-style: italic;
- font-weight: normal;
- margin-right:5%;
- padding: 5px 0 5px 0;
- width:67%;
+ padding-top: 2px;
 }
+
 label {
  float: left;
  text-align: right;
- margin-right: 15px;
- width: 25%;
+ width: 24%;
+ font: 12px verdana;
+ position:relative;
+ top:3px;
+ left: -8px;
 }
 .error input {
  background-color:#ffd6d6;
 }
 .error p{
- color:red;
+ color: red;
+}
+
+input, textarea, select{ /*todo - move to global reset?*/
+ padding:0;
+ outline:0;
 }
 
 input[type=text], input[type=password]{
- height: 22px; line-height: 22px;
- font-size: 15px;
+ height: 24px; line-height: 24px;
+ font: 14px verdana;
 }
 textarea, input[type=text], input[type=password]{
- outline:none;
- width:70%; 
+ outline: none;
  border: 1px solid #aaa;
 }
 textarea:focus, input[type=text]:focus, input[type=password]:focus{
@@ -291,6 +301,6 @@ textarea:focus, input[type=text]:focus, input[type=password]:focus{
 textarea { resize: vertical; }
 
 input[type=submit]{
- margin: 0 15px 15px 0;
+ margin: 15px 20px 15px 0;
 }
 
