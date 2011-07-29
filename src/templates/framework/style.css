@@ -186,6 +186,12 @@ end of content - start of base*/
  margin: 10px 0 30px 0; 
 }
 
+/******************************** TYPOGRAPHY ***********************************/
+
+#content .massive {font-size:30px;}
+
+#content .centred {text-align:center;}
+
 /********************************* BUTTONS *************************************/
 
 button, input[type=submit], input[type=button]{
