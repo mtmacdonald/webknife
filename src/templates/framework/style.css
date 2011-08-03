@@ -208,10 +208,22 @@ end of content - start of base*/
  ALIGNMENT
 ------------------------------------------------------*/
 
+.inline {display:inline;}
+
 /*horizontal*/
 #content img, .center {text-align: center; display: block; margin-left: auto; margin-right: auto; }
 .left {text-align: left; display: block; margin-left: 0; margin-right: auto;  }
 .right {text-align: right; display: block; margin-left: auto; margin-right: 0;  }
+
+/*------------------------------------------------------
+ ICONOGRAPHY
+------------------------------------------------------*/
+
+.tick {background-image: url('images/tick.png'); background-repeat:no-repeat;}
+.cross {background-image: url('images/tick.png'); background-repeat:no-repeat;}
+.search {background-image: url('images/tick.png'); background-repeat:no-repeat;}
+.information {background-image: url('images/tick.png'); background-repeat:no-repeat;}
+.download {background-image: url('images/tick.png'); background-repeat:no-repeat;}
 
 /*------------------------------------------------------
  BUTTONS
