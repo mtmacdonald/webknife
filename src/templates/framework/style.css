@@ -190,7 +190,12 @@ end of content - start of base*/
 
 #content .massive {font-size:30px;}
 
-#content .centred {text-align:center;}
+/******************************** ALIGNMENT ************************************/
+
+/*horizontal*/
+#content img, #content .center {text-align: center; display: block; margin-left: auto; margin-right: auto; }
+#content .left {text-align: left; display: block; margin-left: 0; margin-right: auto;  }
+#content .right {text-align: right; display: block; margin-left: auto; margin-right: 0;  }
 
 /********************************* BUTTONS *************************************/
 
