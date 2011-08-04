@@ -7,14 +7,17 @@
   <link rel="stylesheet" href="framework/style.css" type="text/css" />
   
   <style>
-  #banner {color: #385691; font-weight: bold; padding-top: 50px; background: white url('framework/images/gradient.png') repeat-x left bottom;}
-  #banner-buttons {background-color:#f3f3f3; border-bottom: 1px solid #385691;}
-
-  #banner-buttons button
+  #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
+  #banner img {padding: 25px 0 25px 0;}
+  #banner-buttons {background-color: #f7f7f7; border-bottom: 1px solid #385691;}
+  /*#banner-buttons span { position:relative; left: 138px; }*/
+  #banner-buttons a {text-decoration: none; } 
+  #banner-buttons button { border-bottom: 1px solid #385691; }
+  .spaced {margin-right: 15px;}
+  .lowered
   {
-   border-bottom-left-radius: 0;
-   border-bottom-right-radius: 0;
-   border-bottom: none;
+	position: relative;
+	top: 8px; /*height difference between large and small buttons -1px*/
   }
   </style>
   
@@ -31,13 +34,14 @@
 
  <div id="banner"><div class="fixed_width">
    <h1 class="massive center">Make elegant web interfaces in minutes.</h1>
-   <img class="center" src="framework/images/overview.png"  alt="overview" />
+   <img class="center" src="index/overview.png"  alt="overview" />
  </div></div>
  
  <div id="banner-buttons"><div class="fixed_width">
   <span class="center">
-    <button class="large colored" type="button">Download</button>
-	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="large dark" type="button">Report Issues</button></a>
+	<a href=""><button class="large colored flat spaced" type="button">Download</button></a>
+	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="dark lowered flat spaced" type="button">Report Issues</button></a>
+	<a href=""><button class="lowered flat" type="button">Do you use Webknife?</button></a>
   </span>
  </div></div>
  
