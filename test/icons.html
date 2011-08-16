@@ -1,0 +1,159 @@
+﻿<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages-->
+  <meta charset="UTF-8">
+  <title>Reference Page</title>
+  <link rel="stylesheet" href="../src/templates/framework/style.css" type="text/css" />
+  
+  <style>
+  
+  /*default table*/
+	#content table, #content td, #content tr
+	{
+	 border: 1px solid #CCC;
+	 vertical-align: middle;
+	 text-align:left;
+	 padding: 2px 15px 2px 15px;
+	}
+
+	#content table
+	{
+	 width: 700px;
+	}
+
+	#content td
+	{
+	 margin: 1px 6px 1px 6px;
+	}
+
+	#content tr
+	{
+	 height:25px;
+	}
+
+	#content th
+	{
+	 background-color:#888;
+	 font-weight:bold;
+	 height:40px;
+	 line-height:40px;
+	 color:white;
+	 font-size:14px;
+	 padding: 2px 10px 2px 10px;
+	}
+
+	/*special table*/
+	 
+	#content .styled-table tr
+	{
+	 height:30px;
+	 line-height:30px;
+	}
+
+	#content .styled-table td
+	{
+	 font-size: 12px;
+	}
+
+	#content .shaded
+	{
+	 background-color:#eee;
+	}
+
+	#content .bold
+	{
+	 font-weight:bold;
+	}
+
+	#content .red
+	{
+	 color:#bf2e2e;
+	}
+
+	#content .green
+	{
+	 color:#2ebf3c;
+	}
+
+	#content .tick-background
+	{
+	 text-align:center;
+	 background-position:center; 
+	}
+
+	#content .cross-background
+	{
+	 text-align:center;
+	 background-position:center; 
+	}
+
+  </style>
+  
+  
+  
+ </head>
+
+ <body>
+
+ <div id="siteHeader"><div class="fixed_width">
+  <a href="./index.html" id="title">
+   <img src="../src/templates/framework/images/logo.png" id="logo" alt="logo"/>
+   <span>Webknife</span>
+  </a>
+ </div></div>
+
+ <div id="content"><div class="fixed_width">
+
+ <!--paste <HTML elements here-->
+ <h2>Icons  example (tables)</h2>
+ <table class="styled-table" style="width:700px;">
+ 
+ <tr>
+  <th style="width:150px;">Heading</th>
+  <th style="width:300px;">Heading</th>
+  <th>Heading</th>
+ </tr>
+	
+  <tr>
+	<td class="bold">Example</td>
+	<td>Example</td>
+	<td>Example</td>
+  </tr>
+	 
+  <tr class="shaded">
+	<td class="bold">Example</td>
+	<td>Example</td>
+	<td></td>
+  </tr>
+
+  <tr>
+	 <td class="bold">Example</td>
+	 <td class="green">Example</td>
+	 <td class="tick-background"></td>
+  </tr>
+
+  <tr class="shaded">
+	<td class="bold">Example</td>
+	<td class="red">Example</td>
+	<td class="cross-background"></td>
+  </tr>
+
+  </table>
+  
+  <h2>Icons  example (buttons)</h2>
+ <button class="large colored" type="button"><div class="icon download-inverted" style="padding-left: 40px; margin:0; background-position: left center; width:auto;">Download</div></button>
+ </div></div> 
+
+ <div id="base"><div class="fixed_width">
+  <span>&nbsp;</span>
+ </div></div>
+
+ <div id="footer"><div class="fixed_width">
+  <div>&copy;2011 The Webknife Project</div>
+  <p>Licensed under the MIT license.</p>
+ </div></div>
+ 
+ </body>
+</html>
+
