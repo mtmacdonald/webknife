@@ -174,6 +174,28 @@ end of content - start of base*/
 }
 
 /*------------------------------------------------------
+ ALIGNMENT
+------------------------------------------------------*/
+
+.inline {display:inline;}
+
+/*horizontal*/
+#content img, .center {text-align: center; display: block; margin-left: auto; margin-right: auto; }
+.left {text-align: left; display: block; margin-left: 0; margin-right: auto;  }
+.right {text-align: right; display: block; margin-left: auto; margin-right: 0;  }
+
+/*------------------------------------------------------
+ TYPOGRAPHY
+------------------------------------------------------*/
+
+.massive {font-size:30px;}
+.bold { font-weight:bold; }
+.red { color:#bf2e2e; }
+.green { color:#2ebf3c; }
+
+/*todo - false links for JavScript*/
+
+/*------------------------------------------------------
  HEADINGS
 ------------------------------------------------------*/
 
@@ -207,25 +229,43 @@ end of content - start of base*/
  margin: 10px 0 30px 0; 
 }
 
-/*------------------------------------------------------
- TYPOGRAPHY
-------------------------------------------------------*/
-
-.massive {font-size:30px;}
-.bold { font-weight:bold; }
-.red { color:#bf2e2e; }
-.green { color:#2ebf3c; }
 
 /*------------------------------------------------------
- ALIGNMENT
+ LISTS
 ------------------------------------------------------*/
 
-.inline {display:inline;}
+ul , ol { padding-left:15px; }
+ul  { list-style-type: disc; }
+ol  { list-style-type: decimal; }
+li.list-heading  { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
 
-/*horizontal*/
-#content img, .center {text-align: center; display: block; margin-left: auto; margin-right: auto; }
-.left {text-align: left; display: block; margin-left: 0; margin-right: auto;  }
-.right {text-align: right; display: block; margin-left: auto; margin-right: 0;  }
+/*------------------------------------------------------
+ TABLES
+------------------------------------------------------*/
+
+table { width: 700px; table-layout:fixed; }
+tr { height:25px; }
+td, tr, th { vertical-align: middle; }
+table, td, tr
+{
+ border: 1px solid #ccc;
+ text-align:left;
+ padding: 2px 15px 2px 15px;
+}
+
+th, tfoot td
+{
+ background-color:#999;
+ font-weight:bold;
+ height:30px;
+ color:white;
+ font-size:14px;
+ padding: 2px 15px 2px 15px;
+ border: none;
+}
+
+tbody tr:nth-of-type(2n){ background-color:#f1f1f1; }
+caption { caption-side:bottom; font-weight: bold; padding: 15px; }
 
 /*------------------------------------------------------
  BUTTONS
@@ -263,6 +303,7 @@ button.small, input[type=submit].small, input[type=button].small {height: 22px; 
 button.large, input[type=submit].large, input[type=button].large {height: 46px; line-height:23px; font-size: 14px; padding: 0 20px 0 20px; border-width:2px; border-radius: 8px;}
 		button.large:hover, input[type=submit].large:hover, input[type=button].large:hover { box-shadow: 0 1px 2px #aaa;}
 button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-left-radius: 0!important; border-bottom-right-radius: 0!important; }
+
 /*------------------------------------------------------
  FORMS
 ------------------------------------------------------*/
@@ -275,6 +316,7 @@ form {
 form div { /*right-align submit buttons*/
  text-align:right;
 }
+form ul {list-style-type: none; padding-left: 0} /*undo list bullets in forms*/
 
 fieldset {
  text-align: left;
@@ -348,34 +390,6 @@ textarea { resize: vertical; }
 input[type=submit]{
  margin: 15px 20px 15px 0;
 }
-
-/*------------------------------------------------------
- TABLES
-------------------------------------------------------*/
-
-table { width: 700px; table-layout:fixed; }
-tr { height:25px; }
-td, tr, th { vertical-align: middle; }
-table, td, tr
-{
- border: 1px solid #ccc;
- text-align:left;
- padding: 2px 15px 2px 15px;
-}
-
-th, tfoot td
-{
- background-color:#999;
- font-weight:bold;
- height:30px;
- color:white;
- font-size:14px;
- padding: 2px 15px 2px 15px;
- border: none;
-}
-
-tbody tr:nth-of-type(2n){ background-color:#f1f1f1; }
-caption { caption-side:bottom; font-weight: bold; padding: 15px; }
 
 /*------------------------------------------------------
  ICONOGRAPHY
