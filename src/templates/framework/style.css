@@ -212,6 +212,9 @@ end of content - start of base*/
 ------------------------------------------------------*/
 
 .massive {font-size:30px;}
+.bold { font-weight:bold; }
+.red { color:#bf2e2e; }
+.green { color:#2ebf3c; }
 
 /*------------------------------------------------------
  ALIGNMENT
@@ -347,10 +350,39 @@ input[type=submit]{
 }
 
 /*------------------------------------------------------
+ TABLES
+------------------------------------------------------*/
+
+table { width: 700px; table-layout:fixed; }
+tr { height:25px; }
+td, tr, th { vertical-align: middle; }
+table, td, tr
+{
+ border: 1px solid #ccc;
+ text-align:left;
+ padding: 2px 15px 2px 15px;
+}
+
+th, tfoot td
+{
+ background-color:#999;
+ font-weight:bold;
+ height:30px;
+ color:white;
+ font-size:14px;
+ padding: 2px 15px 2px 15px;
+ border: none;
+}
+
+tbody tr:nth-of-type(2n){ background-color:#f1f1f1; }
+caption { caption-side:bottom; font-weight: bold; padding: 15px; }
+
+/*------------------------------------------------------
  ICONOGRAPHY
 ------------------------------------------------------*/
 
 .icon {display: inline-block; height: 25px; width: 25px; margin: 1px; background-position:center; }
+td.icon {display: table-cell; height:auto; width:auto; height:27px;}/*don't use inline-block for table cells*/
 
 .home {background-image: url('images/icons/home.png'); background-repeat:no-repeat;}
 	.home-inverted {background-image: url('images/icons/home-inverted.png'); background-repeat:no-repeat;}
