@@ -319,8 +319,8 @@ form {
 form div { /*right-align submit buttons*/
  text-align:right;
 }
-form ul {list-style-type: none; padding-left: 0} /*undo list bullets in forms*/
-#content form p , #content .fixed_width form div{ margin: 0; } /*undo p margin in forms*/
+form ul {list-style-type: none; padding-left: 0; } /*undo list bullets in forms*/
+#content form p , #content form ul, #content .fixed_width form div{ margin: 0; } /*undo p, div, ul margin in forms*/
 
 fieldset {
  text-align: left;
