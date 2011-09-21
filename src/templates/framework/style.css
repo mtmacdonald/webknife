@@ -57,7 +57,8 @@ table {
 }
 
 /*additional resets*/
-a, button, input { outline: 0; /*removes dotted outline in some browsers*/ }
+a, button, input { outline: 0; } /*removes dotted outline in some browsers*/
+strong { font-weight: bold; } em  { font-style: italic } /*fix strong and em (font:inherit in standard reset breaks these)*/
 
 /*------------------------------------------------------
  PAGE
@@ -73,8 +74,6 @@ html
 body
 {
  min-width:1024px;
- font-family:verdana;
- font-size:14px;
  text-align:center;
 }
 
@@ -115,10 +114,6 @@ border-top: 3px solid #4d4d4d;
  font-size:14px;
 }
 
-/*end of site header - start of content
- FOR CONTENT STYLES SEE SEPARATE STYLE SHEETS
-end of content - start of base*/
-
 /*------------------------------------------------------
  BASE AND FOOTER
 ------------------------------------------------------*/
@@ -138,7 +133,6 @@ end of content - start of base*/
  height:70px;
  line-height: 70px;
  border-top: 1px solid #888;
- font-size:12px;
  color:white;
 }
 #footer div
@@ -156,21 +150,23 @@ end of content - start of base*/
  GENERAL
 ------------------------------------------------------*/
 
-#content
+#content { background-color:white; padding:25px 0 50px 0; }
+
+#content p, #content .fixed_width  div, #content pre, #content ul, #content ol, #content table
 {
- background-color:white;
- padding:25px 0 50px 0;
- font-family: verdana;
- font-size: 11px;
- line-height: 20px;
+ margin: 20px 0 20px 0; 
 }
 
-#error
+#navigation
 {
- color:red;
- border: 1px solid red;
- padding: 15px;
- margin: 30px;
+ border: 1px solid #999;
+ padding:10px;
+ background-color: #eee;
+}
+
+#pageHeader
+{
+ margin: 10px 0 30px 0; 
 }
 
 /*------------------------------------------------------
@@ -188,47 +184,39 @@ end of content - start of base*/
  TYPOGRAPHY
 ------------------------------------------------------*/
 
+body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
+
+.small {font-size:11px;}
+.large {font-size:14px;}
 .massive {font-size:30px;}
+
 .bold { font-weight:bold; }
+.colored{ color:#385691; }
+.gray{ color:#999; }
 .red { color:#bf2e2e; }
 .green { color:#2ebf3c; }
 
-/*todo - false links for JavScript*/
+/*links*/
+a, .falseLink { color:#385691; }
+a:visited { color: #888 }
+a:hover, .falseLink:hover { color: #4a72c1; text-decoration: none;}
+.falseLink{text-decoration: underline; cursor: pointer;} 
+
+.warning  { color:red; background-color: #ffe6e6; border: 1px solid red; padding: 10px;}
 
 /*------------------------------------------------------
  HEADINGS
 ------------------------------------------------------*/
 
-#content h1
-{
- text-decoration:none;
- margin: 25px 0 25px 0; 
- font-weight: bold;
- color: #003972;
- font-size:18px;
-}
+h1, h2, h3, h4 , h5, h6 { text-decoration:none; font-weight: bold; color: #003972; padding-bottom: 5px; border-bottom: 1px solid #bbb;  margin: 20px 0 20px 0; }
+h1  { font-size:20px; padding-bottom: 10px; }
+h2  { font-size:14px; padding-bottom: 5px; }
+h3  { font-size:13px; padding-bottom: 4px; }
+h4  { font-size:12px; padding-bottom: 2px; }
+h5  { font-size:11px; padding-bottom: 1px; }
+h6  { font-size:10px; }
 
-#content h2
-{
- text-decoration:none;
- margin: 10px 0 10px 0; 
- font-weight: bold;
- color: #003972;
- font-size:12px;
-}
-
-#navigation
-{
- border: 1px solid #999;
- padding:10px;
- background-color: #eee;
-}
-
-#pageHeader
-{
- margin: 10px 0 30px 0; 
-}
-
+.no-underline { border-bottom:none; } 
 
 /*------------------------------------------------------
  LISTS
@@ -238,6 +226,21 @@ ul , ol { padding-left:15px; }
 ul  { list-style-type: disc; }
 ol  { list-style-type: decimal; }
 li.list-heading  { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
+
+/*------------------------------------------------------
+ PREFORMATED, CODE
+------------------------------------------------------*/
+
+pre
+{
+ margin: 15px 0px 15px 0px; 
+ padding: 10px 10px 10px 10px; 
+ background-color: #fafafa;
+ border: 1px solid #ccc;
+ line-height: 14px;
+}
+
+code { font-family: courier, monospace}
 
 /*------------------------------------------------------
  TABLES
@@ -317,6 +320,7 @@ form div { /*right-align submit buttons*/
  text-align:right;
 }
 form ul {list-style-type: none; padding-left: 0} /*undo list bullets in forms*/
+#content form p , #content .fixed_width form div{ margin: 0; } /*undo p margin in forms*/
 
 fieldset {
  text-align: left;
@@ -396,6 +400,7 @@ input[type=submit]{
 ------------------------------------------------------*/
 
 .icon {display: inline-block; height: 25px; width: 25px; margin: 1px; background-position:center; background-repeat:no-repeat;}
+#content .fixed_width .icon { margin: 0; } /*undo default div margin*/
 td.icon {display: table-cell; height:auto; width:auto; height:27px;}/*don't use inline-block for table cells*/
 
 .home {background-image: url('images/icons/home.png'); }
