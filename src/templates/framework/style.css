@@ -152,7 +152,8 @@ border-top: 3px solid #4d4d4d;
 
 #content { background-color:white; padding:25px 0 50px 0; }
 
-#content p, #content .fixed_width  div, #content pre, #content ul, #content ol, #content table
+#content p, #content .fixed_width  div, #content pre, #content ul, #content ol, #content table, 
+#content blockquote, #content pre
 {
  margin: 20px 0 20px 0; 
 }
@@ -228,19 +229,30 @@ ol  { list-style-type: decimal; }
 li.list-heading  { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
 
 /*------------------------------------------------------
+ BLOCKQUOTES
+------------------------------------------------------*/
+
+blockquote 
+{
+ padding: 10px 15px 10px 15px;
+ border-left: 5px solid #d893a1;
+ background-color: #fbe6f2;
+ line-height: 15px;
+}
+
+/*------------------------------------------------------
  PREFORMATED, CODE
 ------------------------------------------------------*/
 
 pre
 {
- margin: 15px 0px 15px 0px; 
- padding: 10px 10px 10px 10px; 
+ padding: 10px 10px 10px 10px;
  background-color: #fafafa;
  border: 1px solid #ccc;
  line-height: 14px;
 }
 
-code { font-family: courier, monospace}
+code { font-family: courier, monospace }
 
 /*------------------------------------------------------
  TABLES
