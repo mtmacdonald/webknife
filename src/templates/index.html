@@ -55,7 +55,14 @@
 
  <h2>Features</h2>
  
- <p>...</p>
+ <ul>
+  <li>CSS reset</li>
+  <li>Forms</li>
+  <li>Buttons</li>
+  <li>Typography</li>
+  <li>Tables</li>
+  <li>Icons</li>
+ </ul>
  
  <h2>How to get started</h2>
  
@@ -63,14 +70,22 @@
 
  <h2>Predictable Browser Support</h2>
  
- <p>The Webknife browser support policy is listed below</p>
+  <p>Every release supports all major browsers and operating systems, with 'graceful degradation' for old browsers.</p>
  
- <table style="width:100%;">
+  <h3 class="no-underline">Take advantage of extensive testing</h3>
+   
+  <ul>
+   <li>Checked against the W3C <a href="http://validator.w3.org/">HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/validator.html.en">CSS3</a> validators</li>
+   <!--<li>JavaScript syntax checked with the <a href="http://closure-compiler.appspot.com/home">Google Closure Compiler</a></li>-->
+   <li>12 discreet browser tests, across multiple operating systems (see 'release tests' below)</li>
+  </ul>
+ 
+ <table style="width:100%; margin-top:30px;">
   <thead>
    <tr>
     <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:50px;"></th>
-    <th class="hide-background hide-top hide-bottom hide-left hide-right"></th>
-	<th class="hide-background hide-top hide-bottom hide-left" style="width:200px;"></th>
+    <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:85px;"></th>
+	<th class="hide-background hide-top hide-bottom hide-left" style="width:170px;"></th>
     <th colspan="4" style="text-align:center; border: 1px solid #999;">Browser Support Policy</th>
    </tr>
   </thead>
@@ -82,30 +97,30 @@
     <td class="hide-background hide-top hide-left hide-right"></td>
     <td class="hide-background hide-top hide-left"></td>
 	<td><strong>Full</strong><br/><em>(visually consistent)</em></td>
-	<td><strong>Moderate</strong><br/><em>(functional)</em></td>
+	<td><strong>Moderate</strong><br/><em>(aesthetic, functional)</em></td>
 	<td><strong>None</strong><br/><em>(not tested)</em></td>
-    <td class="gray small"><em>Release testing on:</em></td>
+    <td class="gray small"><em>Release tests:</em></td>
    </tr>
    
    <!--IE-->
    <tr>
     <td rowspan="3" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/ie.png'); width:32px; height:32px;"></td>
-    <td rowspan="3" style ="background-color:#f1f1f1;">Internet Explorer</td>
-    <td><strong>9</strong></td>
+    <td rowspan="3" style ="background-color:#f1f1f1;"><strong>Internet Explorer</strong></td>
+    <td><strong class="green">9 (latest)</strong></td>
 	<td class="icon tick"></td>
     <td></td>
 	<td></td>
-	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=13950">Internet Explorer 9</a> for Windows 7</td>
+	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=13950">Microsoft Internet Explorer 9</a> (Windows 7)</td>
    </tr>
    <tr>
-    <td><strong>8</strong></td>
+    <td><strong class="green">8</strong></td>
 	<td></td>
 	<td class="icon tick"></td>
 	<td></td>
-	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=43">Internet Explorer 8</a> for Windows XP</td>
+	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=43">Microsoft Internet Explorer 8</a> (Windows XP)</td>
    </tr>
    <tr>
-    <td><strong>Older</strong></td>
+    <td><strong class="green">7, 6,</strong> older</td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -115,14 +130,14 @@
    <!--Chrome-->
    <tr>
     <td rowspan="2" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/chrome.png'); width:32px; height:32px;"></td>
-    <td rowspan="2" style ="background-color:#fff;">Chrome</td>
-    <td><strong>14</strong></td>
+    <td rowspan="2" style ="background-color:#fff;"><strong>Chrome</strong></td>
+    <td><strong class="green">14</strong></td>
 	<td class="icon tick"></td>
     <td></td>
 	<td></td>
-    <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> on Windows XP</td>
+    <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> (Windows XP, Linux, OS X)</td>
    </tr>
-    <td><strong>Older</strong><span class="gray small"> (auto-updated*)</td>
+    <td>older<span class="gray small"> (auto-updated*)</td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -131,23 +146,28 @@
    
    <!--Firefox-->
    <tr>
-    <td rowspan="3" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/firefox.png'); width:32px; height:32px;"></td>
-    <td rowspan="3" style ="background-color:#f1f1f1;">Firefox</td>
-    <td><strong>Latest (7)</strong></td>
+    <td rowspan="4" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/firefox.png'); width:32px; height:32px;"></td>
+    <td rowspan="4" style ="background-color:#f1f1f1;"><strong>Firefox</strong></td>
+    <td><strong class="green">7 (latest)</strong></td>
 	<td class="icon tick"></td>
     <td></td>
 	<td></td>
-    <td></td>
-   </tr>
+	<td class="gray small"><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> (Windows XP)</tr>
    <tr>
-    <td><strong>3.6</strong></td>
-	<td></td>
+    <td>4, 5, 6 <span class="gray small">(auto-updated*)</span></td>
 	<td class="icon tick"></td>
 	<td></td>
 	<td></td>
+	<td rowspan="2" class="gray small"><a href="http://utilu.com/UtiluMFC/">Utilu Mozilla Firefox Collection</a> (Windows XP)</td>
    </tr>
    <tr>
-    <td><strong>Older</strong></td>
+    <td><strong class="green">3.6</strong></td>
+	<td></td>
+	<td class="icon tick"></td>
+	<td></td>
+   </tr>
+   <tr>
+    <td>older</td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -156,23 +176,16 @@
    
    <!--Safari-->
    <tr>
-    <td rowspan="3" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/safari.png'); width:32px; height:32px;"></td>
-    <td rowspan="3" style ="background-color:#fff;">Safari</td>
-    <td><strong>5</strong></td>
+    <td rowspan="2" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/safari.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" style ="background-color:#fff;"><strong>Safari</strong></td>
+    <td><strong class="green">5 (latest)</strong></td>
 	<td class="icon tick"></td>
     <td></td>
 	<td></td>
-    <td></td>
+	<td class="gray small"><a href="http://www.apple.com/safari/download/">Apple Safari</a> (Windows XP and OS X Lion)</td>
    </tr>
    <tr>
-    <td><strong>4</strong></td>
-	<td></td>
-	<td class="icon tick"></td>
-	<td></td>
-    <td></td>
-   </tr>
-   <tr>
-    <td><strong>Older</strong></td>
+    <td>older <span class="gray small">(not supported†)</span></td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -182,14 +195,14 @@
    <!--Opera-->
    <tr>
     <td rowspan="2" class="icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/opera.png'); width:32px; height:32px;"></td>
-    <td rowspan="2" style ="background-color:#f1f1f1;">Opera</td>
-    <td><strong>11</strong></td>
+    <td rowspan="2" style ="background-color:#f1f1f1;"><strong>Opera</strong></td>
+    <td><strong class="green">11 (latest)</strong></td>
 	<td class="icon tick"></td>
     <td></td>
 	<td></td>
-	<td></td>
+	<td class="gray small"><a href="http://www.opera.com/">Opera</a> (Windows XP)</td>
    </tr>
-    <td><strong>Older</strong></td>
+    <td>older<span class="gray small"> (auto-updated*)</td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -199,9 +212,11 @@
   </tbody>
  </table>
  
- <p>*some browsers automatically update old versions to the latest stable release.</p>
- 
- <p>Issues can only be accepted against supported browser versions.</p>
+ <p class="right small">
+ <span class="gray">Browser versions actively supported by the vendor are shown in</span><strong class="green"> green</strong><br/>
+ <span class="small gray">*some browsers automatically update to the latest version. Therefore while this framework may work with older versions, no specific tests are performed</span><br/>
+ <span class="small gray">†support is provided for the <a href="http://en.wikipedia.org/wiki/Safari_version_history">latest Safari version</a>, which can be installed on all recent versions of OS X and Windows</span>
+ </p>
  
  </div></div> 
 
