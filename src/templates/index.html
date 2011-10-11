@@ -3,7 +3,7 @@
  <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages-->
   <meta charset="UTF-8">
-  <title>Webknife</title>
+  <title>Webknife - a web presentation framework</title>
   <link rel="stylesheet" href="framework/style.css" type="text/css" />
   
   <style>
@@ -35,7 +35,12 @@
   <a href="./index.html" id="title">
    <img src="framework/images/logo.png" id="logo" alt="logo"/>
    <span>Webknife - a web presentation framework</span>
+   <span style="font-weight:normal;">(version x.x.x)</span>
   </a>
+  <span style="float:right; height:42px; line-height:42px;">
+    <a href="reference.html"><button class="small colored" type="button">HTML Reference Guide</button></a>
+    <a href="framework/change-log.html"><button class="small colored" type="button">Change Log</button></a>
+  </span>
  </div></div>
 
  <div id="banner"><div class="fixed_width">
@@ -45,14 +50,16 @@
  
  <div id="banner-buttons"><div class="fixed_width">
   <span class="center">
-	<a href=""><button class="large colored flat spaced" type="button">Download</button></a>
+	<a href="https://www.assembla.com/spaces/webknife/documents"><button class="large colored flat spaced" type="button">Download</button></a>
 	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="dark lowered flat spaced" type="button">Report Issues</button></a>
-	<a href=""><button class="lowered flat" type="button">Do you use Webknife?</button></a>
+	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="lowered flat" type="button">Do you use Webknife?</button></a>
   </span>
  </div></div>
  
  <div id="content"><div class="fixed_width">
 
+ <p><strong>Webknife</strong> is a web presentation framework for rapid user interface design on the client side.</p>
+ 
  <h2>Features</h2>
  
  <ul>
@@ -66,7 +73,42 @@
  
  <h2>How to get started</h2>
  
- <a href="reference.html">Reference Page</a>
+ <table  class="center" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
+ <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   1. Download the framework
+  </td>
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   2. Edit template pages
+  </td>
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   3. Customise and publish
+  </td>
+ </tr>
+ <tr style="padding:0; margin:0; ">
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li><a href="http://daringfireball.net/projects/markdown/basics">Download</a> a copy of the framework for each new web project</li>
+	<li>Keep the <strong>framework</strong> directory as part of your project</li>
+   </ul>
+  </td>
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li>Edit <a href="template.html">template.html</a> (a blank canvas for any new web pages)</li>
+	<li>Copy and paste from <a href="reference.html">reference.html</a> (production-tested HTML snippets)</li>
+	<li>Consult <a href="framework/style.css">style.css</a> (for alternative style options)</li>
+   </ul>
+  </td>
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li>Attach other stylesheets and further customise pages</li>
+	<li>Delete unneeded files (index.html, reference.html)</li>
+	<li>Publish the web project</li>
+   </ul>
+  </td>
+ </tr>
+ </table>
+ 
 
  <h2>Predictable Browser Support</h2>
  
@@ -226,7 +268,7 @@
 
  <div id="footer"><div class="fixed_width">
   <div>&copy;2011 The Webknife Project</div>
-  <p>Licensed under the MIT license.</p>
+  <p>Licensed under the <a href="framework/license.html" style="color:white;">MIT license</a>.</p>
  </div></div>
  
  </body>
