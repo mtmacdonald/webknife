@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
  <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages-->
@@ -38,8 +38,8 @@
    <span style="font-weight:normal;">(version x.x.x)</span>
   </a>
   <span style="float:right; height:42px; line-height:42px;">
-    <a href="reference.html"><button class="small colored" type="button">HTML Reference Guide</button></a>
-    <a href="framework/change-log.html"><button class="small colored" type="button">Change Log</button></a>
+	<button class="small colored" type="button" onClick="window.location='reference.html'" >HTML Reference Guide</button>
+	<button class="small colored" type="button" onClick="window.location='framework/change-log.html'" >Change Log</button>
   </span>
  </div></div>
 
@@ -50,15 +50,28 @@
  
  <div id="banner-buttons"><div class="fixed_width">
   <span class="center">
-	<a href="https://www.assembla.com/spaces/webknife/documents"><button class="large colored flat spaced" type="button">Download</button></a>
-	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="dark lowered flat spaced" type="button">Report Issues</button></a>
-	<a href="http://www.assembla.com/spaces/webknife/support/tickets"><button class="lowered flat" type="button">Do you use Webknife?</button></a>
+	<button class="large colored flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/documents'" >Download</button>
+	<button class="dark lowered flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Report Issues</button>
+	<button class="lowered flat" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Do you use Webknife?</button>
   </span>
  </div></div>
  
  <div id="content"><div class="fixed_width">
 
- <p><strong>Webknife</strong> is a web presentation framework for rapid user interface design on the client side.</p>
+ <p class="colored" style="font-size:16px; text-align:center;">"<strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side, with an emphasis on HTML 
+ 5 that degrades gracefully in older browsers". 
+ </p>
+
+ <p>Webknife contains:</p>
+ 
+ <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('index/large-logo.png')"></p>
+ <ul>
+  <li>A gridless CSS framework</li>
+  <li>A reference syntax for production-ready HTML components</li>
+  <li class="gray"><em>(In future versions) optional inclusion of extended JavaScript components (with jQuery bundled)</em></li>
+ </ul>
+
+ <p>Webknife makes it easy for any web designer to make high quality interfaces more quickly, by selecting from predesigned 'components' for common design tasks.</p>
  
  <h2>Features</h2>
  
@@ -79,7 +92,7 @@
    1. Download the framework
   </td>
   <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   2. Edit template pages
+   2. Edit the template pages
   </td>
   <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
    3. Customise and publish
@@ -88,7 +101,7 @@
  <tr style="padding:0; margin:0; ">
   <td style="padding:10px; margin:0;" >
    <ul>
-    <li><a href="http://daringfireball.net/projects/markdown/basics">Download</a> a copy of the framework for each new web project</li>
+    <li><a href="https://www.assembla.com/spaces/webknife/documents">Download</a> a copy of the framework for each new web project</li>
 	<li>Keep the <strong>framework</strong> directory as part of your project</li>
    </ul>
   </td>
@@ -102,8 +115,8 @@
   <td style="padding:10px; margin:0;" >
    <ul>
     <li>Attach other stylesheets and further customise pages</li>
-	<li>Delete unneeded files (index.html, reference.html)</li>
-	<li>Publish the web project</li>
+	<li>Delete unneeded files and directories (index, index.html, reference.html, framework/change-log.html)</li>
+	<li>Publish your web project</li>
    </ul>
   </td>
  </tr>
@@ -179,7 +192,8 @@
 	<td></td>
     <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> (Windows XP, Linux, OS X)</td>
    </tr>
-    <td>older<span class="gray small"> (auto-updated*)</td>
+   <tr>
+    <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
@@ -244,7 +258,8 @@
 	<td></td>
 	<td class="gray small"><a href="http://www.opera.com/">Opera</a> (Windows XP)</td>
    </tr>
-    <td>older<span class="gray small"> (auto-updated*)</td>
+   <tr>
+    <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
 	<td class="icon cross"></td>
