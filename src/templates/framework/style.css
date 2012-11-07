@@ -59,7 +59,7 @@ table {
 a, button, input { outline: 0; } /*removes dotted outline in some browsers*/
 strong { font-weight: bold; } em  { font-style: italic } /*fix strong and em (font:inherit in standard reset breaks these)*/
 
-.w-clear { clear: both; height: 0; visibility: hidden; display: block;} /*use to clear floats*/
+.w-clear, .w-clear-after::after { clear: both; height: 0; visibility: hidden; display: block; content:""; } /*use to clear floats*/
 
 /*------------------------------------------------------
  PAGE
@@ -296,7 +296,7 @@ code { font-family: courier, monospace }
  TABS
 ------------------------------------------------------*/
 
-.w-tab {list-style: none; padding: 0;} /*override defaults for ul*/
+.w-tab {list-style: none; padding:0; margin:0!important;} /*override defaults for ul*/
 .w-tab li {
  float:left;
  margin-right:5px;
@@ -327,6 +327,7 @@ code { font-family: courier, monospace }
  padding: 15px;
  margin: 0!important;/*override defaults for #content .fixed-width div*/
 }
+.w-tab::after { clear: both; height: 0; visibility: hidden; display: block; content:"";}
 
 /*------------------------------------------------------
  TABLES
