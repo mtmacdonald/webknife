@@ -59,6 +59,8 @@ table {
 a, button, input { outline: 0; } /*removes dotted outline in some browsers*/
 strong { font-weight: bold; } em  { font-style: italic } /*fix strong and em (font:inherit in standard reset breaks these)*/
 
+.w-clear { clear: both; height: 0; visibility: hidden; display: block;} /*use to clear floats*/
+
 /*------------------------------------------------------
  PAGE
 ------------------------------------------------------*/
@@ -289,6 +291,42 @@ code { font-family: courier, monospace }
 .w-breadcrumb a:hover::after{ border-left-color: #eee;}
 .w-breadcrumb .w-selected, .w-breadcrumb .w-selected:hover{font-weight: bold; background: none;}
 .w-breadcrumb .w-selected::after, .w-breadcrumb .w-selected::before{content: normal;}
+
+/*------------------------------------------------------
+ TABS
+------------------------------------------------------*/
+
+.w-tab {list-style: none; padding: 0;} /*override defaults for ul*/
+.w-tab li {
+ float:left;
+ margin-right:5px;
+ font-size: 20px;
+ display: block;
+ padding: 10px 15px 10px 15px;
+ background-color: #ddd;
+ margin-bottom: -1px;
+ border: 1px solid #aaa;
+ border-width: 1px;
+ position:relative;
+ color: #888;
+}
+.w-tab li.w-active {
+ background-color: #fff;
+ top: 1px;
+ border-bottom: 0;
+ color: #444;
+ font-weight:bold;
+}
+.w-tab li:hover { cursor: pointer; background-color:#eee; }
+.w-tab li.w-active:hover{ cursor: auto; background-color:#fff; }
+.w-tab li.w-disabled:hover{ cursor: auto; background-color:#ddd; }
+.w-tab li  a { color: #888; text-decoration: none; }
+
+.w-tab-content {
+ border: 1px solid #aaa;
+ padding: 15px;
+ margin: 0!important;/*override defaults for #content .fixed-width div*/
+}
 
 /*------------------------------------------------------
  TABLES
