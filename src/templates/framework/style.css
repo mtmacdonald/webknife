@@ -204,6 +204,7 @@ a:hover, .falseLink:hover { color: #4a72c1; text-decoration: none;}
 .falseLink{text-decoration: underline; cursor: pointer;} 
 
 .warning  { color:red; background-color: #ffe6e6; border: 1px solid red; padding: 10px;}
+	.warning a, .warning .falseLink { color:red; }
 
 /*------------------------------------------------------
  HEADINGS
