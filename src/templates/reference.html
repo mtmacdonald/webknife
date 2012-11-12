@@ -20,6 +20,12 @@
 	$(document).ready(function() {
       $('#datepicker').Zebra_DatePicker();
 	});
+	
+	$(window).resize(function () { //fix the datepicker icon positioning whenever the window is resized. 
+		var datepicker = $('#datepicker').data('Zebra_DatePicker');
+		datepicker.hide();
+		datepicker.update();
+	});
   </script>
   <link rel="stylesheet" href="framework/style.css" type="text/css" />
   <link rel="stylesheet" href="framework/zebra_datepicker/zebra_datepicker.css" type="text/css" />
