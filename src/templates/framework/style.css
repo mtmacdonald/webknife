@@ -269,30 +269,29 @@ code { font-family: courier, monospace }
 }
 .w-breadcrumb li{float: left;}
 .w-breadcrumb a{
-  padding: .5em 1em .5em 2em;
+  padding: 6px 0 6px 32px;
   float: left;
   text-decoration: none;
   color: #444;
   position: relative;
   background-color: #bbb;
 }
-.w-breadcrumb li:first-child a{padding-left: 1em;}
-.w-breadcrumb a:hover{background: #eee;}
-.w-breadcrumb a::after, .w-breadcrumb a::before{
+.w-breadcrumb li:first-child a { padding-left: 12px; }
+.w-breadcrumb li a:hover{ background: #eee; }
+.w-breadcrumb li a::after , .w-breadcrumb li a::before {
   content: "";
   position: absolute;
   top: 50%;
-  margin-top: -1.5em;
-  border-top: 1.5em solid transparent;
-  border-bottom: 1.5em solid transparent;
-  border-left: 1em solid;
-  right: -1em;
+  margin-top: -30px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  left: 100%;
 }
-.w-breadcrumb a::after{ z-index: 2; border-left-color: #bbb;}
-.w-breadcrumb a::before{ border-left-color: #999; right: -1.1em; z-index: 1;}
-.w-breadcrumb a:hover::after{ border-left-color: #eee;}
-.w-breadcrumb .w-selected, .w-breadcrumb .w-selected:hover{font-weight: bold; background: none;}
-.w-breadcrumb .w-selected::after, .w-breadcrumb .w-selected::before{content: normal;}
+.w-breadcrumb li a:after { z-index: 2; border-left: 20px solid #bbb;}
+.w-breadcrumb li a:before { border-left: 20px solid #999; margin-left: 1px; z-index: 1; }
+.w-breadcrumb li a:hover::after{ border-left-color: #eee;}
+.w-breadcrumb li:last-child a { background: none; font-weight: bold; }
+.w-breadcrumb li:last-child a::after, .w-breadcrumb  li:last-child a::before{content: normal;}
 
 /*------------------------------------------------------
  TABS
