@@ -145,6 +145,7 @@ border-top: 3px solid #4d4d4d;
  font-size:9px;
  line-height: 15px;
 }
+#footer a {color:white;}
 
 /*------------------------------------------------------
  GENERAL
@@ -334,17 +335,17 @@ code { font-family: courier, monospace }
  TABLES
 ------------------------------------------------------*/
 
-table { width: 700px; table-layout:fixed; }
-tr { height:25px; }
-td, tr, th { vertical-align: middle; }
-table, td, tr
+.w-table { width: 700px; table-layout:fixed; }
+.w-table tr { height:25px; }
+.w-table td, .w-table tr, .w-table th { vertical-align: middle; }
+.w-table, .w-table td, .w-table tr
 {
  border: 1px solid #ccc;
  text-align:left;
  padding: 2px 15px 2px 15px;
 }
 
-th, tfoot td
+.w-table th, .w-table tfoot td
 {
  background-color:#999;
  font-weight:bold;
@@ -355,8 +356,8 @@ th, tfoot td
  border: none;
 }
 
-tbody tr:nth-of-type(2n){ background-color:#f1f1f1; }
-caption { caption-side:bottom; font-weight: bold; padding: 15px; }
+.w-table tbody tr:nth-of-type(2n){ background-color:#f1f1f1; }
+.w-table caption { caption-side:bottom; font-weight: bold; padding: 15px; }
 
 /*------------------------------------------------------
  BUTTONS
@@ -399,35 +400,35 @@ button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-le
  FORMS
 ------------------------------------------------------*/
 
-form {
+.w-form {
  margin: 25px 0 25px 0;
  background-color:#f9f9f9;
  color: #666;
 }
-form div { /*right-align submit buttons*/
+.w-form div { /*right-align submit buttons*/
  text-align:right;
 }
-form ul {list-style-type: none; padding-left: 0; } /*undo list bullets in forms*/
-#content form p , #content form ul, #content .fixed_width form div{ margin: 0; } /*undo p, div, ul margin in forms*/
+.w-form ul {list-style-type: none; padding-left: 0; } /*undo list bullets in forms*/
+#content .w-form p , #content .w-form ul, #content .fixed_width .w-form div{ margin: 0; } /*undo p, div, ul margin in forms*/
 
-fieldset {
+.w-form fieldset {
  text-align: left;
 }
-fieldset > div { /*select the whole group of inputs in a fieldset*/
+.w-form fieldset > div { /*select the whole group of inputs in a fieldset*/
  padding: 15px 20px 0 15px; /*cannot use bottom padding because floated elements collapse children*/
 }
-fieldset > div > p { font-weight: bold; } /*select the heading questions*/
-fieldset > div > p, .formField p, textarea, input[type=text], select, input[type=password]{ 
+.w-form fieldset > div > p { font-weight: bold; } /*select the heading questions*/
+.w-form fieldset > div > p, .w-form .formField p, .w-form textarea, .w-form input[type=text], .w-form select, .w-form input[type=password]{ 
  float:right;
  width: 75%;
  text-align: left;
 }
-legend { /*do not apply padding to the legend, use legend p instead*/ 
+.w-form legend { /*do not apply padding to the legend, use legend p instead*/ 
  width:100%;
  font-size: 11px;
  font-weight:bold;
 }
-legend span {
+.w-form legend span {
  display: block; /*cannot use <p> as child of legend (invalid HTML), so use block <span> instead*/
  padding: 14px 20px 14px 20px;
  background-color: #f1f1f1;
@@ -435,18 +436,18 @@ legend span {
  border-top: 1px solid #ccc;
 }
 
-.formField{
+.w-form .formField{
  text-align: left;
  clear:both;
  padding: 15px 0 15px 0;
 }
-.formField p {
+.w-form .formField p {
  font-size: 90%;
  font-style: italic;
  padding-top: 2px;
 }
 
-label {
+.w-form label {
  float: left;
  text-align: right;
  width: 24%;
@@ -455,32 +456,32 @@ label {
  top:3px;
  left: -8px;
 }
-.error input {
+.w-form .error input {
  background-color:#ffd6d6;
 }
-.error p{
+.w-form .error p{
  color: red;
 }
 
-input, textarea, select{ /*todo - move to global reset?*/
+.w-form input[type=text], .w-form input[type=password], w-form input[type=text], .w-form textarea, .w-form select{ /*todo - move to global reset?*/
  padding:0;
  outline:0;
 }
 
-input[type=text], input[type=password]{
+.w-form input[type=text], .w-form input[type=password]{
  height: 24px; line-height: 24px;
  font: 14px verdana;
 }
-textarea, input[type=text], input[type=password]{
+.w-form textarea, .w-form input[type=text], .w-form input[type=password]{
  outline: none;
  border: 1px solid #aaa;
 }
-textarea:focus, input[type=text]:focus, input[type=password]:focus{
+.w-form textarea:focus, .w-form input[type=text]:focus, .w-form input[type=password]:focus{
  border: 1px solid #498af4;
 }
-textarea { resize: vertical; }
+.w-form textarea { resize: vertical; }
 
-input[type=submit]{
+.w-form input[type=submit]{
  margin: 15px 20px 15px 0;
 }
 
