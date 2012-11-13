@@ -13,9 +13,17 @@
   <meta name="viewport" content="initial-scale=1.0" ><!--Prevent iOS scaling-->
   <meta charset="UTF-8">
   <title>License</title>
+
+  <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="zebra_datepicker/zebra_datepicker.css" type="text/css" />
+
+  <!--load scripts second-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="framework.js"></script>
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script src="zebra_datepicker/zebra_datepicker.js"></script>
+
+  <!--inline scripts last-->
  </head>
 
  <body>
@@ -249,7 +257,7 @@ Library.
 
  <div id="footer"><div class="fixed_width">
   <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
-  <p><a href="framework/license.html">Code license</a></p>
+  <p><a href="license.html">Code license</a></p>
  </div></div>
  
  </body>
