@@ -399,8 +399,9 @@ button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-le
  DATEPICKER
 ------------------------------------------------------*/
 
+.Zebra_DatePicker { line-height:15px; } /*override defaults for body*/
 .w-datepicker{ background-image: url('zebra_datepicker/calendar.png'); background-position:98% 50%; background-repeat:no-repeat; cursor: pointer; }
-.w-datepicker{ border: 1px solid #aaa/*#498af4*/;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid #498af4;}  /*match with form styles*/
+.w-datepicker{ border: 1px solid #aaa;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid #498af4;}  /*match with form styles*/
 .w-datepicker:hover { background-image: url('zebra_datepicker/calendar-hovered.png'); }
 .w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { background-image: url('zebra_datepicker/calendar-disabled.png'); }
 
