@@ -18,13 +18,7 @@
   <script src="framework/zebra_datepicker/zebra_datepicker.js"></script>
   <script>
 	$(document).ready(function() {
-      $('#datepicker').Zebra_DatePicker();
-	});
-	
-	$(window).resize(function () { //fix the datepicker icon positioning whenever the window is resized. 
-		var datepicker = $('#datepicker').data('Zebra_DatePicker');
-		datepicker.hide();
-		datepicker.update();
+      $('#datepicker').Zebra_DatePicker(datePickerOptions);
 	});
   </script>
   <link rel="stylesheet" href="framework/style.css" type="text/css" />
@@ -77,7 +71,7 @@
  
  <h1>Reference for datepicker</h1>
  
- <input id="datepicker" type="text">
+ <input id="datepicker" class="w-datepicker" type="text">
  
  <h1>Reference for typography</h1>
  

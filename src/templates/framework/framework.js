@@ -1,5 +1,9 @@
 var lastSupportedIEVersion = 9;
 
+var datePickerOptions = {
+	"show_icon" : false
+};
+
 function oldBrowserWarning(){
  /*
 	Warn users of old versions of Internet Explorer about lack of support.

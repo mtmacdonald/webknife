@@ -396,6 +396,15 @@ button.large, input[type=submit].large, input[type=button].large {height: 46px; 
 button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-left-radius: 0!important; border-bottom-right-radius: 0!important; }
 
 /*------------------------------------------------------
+ DATEPICKER
+------------------------------------------------------*/
+
+.w-datepicker{ background-image: url('zebra_datepicker/calendar.png'); background-position:98% 50%; background-repeat:no-repeat; cursor: pointer; }
+.w-datepicker{ border: 1px solid #aaa/*#498af4*/;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid #498af4;}  /*match with form styles*/
+.w-datepicker:hover { background-image: url('zebra_datepicker/calendar-hovered.png'); }
+.w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { background-image: url('zebra_datepicker/calendar-disabled.png'); }
+
+/*------------------------------------------------------
  FORMS
 ------------------------------------------------------*/
 
