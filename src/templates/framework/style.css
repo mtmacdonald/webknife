@@ -290,7 +290,7 @@ code { font-family: courier, monospace }
 .w-breadcrumb li a:after { z-index: 2; border-left: 20px solid #bbb;}
 .w-breadcrumb li a:before { border-left: 20px solid #999; margin-left: 1px; z-index: 1; }
 .w-breadcrumb li a:hover::after{ border-left-color: #eee;}
-.w-breadcrumb li:last-child a { background: none; font-weight: bold; }
+.w-breadcrumb li:last-child a { background: none; font-weight: bold; cursor:default;}
 .w-breadcrumb li:last-child a::after, .w-breadcrumb  li:last-child a::before{content: normal;}
 
 /*------------------------------------------------------

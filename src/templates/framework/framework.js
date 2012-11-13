@@ -31,4 +31,8 @@ $(document).ready(function() {
   $("#browser_warning").remove();
  });
  
+ $('.w-breadcrumb li:last-child a').click(function(event) { //prevent the selected breadcrumb link from being clickable
+	event.preventDefault();
+ });
+ 
 });
