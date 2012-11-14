@@ -276,10 +276,10 @@ code { font-family: courier, monospace }
   position: relative;
 }
 .w-breadcrumb a { background-color: #bbb; padding: 6px 0 6px 32px;}
-.w-breadcrumb-right a { padding: 6px 12px 6px 0;}
+.w-breadcrumb-right a { padding: 6px 12px 6px 12px;}
 
 .w-breadcrumb li:first-child a { padding-left: 12px; }
-.w-breadcrumb li a:hover{ background: #eee; }
+.w-breadcrumb li a:hover, .w-breadcrumb-right li a:hover{ background: #eee; }
 .w-breadcrumb li a::after , .w-breadcrumb li a::before {
   content: "";
   position: absolute;
