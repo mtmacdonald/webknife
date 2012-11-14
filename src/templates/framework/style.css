@@ -83,7 +83,7 @@ body
 {
  padding: 0 15px 0 15px; /*stop text touching window edge when window is small*/
  margin: 0 auto; /*cause fixed width*/
- width: 1024px;
+ width: 980px; 
  text-align:left;
 }
 
