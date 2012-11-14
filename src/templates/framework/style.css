@@ -260,22 +260,24 @@ code { font-family: courier, monospace }
  BREADCRUMBS
 ------------------------------------------------------*/
 
-.w-breadcrumb{
+.w-breadcrumb-container { border: 1px solid #aaa; background-color:#ddd; height:32px; }
+.w-breadcrumb, .w-breadcrumb-right{
   background: #ddd;
-  border: 1px solid #aaa;
   overflow: hidden;
-  width: 100%;
   list-style-type:none; padding:0; /*override defaults for ul*/
+  margin: 0!important;
 }
-.w-breadcrumb li{float: left;}
-.w-breadcrumb a{
-  padding: 6px 0 6px 32px;
+.w-breadcrumb, .w-breadcrumb li {float: left; }
+.w-breadcrumb-right, .w-breadcrumb-right li { float:right; }
+.w-breadcrumb a, .w-breadcrumb-right a{
   float: left;
   text-decoration: none;
   color: #444;
   position: relative;
-  background-color: #bbb;
 }
+.w-breadcrumb a { background-color: #bbb; padding: 6px 0 6px 32px;}
+.w-breadcrumb-right a { padding: 6px 12px 6px 0;}
+
 .w-breadcrumb li:first-child a { padding-left: 12px; }
 .w-breadcrumb li a:hover{ background: #eee; }
 .w-breadcrumb li a::after , .w-breadcrumb li a::before {
