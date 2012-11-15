@@ -22,8 +22,12 @@
 		color: @interface_text; 
 	}
 
-	//optionally sets the table columns to fixed-width
-	&.w-fixed { table-layout: fixed; }
+	//fixed-width forces the cell sizing to be independent of content
+	//therefore need to break long words to prevent them overflowing into the next cell
+	&.w-fixed {
+		table-layout: fixed;
+		word-wrap: break-word;
+	}
 
 	//optionally set .w-zebra to stripe a table
 	&.w-zebra tbody tr:nth-of-type(2n){ background-color: @light; }
