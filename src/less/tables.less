@@ -1,0 +1,35 @@
+
+.w-table {
+	width: 700px;
+	
+	td, th { 
+		.border(1px);
+		padding: 2px 15px 2px 15px;
+		height: 25px;
+		vertical-align: middle;
+	}
+
+	th, tfoot td {
+		background-color:@medium;
+		font-weight:bold;
+		color: @interface_text;
+	}
+
+	caption { 
+		caption-side: bottom;
+		font-weight: bold; 
+		padding: 15px; 
+		color: @interface_text; 
+	}
+
+	//optionally sets the table columns to fixed-width
+	&.w-fixed { table-layout: fixed; }
+
+	//optionally set .w-zebra to stripe a table
+	&.w-zebra tbody tr:nth-of-type(2n){ background-color: @light; }
+}
+
+
+
+
+
