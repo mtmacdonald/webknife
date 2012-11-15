@@ -1,0 +1,306 @@
+﻿<!doctype html>
+<!-- MOTW-DISABLEDsaved from url=(0014)about:internet -->
+	<!-- delete MOTW-DISABLED to enable Mark of the Web (http://msdn.microsoft.com/en-us/library/ms537628%28VS.85%29.aspx)
+		- MOTW suppresses "Internet Explorer restricted this webpage from running scripts or ActiveX controls" for locally loaded HTML pages containing scripts.
+		- using MOTW prevents links to other files types from working for locally loaded HTML pages. 
+		- only works with this precise formatting and location in the file (must end with a new line).
+		- only works when file is saved with Windows EOL (CRLF).
+		- after enabling, the browser must be restarted for the change to take effect.
+	-->
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages. Do not put scripts before this line.-->
+  <meta name="viewport" content="initial-scale=1.0" ><!--Prevent iOS scaling-->
+  <meta charset="UTF-8">
+  <title>Webknife - a web presentation framework</title>
+
+  <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
+  <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
+ 
+  <style>
+  #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
+  #banner img {padding: 25px 0 25px 0;}
+  #banner-buttons {background-color: #f7f7f7; border-bottom: 1px solid #385691;}
+  /*#banner-buttons span { position:relative; left: 138px; }*/
+  #banner-buttons a {text-decoration: none; } 
+  #banner-buttons button { border-bottom: 1px solid #385691; }
+  .spaced {margin-right: 15px;}
+  .lowered
+  {
+	position: relative;
+	top: 8px; /*height difference between large and small buttons -1px*/
+  }
+  
+  .hide-background { background-color:#fff; }
+  .hide-top { border-top:1px solid #fff; }
+  .hide-right { border-right:1px solid #fff; }
+  .hide-bottom { border-bottom:1px solid #fff; }
+  .hide-left { border-left:1px solid #fff; }
+  </style>
+
+  <!--load scripts second-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="../framework/framework.min.js"></script>
+
+  <!--inline scripts last-->
+ </head>
+
+ <body>
+
+ <div id="siteHeader"><div class="fixed_width">
+  <a href="./index.html" id="title">
+   <img src="../framework/images/logo.png" id="logo" alt="logo"/>
+   <span>Webknife - a web presentation framework</span>
+   <span style="font-weight:normal;">(version x.x.x)</span>
+  </a>
+  <span style="float:right; height:42px; line-height:42px;">
+	<button class="small colored" type="button" onClick="window.location='reference.html'" >HTML Reference Guide</button>
+	<button class="small colored" type="button" onClick="window.location='change-log.html'" >Change Log</button>
+  </span>
+ </div></div>
+
+ <div id="banner"><div class="fixed_width">
+   <h1 class="massive center no-underline">Make elegant web interfaces in minutes.</h1>
+   <img class="center" src="index/overview.png"  alt="overview" />
+ </div></div>
+ 
+ <div id="banner-buttons"><div class="fixed_width">
+  <span class="center">
+	<button class="large colored flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/documents'" >Download</button>
+	<button class="dark lowered flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Report Issues</button>
+	<button class="lowered flat" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Do you use Webknife?</button>
+  </span>
+ </div></div>
+ 
+ <div id="content"><div class="fixed_width">
+
+ <p class="colored" style="font-size:16px; text-align:center;">"<strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side, with an emphasis on HTML 
+ 5 that degrades gracefully in older browsers". 
+ </p>
+
+ <p>Webknife contains:</p>
+ 
+ <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('index/large-logo.png')"></p>
+ <ul>
+  <li>A gridless CSS framework</li>
+  <li>A reference syntax for production-ready HTML components</li>
+  <li class="gray"><em>(In future versions) optional inclusion of extended JavaScript components (with jQuery bundled)</em></li>
+ </ul>
+
+ <p>Webknife makes it easy for any web designer to make high quality interfaces more quickly, by selecting from predesigned 'components' for common design tasks.</p>
+ 
+ <h2>Features</h2>
+ 
+ <ul>
+  <li>CSS reset</li>
+  <li>Forms</li>
+  <li>Buttons</li>
+  <li>Typography</li>
+  <li>Tables</li>
+  <li>Icons</li>
+ </ul>
+ 
+ <h2>How to get started</h2>
+ 
+ <table  class="center w-table" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
+ <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   1. Download the framework
+  </td>
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   2. Edit the template pages
+  </td>
+  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
+   3. Customise and publish
+  </td>
+ </tr>
+ <tr style="padding:0; margin:0; ">
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li><a href="https://www.assembla.com/spaces/webknife/documents">Download</a> a copy of the framework for each new web project</li>
+	<li>Keep the <strong>framework</strong> directory as part of your project</li>
+   </ul>
+  </td>
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li>Edit <a href="template.html">template.html</a> (a blank canvas for any new web pages)</li>
+	<li>Copy and paste from <a href="reference.html">reference.html</a> (production-tested HTML snippets)</li>
+	<li>Consult <a href="framework/style.css">style.css</a> (for alternative style options)</li>
+   </ul>
+  </td>
+  <td style="padding:10px; margin:0;" >
+   <ul>
+    <li>Attach other stylesheets and further customise pages</li>
+	<li>Delete unneeded files and directories (index, index.html, reference.html, framework/change-log.html)</li>
+	<li>Publish your web project</li>
+   </ul>
+  </td>
+ </tr>
+ </table>
+ 
+
+ <h2>Predictable Browser Support</h2>
+ 
+  <p>Every release supports all major browsers and operating systems, with 'graceful degradation' for old browsers.</p>
+ 
+  <h3 class="no-underline">Take advantage of extensive testing</h3>
+   
+  <ul>
+   <li>Checked against the W3C <a href="http://validator.w3.org/">HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/validator.html.en">CSS3</a> validators</li>
+   <!--<li>JavaScript syntax checked with the <a href="http://closure-compiler.appspot.com/home">Google Closure Compiler</a></li>-->
+   <li>12 discreet browser tests, across multiple operating systems (see 'release tests' below)</li>
+  </ul>
+ 
+ <table class="w-table" style="width:100%; margin-top:30px;">
+  <thead>
+   <tr>
+    <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:50px;"></th>
+    <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:85px;"></th>
+	<th class="hide-background hide-top hide-bottom hide-left" style="width:170px;"></th>
+    <th colspan="4" style="text-align:center; border: 1px solid #999;">Browser Support Policy</th>
+   </tr>
+  </thead>
+  <tfoot>
+  </tfoot>
+  <tbody>
+   <tr>
+    <td class="hide-background hide-top hide-left hide-right hide-bottom"></td>
+    <td class="hide-background hide-top hide-left hide-right"></td>
+    <td class="hide-background hide-top hide-left"></td>
+	<td><strong>Full</strong><br/><em>(visually consistent)</em></td>
+	<td><strong>Moderate</strong><br/><em>(aesthetic, functional)</em></td>
+	<td><strong>None</strong><br/><em>(not tested)</em></td>
+    <td class="gray small"><em>Release tests:</em></td>
+   </tr>
+   
+   <!--IE-->
+   <tr>
+    <td rowspan="3" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/ie.png'); width:32px; height:32px;"></td>
+    <td rowspan="3" style ="background-color:#f1f1f1;"><strong>Internet Explorer</strong></td>
+    <td><strong class="green">9 (latest)</strong></td>
+	<td class="w-icon w-tick"></td>
+    <td></td>
+	<td></td>
+	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=13950">Microsoft Internet Explorer 9</a> (Windows 7)</td>
+   </tr>
+   <tr>
+    <td><strong class="green">8</strong></td>
+	<td></td>
+	<td class="w-icon w-tick"></td>
+	<td></td>
+	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=43">Microsoft Internet Explorer 8</a> (Windows XP)</td>
+   </tr>
+   <tr>
+    <td><strong class="green">7, 6,</strong> older</td>
+	<td></td>
+	<td></td>
+	<td class="w-icon w-cross"></td>
+	<td class="gray small">-</td>
+   </tr>
+   
+   <!--Chrome-->
+   <tr>
+    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/chrome.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" style ="background-color:#fff;"><strong>Chrome</strong></td>
+    <td><strong class="green">14</strong></td>
+	<td class="w-icon w-tick"></td>
+    <td></td>
+	<td></td>
+    <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> (Windows XP, Linux, OS X)</td>
+   </tr>
+   <tr>
+    <td>older<span class="gray small"> (auto-updated*)</span></td>
+	<td></td>
+	<td></td>
+	<td class="w-icon w-cross"></td>
+    <td></td>
+   </tr>
+   
+   <!--Firefox-->
+   <tr>
+    <td rowspan="4" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/firefox.png'); width:32px; height:32px;"></td>
+    <td rowspan="4" style ="background-color:#f1f1f1;"><strong>Firefox</strong></td>
+    <td><strong class="green">7 (latest)</strong></td>
+	<td class="w-icon w-tick"></td>
+    <td></td>
+	<td></td>
+	<td class="gray small"><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> (Windows XP)</tr>
+   <tr>
+    <td>4, 5, 6 <span class="gray small">(auto-updated*)</span></td>
+	<td class="w-icon w-tick"></td>
+	<td></td>
+	<td></td>
+	<td rowspan="2" class="gray small"><a href="http://utilu.com/UtiluMFC/">Utilu Mozilla Firefox Collection</a> (Windows XP)</td>
+   </tr>
+   <tr>
+    <td><strong class="green">3.6</strong></td>
+	<td></td>
+	<td class="w-icon w-tick"></td>
+	<td></td>
+   </tr>
+   <tr>
+    <td>older</td>
+	<td></td>
+	<td></td>
+	<td class="w-icon w-cross"></td>
+    <td class="gray small">-</td>
+   </tr>
+   
+   <!--Safari-->
+   <tr>
+    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/safari.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" style ="background-color:#fff;"><strong>Safari</strong></td>
+    <td><strong class="green">5 (latest)</strong></td>
+	<td class="w-icon w-tick"></td>
+    <td></td>
+	<td></td>
+	<td class="gray small"><a href="http://www.apple.com/safari/download/">Apple Safari</a> (Windows XP and OS X Lion)</td>
+   </tr>
+   <tr>
+    <td>older <span class="gray small">(not supported†)</span></td>
+	<td></td>
+	<td></td>
+	<td class="w-icon w-cross"></td>
+	<td class="gray small">-</td>
+   </tr>
+   
+   <!--Opera-->
+   <tr>
+    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/opera.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" style ="background-color:#f1f1f1;"><strong>Opera</strong></td>
+    <td><strong class="green">11 (latest)</strong></td>
+	<td class="w-icon w-tick"></td>
+    <td></td>
+	<td></td>
+	<td class="gray small"><a href="http://www.opera.com/">Opera</a> (Windows XP)</td>
+   </tr>
+   <tr>
+    <td>older<span class="gray small"> (auto-updated*)</span></td>
+	<td></td>
+	<td></td>
+	<td class="w-icon w-cross"></td>
+	<td class="gray small">-</td>
+   </tr>
+   
+  </tbody>
+ </table>
+ 
+ <p class="right small">
+ <span class="gray">Browser versions actively supported by the vendor are shown in</span><strong class="green"> green</strong><br/>
+ <span class="small gray">*some browsers automatically update to the latest version. Therefore while this framework may work with older versions, no specific tests are performed</span><br/>
+ <span class="small gray">†support is provided for the <a href="http://en.wikipedia.org/wiki/Safari_version_history">latest Safari version</a>, which can be installed on all recent versions of OS X and Windows</span>
+ </p>
+ 
+ </div></div> 
+
+ <div id="base"><div class="fixed_width">
+  <span>&nbsp;</span>
+ </div></div>
+
+ <div id="footer"><div class="fixed_width">
+  <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
+  <p><a href="../framework/license.txt">Code license</a></p>
+ </div></div>
+ 
+ </body>
+</html>
+

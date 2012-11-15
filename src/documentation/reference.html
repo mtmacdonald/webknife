@@ -1,0 +1,371 @@
+﻿<!doctype html>
+<!-- MOTW-DISABLEDsaved from url=(0014)about:internet -->
+	<!-- delete MOTW-DISABLED to enable Mark of the Web (http://msdn.microsoft.com/en-us/library/ms537628%28VS.85%29.aspx)
+		- MOTW suppresses "Internet Explorer restricted this webpage from running scripts or ActiveX controls" for locally loaded HTML pages containing scripts.
+		- using MOTW prevents links to other files types from working for locally loaded HTML pages. 
+		- only works with this precise formatting and location in the file (must end with a new line).
+		- only works when file is saved with Windows EOL (CRLF).
+		- after enabling, the browser must be restarted for the change to take effect.
+	-->
+<html>
+ <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages. Do not put scripts before this line.-->
+  <meta name="viewport" content="initial-scale=1.0" ><!--Prevent iOS scaling-->
+  <meta charset="UTF-8">
+  <title>HTML reference guide</title>
+
+  <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
+  <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
+
+  <!--load scripts second-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="../framework/framework.min.js"></script>
+
+  <!--inline scripts last-->
+  <script>
+	$(document).ready(function() {
+      $('#datepicker').Zebra_DatePicker(datePickerOptions);
+	});
+  </script>
+ </head>
+
+ <body>
+
+ <div id="siteHeader"><div class="fixed_width">
+  <a href="./index.html" id="title">
+   <img src="../framework/images/logo.png" id="logo" alt="logo"/>
+   <span>HTML reference guide</span>
+   <span style="font-weight:normal;">(version x.x.x)</span>
+ </a>
+ </div></div>
+
+ <div id="content"><div class="fixed_width">
+ 
+ <h1>Reference for buttons</h1>
+ <button type="button">Stardard</button>
+ <button class="dark" type="button">Dark</button>
+
+ <button class="small" type="button">Small</button>
+ 
+ <button class="small colored" type="button">1</button>
+ <button class="small colored" type="button">2</button>
+ <button class="small colored" type="button">3</button>
+ <button class="large" type="button">Large</button>
+ <button class="large colored" type="button">Colored</button>
+ 
+ <h1>Reference for breadcrumbs</h1>
+
+ <div class="w-breadcrumb-container">
+ <ul class="w-breadcrumb">
+	<li><a href="#">Home</a></li>
+    <li><a href="#">Items</a></li>
+    <li><a href="#">Subset</a></li>
+    <li><a href="#">Selection</a></li>
+ </ul>
+ <ul class="w-breadcrumb-right">
+ 	<li><a href="#">Optional link</a></li>
+ </ul>
+ </div>
+
+ <h1>Reference for tabs</h1>
+ 
+ <ul class="w-tab">
+	<li class="w-disabled">Disabled</li>
+	<li><a href="#">Selectable</a></li>
+	<li class="w-active">Active</li>
+ </ul>
+ <div class="w-tab-content">
+	<!--Insert tab content here-->
+ </div>
+ 
+ <h1>Reference for datepicker</h1>
+ 
+ <input id="datepicker" class="w-datepicker" type="text">
+ 
+ <h1>Reference for typography</h1>
+ 
+ <div>
+  <a href="">Example Link</a> | <span class="falseLink">False Link</span> (useful for JavaScript apps)
+ </div>
+ 
+ <div>
+  <span>Standard text</span> | <strong>Strong text</strong> | <em>Emphasised text</em> | <del>Deleted text</del>
+ </div>
+ 
+ <div>
+  <span class="colored">Colored text</span> |  <span class="gray">Gray text</span> | <span class="red">Red text</span> | <span class="green">Green text</span>
+ </div>
+ 
+ <div>
+  <span class="small">Small text</span> | <span>Standard text</span> | <span class="large">Large text</span> | <span class="massive">Massive text</span>
+ </div>
+ 
+ <h1>Example H1 heading</h1>
+ <h2>Example H2 heading</h2>
+ <h3>Example H3 heading</h3>
+ <h4>Example H4 heading</h4>
+ <h5>Example H5 heading</h5>
+ <h6>Example H6 heading</h6>
+
+ <h3 class="no-underline">Example H3 heading with no underline</h3>
+  
+ <p>
+  Example paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+ </p>
+
+ <p class="warning">
+  Example warning paragraph. 
+ </p>
+ 
+ <blockquote>
+ Example block quote.
+ </blockquote>
+ 
+<pre>
+<code>//example code block
+#include <iostream>
+int main()
+{
+  std::cout << "Hello, world!\n";
+}</code>
+</pre>
+   
+ <ul>
+  <li class="list-heading">List with heading</li>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+ </ul>
+
+ <ol>
+  <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
+ </ol>
+   
+ <h1>Reference for tables</h1>
+  
+ <table class="w-table">
+ <caption>Optional Table Caption</caption>
+  <thead>
+   <tr>
+    <th>Heading</th>
+    <th>Heading</th>
+	<th>Heading</th>
+   </tr>
+  </thead>
+  <tfoot>
+   <!--optional
+   <tr>
+    <td>Footer</td>
+    <td>Footer</td>
+	<td>Footer</td>
+   </tr>
+   -->
+  </tfoot>
+  <tbody>
+   <tr>
+    <td>Lorem ipsum</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+	<td>Lorem ipsum</td>
+   </tr>
+   <tr>
+    <td>Lorem ipsum</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    <td>Lorem ipsum</td>
+   </tr>
+   <tr>
+    <td>Lorem ipsum</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    <td>Lorem ipsum</td>
+   </tr>
+   <tr>
+    <td>Lorem ipsum</td>
+    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    <td class="bold red">Lorem ipsum</td>
+   </tr>
+      <tr>
+    <td>Lorem ipsum</td>
+    <td>Lorem ipsum dolor sit amet</td>
+    <td class="icon tick"></td>
+   </tr>
+  </tbody>
+ </table>
+
+ <h1>Reference for forms</h1>
+ 
+  <form class="w-form" style="width: 450px;" action="#">
+  <fieldset><legend><span>Simple Form</span></legend><div>
+
+   <div class="formField">
+    <label for="name">Username</label> 
+    <input type="text" name="name" />
+   </div>
+
+   <div class="formField">
+    <label for="password">Password</label> 
+    <input type="password" name="password" />
+   </div>
+
+  </div></fieldset>
+  <div><input type="submit" value="Login" /></div>
+ </form>
+  
+ <form class="w-form" style="width: 700px;" action="#">
+  <fieldset><legend><span>Advanced form</span></legend><div>
+
+   <p>Describe what this form is about?</p>
+
+   <div class="formField">
+    <label for="name">Text input</label>
+    <input type="text" name="name" id="name" />
+    <p>Describe what this field is about?</p>
+   </div>
+
+   <div  class="formField error">
+    <label for="error">Text input (error)</label> 
+    <input type="text" name="error" id="error" />
+	<p>Describe an error</p>
+   </div>
+
+   <div class="formField">
+    <label for="password">Password input</label> 
+    <input type="password" name="password" id="password" />
+   </div>
+
+   <div class="formField">
+    <label for="choices">Selection input</label> 
+    <select name="choices" id="choices">
+     <option>Choice 1</option>
+     <option>Choice 2</option>
+     <option>Choice 3</option>
+    </select>
+   </div>
+   
+   <div class="formField">
+    <label for="description">Textarea input</label> 
+    <textarea name="description" id="description" rows="6">Example text</textarea>
+   </div>
+
+   <div style="clear:both;">&nbsp;</div><p>Another user question?</p>
+
+   <div class="formField">
+	<ul>
+     <li><label for="A">Choice A</label><input type="radio" name="option" value="A" id="A" checked="checked"></li>
+     <li><label for="B">Choice B</label><input type="radio" name="option" value="B" id="B"></li>
+     <li><label for="C">Choice C</label><input type="radio" name="option" value="C" id="C"></li> 
+	</ul>
+   </div>
+
+  </div></fieldset>
+
+  <br/><fieldset><legend><span>Example Fieldset 2</span></legend><div>
+
+   <div class="formField">
+	<ul>
+     <li><label for="One">Choice One</label><input type="checkbox" name="selections" value="One" id="One" checked="checked"></li>
+     <li><label for="Two">Choice Two</label><input type="checkbox" name="selections" value="Two" id="Two"></li>
+     <li><label for="Three">Choice Three</label><input type="checkbox" name="selections" value="Three" id="Three"></li>
+	</ul>
+   </div>
+
+  </div></fieldset>
+  <div><input type="submit" value="Submit" /></div>
+ </form>
+
+  <h1>Reference for iconography</h1>
+ 
+ <h2>Standard</h2>
+ <div style="background-color:#eee; height:27px; width:750px; text-align:center;">
+  <div class="w-icon w-home"></div>
+  <div class="w-icon w-search"></div>
+  <div class="w-icon w-information"></div>
+  <div class="w-icon w-tick"></div>
+  <div class="w-icon w-cross"></div>
+  <div class="w-icon w-add"></div>
+  <div class="w-icon w-exclamation"></div>
+  <div class="w-icon w-question"></div>
+  <div class="w-icon w-download"></div>
+  <div class="w-icon w-email"></div>
+  <div class="w-icon w-person"></div>
+  <div class="w-icon w-change"></div>
+  <div class="w-icon w-database"></div>
+  <div class="w-icon w-secure"></div>
+  <div class="w-icon w-cart"></div>
+  <div class="w-icon w-tools"></div>
+  <div class="w-icon w-talk"></div>
+  <div class="w-icon w-folder"></div>
+  <div class="w-icon w-file"></div>
+  <div class="w-icon w-zip-file"></div>
+  <div class="w-icon w-pdf-file"></div>
+  <div class="w-icon w-rss"></div>
+  <div class="w-icon w-calendar"></div>
+ </div>
+ 
+ <h2>Inverted Variant</h2>
+  <div style="background-color:#aaa; height:27px; width:750px; text-align:center;">
+  <div class="w-icon w-home-inverted"></div>
+  <div class="w-icon w-search-inverted"></div>
+  <div class="w-icon w-information-inverted"></div>
+  <div class="w-icon w-tick-inverted"></div>
+  <div class="w-icon w-cross-inverted"></div>
+  <div class="w-icon w-add-inverted"></div>
+  <div class="w-icon w-exclamation-inverted"></div>
+  <div class="w-icon w-question-inverted"></div>
+  <div class="w-icon w-download-inverted"></div>
+  <div class="w-icon w-email-inverted"></div>
+  <div class="w-icon w-person-inverted"></div>
+  <div class="w-icon w-change-inverted"></div>
+  <div class="w-icon w-database-inverted"></div>
+  <div class="w-icon w-secure-inverted"></div>
+  <div class="w-icon w-cart-inverted"></div>
+  <div class="w-icon w-tools-inverted"></div>
+  <div class="w-icon w-talk-inverted"></div>
+  <div class="w-icon w-folder-inverted"></div>
+  <div class="w-icon w-file-inverted"></div>
+  <div class="w-icon w-zip-file-inverted"></div>
+  <div class="w-icon w-pdf-file-inverted"></div>
+  <div class="w-icon w-rss-inverted"></div>
+  <div class="w-icon w-calendar-inverted"></div>
+ </div>
+ 
+ <h2>Background Variant</h2>
+ <div style="background-color:#eee; height:27px; width:750px; text-align:center;">
+ <div class="w-icon w-home-background"></div>
+ <div class="w-icon w-search-background"></div>
+ <div class="w-icon w-information-background"></div>
+ <div class="w-icon w-tick-background"></div>
+ <div class="w-icon w-cross-background"></div>
+ <div class="w-icon w-add-background"></div>
+ <div class="w-icon w-exclamation-background"></div>
+ <div class="w-icon w-question-background"></div>
+ <div class="w-icon w-download-background"></div>
+ <div class="w-icon w-email-background"></div>
+ <div class="w-icon w-person-background"></div>
+ <div class="w-icon w-change-background"></div>
+ <div class="w-icon w-database-background"></div>
+ <div class="w-icon w-secure-background"></div>
+ <div class="w-icon w-cart-background"></div>
+ <div class="w-icon w-tools-background"></div>
+ <div class="w-icon w-talk-background"></div>
+ <div class="w-icon w-folder-background"></div>
+ <div class="w-icon w-file-background"></div>
+ <div class="w-icon w-zip-file-background"></div>
+ <div class="w-icon w-pdf-file-background"></div>
+ <div class="w-icon w-rss-background"></div>
+ <div class="w-icon w-calendar-background"></div>
+ </div>
+  
+ </div></div> 
+
+ <div id="base"><div class="fixed_width">
+  <span>&nbsp;</span>
+ </div></div>
+
+ <div id="footer"><div class="fixed_width">
+  <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
+  <p><a href="../framework/license.txt">Code license</a></p>
+ </div></div>
+
+ </body>
+</html>
+
