@@ -1,3 +1,5 @@
+/*! Webknife - webknife.org | webknife.org/framework/license.txt 
+!*/
 var lastSupportedIEVersion = 9;
 
 var datePickerOptions = {

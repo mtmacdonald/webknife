@@ -30,11 +30,11 @@
 	top: 8px; /*height difference between large and small buttons -1px*/
   }
   
-  .hide-background { background-color:#fff; }
-  .hide-top { border-top:1px solid #fff; }
-  .hide-right { border-right:1px solid #fff; }
-  .hide-bottom { border-bottom:1px solid #fff; }
-  .hide-left { border-left:1px solid #fff; }
+  .hide-background { background-color:#fff!important; }
+  .hide-top { border-top:1px solid #fff!important; }
+  .hide-right { border-right:1px solid #fff!important; }
+  .hide-bottom { border-bottom:1px solid #fff!important; }
+  .hide-left { border-left:1px solid #fff!important; }
   </style>
 
   <!--load scripts second-->
@@ -48,7 +48,7 @@
 
  <div id="siteHeader"><div class="fixed_width">
   <a href="./index.html" id="title">
-   <img src="../framework/images/logo.png" id="logo" alt="logo"/>
+   <img src="images/logo.png" id="logo" alt="logo"/>
    <span>Webknife - a web presentation framework</span>
    <span style="font-weight:normal;">(version x.x.x)</span>
   </a>
@@ -60,7 +60,7 @@
 
  <div id="banner"><div class="fixed_width">
    <h1 class="massive center no-underline">Make elegant web interfaces in minutes.</h1>
-   <img class="center" src="index/overview.png"  alt="overview" />
+   <img class="center" src="images/overview.png"  alt="overview" />
  </div></div>
  
  <div id="banner-buttons"><div class="fixed_width">
@@ -79,7 +79,7 @@
 
  <p>Webknife contains:</p>
  
- <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('index/large-logo.png')"></p>
+ <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('images/large-logo.png')"></p>
  <ul>
   <li>A gridless CSS framework</li>
   <li>A reference syntax for production-ready HTML components</li>
@@ -101,7 +101,7 @@
  
  <h2>How to get started</h2>
  
- <table  class="center w-table" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
+ <table  class="center w-table w-fixed w-zebra" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
  <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
   <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
    1. Download the framework
@@ -150,7 +150,7 @@
    <li>12 discreet browser tests, across multiple operating systems (see 'release tests' below)</li>
   </ul>
  
- <table class="w-table" style="width:100%; margin-top:30px;">
+ <table class="w-table  w-fixed w-zebra" style="width:100%; margin-top:30px;">
   <thead>
    <tr>
     <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:50px;"></th>
@@ -174,10 +174,10 @@
    
    <!--IE-->
    <tr>
-    <td rowspan="3" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/ie.png'); width:32px; height:32px;"></td>
+    <td rowspan="3" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/ie.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="3" style ="background-color:#f1f1f1;"><strong>Internet Explorer</strong></td>
     <td><strong class="green">9 (latest)</strong></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=13950">Microsoft Internet Explorer 9</a> (Windows 7)</td>
@@ -185,7 +185,7 @@
    <tr>
     <td><strong class="green">8</strong></td>
 	<td></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=43">Microsoft Internet Explorer 8</a> (Windows XP)</td>
    </tr>
@@ -193,16 +193,16 @@
     <td><strong class="green">7, 6,</strong> older</td>
 	<td></td>
 	<td></td>
-	<td class="w-icon w-cross"></td>
+	<td class="center"><span class="w-icon w-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    
    <!--Chrome-->
    <tr>
-    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/chrome.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/chrome.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#fff;"><strong>Chrome</strong></td>
     <td><strong class="green">14</strong></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
     <td></td>
 	<td></td>
     <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> (Windows XP, Linux, OS X)</td>
@@ -211,22 +211,22 @@
     <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
-	<td class="w-icon w-cross"></td>
+	<td class="center"><span class="w-icon w-cross"></span></td>
     <td></td>
    </tr>
    
    <!--Firefox-->
    <tr>
-    <td rowspan="4" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/firefox.png'); width:32px; height:32px;"></td>
+    <td rowspan="4" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/firefox.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="4" style ="background-color:#f1f1f1;"><strong>Firefox</strong></td>
     <td><strong class="green">7 (latest)</strong></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> (Windows XP)</tr>
    <tr>
     <td>4, 5, 6 <span class="gray small">(auto-updated*)</span></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
 	<td></td>
 	<td></td>
 	<td rowspan="2" class="gray small"><a href="http://utilu.com/UtiluMFC/">Utilu Mozilla Firefox Collection</a> (Windows XP)</td>
@@ -234,23 +234,23 @@
    <tr>
     <td><strong class="green">3.6</strong></td>
 	<td></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
 	<td></td>
    </tr>
    <tr>
     <td>older</td>
 	<td></td>
 	<td></td>
-	<td class="w-icon w-cross"></td>
+	<td class="center"><span class="w-icon w-cross"></span></td>
     <td class="gray small">-</td>
    </tr>
    
    <!--Safari-->
    <tr>
-    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/safari.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/safari.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#fff;"><strong>Safari</strong></td>
     <td><strong class="green">5 (latest)</strong></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"><span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.apple.com/safari/download/">Apple Safari</a> (Windows XP and OS X Lion)</td>
@@ -259,16 +259,16 @@
     <td>older <span class="gray small">(not supported†)</span></td>
 	<td></td>
 	<td></td>
-	<td class="w-icon w-cross"></td>
+	<td class="center"><span class="w-icon w-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    
    <!--Opera-->
    <tr>
-    <td rowspan="2" class="w-icon hide-background hide-top hide-bottom hide-left" style="background-image: url('index/opera.png'); width:32px; height:32px;"></td>
+    <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/opera.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#f1f1f1;"><strong>Opera</strong></td>
     <td><strong class="green">11 (latest)</strong></td>
-	<td class="w-icon w-tick"></td>
+	<td class="center"><span class="w-icon w-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.opera.com/">Opera</a> (Windows XP)</td>
@@ -277,7 +277,7 @@
     <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
-	<td class="w-icon w-cross"></td>
+	<td  class="center"><span class="w-icon w-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    

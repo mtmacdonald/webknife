@@ -376,10 +376,10 @@ button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-le
 ------------------------------------------------------*/
 
 .Zebra_DatePicker { line-height:15px; } /*override defaults for body*/
-.w-datepicker{ background-image: url('images/zebra_datepicker/calendar.png'); background-position:98% 50%; background-repeat:no-repeat; cursor: pointer; }
+.w-datepicker{ width:150px; /*background-image: url('images/zebra_datepicker/calendar.png'); background-position:98% 50%!important; background-repeat:no-repeat;*/ cursor: pointer; }
 .w-datepicker{ border: 1px solid #aaa;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid #498af4;}  /*match with form styles*/
-.w-datepicker:hover { background-image: url('images/zebra_datepicker/calendar-hovered.png'); }
-.w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { background-image: url('images/zebra_datepicker/calendar-disabled.png'); }
+.w-datepicker:hover { /*background-image: url('images/zebra_datepicker/calendar-hovered.png');*/ }
+.w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { /*background-image: url('images/zebra_datepicker/calendar-disabled.png');*/ }
 
 /*------------------------------------------------------
  FORMS
@@ -474,76 +474,6 @@ button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-le
  ICONOGRAPHY
 ------------------------------------------------------*/
 
-.w-icon {display: inline-block; height: 25px; width: 25px; margin: 1px; background-position:center; background-repeat:no-repeat;}
+.w-icon {display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat; }
 #content .fixed_width .w-icon { margin: 0; } /*undo default div margin*/
-td.w-icon {display: table-cell; height:auto; width:auto; height:27px;}/*don't use inline-block for table cells*/
-
-.w-home {background-image: url('images/icons/home.png'); }
-	.w-home-inverted {background-image: url('images/icons/home-inverted.png'); }
-	.w-home-background {background-image: url('images/icons/home-background.png'); }
-.w-search {background-image: url('images/icons/search.png'); }
-	.w-search-inverted {background-image: url('images/icons/search-inverted.png'); }
-	.w-search-background {background-image: url('images/icons/search-background.png'); }
-.w-information {background-image: url('images/icons/information.png'); }
-	.w-information-inverted {background-image: url('images/icons/information-inverted.png'); }
-	.w-information-background {background-image: url('images/icons/information-background.png'); }
-.w-tick {background-image: url('images/icons/tick.png'); }
-	.w-tick-inverted {background-image: url('images/icons/tick-inverted.png'); }
-	.w-tick-background {background-image: url('images/icons/tick-background.png'); }	
-.w-cross {background-image: url('images/icons/cross.png'); }
-	.w-cross-inverted {background-image: url('images/icons/cross-inverted.png'); }
-	.w-cross-background {background-image: url('images/icons/cross-background.png'); }		
-.w-add {background-image: url('images/icons/add.png'); }
-	.w-add-inverted {background-image: url('images/icons/add-inverted.png'); }
-	.w-add-background {background-image: url('images/icons/add-background.png'); }			
-.w-exclamation {background-image: url('images/icons/exclamation.png'); }
-	.w-exclamation-inverted {background-image: url('images/icons/exclamation-inverted.png'); }
-	.w-exclamation-background {background-image: url('images/icons/exclamation-background.png'); }		
-.w-question {background-image: url('images/icons/question.png'); }
-	.w-question-inverted {background-image: url('images/icons/question-inverted.png'); }
-	.w-question-background {background-image: url('images/icons/question-background.png'); }		
-.w-download {background-image: url('images/icons/download.png'); }
-	.w-download-inverted {background-image: url('images/icons/download-inverted.png'); }
-	.w-download-background {background-image: url('images/icons/download-background.png'); }			
-.w-email {background-image: url('images/icons/email.png'); }
-	.w-email-inverted {background-image: url('images/icons/email-inverted.png'); }
-	.w-email-background {background-image: url('images/icons/email-background.png'); }			
-.w-person {background-image: url('images/icons/person.png'); }
-	.w-person-inverted {background-image: url('images/icons/person-inverted.png'); }
-	.w-person-background {background-image: url('images/icons/person-background.png'); }			
-.w-change{background-image: url('images/icons/change.png'); }
-	.w-change-inverted {background-image: url('images/icons/change-inverted.png'); }
-	.w-change-background {background-image: url('images/icons/change-background.png');}				
-.w-database{background-image: url('images/icons/database.png'); }
-	.w-database-inverted {background-image: url('images/icons/database-inverted.png'); }
-	.w-database-background {background-image: url('images/icons/database-background.png'); }	
-.w-secure{background-image: url('images/icons/secure.png'); }
-	.w-secure-inverted {background-image: url('images/icons/secure-inverted.png'); }
-	.w-secure-background {background-image: url('images/icons/secure-background.png'); }	
-.w-cart{background-image: url('images/icons/cart.png'); }
-	.w-cart-inverted {background-image: url('images/icons/cart-inverted.png'); }
-	.w-cart-background {background-image: url('images/icons/cart-background.png'); }		
-.w-tools{background-image: url('images/icons/tools.png'); }
-	.w-tools-inverted {background-image: url('images/icons/tools-inverted.png'); }
-	.w-tools-background {background-image: url('images/icons/tools-background.png'); }	
-.w-talk{background-image: url('images/icons/talk.png'); }
-	.w-talk-inverted {background-image: url('images/icons/talk-inverted.png'); }
-	.w-talk-background {background-image: url('images/icons/talk-background.png'); }		
-.w-folder{background-image: url('images/icons/folder.png'); }
-	.w-folder-inverted {background-image: url('images/icons/folder-inverted.png'); }
-	.w-folder-background {background-image: url('images/icons/folder-background.png'); }			
-.w-file{background-image: url('images/icons/file.png'); }
-	.w-file-inverted {background-image: url('images/icons/file-inverted.png'); }
-	.w-file-background {background-image: url('images/icons/file-background.png'); }	
-.w-zip-file{background-image: url('images/icons/zip-file.png'); }
-	.w-zip-file-inverted {background-image: url('images/icons/zip-file-inverted.png'); }
-	.w-zip-file-background {background-image: url('images/icons/zip-file-background.png'); }	
-.w-pdf-file{background-image: url('images/icons/pdf-file.png'); }
-	.w-pdf-file-inverted {background-image: url('images/icons/pdf-file-inverted.png'); }
-	.w-pdf-file-background {background-image: url('images/icons/pdf-file-background.png'); }		
-.w-rss{background-image: url('images/icons/rss.png'); }
-	.w-rss-inverted {background-image: url('images/icons/rss-inverted.png'); }
-	.w-rss-background {background-image: url('images/icons/rss-background.png'); }			
-.w-calendar{background-image: url('images/icons/calendar.png'); }
-	.w-calendar-inverted {background-image: url('images/icons/calendar-inverted.png'); }
-	.w-calendar-background {background-image: url('images/icons/calendar-background.png'); }			
+td.center {display: table-cell;}
