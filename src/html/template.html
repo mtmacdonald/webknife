@@ -26,27 +26,32 @@
 
  <body>
 
- <div id="siteHeader"><div class="fixed_width">
-  <a href="template.html" id="title">
-   <img src="../documentation/images/logo.png" id="logo" alt="logo"/>
-   <span>Template</span>
-  </a>
- </div></div>
+ <header>
+ <div class="w-fixed-width">
+	<a href="#">
+		<div style="background-image:url('../documentation/images/logo.png');">
+			Template
+		</div>
+	</a>
+	<div>
+		(Optional header element)
+	</div>
+ </div>
+ </header>
 
- <div id="content"><div class="fixed_width">
+ <div id="content"><div class="w-fixed-width">
 
  <!--paste <HTML elements here-->
 
- </div></div> 
-
- <div id="base"><div class="fixed_width">
-  <span>&nbsp;</span>
  </div></div>
 
- <div id="footer"><div class="fixed_width">
-  <div>&copy; YYYY Your Project</div>
-  <p><a href="license.txt">Code license</a></p>
- </div></div>
+ <footer>
+	<div><p class="w-fixed-width">&nbsp;</p></div>
+	<div class="w-fixed-width">
+		<p>&copy; YYYY <a href="#">Your Project</a></p>
+		<p><a href="#">License</a></p>
+	</div>
+ </footer>
  
  </body>
 </html>

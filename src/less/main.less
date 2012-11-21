@@ -2,10 +2,33 @@
 !*/
 
 @import "config";
+@import 'reset';
+
+@import 'page';
 @import "style";
+
 @import "tables";
 @import "zebra_datepicker";
 @import "sprite";
 @import "sprite-images"; //base-64 encoded images
 
+/*
+ basics
+*/
+
+.w-clear-after::after, .w-clear { clear: both; height: 0; visibility: hidden; display: block; content:" "; } /*use to clear floats*/
+
 .border(@width: 1px) { border: @width solid @border; }
+
+.fixed_color_text(@color: @brand_color) {
+	color:@color;
+	
+	a { color: @color!important; }
+	
+}
+
+/*
+
+*/
+
+#browser_warning {text-align: center;}

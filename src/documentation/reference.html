@@ -31,15 +31,20 @@
 
  <body>
  
- <div id="siteHeader"><div class="fixed_width">
-  <a href="./index.html" id="title">
-   <img src="images/logo.png" id="logo" alt="logo"/>
-   <span>HTML reference guide</span>
-   <span style="font-weight:normal;">(version x.x.x)</span>
- </a>
- </div></div>
+ <header>
+ <div class="w-fixed-width">
+	<a href="./index.html">
+		<div style="background-image:url('../documentation/images/logo.png');">
+			HTML reference guide <span style="font-weight:normal;">(version x.x.x)</span>
+		</div>
+	</a>
+	<div>
+		(Optional header element)
+	</div>
+ </div>
+ </header>
  
- <div id="content"><div class="fixed_width">
+ <div id="content"><div class="w-fixed-width">
  
  <h1>Reference for buttons</h1>
  <button type="button">Stardard</button>
@@ -81,7 +86,7 @@
  <h1>Reference for datepicker</h1>
  
  <input id="datepicker" class="w-datepicker" type="text">
- 
+  
  <h1>Reference for typography</h1>
  
  <div>
@@ -274,7 +279,7 @@ int main()
 
  <h1>Reference for icons</h1>
  
- <div style="background-color:#ddd; height:16px; width:550px; text-align:center;">
+ <div style="background-color:#ddd; height:16px; width:600px; text-align:center;">
 	<span class="w-icon w-tick"></span>
 	<span class="w-icon w-cross"></span>
 	<span class="w-icon w-add"></span>
@@ -303,7 +308,7 @@ int main()
 	<span class="w-icon w-chart_pie"></span>
 	<span class="w-icon w-calendar"></span>
  </div>
- <div style="background-color:#ddd; height:16px; width:550px; text-align:center;">
+ <div style="background-color:#ddd; height:16px; width:600px; text-align:center;">
 	<span class="w-icon w-text_bold"></span>
 	<span class="w-icon w-text_italic"></span>
 	<span class="w-icon w-text_underline"></span>
@@ -332,7 +337,7 @@ int main()
 	<span class="w-icon w-page_paste"></span>
 	<span class="w-icon w-printer"></span>
  </div>
- <div style="background-color:#ddd; height:16px; width:550px; text-align:center;"> 
+ <div style="background-color:#ddd; height:16px; width:600px; text-align:center;"> 
 	<span class="w-icon w-application"></span>
 	<span class="w-icon w-application_terminal"></span>
 	<span class="w-icon w-picture"></span>
@@ -363,15 +368,15 @@ int main()
  </div>
  
  </div></div>
- <div id="base"><div class="fixed_width">
-  <span>&nbsp;</span>
- </div></div>
 
- <div id="footer"><div class="fixed_width">
-  <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
-  <p><a href="../framework/license.txt">Code license</a></p>
- </div></div>
-
+ <footer>
+	<div><p class="w-fixed-width">Optional footnote&nbsp;</p></div>
+	<div class="w-fixed-width">
+		<p>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></p>
+		<p><a href="../framework/license.txt">Code license</a></p>
+	</div>
+ </footer>
+ 
  </body>
 </html>
 

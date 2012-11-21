@@ -1,0 +1,84 @@
+
+/*
+ page
+*/
+
+html
+{
+	background-color: @brand_color; //make short pages appear to stretch to bottom
+
+	body
+	{
+
+		min-width: @page_width + 40;
+
+		.w-fixed-width {
+			width: @page_width;
+			margin: 0 auto;
+		}
+
+	}
+}
+
+/*
+ header
+*/
+
+header
+{
+	.fixed_color_text;
+	
+	padding: 30px 0 30px 0;
+	background-color: @page_background;
+	border-top: 2px solid @brand_color;
+	border-bottom: 2px solid @brand_color;
+
+	> div {
+		> a { 
+			float:left;
+			text-decoration:none;
+			font-weight: bold;
+			font-size: 14px;
+
+			div {
+				background-repeat: no-repeat;
+				height: @logo_height; line-height: @logo_height; //vertical center
+				padding-left: @logo_width + 25;
+			}
+		}
+
+		> div { 
+			float:right;
+			height: @logo_height; line-height: @logo_height; //vertical center
+		}
+	}
+
+	&::after { .w-clear }
+}
+
+/*
+ footer
+*/
+
+footer {
+
+	.fixed_color_text(#fff);
+
+	div { padding: 15px 0 15px 0; }
+
+	> div:first-child {
+		background-color:#c4c4c4;
+		color: #555;
+		border-top: 1px solid #888;
+		font-size:11px;
+	}
+
+	> div:nth-child(2) {
+		text-align: center;
+		line-height: 35px;
+		
+		>p:nth-child(2) {
+			font-size:9px;
+		}
+	}
+}

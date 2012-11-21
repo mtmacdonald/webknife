@@ -26,15 +26,17 @@
 
  <body>
 
- <div id="siteHeader"><div class="fixed_width">
-  <a href="index.html" id="title">
-   <img src="index/logo.png" id="logo" alt="logo"/>
-   <span>Change log</span>
-   <span style="font-weight:normal;">(version x.x.x)</span>
-  </a>
- </div></div>
+ <header>
+ <div class="w-fixed-width">
+	<a href="./index.html">
+		<div style="background-image:url('../documentation/images/logo.png');">
+			Change log <span style="font-weight:normal;">(version x.x.x)</span>
+		</div>
+	</a>
+ </div>
+ </header>
 
- <div id="content"><div class="fixed_width">
+ <div id="content"><div class="w-fixed-width">
 
  <h1>Version x</h1>
  
@@ -46,14 +48,13 @@
 
  </div></div> 
 
- <div id="base"><div class="fixed_width">
-  <span>&nbsp;</span>
- </div></div>
-
- <div id="footer"><div class="fixed_width">
-  <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
-  <p><a href="../framework/license.txt">Code license</a></p>
- </div></div>
+ <footer>
+	<div><p class="w-fixed-width">&nbsp;</p></div>
+	<div class="w-fixed-width">
+		<p>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></p>
+		<p><a href="../framework/license.txt">Code license</a></p>
+	</div>
+ </footer>
  
  </body>
 </html>

@@ -46,24 +46,26 @@
 
  <body>
 
- <div id="siteHeader"><div class="fixed_width">
-  <a href="./index.html" id="title">
-   <img src="images/logo.png" id="logo" alt="logo"/>
-   <span>Webknife - a web presentation framework</span>
-   <span style="font-weight:normal;">(version x.x.x)</span>
-  </a>
-  <span style="float:right; height:42px; line-height:42px;">
-	<button class="small colored" type="button" onClick="window.location='reference.html'" >HTML Reference Guide</button>
-	<button class="small colored" type="button" onClick="window.location='change-log.html'" >Change Log</button>
-  </span>
- </div></div>
+ <header>
+ <div class="w-fixed-width">
+	<a href="./index.html">
+		<div style="background-image:url('../documentation/images/logo.png');">
+			Webknife - a web presentation framework <span style="font-weight:normal;">(version x.x.x)</span>
+		</div>
+	</a>
+	<div>
+		<button class="small colored" type="button" onClick="window.location='reference.html'" >HTML Reference Guide</button>
+		<button class="small colored" type="button" onClick="window.location='change-log.html'" >Change Log</button>
+	</div>
+ </div>
+ </header>
 
  <div id="banner"><div class="fixed_width">
    <h1 class="massive center no-underline">Make elegant web interfaces in minutes.</h1>
    <img class="center" src="images/overview.png"  alt="overview" />
  </div></div>
  
- <div id="banner-buttons"><div class="fixed_width">
+ <div id="banner-buttons"><div class="w-fixed-width">
   <span class="center">
 	<button class="large colored flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/documents'" >Download</button>
 	<button class="dark lowered flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Report Issues</button>
@@ -71,7 +73,7 @@
   </span>
  </div></div>
  
- <div id="content"><div class="fixed_width">
+ <div id="content"><div class="w-fixed-width">
 
  <p class="colored" style="font-size:16px; text-align:center;">"<strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side, with an emphasis on HTML 
  5 that degrades gracefully in older browsers". 
@@ -292,14 +294,13 @@
  
  </div></div> 
 
- <div id="base"><div class="fixed_width">
-  <span>&nbsp;</span>
- </div></div>
-
- <div id="footer"><div class="fixed_width">
-  <div>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></div>
-  <p><a href="../framework/license.txt">Code license</a></p>
- </div></div>
+ <footer>
+	<div><p class="w-fixed-width">&nbsp;</p></div>
+	<div class="w-fixed-width">
+		<p>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></p>
+		<p><a href="../framework/license.txt">Code license</a></p>
+	</div>
+ </footer>
  
  </body>
 </html>
