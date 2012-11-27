@@ -1,0 +1,38 @@
+
+
+/*------------------------------------------------------
+ BUTTONS
+------------------------------------------------------*/
+
+button, input[type=submit], input[type=button]{
+  outline: 0; /*removes dotted outline in some browsers*/
+  height: 28px; /*set the height and line-height to avoid inconsistency across browsers (noteably IE)*/
+  line-height: 14px;
+  cursor:pointer;
+  padding: 0 9px 0 9px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  font-family: verdana;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 4px #fff;
+}
+button:hover, input[type=submit]:hover, input[type=button]:hover{
+ border-color: #aaa;
+ box-shadow: 0px 1px 1px #ddd;
+}
+button:active, input[type=submit]:active, input[type=button]:active{
+ border-color: #888;
+}
+/*button variants:*/
+button.dark, input[type=submit].dark, input[type=button].dark {background-color: #ccc; border-color: #999; box-shadow: inset 0px 1px 4px #ddd;} 
+		button.dark:hover, input[type=submit].dark:hover, input[type=button].dark:hover {border-color: #777; box-shadow: 0px 1px 1px #bbb;} 
+		button.dark:active, input[type=submit].dark:active, input[type=button].dark:active {border-color: #444;}
+button.colored, input[type=submit].colored, input[type=button].colored {color: white; background-color: @brand_color; border-color: #274b91; box-shadow: inset 0 1px 4px #4a72c1;} 
+		button.colored:hover, input[type=submit].colored:hover, input[type=button].colored:hover {background-color: #4a72c1; box-shadow: 0px 1px 1px #ddd;}
+		button.colored:active, input[type=submit].colored:active, input[type=button].colored:active {border-color: #0f1c37;}
+button.small, input[type=submit].small, input[type=button].small {height: 22px; line-height:11px; padding: 0 6px 0 6px;}
+button.large, input[type=submit].large, input[type=button].large {height: 46px; line-height:23px; font-size: 14px; padding: 0 20px 0 20px; border-width:2px; border-radius: 8px;}
+		button.large:hover, input[type=submit].large:hover, input[type=button].large:hover { box-shadow: 0px 1px 2px #aaa;}
+button.flat, input[type=submit].flat, input[type=button].flat { border-bottom-left-radius: 0!important; border-bottom-right-radius: 0!important; }

@@ -1,0 +1,29 @@
+
+/*additional resets*/
+a, button, input { outline: 0; } /*removes dotted outline in some browsers*/
+strong { font-weight: bold; } em  { font-style: italic } /*fix strong and em (font:inherit in standard reset breaks these)*/
+
+/*
+ basics
+*/
+
+.w-clear-after::after, .w-clear { clear: both; height: 0; visibility: hidden; display: block; content:" "; } /*use to clear floats*/
+
+.border(@width: 1px) { border: @width solid @border; }
+
+.fixed_color_text(@color: @brand_color) {
+	color:@color;
+	
+	a { color: @color!important; }
+	
+}
+
+/*
+
+*/
+
+#browser_warning {text-align: center;}
+
+
+
+

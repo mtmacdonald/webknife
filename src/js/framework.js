@@ -1,4 +1,4 @@
-/*! Webknife - webknife.org | webknife.org/framework/license.txt 
+/*! Webknife vX.X.X - webknife.org | webknife.org/framework/license.txt 
 !*/
 var lastSupportedIEVersion = 9;
 

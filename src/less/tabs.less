@@ -1,0 +1,38 @@
+
+
+/*------------------------------------------------------
+ TABS
+------------------------------------------------------*/
+
+.w-tab {list-style: none; padding:0; margin:0!important;} /*override defaults for ul*/
+.w-tab li {
+ float:left;
+ margin-right:5px;
+ font-size: 20px;
+ display: block;
+ padding: 10px 15px 10px 15px;
+ background-color: #ddd;
+ margin-bottom: -1px;
+ border: 1px solid #aaa;
+ border-width: 1px;
+ position:relative;
+ color: #888;
+}
+.w-tab li.w-active {
+ background-color: #fff;
+ top: 1px;
+ border-bottom: 0;
+ color: @interface_text;
+ font-weight:bold;
+}
+.w-tab li:hover { cursor: pointer; background-color:#eee; }
+.w-tab li.w-active:hover{ cursor: auto; background-color:#fff; }
+.w-tab li.w-disabled:hover{ cursor: auto; background-color:#ddd; }
+.w-tab li  a { color: #888; text-decoration: none; }
+
+.w-tab-content {
+ border: 1px solid #aaa;
+ padding: 15px;
+ margin: 0!important;/*override defaults for #content .fixed-width div*/
+}
+.w-tab::after { clear: both; height: 0; visibility: hidden; display: block; content:"";}

@@ -1,34 +1,17 @@
-/*! Webknife - webknife.org | webknife.org/framework/license.txt 
+/*! Webknife vX.X.X - webknife.org | webknife.org/framework/license.txt 
 !*/
 
 @import "config";
 @import 'normalize';
-
+@import 'common';
 @import 'page';
-@import "style";
+@import 'typography';
+@import 'tables';
+@import 'buttons';
+@import 'tabs';
+@import 'breadcrumbs';
+@import 'forms';
+@import 'icons';
+@import 'sprite';
+@import 'sprite-images'; //base-64 encoded images
 
-@import "tables";
-@import "zebra_datepicker";
-@import "sprite";
-@import "sprite-images"; //base-64 encoded images
-
-/*
- basics
-*/
-
-.w-clear-after::after, .w-clear { clear: both; height: 0; visibility: hidden; display: block; content:" "; } /*use to clear floats*/
-
-.border(@width: 1px) { border: @width solid @border; }
-
-.fixed_color_text(@color: @brand_color) {
-	color:@color;
-	
-	a { color: @color!important; }
-	
-}
-
-/*
-
-*/
-
-#browser_warning {text-align: center;}

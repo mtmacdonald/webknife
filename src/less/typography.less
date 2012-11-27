@@ -1,0 +1,77 @@
+
+
+/*------------------------------------------------------
+ TYPOGRAPHY
+------------------------------------------------------*/
+
+body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
+
+.small {font-size:11px;}
+.large {font-size:14px;}
+.massive {font-size:30px;}
+
+.bold { font-weight:bold; }
+.colored{ color:@brand_color; }
+.gray{ color:#999; }
+.red { color:#bf2e2e; }
+.green { color:#2ebf3c; }
+
+/*
+links
+*/
+a, .falseLink { color:@brand_color; }
+a:visited { color: #888 }
+a:hover, .falseLink:hover { color: #4a72c1; text-decoration: none;}
+.falseLink{text-decoration: underline; cursor: pointer;} 
+
+.warning  { color:red; background-color: #ffe6e6; border: 1px solid red; padding: 10px;}
+	.warning a, .warning .falseLink { color:red; }
+
+/*------------------------------------------------------
+ HEADINGS
+------------------------------------------------------*/
+
+h1, h2, h3, h4 , h5, h6 { text-decoration:none; font-weight: bold; color: @brand_color; padding-bottom: 5px; border-bottom: 1px solid #bbb;  margin: 20px 0 20px 0; }
+h1  { font-size:20px; padding-bottom: 10px; }
+h2  { font-size:14px; padding-bottom: 5px; }
+h3  { font-size:13px; padding-bottom: 4px; }
+h4  { font-size:12px; padding-bottom: 2px; }
+h5  { font-size:11px; padding-bottom: 1px; }
+h6  { font-size:10px; }
+
+.no-underline { border-bottom:none; } 
+
+/*------------------------------------------------------
+ LISTS
+------------------------------------------------------*/
+
+ul , ol { padding-left:15px; }
+ul  { list-style-type: disc; }
+ol  { list-style-type: decimal; }
+li.list-heading  { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
+
+/*------------------------------------------------------
+ BLOCKQUOTES
+------------------------------------------------------*/
+
+blockquote 
+{
+ padding: 10px 15px 10px 15px;
+ border-left: 5px solid #d893a1;
+ background-color: #fbe6f2;
+ line-height: 15px;
+}
+
+/*------------------------------------------------------
+ PREFORMATED, CODE
+------------------------------------------------------*/
+
+pre
+{
+ padding: 10px 10px 10px 10px;
+ background-color: #fafafa;
+ border: 1px solid #ccc;
+ line-height: 14px;
+}
+
+code { font-family: courier, monospace }
