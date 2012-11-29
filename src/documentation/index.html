@@ -60,20 +60,21 @@
  </div>
  </header>
 
- <div id="banner"><div class="fixed_width">
-   <h1 class="massive center no-underline">Make elegant web interfaces in minutes.</h1>
-   <img class="center" src="images/overview.png"  alt="overview" />
+ <div id="banner"><div class="w-fixed-width">
+   <h1 class="w-massive w-center w-no-underline">Make elegant web interfaces in minutes.</h1>
+   <img class="w-center" src="images/overview.png"  alt="overview" />
  </div></div>
  
  <div id="banner-buttons"><div class="w-fixed-width">
-  <span class="center">
+  <span class="w-center">
 	<button class="large colored flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/documents'" >Download</button>
 	<button class="dark lowered flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Report Issues</button>
 	<button class="lowered flat" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Do you use Webknife?</button>
   </span>
  </div></div>
  
- <div id="content"><div class="w-fixed-width">
+ <section>
+ <div class="w-fixed-width">
 
  <p class="colored" style="font-size:16px; text-align:center;">"<strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side, with an emphasis on HTML 
  5 that degrades gracefully in older browsers". 
@@ -103,7 +104,7 @@
  
  <h2>How to get started</h2>
  
- <table  class="center w-table w-fixed w-zebra" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
+ <table  class="center w-table w-fixed w-stripe" style="text-align:center; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
  <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
   <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
    1. Download the framework
@@ -152,7 +153,7 @@
    <li>12 discreet browser tests, across multiple operating systems (see 'release tests' below)</li>
   </ul>
  
- <table class="w-table  w-fixed w-zebra" style="width:100%; margin-top:30px;">
+ <table class="w-table  w-fixed w-stripe" style="width:100%; margin-top:30px;">
   <thead>
    <tr>
     <th class="hide-background hide-top hide-bottom hide-left hide-right" style="width:50px;"></th>
@@ -179,7 +180,7 @@
     <td rowspan="3" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/ie.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="3" style ="background-color:#f1f1f1;"><strong>Internet Explorer</strong></td>
     <td><strong class="green">9 (latest)</strong></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=13950">Microsoft Internet Explorer 9</a> (Windows 7)</td>
@@ -187,7 +188,7 @@
    <tr>
     <td><strong class="green">8</strong></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.microsoft.com/download/en/details.aspx?id=43">Microsoft Internet Explorer 8</a> (Windows XP)</td>
    </tr>
@@ -195,7 +196,7 @@
     <td><strong class="green">7, 6,</strong> older</td>
 	<td></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-cross"></span></td>
+	<td class="center"><span class="w-icon w-icon-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    
@@ -204,7 +205,7 @@
     <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/chrome.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#fff;"><strong>Chrome</strong></td>
     <td><strong class="green">14</strong></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
     <td></td>
 	<td></td>
     <td class="gray small"><a href="http://www.google.com/chrome/">Google Chrome</a> (Windows XP, Linux, OS X)</td>
@@ -213,7 +214,7 @@
     <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-cross"></span></td>
+	<td class="center"><span class="w-icon w-icon-cross"></span></td>
     <td></td>
    </tr>
    
@@ -222,13 +223,13 @@
     <td rowspan="4" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/firefox.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="4" style ="background-color:#f1f1f1;"><strong>Firefox</strong></td>
     <td><strong class="green">7 (latest)</strong></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> (Windows XP)</tr>
    <tr>
     <td>4, 5, 6 <span class="gray small">(auto-updated*)</span></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
 	<td></td>
 	<td></td>
 	<td rowspan="2" class="gray small"><a href="http://utilu.com/UtiluMFC/">Utilu Mozilla Firefox Collection</a> (Windows XP)</td>
@@ -236,14 +237,14 @@
    <tr>
     <td><strong class="green">3.6</strong></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
 	<td></td>
    </tr>
    <tr>
     <td>older</td>
 	<td></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-cross"></span></td>
+	<td class="center"><span class="w-icon w-icon-cross"></span></td>
     <td class="gray small">-</td>
    </tr>
    
@@ -252,7 +253,7 @@
     <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/safari.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#fff;"><strong>Safari</strong></td>
     <td><strong class="green">5 (latest)</strong></td>
-	<td class="center"><span class="w-icon w-tick"><span></td>
+	<td class="center"><span class="w-icon w-icon-tick"><span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.apple.com/safari/download/">Apple Safari</a> (Windows XP and OS X Lion)</td>
@@ -261,7 +262,7 @@
     <td>older <span class="gray small">(not supported†)</span></td>
 	<td></td>
 	<td></td>
-	<td class="center"><span class="w-icon w-cross"></span></td>
+	<td class="center"><span class="w-icon w-icon-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    
@@ -270,7 +271,7 @@
     <td rowspan="2" class="hide-background hide-top hide-bottom hide-left center"><span style="background-image: url('images/opera.png'); width:32px; height:32px; display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat;"></span></td>
     <td rowspan="2" style ="background-color:#f1f1f1;"><strong>Opera</strong></td>
     <td><strong class="green">11 (latest)</strong></td>
-	<td class="center"><span class="w-icon w-tick"></span></td>
+	<td class="center"><span class="w-icon w-icon-tick"></span></td>
     <td></td>
 	<td></td>
 	<td class="gray small"><a href="http://www.opera.com/">Opera</a> (Windows XP)</td>
@@ -279,7 +280,7 @@
     <td>older<span class="gray small"> (auto-updated*)</span></td>
 	<td></td>
 	<td></td>
-	<td  class="center"><span class="w-icon w-cross"></span></td>
+	<td  class="center"><span class="w-icon w-icon-cross"></span></td>
 	<td class="gray small">-</td>
    </tr>
    
@@ -292,7 +293,8 @@
  <span class="small gray">†support is provided for the <a href="http://en.wikipedia.org/wiki/Safari_version_history">latest Safari version</a>, which can be installed on all recent versions of OS X and Windows</span>
  </p>
  
- </div></div> 
+ </div>
+ </section> 
 
  <footer>
 	<div><p class="w-fixed-width">&nbsp;</p></div>

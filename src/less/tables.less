@@ -12,25 +12,23 @@
 	th, tfoot td {
 		background-color:@medium;
 		font-weight:bold;
-		color: @interface_text;
 	}
 
 	caption { 
 		caption-side: bottom;
 		font-weight: bold; 
-		padding: 15px; 
-		color: @interface_text; 
+		padding: 15px;
 	}
 
-	//fixed-width forces the cell sizing to be independent of content
-	//therefore need to break long words to prevent them overflowing into the next cell
+	//'fixed-width forces the cell sizing to be independent of content'
+	//'therefore need to break long words to prevent them overflowing into the next cell'
 	&.w-fixed {
 		table-layout: fixed;
 		word-wrap: break-word;
 	}
 
-	//optionally set .w-zebra to stripe a table
-	&.w-zebra tbody tr:nth-of-type(2n){ background-color: @light; }
+	//'optionally set .w-stripe to stripe a table'
+	&.w-stripe tbody tr:nth-of-type(2n){ background-color: @light; }
 }
 
 

@@ -5,15 +5,16 @@
 
 html
 {
-	background-color: @brand_color; //make short pages appear to stretch to bottom
+	background-color: @brand-color; //'make short pages appear to stretch to bottom'
+	color: @text;
 
 	body
 	{
 
-		min-width: @page_width + 40;
+		min-width: @page-width + 40;
 
 		.w-fixed-width {
-			width: @page_width;
+			width: @page-width;
 			margin: 0 auto;
 		}
 
@@ -26,12 +27,12 @@ html
 
 header
 {
-	.fixed_color_text;
+	.fixed-color-text;
 	
 	padding: 30px 0 30px 0;
-	background-color: @page_background;
-	border-top: 2px solid @brand_color;
-	border-bottom: 2px solid @brand_color;
+	background-color: @content-background;
+	border-top: 2px solid @brand-color;
+	border-bottom: 2px solid @brand-color;
 
 	> div {
 		> a { 
@@ -42,18 +43,20 @@ header
 
 			div {
 				background-repeat: no-repeat;
-				height: @logo_height; line-height: @logo_height; //vertical center
-				padding-left: @logo_width + 25;
+				height: @logo-height; line-height: @logo-height; //'vertical center'
+				padding-left: @logo-width + 25;
 			}
 		}
 
 		> div { 
 			float:right;
-			height: @logo_height; line-height: @logo_height; //vertical center
+			height: @logo-height; line-height: @logo-height; //'vertical center'
 		}
 	}
 
-	&::after { .w-clear }
+	&::after { 
+		.w-clear 
+	}
 }
 
 /*
@@ -62,18 +65,21 @@ header
 
 footer {
 
-	.fixed_color_text(#fff);
-
-	div { padding: 15px 0 15px 0; }
+	div { 
+		padding: 15px 0 15px 0;
+	}
 
 	> div:first-child {
-		background-color:#c4c4c4;
-		color: #555;
-		border-top: 1px solid #888;
+		background-color:@medium;
+		border-top: 2px solid @dark;
+		border-bottom: 2px solid @dark;
 		font-size:11px;
 	}
 
 	> div:nth-child(2) {
+	
+		.fixed-color-text(@light-text);
+	
 		text-align: center;
 		line-height: 35px;
 		
@@ -83,42 +89,21 @@ footer {
 	}
 }
 
+/*
+ page content
+*/
 
+section {
 
+	background-color: @content-background;
+	padding: 25px 0 25px 0;
 
+	> div > p, > div > div, > div > pre, > div > ul, > div > ol, > div > table, > div > blockquote {
+		margin: 20px 0 20px 0; 
+	}
 
+	img { 
+		.w-center;
+	}
 
-/*------------------------------------------------------
- GENERAL
-------------------------------------------------------*/
-
-#content { background-color:white; padding:25px 0 50px 0; }
-
-#content p, #content .fixed_width  div, #content pre, #content ul, #content ol, #content table, 
-#content blockquote, #content pre
-{
- margin: 20px 0 20px 0; 
 }
-
-#navigation
-{
- border: 1px solid #999;
- padding:10px;
- background-color: #eee;
-}
-
-#pageHeader
-{
- margin: 10px 0 30px 0; 
-}
-
-/*------------------------------------------------------
- ALIGNMENT
-------------------------------------------------------*/
-
-.inline {display:inline;}
-
-/*horizontal*/
-#content img, .center {text-align: center; display: block; margin-left: auto!important; margin-right: auto!important; }
-.left {text-align: left; display: block; margin-left: 0!important; margin-right: auto!important;  }
-.right {text-align: right; display: block; margin-left: auto!important; margin-right: 0!important;  }

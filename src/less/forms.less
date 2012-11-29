@@ -5,8 +5,8 @@
 
 .w-form {
  margin: 25px 0 25px 0;
- background-color:#f9f9f9;
- color: #666;
+ background-color: @light;
+ border: 1px solid @border;
 }
 .w-form div { /*right-align submit buttons*/
  text-align:right;
@@ -30,15 +30,14 @@
 }
 .w-form legend { /*do not apply padding to the legend, use legend p instead*/ 
  width:100%;
+
  font-size: 11px;
  font-weight:bold;
 }
 .w-form legend span {
  display: block; /*cannot use <p> as child of legend (invalid HTML), so use block <span> instead*/
  padding: 14px 20px 14px 20px;
- background-color: #f1f1f1;
- border-bottom: 1px solid #ccc;
- border-top: 1px solid #ccc;
+ background-color: @medium;
 }
 
 .w-form .formField{
@@ -62,10 +61,10 @@
  left: -8px;
 }
 .w-form .error input {
- background-color:#ffd6d6;
+ background-color: @error;
 }
 .w-form .error p{
- color: red;
+ color: darken(@error, 60%);
 }
 
 .w-form input[type=text], .w-form input[type=password], w-form input[type=text], .w-form textarea, .w-form select{ /*todo - move to global reset?*/
@@ -79,10 +78,10 @@
 }
 .w-form textarea, .w-form input[type=text], .w-form input[type=password]{
  outline: none;
- border: 1px solid #aaa;
+ border: 1px solid @border;
 }
 .w-form textarea:focus, .w-form input[type=text]:focus, .w-form input[type=password]:focus{
- border: 1px solid #498af4;
+ border: 1px solid @brand-color;
 }
 .w-form textarea { resize: vertical; }
 
@@ -97,7 +96,7 @@
 
 .Zebra_DatePicker { line-height:15px; } /*override defaults for body*/
 .w-datepicker{ width:150px; /*background-image: url('images/zebra_datepicker/calendar.png'); background-position:98% 50%!important; background-repeat:no-repeat;*/ cursor: pointer; }
-.w-datepicker{ border: 1px solid #aaa;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid #498af4;}  /*match with form styles*/
+.w-datepicker{ border: 1px solid @border;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid @brand-color;}  /*match with form styles*/
 .w-datepicker:hover { /*background-image: url('images/zebra_datepicker/calendar-hovered.png');*/ }
 .w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { /*background-image: url('images/zebra_datepicker/calendar-disabled.png');*/ }
 

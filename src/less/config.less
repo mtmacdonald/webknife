@@ -1,40 +1,49 @@
+/*
 
+Webknife CSS configurable options
 
-@logo_height: 42px;
-@logo_width: 90px;
-@logo_path: 90px;
+*/
 
-//Dimensions
+/*
+Page dimensions
+*/
 
+@page-width: 980px; //default is 980px (recommended for iPad)
 
-@page_width: 980px; //980px default is recommended for iPad
+/*
+Logo dimensions (should match the logo image file)
+*/
 
-//Site colors
+@logo-height: 42px;
+@logo-width: 90px;
 
-@brand_color: #385691;
-@page_background: #fff;
+/*
+Page color scheme
+*/
 
-//Text colors
+@brand-color: #385691;
 
-//@regular: ;
-@interface_text: #444;
-
-//Link colors
-
-//@link: ;
-//@visited: ; 
-//@hover: ;
-
-
-//Page colors
-
+@content-background: #fff;
 @light: #eee;
 @medium: #ddd;
 @dark: #bbb;
 @border: #999;
 
+/*
+Text color scheme
+*/
 
-a, .falseLink { color:@brand_color; }
-a:visited { color: #888 }
-a:hover, .falseLink:hover { color: #4a72c1; text-decoration: none; }
-.falseLink{text-decoration: underline; cursor: pointer; }
+@text: #444;
+@link: @brand-color;
+@hover: #4a72c1;
+@visited: #888;
+
+@success: #ccffbc;
+@warning: #fff0bd;
+@error: #ffe6e6;
+@information: #bdccff;
+
+@light-text: #fff; //'color for text on dark backgrounds'
+
+
+

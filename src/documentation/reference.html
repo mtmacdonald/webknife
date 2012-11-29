@@ -44,7 +44,8 @@
  </div>
  </header>
  
- <div id="content"><div class="w-fixed-width">
+ <section>
+ <div class="w-fixed-width">
  
  <h1>Reference for buttons</h1>
  <button type="button">Stardard</button>
@@ -80,7 +81,7 @@
 	<li class="w-active">Active</li>
  </ul>
  <div class="w-tab-content">
-	<!--Insert tab content here-->
+	Example tab content.
  </div>
  
  <h1>Reference for datepicker</h1>
@@ -90,7 +91,7 @@
  <h1>Reference for typography</h1>
  
  <div>
-  <a href="">Example Link</a> | <span class="falseLink">False Link</span> (useful for JavaScript apps)
+  <a href="">Example Link</a> | <span class="w-false-link">False Link</span> (useful for JavaScript apps)
  </div>
  
  <div>
@@ -98,11 +99,11 @@
  </div>
  
  <div>
-  <span class="colored">Colored text</span> |  <span class="gray">Gray text</span> | <span class="red">Red text</span> | <span class="green">Green text</span>
+  <span class="w-information-text">Information text</span> |  <span class="w-success-text">Success text</span> | <span class="w-warning-text">Warning text</span> | <span class="w-error-text">Error text</span> | <span class="w-de-emphasised-text">De-emphasised text</span>
  </div>
  
  <div>
-  <span class="small">Small text</span> | <span>Standard text</span> | <span class="large">Large text</span> | <span class="massive">Massive text</span>
+  <span class="w-small">Small text</span> | <span>Standard text</span> | <span class="w-large">Large text</span> | <span class="w-massive">Massive text</span>
  </div>
  
  <h1>Example H1 heading</h1>
@@ -112,17 +113,29 @@
  <h5>Example H5 heading</h5>
  <h6>Example H6 heading</h6>
 
- <h3 class="no-underline">Example H3 heading with no underline</h3>
+ <h3 class="w-no-underline">Example H3 heading with no underline</h3>
   
  <p>
   Example paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
  </p>
 
- <p class="warning">
-  Example warning paragraph. 
+ <p class="w-success">
+  Example success paragraph. 
  </p>
  
+ <p class="w-warning">
+  Example warning paragraph. 
+ </p>
+
+ <p class="w-error">
+  Example error paragraph. 
+ </p>
+
+ <p class="w-information">
+  Example information paragraph. 
+ </p>
+
  <blockquote>
  Example block quote.
  </blockquote>
@@ -149,7 +162,7 @@ int main()
    
  <h1>Reference for tables</h1>
   
- <table class="w-table w-fixed w-zebra">
+ <table class="w-table w-fixed w-stripe">
  <caption>Optional Table Caption</caption>
   <thead>
    <tr>
@@ -191,7 +204,7 @@ int main()
       <tr>
     <td>Lorem ipsum</td>
     <td>Lorem ipsum dolor sit amet</td>
-    <td class="center"><span class="w-icon w-tick"></span></td>
+    <td class="center"><span class="w-icon w-icon-tick"></span></td>
    </tr>
   </tbody>
  </table>
@@ -277,97 +290,104 @@ int main()
   <div><input type="submit" value="Submit" /></div>
  </form>
 
+ <h1>Reference for alignment</h1>
+ 
+ <div class="w-left">Left</div>
+ <div class="w-center">Center</div>
+ <div class="w-right">Right</div>
+ 
  <h1>Reference for icons</h1>
  
  <div style="background-color:#ddd; height:16px; width:600px; text-align:center;">
-	<span class="w-icon w-tick"></span>
-	<span class="w-icon w-cross"></span>
-	<span class="w-icon w-add"></span>
-	<span class="w-icon w-accept"></span>
-	<span class="w-icon w-delete"></span>
-	<span class="w-icon w-exclamation"></span>
-	<span class="w-icon w-information"></span>
-	<span class="w-icon w-help"></span>
-	<span class="w-icon w-warning"></span>
-	<span class="w-icon w-search"></span>
-	<span class="w-icon w-feed"></span>	
-	<span class="w-icon w-email"></span>
-	<span class="w-icon w-cart"></span>
-	<span class="w-icon w-arrow_refresh"></span>
-	<span class="w-icon w-arrow_anticlockwise"></span>
-	<span class="w-icon w-arrow_clockwise"></span>
-	<span class="w-icon w-arrow_up"></span>
-	<span class="w-icon w-arrow_down"></span>
-	<span class="w-icon w-arrow_left"></span>
-	<span class="w-icon w-arrow_right"></span>
-	<span class="w-icon w-resultset_first"></span>
-	<span class="w-icon w-resultset_last"></span>
-	<span class="w-icon w-resultset_next"></span>
-	<span class="w-icon w-resultset_previous"></span>
-	<span class="w-icon w-chart_bar"></span>
-	<span class="w-icon w-chart_pie"></span>
-	<span class="w-icon w-calendar"></span>
+	<span class="w-icon w-icon-tick"></span>
+	<span class="w-icon w-icon-cross"></span>
+	<span class="w-icon w-icon-add"></span>
+	<span class="w-icon w-icon-accept"></span>
+	<span class="w-icon w-icon-delete"></span>
+	<span class="w-icon w-icon-exclamation"></span>
+	<span class="w-icon w-icon-information"></span>
+	<span class="w-icon w-icon-help"></span>
+	<span class="w-icon w-icon-warning"></span>
+	<span class="w-icon w-icon-search"></span>
+	<span class="w-icon w-icon-feed"></span>	
+	<span class="w-icon w-icon-email"></span>
+	<span class="w-icon w-icon-cart"></span>
+	<span class="w-icon w-icon-arrow-refresh"></span>
+	<span class="w-icon w-icon-arrow-anticlockwise"></span>
+	<span class="w-icon w-icon-arrow-clockwise"></span>
+	<span class="w-icon w-icon-arrow-up"></span>
+	<span class="w-icon w-icon-arrow-down"></span>
+	<span class="w-icon w-icon-arrow-left"></span>
+	<span class="w-icon w-icon-arrow-right"></span>
+	<span class="w-icon w-icon-resultset-first"></span>
+	<span class="w-icon w-icon-resultset-last"></span>
+	<span class="w-icon w-icon-resultset-next"></span>
+	<span class="w-icon w-icon-resultset-previous"></span>
+	<span class="w-icon w-icon-chart-bar"></span>
+	<span class="w-icon w-icon-chart-pie"></span>
+	<span class="w-icon w-icon-calendar"></span>
  </div>
  <div style="background-color:#ddd; height:16px; width:600px; text-align:center;">
-	<span class="w-icon w-text_bold"></span>
-	<span class="w-icon w-text_italic"></span>
-	<span class="w-icon w-text_underline"></span>
-	<span class="w-icon w-text_align_left"></span>
-	<span class="w-icon w-text_align_right"></span>
-	<span class="w-icon w-text_align_center"></span>
-	<span class="w-icon w-text_align_justify"></span>
-	<span class="w-icon w-text_list_bullets"></span>
-	<span class="w-icon w-text_list_numbers"></span>
-	<span class="w-icon w-spellcheck"></span>
-	<span class="w-icon w-page"></span>
-	<span class="w-icon w-page_edit"></span>
-	<span class="w-icon w-page_add"></span>
-	<span class="w-icon w-page_delete"></span>
-	<span class="w-icon w-page_magnify"></span>
-	<span class="w-icon w-page_text"></span>	
-	<span class="w-icon w-page_code"></span>
-	<span class="w-icon w-page_zip"></span>
-	<span class="w-icon w-page_compressed"></span>
-	<span class="w-icon w-page_gear"></span>
-	<span class="w-icon w-page_acrobat"></span>
-	<span class="w-icon w-page_word"></span>
-	<span class="w-icon w-page_excel"></span>
-	<span class="w-icon w-page_powerpoint"></span>
-	<span class="w-icon w-page_copy"></span>
-	<span class="w-icon w-page_paste"></span>
-	<span class="w-icon w-printer"></span>
+	<span class="w-icon w-icon-text-bold"></span>
+	<span class="w-icon w-icon-text-italic"></span>
+	<span class="w-icon w-icon-text-underline"></span>
+	<span class="w-icon w-icon-text-align-left"></span>
+	<span class="w-icon w-icon-text-align-right"></span>
+	<span class="w-icon w-icon-text-align-center"></span>
+	<span class="w-icon w-icon-text-align-justify"></span>
+	<span class="w-icon w-icon-text-list-bullets"></span>
+	<span class="w-icon w-icon-text-list-numbers"></span>
+	<span class="w-icon w-icon-spellcheck"></span>
+	<span class="w-icon w-icon-page"></span>
+	<span class="w-icon w-icon-page-edit"></span>
+	<span class="w-icon w-icon-page-add"></span>
+	<span class="w-icon w-icon-page-delete"></span>
+	<span class="w-icon w-icon-page-magnify"></span>
+	<span class="w-icon w-icon-page-text"></span>	
+	<span class="w-icon w-icon-page-code"></span>
+	<span class="w-icon w-icon-page-zip"></span>
+	<span class="w-icon w-icon-page-compressed"></span>
+	<span class="w-icon w-icon-page-gear"></span>
+	<span class="w-icon w-icon-page-acrobat"></span>
+	<span class="w-icon w-icon-page-word"></span>
+	<span class="w-icon w-icon-page-excel"></span>
+	<span class="w-icon w-icon-page-powerpoint"></span>
+	<span class="w-icon w-icon-page-copy"></span>
+	<span class="w-icon w-icon-page-paste"></span>
+	<span class="w-icon w-icon-printer"></span>
  </div>
  <div style="background-color:#ddd; height:16px; width:600px; text-align:center;"> 
-	<span class="w-icon w-application"></span>
-	<span class="w-icon w-application_terminal"></span>
-	<span class="w-icon w-picture"></span>
-	<span class="w-icon w-picture_add"></span>
-	<span class="w-icon w-picture_delete"></span>
-	<span class="w-icon w-folder"></span>
-	<span class="w-icon w-folder_add"></span>
-	<span class="w-icon w-folder_delete"></span>	
-	<span class="w-icon w-disk"></span>
-	<span class="w-icon w-attach"></span>
-	<span class="w-icon w-link"></span>
-	<span class="w-icon w-cog"></span>
-	<span class="w-icon w-lock"></span>
-	<span class="w-icon w-lock_open"></span>
-	<span class="w-icon w-database"></span>
-	<span class="w-icon w-database_add"></span>
-	<span class="w-icon w-database_delete"></span>	 
-	<span class="w-icon w-user"></span>
-	<span class="w-icon w-user_add"></span>
-	<span class="w-icon w-user_delete"></span>
-	<span class="w-icon w-group"></span>
-	<span class="w-icon w-comment"></span>
-	<span class="w-icon w-comment_add"></span>
-	<span class="w-icon w-comment_delete"></span>
-	<span class="w-icon w-comments"></span>
-	<span class="w-icon w-color_swatch"></span>
-	<span class="w-icon w-home"></span>
+	<span class="w-icon w-icon-application"></span>
+	<span class="w-icon w-icon-application-terminal"></span>
+	<span class="w-icon w-icon-picture"></span>
+	<span class="w-icon w-icon-picture-add"></span>
+	<span class="w-icon w-icon-picture-delete"></span>
+	<span class="w-icon w-icon-folder"></span>
+	<span class="w-icon w-icon-folder-add"></span>
+	<span class="w-icon w-icon-folder-delete"></span>	
+	<span class="w-icon w-icon-disk"></span>
+	<span class="w-icon w-icon-attach"></span>
+	<span class="w-icon w-icon-link"></span>
+	<span class="w-icon w-icon-cog"></span>
+	<span class="w-icon w-icon-lock"></span>
+	<span class="w-icon w-icon-lock-open"></span>
+	<span class="w-icon w-icon-database"></span>
+	<span class="w-icon w-icon-database-add"></span>
+	<span class="w-icon w-icon-database-delete"></span>	 
+	<span class="w-icon w-icon-user"></span>
+	<span class="w-icon w-icon-user-add"></span>
+	<span class="w-icon w-icon-user-delete"></span>
+	<span class="w-icon w-icon-group"></span>
+	<span class="w-icon w-icon-comment"></span>
+	<span class="w-icon w-icon-comment-add"></span>
+	<span class="w-icon w-icon-comment-delete"></span>
+	<span class="w-icon w-icon-comments"></span>
+	<span class="w-icon w-icon-color-swatch"></span>
+	<span class="w-icon w-icon-home"></span>
  </div>
  
- </div></div>
+ </div>
+ </section>
 
  <footer>
 	<div><p class="w-fixed-width">Optional footnote&nbsp;</p></div>

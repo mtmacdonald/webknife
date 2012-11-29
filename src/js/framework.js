@@ -23,7 +23,7 @@ function oldBrowserWarning(){
   browser_warning[++i] = '<p id="browser_warning" class="warning">';
   browser_warning[++i] = 'You are using an old version of Internet Explorer which is unsupported. Some features may not work correctly. ';
   browser_warning[++i] = 'Consider <a href="http://www.whatbrowser.org/intl/en_uk/">upgrading</a> to a modern browser. ';
-  browser_warning[++i] = '<span id="dismiss_browser_warning" class="falseLink">Dismiss.</span> ';
+  browser_warning[++i] = '<span id="dismiss_browser-warning" class="falseLink">Dismiss.</span> ';
   browser_warning[++i] = '</p>';
   $('body').prepend(browser_warning.join(''));
  }
