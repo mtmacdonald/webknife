@@ -210,7 +210,78 @@ int main()
  </table>
 
  <h1>Reference for forms</h1>
+
+  <label for="name">Inline text: </label><input type="text" name="name" id="name" />
+  <label for="select">Inline select: </label><select name="choices" id="choices"><option>Choice 1</option></select>
+  <input type="radio" name="option" value="A" id="A"><label for="A">Inline radio</label>
+  <input type="checkbox" name="option" value="One" id="One"><label for="One">Inline checkbox</label>
  
+  <div class="w-vertical-form"><form action="#">
+  <fieldset><legend>Simple Vertical Form</legend>
+  
+    <label for="name">Username</label> 
+    <input type="text" name="name" />
+
+    <label for="password">Password</label> 
+    <input type="password" name="password" />
+   
+  </fieldset>  
+  <input type="submit" value="Login" />
+  </form></div>
+
+  <div class="w-vertical-form w-background-form"><form action="#">
+  <fieldset><legend>Advanced Vertical Form</legend>
+  
+   <p class="w-form-description">Describe what this form is about?</p>
+
+    <label for="name">Text input</label>
+    <input type="text" name="name" id="name" />
+    <p class="w-input-description">Describe what this field is about?</p>
+
+    <label for="error">Text input (error)</label> 
+    <input type="text" name="error" id="error" class="w-form-error"/>
+	<p class="w-input-error">Describe an error</p>
+
+    <label for="password">Password input</label> 
+    <input type="password" name="password" id="password" />
+	
+    <label for="choices">Selection input</label> 
+    <select name="choices" id="choices">
+     <option>Choice 1</option>
+     <option>Choice 2</option>
+     <option>Choice 3</option>
+    </select>
+   
+    <label for="description">Textarea input</label> 
+    <textarea name="description" id="description" rows="6">Example text</textarea>
+
+    <p class="w-form-label">Another user question?</p>
+    <input type="radio" name="option" value="A" id="A" checked="checked"><label for="A">Choice A</label>
+    <input type="radio" name="option" value="B" id="B"><label for="B">Choice B</label>
+    <input type="radio" name="option" value="C" id="C"><label for="C">Choice C</label>
+	 
+    <p class="w-form-label">Another user question?</p>
+    <input type="radio" name="option" value="A" id="A" checked="checked"><label for="A">Choice A</label><br/>
+    <input type="radio" name="option" value="B" id="B"><label for="B">Choice B</label><br/>
+    <input type="radio" name="option" value="C" id="C"><label for="C">Choice C</label><br/>
+
+  </fieldset>
+
+  <fieldset><legend>Example Fieldset 2</legend>
+    
+	<p class="w-form-label">Another user question?</p>
+    <input type="checkbox" name="selections" value="One" id="One" checked="checked"><label for="One">Choice One</label>
+    <input type="checkbox" name="selections" value="Two" id="Two"><label for="Two">Choice Two</label>
+    <input type="checkbox" name="selections" value="Three" id="Three"><label for="Three">Choice Three</label>
+
+  </fieldset>
+  
+  <input type="submit" value="Login" />
+  </form></div>
+
+
+<!--
+  
   <form class="w-form" style="width: 450px;" action="#">
   <fieldset><legend><span>Simple Form</span></legend><div>
 
@@ -289,7 +360,7 @@ int main()
   </div></fieldset>
   <div><input type="submit" value="Submit" /></div>
  </form>
-
+-->
  <h1>Reference for alignment</h1>
  
  <div class="w-left">Left</div>
