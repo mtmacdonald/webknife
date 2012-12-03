@@ -3,10 +3,9 @@
  form configuration
 */
 
-
 @form-width: 600px;
 @form-vertical-padding: 20px;
-@form-horizontal-padding: 40px; 
+@form-horizontal-padding: 40px;
 
 @form-font-size: 14px;
 @input-height: 20px;
@@ -17,11 +16,34 @@
  input width - do not edit this!
 */
 
-@input-width: @form-width - ( (2 * @input-horizontal-padding) + 2); //'exclude input padding and border width'
+@input-width: @form-width - ( (2 * @input-horizontal-padding) + 2); //'exclude horizontal input padding and border width'
+@select-input-width: @input-width + 14;
+@file-input-width: @input-width - 95; //'exclude file input button width'
 
 /*
- form elements
+ input elements
 */
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+{
+	height: @input-height;
+	line-height: @input-height;
+	font-size: @form-font-size;
+	border: 1px solid @border;
+	outline: none;
+		
+	&:hover {
+		border: 1px solid saturate(@brand-color, 80%); 
+	}
+	
+	&.w-form-error {
+		background-color: @error; 
+		border: 1px solid darken(@error, 60%); 
+	}
+}
 
 select,
 textarea,
@@ -31,40 +53,35 @@ input[type="radio"],
 input[type="checkbox"]
 {
 	vertical-align: middle;
-	height: @input-height;
-	line-height: @input-height;
-	font-size: @form-font-size;
 	padding: @input-vertical-padding @input-horizontal-padding;
-	border: 1px solid @border;
-
-	outline: none;
-  
-	&.w-form-error {
-		background-color: @error; 
-		border: 1px solid darken(@error, 60%); 
-	}
-	
-	&:hover {
-		border: 1px solid lighten(@brand-color, 40%); 
-	}  
-
 }
+
 textarea {
-	height: auto; //'undo height for textarea'
+	height: auto;
 	resize: vertical;
 }
-input[type="radio"], input[type="checkbox"] {
-	border: none; //'undo border for radio and checkbox' (only affects IE)
+
+select { //'make select input match the other input heights'
+	height: @input-height + 10;
+	line-height: @input-height + 10;
 }
 
-select, input[type="file"] { //'make file and select input match the other input heights'
-  height: @input-height + 10;
-  line-height: @input-height + 10;
-}
-
-input[type="radio"]+label, input[type="checkbox"]+label { 
+input[type="radio"]+label, 
+input[type="checkbox"]+label { 
 	padding: 0 10px 0 4px;
 	vertical-align: middle;
+}
+
+//'hide the file input because a fake file input implementation is used instead'
+//'can't use display: none; because some browsers disable the file input when it is not visible. Instead position off screen'
+input[type="file"] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.w-file-input {
+	margin-right: 10px;
 }
 
 /*
@@ -74,15 +91,19 @@ input[type="radio"]+label, input[type="checkbox"]+label {
 .w-vertical-form {
 
 	form {
-	
+
 		width: @form-width;
-		
+
 		fieldset {
 			border: 0;
 			margin: 0;
 			padding: 0;
 		}
-		
+
+		fieldset:not(:first-child) {
+			margin-top: 20px;
+		}
+
 		legend {
 			width: @form-width;
 			padding: 10px 0 10px 0;
@@ -92,32 +113,40 @@ input[type="radio"]+label, input[type="checkbox"]+label {
 			margin-bottom: 20px;
 		}
 
-		label,
-		select,
+		legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
+			-webkit-margin-top-collapse : separate;
+		}
+
 		textarea,
 		input[type="text"],
-		input[type="password"]
+		input[type="password"],
 		{
 			display: block;
-			margin-bottom: 20px;
 			width: @input-width;
 		}
-		label { width: @form-width; }
-		
-		
+
 		select {
-			width: @input-width + 14;	
+			display: block;
+			width: @select-input-width;
 		}
 		
 		label, .w-form-label {
+			display: block;
+			width: @form-width;
+			margin-top: 20px;
 			font-weight: bold;
 			margin-bottom: 5px;
 		}
-		
-		input[type="radio"]+label, input[type="checkbox"]+label { 
+
+		input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
 			display:inline;
 			font-weight: normal;
 			margin: 0;
+		}
+
+		input[type="text"].w-file-input {
+			width: @file-input-width;
+			display: inline;
 		}
 
 		.w-input-description, .w-input-error {
@@ -127,23 +156,19 @@ input[type="radio"]+label, input[type="checkbox"]+label {
 			padding: 0;
 			text-align: right;
 			position: relative;
-			top: -10px;
+			top: 4px;
 		}
-		
-		.w-input-error { color: darken(@error, 60%) }
-		
-		input[type="submit"], input[type="button"], button {
+
+		.w-input-error {
+			color: darken(@error, 60%) 
+		}
+
+		input[type="submit"] {
 			margin-top: 20px;
 		}
-		
-		fieldset:last-child { background-color:yellow!important;}
-	
-		legend + * {
-			-webkit-margin-top-collapse : separate;
-		}
-	
+
 	}
-	
+
 }
 
 .w-background-form {
@@ -161,8 +186,6 @@ input[type="radio"]+label, input[type="checkbox"]+label {
 .w-datepicker{ border: 1px solid @border;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid @brand-color;}  /*match with form styles*/
 .w-datepicker:hover { /*background-image: url('images/zebra_datepicker/calendar-hovered.png');*/ }
 .w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { /*background-image: url('images/zebra_datepicker/calendar-disabled.png');*/ }
-
-
 
 /*
 
