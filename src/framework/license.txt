@@ -54,7 +54,7 @@ Any other questions about this icon set please
 contact mjames@gmail.com
 
 - Includes Zebra Datepicker</a> (c) 2011 - 2012 Stefan Gabos, license: LGPL version 3 (href="http://stefangabos.ro/jquery/zebra-datepicker/)
-		- makes use of an interface provided by Zebra Datepicker, but is not otherwise based on Zebra Datepicker.
+- makes use of an interface provided by Zebra Datepicker, but is not otherwise based on Zebra Datepicker.
 
 
                 GNU LESSER GENERAL PUBLIC LICENSE

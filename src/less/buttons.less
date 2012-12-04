@@ -3,19 +3,19 @@
  buttons
 */
 
-.button-color(@color: @medium, @text-color: @text) {
-	border: 1px solid darken(@color, 5%);
+.button-color(@color: @light, @text-color: @text) {
+	border: 1px solid darken(@color, 10%);
 	color: @text-color;
 	background-color: @color;
 	box-shadow: inset 0px 1px 4px lighten(@color, 10%);
 		
 	&:hover{
-		background-color: lighten(@color, 5%);
-		border-color: darken(@color, 10%);
+		background-color: saturate(@color, 1%);
+		border-color: darken(@color, 20%);
 		box-shadow: 0px 1px 1px @dark;
 	}
 	&:active{
-		border-color: darken(@color, 30%);
+		border-color: darken(@color, 40%);
 	}
 }
 
