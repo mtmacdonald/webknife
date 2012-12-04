@@ -23,7 +23,7 @@
 # User configurable options
 #
 
-output_directory = "framework"; #the path to the directory where the generated framework package should be written
+output_directory = "release/framework"; #the path to the directory where the generated framework package should be written
 
 #
 # End of user configurable options
