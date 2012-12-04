@@ -29,6 +29,9 @@
 
 	//'optionally set .w-stripe to stripe a table'
 	&.w-stripe tbody tr:nth-of-type(2n){ background-color: @light; }
+	
+	//'override display:block on the w-center class within tables'
+	th.w-center, td.w-center { display:table-cell; }
 }
 
 
