@@ -6,6 +6,11 @@ var datePickerOptions = {
 	"show_icon" : false
 };
 
+var RecaptchaOptions = {
+	theme: 'custom',
+	custom_theme_widget: 'recaptcha_widget'
+};
+
 function oldBrowserWarning(){
  /*
 	Warn users of old versions of Internet Explorer about lack of support.

@@ -187,6 +187,38 @@ input[type="file"] {
 }
 
 /*
+ recaptcha
+*/
+
+#recaptcha_image {
+	background-color: white;
+	border: 1px solid @border; 
+	float: left;
+	margin-top: 5px!important;
+	padding: 5px;
+}
+#recaptcha_links { 
+	float: left; 
+	margin-top: 5px;
+	padding-left: 10px;
+
+	a {
+		font-style:italic;
+		font-size:11px;
+		line-height: 9px;
+		color: #666;
+	}
+}
+
+/* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
+iframe { 
+	display:none !important;
+}
+header iframe, section iframe, footer iframe, div iframe { 
+	display:inline; 
+}
+
+/*
  datepicker
 */
 

@@ -285,6 +285,21 @@
     <input type="checkbox" name="selections" value="Two" id="Two"><label for="Two">Choice Two</label>
     <input type="checkbox" name="selections" value="Three" id="Three"><label for="Three">Choice Three</label>
 
+	<div id="recaptcha_widget" style="display:none"><!--display:none to hide controls until CAPTCHA has loaded-->
+		<label for="captcha">ReCAPTCHA input</label>
+		<input type="text"name="recaptcha_response_field" id="recaptcha_response_field" />
+		<p class="w-input-error">Optional ReCAPTCHA error</p>
+		
+		<div id="recaptcha_image"></div>
+		<div id="recaptcha_links">
+			<div><a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a></div>
+			<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
+			<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
+			<div><a href="javascript:Recaptcha.showhelp()">ReCAPTCHA Help</a></div>
+			<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdHWdsSAAAAANEk8eW-ntkgds5_WwTBFQuJPLP6"></script>
+		</div>
+	</div>
+
   </fieldset>
   
   <input type="submit" value="Submit" />
