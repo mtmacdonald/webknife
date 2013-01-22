@@ -16,7 +16,7 @@ a, button, input { outline: 0; } /*removes dotted outline in some browsers*/
 .fixed-color-text(@color: @brand-color) {
 	color:@color;
 	
-	a, .w-false-link { color: @color!important; }
+	a, a:hover, a:active, a:visited, .w-false-link, .w-false-link:hover{ color: @color;}
 	
 }
 

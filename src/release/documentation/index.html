@@ -13,12 +13,12 @@
   #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
   #banner img {padding: 25px 0 25px 0;}
   #banner-buttons {background-color: #f7f7f7; border-bottom: 1px solid #385691;}
-  #banner-buttons button { border-bottom: 1px solid #385691; }
+  #banner-buttons a { border-bottom: 1px solid #385691; }
   .spaced {margin-right: 15px;}
   .lowered
   {
 	position: relative;
-	top: 7px; /*height difference between large and small buttons -1px*/
+	top: 6px; /*height difference between large and small buttons*/
   }
   </style>
 
@@ -39,8 +39,8 @@
 		</div>
 	</a>
 	<div>
-		<button class="w-small w-colored" type="button" onClick="window.location='reference.html'" >HTML Reference Guide</button>
-		<button class="w-small w-colored" type="button" onClick="window.location='change-log.html'" >Change Log</button>
+		<a href="reference.html" class="w-button-link w-colored w-small">HTML Reference Guide</a>
+		<a href="change-log.html" class="w-button-link w-colored w-small">Change Log</a>
 	</div>
  </div>
  </header>
@@ -52,9 +52,9 @@
  
  <div id="banner-buttons"><div class="w-fixed-width">
   <span class="w-center">
-	<button class="w-large w-colored w-flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/documents'" >Download</button>
-	<button class="w-dark lowered w-flat spaced" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Report Issues</button>
-	<button class="lowered w-flat" type="button" onClick="window.location='http://www.assembla.com/spaces/webknife/support/tickets'" >Do you use Webknife?</button>
+  	<a href="http://www.assembla.com/spaces/webknife/documents" class="w-button-link w-colored w-large w-flat spaced">Download</a>
+	<a href="http://www.assembla.com/spaces/webknife/support/tickets" class="w-button-link w-dark w-flat lowered spaced">Report Issues</a>
+	<a href="http://www.assembla.com/spaces/webknife/support/tickets" class="w-button-link w-flat lowered">Do you use Webknife?</a>
   </span>
  </div></div>
  
