@@ -16,14 +16,15 @@
 	}
 	&:active{
 		border-color: darken(@color, 40%);
+
 	}
 }
 
-button, input[type=submit], input[type=button]{
+button, input[type=submit], input[type=button], .w-button-link {
 	outline: 0; //'removes dotted outline in some browsers'
 	height: 30px; //'set the height and line-height to avoid inconsistency across browsers (noteably IE)'
 	line-height: 14px;
-	cursor:pointer;
+	cursor: pointer;
 	padding: 0 9px 0 9px;
 	font-family: verdana;
 	font-size: 11px;
@@ -61,3 +62,20 @@ button, input[type=submit], input[type=button]{
 		border-bottom-right-radius: 0; 
 	}
 }
+
+.w-button-link {
+	display: inline-block;
+	text-decoration: none;
+	line-height: 30px;	
+	
+	&.small {
+		line-height:22px;
+	}
+
+	&.large {
+		line-height:46px;
+	}
+}
+
+
+

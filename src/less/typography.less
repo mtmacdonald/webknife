@@ -20,10 +20,10 @@ body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
  links
 */
 
-a, .w-false-link { color: @brand-color; }
+a, .w-false-link, .w-link-button { color: @brand-color; }
+a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten(@brand-color, 20%); text-decoration: none; }
 a:visited { color: @dark }
-a:hover, .w-false-link:hover { color: lighten(@brand-color, 20%); text-decoration: none; }
-.w-false-link { text-decoration: underline; cursor: pointer; } 
+.w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; } 
 
 .special-text(@color: @dark) {
 	background-color: @color; 
@@ -36,7 +36,26 @@ a:hover, .w-false-link:hover { color: lighten(@brand-color, 20%); text-decoratio
 .w-warning { .special-text(@warning) }
 .w-error { .special-text(@error) }
 .w-information { .special-text(@information) }
-	
+
+/*
+ link buttons
+*/
+
+.w-link-button {
+    display: inline;
+    outline: none;
+    border: none;
+	border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+	height: auto;
+	line-height: normal; //'Override line-height to avoid spacing issues'
+    -moz-user-select: text; //'Make button text selectable in Gecko'
+    background: none!important;
+	box-shadow: none!important;
+}
+
 /*
  headings
 */
