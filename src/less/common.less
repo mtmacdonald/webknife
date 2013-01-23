@@ -2,7 +2,7 @@
 /*
 	:focus styling
 	
-	http://outlinenone.com/
+	why? - http://outlinenone.com/
 	
 	Firefox issue (workaround):
 	outline appears outside the box-shadow: http://stackoverflow.com/questions/7833587/css-outline-not-rendering-correctly-in-firefox
@@ -13,6 +13,10 @@
 	Webkit issue (minor):
 	box-shadow does work for select, radio, and checkbox inputs - http://code.google.com/p/chromium/issues/detail?id=96192
 		- avoid using -webkit-appearance: none because it worsens input usability
+		
+	Webkit issue (minor):
+	In Webkit, elements do not receive focus when clicked:
+		- https://bugs.webkit.org/show_bug.cgi?id=22261
 */
 
 a:focus, button:focus, input[type="button"]:focus, input[type="submit"]:focus {
