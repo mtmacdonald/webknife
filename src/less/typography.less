@@ -22,8 +22,9 @@ body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
 
 a, .w-false-link, .w-link-button { color: @brand-color; }
 a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten(@brand-color, 20%); text-decoration: none; }
-a:focus, .w-link-button:focus{ }
+a:active { 	background: none; } //'browser normalization'
 a:visited { color: @dark }
+
 .w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; }
 
 .special-text(@color: @dark) {
