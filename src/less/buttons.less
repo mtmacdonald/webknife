@@ -7,7 +7,7 @@
 	border: 1px solid darken(@color, 10%);
 	color: @text-color;
 	background-color: @color;
-	//'avoid inner box-shadow because it will conflict with the :focus state'
+    box-shadow: inset 0px 1px 4px lighten(@color, 10%);
 
 	&:hover{
 		background-color: saturate(@color, 1%);
