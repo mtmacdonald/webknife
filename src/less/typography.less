@@ -22,9 +22,9 @@ body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
 
 a, .w-false-link, .w-link-button { color: @brand-color; }
 a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten(@brand-color, 20%); text-decoration: none; }
-a:focus, .w-link-button:focus{ outline:0; }
+a:focus, .w-link-button:focus{ }
 a:visited { color: @dark }
-.w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; } 
+.w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; }
 
 .special-text(@color: @dark) {
 	background-color: @color; 
@@ -44,7 +44,6 @@ a:visited { color: @dark }
 
 button.w-link-button {
     display: inline;
-    outline: none;
     border: none;
 	border-radius: 0;
     margin: 0;
@@ -53,8 +52,11 @@ button.w-link-button {
 	height: auto;
 	line-height: normal; //'Override line-height to avoid spacing issues'
     -moz-user-select: text; //'Make button text selectable in Gecko'
-    background: none!important;
-	box-shadow: none!important;
+	background: none;
+}
+button.w-link-button:hover, button.w-link-button:active {
+	background: none;
+	box-shadow: none;
 }
 
 /*

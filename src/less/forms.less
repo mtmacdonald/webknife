@@ -33,10 +33,9 @@ input[type="password"],
 	line-height: @input-height;
 	font-size: @form-font-size;
 	border: 1px solid @border;
-	outline: none;
 		
 	&:hover {
-		border: 1px solid saturate(@brand-color, 80%); 
+		border: 1px solid @focus; 
 	}
 	
 	&.w-form-error {
@@ -76,6 +75,7 @@ input[type="checkbox"]+label {
 //'can't use display: none; because some browsers disable the file input when it is not visible. Instead position off screen'
 input[type="file"] {
 	position: absolute;
+	tabindex: -1;
 	top: -9999px;
 	left: -9999px;
 }

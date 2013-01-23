@@ -7,8 +7,8 @@
 	border: 1px solid darken(@color, 10%);
 	color: @text-color;
 	background-color: @color;
-	box-shadow: inset 0px 1px 4px lighten(@color, 10%);
-		
+	//'avoid inner box-shadow because it will conflict with the :focus state'
+
 	&:hover{
 		background-color: saturate(@color, 1%);
 		border-color: darken(@color, 20%);
@@ -16,17 +16,14 @@
 	}
 	&:active{
 		border-color: darken(@color, 40%);
-
 	}
 }
 
 button, input[type=submit], input[type=button], a.w-button-link {
 	//'avoid the sizing issues that come with the default border-box model: http://stackoverflow.com/questions/8395349/why-do-a-div-and-a-button-with-the-same-styles-render-at-different-sizes '
-	-moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+	-moz-box-sizing: content-box;    
+	box-sizing: content-box;
 
-	outline: 0; //'removes dotted outline in some browsers'
 	height: 28px; //'set the height and line-height to avoid inconsistency across browsers (noteably IE)'
 	line-height: 14px;
 	cursor: pointer;
