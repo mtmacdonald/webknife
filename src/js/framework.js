@@ -1,6 +1,5 @@
 /*! Webknife vX.X.X - webknife.org | webknife.org/framework/license.txt 
 !*/
-var lastSupportedIEVersion = 9;
 
 var datePickerOptions = {
 	"show_icon" : false
@@ -20,10 +19,22 @@ function oldBrowserWarning(){
 		- make sure to include <meta http-equiv="X-UA-Compatible" content="IE=edge" > (otherwise localhost or intranet pages render in compatibility mode)
 		
 	Note - users can still override the rendering mode via the IE developer tools (F12)
-		- see document.browserMode and document.documentMode for more information
+		- see document.browserMode (UA string sent to server) and document.documentMode (rendered mode) for more information
 		- however no user warning is shown where the user has broken the mode themselves
+		
+	Update - since jQuery 1.9 $.browser is removed. Instead we use a supported indication object:
+		http://tanalin.com/en/articles/ie-version-js/
+		
+		IE version	Supported indication object
+		10+			window.atob
+		9+			document.addEventListener
+		8+			document.querySelector
+		7+			window.XMLHttpRequest
+		6+			document.compatMode
+		
+		Since this change the UA string / Browser mode no longer affects the detection. Detection is based solely on document mode.
  */
- if ($.browser.msie && $.browser.version < lastSupportedIEVersion){
+ if (document.all && !document.addEventListener){
   var browser_warning = new Array(), i = -1;
   browser_warning[++i] = '<p id="w-browser-warning" class="w-error" style="margin:0;">';
   browser_warning[++i] = 'You are using an old version of Internet Explorer which is unsupported. Some features may not work correctly. ';
