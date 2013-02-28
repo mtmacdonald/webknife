@@ -17,7 +17,14 @@
   <!--inline scripts last-->
   <script>
 	$(document).ready(function() {
-      $('#datepicker').Zebra_DatePicker(datePickerOptions);
+
+		$('#datepicker').Zebra_DatePicker(datePickerOptions);
+	  
+		$('#modal').click(function(){
+			wModal = new modal(350,310,"Dialog title","<span>Dialog content</span>");
+			wModal.show();
+		});
+	  
 	});
   </script>
  </head>
@@ -86,6 +93,10 @@
  <a href="#" class="w-button-link">Button link</a> (a link that looks like a button)
  </p>
 
+ <h1>Reference for modal dialogs</h1>
+ 
+ <span class="w-false-link" id="modal">Show dialog</span>
+ 
  <h1>Reference for tables</h1>
   
  <table class="w-table w-fixed w-stripe">
