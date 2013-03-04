@@ -87,14 +87,5 @@ $(document).ready(function() {
 	fileName = fileName.split('/').pop(); //split path by forward slash and select the last segment (filename). This is done to remove "C:\fakepath\ inserted by the browser.
 	$(this).next('input[type=text]').val(fileName);
  });
-/* 
- $('#w-internal-modal-close').click(function(){
-	alert("monkey poo");
-	//wModal.close();
- });
-*/
- $('body').on('click', '#w-internal-modal-close', function() {
-	wModal.close();
- });
  
 });

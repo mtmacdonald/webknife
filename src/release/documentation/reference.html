@@ -18,13 +18,20 @@
   <script>
 	$(document).ready(function() {
 
+		//bind the datepicker plugin
 		$('#datepicker').Zebra_DatePicker(datePickerOptions);
-	  
+
+		//bind the modal dialog plugin
+		var modalOptions = {
+			'width' : 350,
+			'height' : 310,
+			'title' : 'Test modal dialog',
+			'html' : '<span>Example modal dialog content</span>'
+		};
 		$('#modal').click(function(){
-			wModal = new modal(350,310,"Dialog title","<span>Dialog content</span>");
-			wModal.show();
+			$('#modal-container').modal(modalOptions);
 		});
-	  
+
 	});
   </script>
  </head>
@@ -95,8 +102,8 @@
 
  <h1>Reference for modal dialogs</h1>
  
- <span class="w-false-link" id="modal">Show dialog</span>
- 
+ <span class="w-false-link" id="modal">Show dialog</span><div id="modal-container"></div>
+
  <h1>Reference for tables</h1>
   
  <table class="w-table w-fixed w-stripe">

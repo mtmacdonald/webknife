@@ -1,44 +1,53 @@
-function modal(width, height, title, html) {
- this.width = width;
- this.height = height; 
- this.title = title;
- this.html = html;
- this.visible = false;
- this.html =
-  '<div id="w-internal-modal"><a id="w-internal-modal-close">x</a> \n' +
-  ' <h1>'+this.title+'</h1>' +
-  ' <div id="w-internal-modal-content">'+this.html+' \n' +
-  ' </div> \n' +
-  '</div> \n' +
-  '<div id="w-internal-modal-background"></div>';
- this.show = function show() {
+(function( $ ){
 
-  if(this.visible==false){
-   $('body').prepend('<div id="w-temp-modal-container"></div>');
-   $('#w-temp-modal-container').after(this.html);
-   $('#w-internal-modal').css({'width': this.width});
-   $('#w-internal-modal').css({'height': this.height});
+  var methods = {
+    init : function( options ) {
+		var windowWidth = document.documentElement.clientWidth;
+		var windowHeight = document.documentElement.clientHeight;
 
-   this.centerDialog();
-   $('#w-internal-modal-background').css({'opacity': "0.2"});
-   $('#w-internal-modal-background').show();
-   $('#w-internal-modal').show();
-   this.visible = true;
-  }
- };
- this.close = function close() {
-  if(this.visible==true){
-   $('#w-internal-modal-background').remove();
-   $('#w-internal-modal').remove();
-   $('#w-temp-modal-container').remove();
-   this.visible = false;
-  }
- };
- this.centerDialog = function center() { //private
-   var windowWidth = document.documentElement.clientWidth;
-   var windowHeight = document.documentElement.clientHeight;
-   var popupHeight = $('#w-internal-modal').height();
-   var popupWidth = $('#w-internal-modal').width();
-   $('#w-internal-modal').css({'top': windowHeight/2-popupHeight/2,'left': windowWidth/2-popupWidth/2});
- };
-}
+		var html = new Array(), i = -1;
+		html[++i] = '<div class="wi-modal-container"></div>';
+		html[++i] = '<div style="width:'+options.width+'px; height:'+options.height+'px;" class="wi-modal">';
+		html[++i] = '<a class="wi-modal-close">x</a>';
+		html[++i] = '<h1>'+options.title+'</h1>';	
+		html[++i] = '<div class="wi-modal-content">'+options.html+'</div>';
+		html[++i] = '</div>';
+		html[++i] = '<div class="wi-modal-background"></div>';
+		this.append(html.join(''));
+
+		$('.wi-modal-background').css({'opacity': "0.2"});
+		$('.wi-modal-background').show();
+		$('.wi-modal').show();
+
+		var popupHeight = $('.wi-modal').height();
+		var popupWidth = $('.wi-modal').width();
+		$('.wi-modal').css({'top': windowHeight/2-popupHeight/2,'left': windowWidth/2-popupWidth/2});
+
+		return this.find('.wi-modal-close').click(onClick)
+			function onClick(){
+				$('.wi-modal-background').remove();
+				$('.wi-modal').remove();
+				$('.wi-modal-container').remove();
+		}
+    },
+
+    example : function( ) {
+		//stub for other plugin methods
+    }
+
+  };
+
+  $.fn.modal = function( method ) {
+    
+    // Method calling logic
+    if ( methods[method] ) {
+      return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    } else if ( typeof method === 'object' || ! method ) {
+      return methods.init.apply( this, arguments );
+    } else {
+      $.error( 'Method ' +  method + ' does not exist on jQuery.modal' );
+    }    
+
+  };
+
+})( jQuery );
