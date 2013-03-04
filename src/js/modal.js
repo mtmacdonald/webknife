@@ -15,9 +15,9 @@
 		html[++i] = '<div>'+options.html+'</div>';
 		html[++i] = '</div>';
 		html[++i] = '<div class="wi-modal-background"></div></div>';
-		this.append(html.join(''));
+		this.after(html.join(''));
 
-		return this.find('.wi-modal-close').click(onClick)
+		return $('.wi-modal-container').find('.wi-modal-close').click(onClick)
 			function onClick(){
 				$('.wi-modal-container').remove();
 		}

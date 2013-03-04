@@ -29,7 +29,7 @@
 			'html' : '<span>Example modal dialog content</span>'
 		};
 		$('#modal').click(function(){
-			$('#modal-container').modal(modalOptions);
+			$(this).modal(modalOptions);
 		});
 
 	});
@@ -102,7 +102,7 @@
 
  <h1>Reference for modal dialogs</h1>
  
- <span class="w-false-link" id="modal">Show dialog</span><div id="modal-container"></div>
+ <span class="w-false-link" id="modal">Show dialog</span>
 
  <h1>Reference for tables</h1>
   
