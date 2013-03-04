@@ -11,10 +11,10 @@
 		html[++i] = '<div class="wi-modal-container"></div>';
 		html[++i] = '<div style="width:'+options.width+'px; height:'+options.height+'px; top:'+modalTop+'px; left:'+modalLeft+'px;" class="wi-modal">';
 		html[++i] = '<a class="wi-modal-close">x</a>';
-		html[++i] = '<h1>'+options.title+'</h1>';	
+		html[++i] = '<h2>'+options.title+'</h2>';	
 		html[++i] = '<div>'+options.html+'</div>';
 		html[++i] = '</div>';
-		html[++i] = '<div class="wi-modal-background" style="opacity: 0.2;"></div>';
+		html[++i] = '<div class="wi-modal-background"></div>';
 		this.append(html.join(''));
 
 		return this.find('.wi-modal-close').click(onClick)
