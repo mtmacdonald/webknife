@@ -12,7 +12,7 @@
 		html[++i] = '<div style="width:'+options.width+'px; height:'+options.height+'px; top:'+modalTop+'px; left:'+modalLeft+'px;" class="wi-modal">';
 		html[++i] = '<a class="wi-modal-close">x</a>';
 		html[++i] = '<h1>'+options.title+'</h1>';	
-		html[++i] = '<div class="wi-modal-content">'+options.html+'</div>';
+		html[++i] = '<div>'+options.html+'</div>';
 		html[++i] = '</div>';
 		html[++i] = '<div class="wi-modal-background" style="opacity: 0.2;"></div>';
 		this.append(html.join(''));
