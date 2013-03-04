@@ -8,19 +8,17 @@
 		var modalLeft = windowWidth/2-options.width/2;
 
 		var html = new Array(), i = -1;
-		html[++i] = '<div class="wi-modal-container"></div>';
+		html[++i] = '<div class="wi-modal-container">';
 		html[++i] = '<div style="width:'+options.width+'px; height:'+options.height+'px; top:'+modalTop+'px; left:'+modalLeft+'px;" class="wi-modal">';
 		html[++i] = '<a class="wi-modal-close">x</a>';
 		html[++i] = '<h2>'+options.title+'</h2>';	
 		html[++i] = '<div>'+options.html+'</div>';
 		html[++i] = '</div>';
-		html[++i] = '<div class="wi-modal-background"></div>';
+		html[++i] = '<div class="wi-modal-background"></div></div>';
 		this.append(html.join(''));
 
 		return this.find('.wi-modal-close').click(onClick)
 			function onClick(){
-				$('.wi-modal-background').remove();
-				$('.wi-modal').remove();
 				$('.wi-modal-container').remove();
 		}
     },
