@@ -23,6 +23,10 @@
 		}
     },
 
+	close : function( ) {
+		$('.wi-modal-container').remove();
+    },
+
     example : function( ) {
 		//stub for other plugin methods
     }
