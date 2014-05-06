@@ -424,7 +424,7 @@ select:focus {
  page
 */
 html {
-  background-color: #004291;
+  background-color: #bbd3e4;
   color: #444444;
 }
 html body {
@@ -456,7 +456,7 @@ header > div > a {
   float: left;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 20px;
 }
 header > div > a div {
   background-repeat: no-repeat;
@@ -483,13 +483,22 @@ footer div {
   padding: 15px 0 15px 0;
 }
 footer > div:first-child {
-  background-color: #dddddd;
+  color: #004291;
+  background-color: #cde0ee;
   border-top: 2px solid #bbbbbb;
   border-bottom: 2px solid #bbbbbb;
   font-size: 11px;
 }
+footer > div:first-child a,
+footer > div:first-child a:hover,
+footer > div:first-child a:active,
+footer > div:first-child a:visited,
+footer > div:first-child .w-false-link,
+footer > div:first-child .w-false-link:hover {
+  color: #004291;
+}
 footer > div:nth-child(2) {
-  color: #ffffff;
+  color: #004291;
   text-align: center;
   line-height: 35px;
 }
@@ -499,7 +508,7 @@ footer > div:nth-child(2) a:active,
 footer > div:nth-child(2) a:visited,
 footer > div:nth-child(2) .w-false-link,
 footer > div:nth-child(2) .w-false-link:hover {
-  color: #ffffff;
+  color: #004291;
 }
 footer > div:nth-child(2) > p:nth-child(2) {
   font-size: 9px;
@@ -531,7 +540,7 @@ section img {
  typography
 */
 body {
-  font-family: verdana, sans-serif;
+  font-family: arial, sans-serif;
   font-size: 12px;
   line-height: 20px;
 }
@@ -990,13 +999,12 @@ button.w-link-button:active {
  breadcrumbs
 */
 .w-breadcrumb-container {
-  border: 1px solid #999999;
-  background-color: #dddddd;
+  background-color: #bbd3e4;
   height: 32px;
 }
 .w-breadcrumb,
 .w-breadcrumb-right {
-  background: #dddddd;
+  background: #bbd3e4;
   overflow: hidden;
   list-style-type: none;
   padding: 0;
@@ -1019,7 +1027,7 @@ button.w-link-button:active {
   position: relative;
 }
 .w-breadcrumb a {
-  background-color: #bbbbbb;
+  background-color: #bbd3e4;
   padding: 6px 0 6px 32px;
 }
 .w-breadcrumb-right a {
@@ -1030,7 +1038,7 @@ button.w-link-button:active {
 }
 .w-breadcrumb li a:hover,
 .w-breadcrumb-right li a:hover {
-  background: #eeeeee;
+  background: #cde0ee;
 }
 .w-breadcrumb li a::after,
 .w-breadcrumb li a::before {
@@ -1044,7 +1052,7 @@ button.w-link-button:active {
 }
 .w-breadcrumb li a:after {
   z-index: 2;
-  border-left: 20px solid #bbbbbb;
+  border-left: 20px solid #bbd3e4;
 }
 .w-breadcrumb li a:before {
   border-left: 20px solid #999999;
@@ -1052,7 +1060,7 @@ button.w-link-button:active {
   z-index: 1;
 }
 .w-breadcrumb li a:hover::after {
-  border-left-color: #eeeeee;
+  border-left-color: #cde0ee;
 }
 .w-breadcrumb li:last-child a {
   background: none;

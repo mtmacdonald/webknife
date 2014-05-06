@@ -5,7 +5,7 @@
 
 html
 {
-	background-color: @brand-color; //'make short pages appear to stretch to bottom'
+	background-color: @dark-blue; //'make short pages appear to stretch to bottom'
 	color: @text;
 
 	body
@@ -39,7 +39,7 @@ header
 			float:left;
 			text-decoration:none;
 			font-weight: bold;
-			font-size: 14px;
+			font-size: 20px;
 			
 			div {
 				background-repeat: no-repeat;
@@ -70,7 +70,8 @@ footer {
 	}
 
 	> div:first-child {
-		background-color:@medium;
+		.fixed-color-text;
+		background-color:@light-blue;
 		border-top: 2px solid @dark;
 		border-bottom: 2px solid @dark;
 		font-size:11px;
@@ -78,7 +79,7 @@ footer {
 
 	> div:nth-child(2) {
 	
-		.fixed-color-text(@light-text);
+		.fixed-color-text;
 	
 		text-align: center;
 		line-height: 35px;
