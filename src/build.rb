@@ -70,5 +70,5 @@ sprite_css.gsub!(/background:/, "background-position:")
 File.open('less/sprite.less', "w") do |f| f.write sprite_css end
 
 #run LESS to concat and minify the CSS
-less = 'lessc --yui-compress less/main.less > "'+output_directory+'/framework.min.css"'
+less = 'lessc --compress less/main.less > "'+output_directory+'/framework.min.css"'
 IO.popen(less)
