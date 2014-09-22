@@ -23,7 +23,7 @@
 # User configurable options
 #
 
-output_directory = "release/framework"; #the path to the directory where the generated framework package should be written
+output_directory = "../framework"; #the path to the directory where the generated framework package should be written
 
 #
 # End of user configurable options
@@ -34,7 +34,6 @@ require 'sprite_factory'
 require 'base64'
 
 #copy the license and template html
-FileUtils.cp('license.txt', output_directory+'/license.txt')
 FileUtils.cp('html/template.html', output_directory+'/template.html')
 
 #concat JavaScript into a single file and minify

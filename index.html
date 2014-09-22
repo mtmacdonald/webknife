@@ -7,7 +7,7 @@
   <title>Webknife - a web presentation framework</title>
 
   <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
-  <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
+  <link rel="stylesheet" href="framework/framework.min.css" type="text/css" />
  
   <style>
   #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
@@ -24,7 +24,7 @@
 
   <!--load scripts second-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="../framework/framework.min.js"></script>
+  <script src="framework/framework.min.js"></script>
 
   <!--inline scripts last-->
  </head>
@@ -34,27 +34,26 @@
  <header>
  <div class="w-fixed-width">
 	<a href="./index.html">
-		<div style="background-image:url('../documentation/images/logo.png');">
+		<div style="background-image:url('docs/images/logo.png');">
 			Webknife - a web presentation framework <span style="font-weight:normal;">(version x.x.x)</span>
 		</div>
 	</a>
 	<div>
-		<a href="reference.html" class="w-button-link w-colored w-small">HTML Reference Guide</a>
-		<a href="change-log.html" class="w-button-link w-colored w-small">Change Log</a>
+		<a href="docs/reference.html" class="w-button-link w-colored w-small">HTML Reference Guide</a>
+		<a href="docs/change-log.html" class="w-button-link w-colored w-small">Change Log</a>
 	</div>
  </div>
  </header>
 
  <div id="banner"><div class="w-fixed-width">
    <h1 class="w-massive w-center w-no-underline">Make elegant web interfaces in minutes.</h1>
-   <img class="w-center" src="images/overview.png"  alt="overview" />
+   <img class="w-center" src="docs/images/overview.png"  alt="overview" />
  </div></div>
  
  <div id="banner-buttons"><div class="w-fixed-width">
   <span class="w-center">
-  	<a href="http://www.assembla.com/spaces/webknife/documents" class="w-button-link w-colored w-large w-flat spaced">Download</a>
-	<a href="http://www.assembla.com/spaces/webknife/support/tickets" class="w-button-link w-dark w-flat lowered spaced">Report Issues</a>
-	<a href="http://www.assembla.com/spaces/webknife/support/tickets" class="w-button-link w-flat lowered">Do you use Webknife?</a>
+  <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large w-flat spaced">Download</a>
+	<a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark w-flat lowered spaced">Report Issues</a>
   </span>
  </div></div>
  
@@ -69,7 +68,7 @@
  <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('images/large-logo.png')"></p>
  <ul>
   <li>A gridless CSS3 and HTML5 framework</li>
-  <li>A <a href="reference.html">reference syntax</a> for production-ready user interface components</li>
+  <li>A <a href="docs/reference.html">reference syntax</a> for production-ready user interface components</li>
   <li>Extended JavaScript components (requires jQuery)</li>
  </ul>
 
@@ -86,7 +85,9 @@
   <li>Tables</li>
   <li>Icons</li>  
   <li>Inputs and Forms</li>
+  <li>ReCAPTCHA</li>  
   <li>Datepicker</li>
+  <li>Modal dialogs</li>
   <li>Typography</li>
   <li>Alignment</li>
  </ul>
@@ -95,41 +96,6 @@
  
  <p>Webknife supports the current and prior major release of Chrome, Firefox, Internet Explorer and Safari on a rolling basis.</p>
  
- <table class="w-table w-fixed w-stripe">
- <caption>Webknife x.x.x browser support policy</caption>
-	<thead>
-		<tr>
-			<th>Browser</th>
-			<th>Current</th>
-			<th>Prior</th>
-		</tr>
-	</thead>
-	<tfoot>
-	</tfoot>
-	<tbody>
-		<tr>
-			<td><a href="http://www.google.com/chrome">Chrome</a></td>
-			<td>24</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td><a href="http://www.mozilla.org">Firefox</a></td>
-			<td>18</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie">Internet Explorer</a></td>
-			<td>10</td>
-			<td>9</td>
-		</tr>
-		<tr>
-			<td><a href="http://www.apple.com/safari/">Safari</a></td>
-			<td>6</td>
-			<td>5.1</td>
-		</tr>
-	</tbody>
- </table>
-
  <h2>How to get started</h2>
  
  <table  class="w-table w-fixed w-stripe" style="text-align:left; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
@@ -147,14 +113,14 @@
  <tr style="padding:0; margin:0; ">
   <td style="padding:10px; margin:0;" >
    <ul>
-    <li><a href="https://www.assembla.com/spaces/webknife/documents">Download</a> a copy of the framework for each new web project</li>
+    <li><a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework for each new web project</li>
 	<li>Keep the <strong>framework</strong> directory as part of your project</li>
    </ul>
   </td>
   <td style="padding:10px; margin:0;" >
    <ul>
-    <li>Edit <a href="../framework/template.html">template.html</a> (a blank canvas for any new web pages)</li>
-	<li>Copy and paste from <a href="reference.html">reference.html</a> (production-tested HTML snippets)</li>
+    <li>Edit <a href="framework/template.html">template.html</a> (a blank canvas for any new web pages)</li>
+	<li>Copy and paste from <a href="docs/reference.html">reference.html</a> (production-tested HTML snippets)</li>
    </ul>
   </td>
   <td style="padding:10px; margin:0;" >
@@ -172,8 +138,8 @@
  <footer>
 	<div><p class="w-fixed-width">&nbsp;</p></div>
 	<div class="w-fixed-width">
-		<p>&copy; 2012 <a href="http://webknife.org/">The Webknife Project</a></p>
-		<p><a href="../framework/license.txt">Code license</a></p>
+    <p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
+		<p><a href="LICENSE">Code license</a></p>
 	</div>
  </footer>
  
