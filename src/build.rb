@@ -37,7 +37,7 @@ require 'base64'
 FileUtils.cp('html/template.html', output_directory+'/template.html')
 
 #concat JavaScript into a single file and minify
-uglify = 'cat js/* | uglifyjs -o "'+output_directory+'/framework.min.js"'
+uglify = 'cat js/* | uglifyjs --comments -o "'+output_directory+'/framework.min.js"'
 IO.popen(uglify)
 
 #generate the image sprite
