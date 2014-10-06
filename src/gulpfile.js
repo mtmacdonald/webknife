@@ -35,8 +35,8 @@ gulp.task('css', function() {
         }))
         .pipe(gulp.dest('./less'));
 
-    gulp.src('./less/main.less')
-        .pipe(less())
+    gulp.src('./style/main.scss')
+        .pipe(sass())
         .pipe(minifyCSS())
         .pipe(concat('framework.min.css'))
         .pipe(gulp.dest(config.build_directory));

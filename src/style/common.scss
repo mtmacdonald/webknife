@@ -1,0 +1,63 @@
+
+/*
+	:focus styling
+	
+	why? - http://outlinenone.com/
+	
+	Firefox issue (workaround):
+	outline appears outside the box-shadow: http://stackoverflow.com/questions/7833587/css-outline-not-rendering-correctly-in-firefox
+		- workaround is to implement inset box-shadow
+		- avoid using browser-specific workaround (-moz-outline-offset, outline-offset)
+		- avoid using border instead of outline because it can impact on sizing
+
+	Webkit issue (minor):
+	box-shadow does work for select, radio, and checkbox inputs - http://code.google.com/p/chromium/issues/detail?id=96192
+		- avoid using -webkit-appearance: none because it worsens input usability
+		
+	Webkit issue (minor):
+	In Webkit, elements do not receive focus when clicked:
+		- https://bugs.webkit.org/show_bug.cgi?id=22261
+*/
+
+a:focus, button:focus, input[type="button"]:focus, input[type="submit"]:focus {
+	color: $focus!important;
+	outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus, textarea:focus, select:focus {
+	outline: $focus thin solid;
+	box-shadow: inset 0 0 8px $focus;
+}
+
+/*
+ reused entities
+*/
+
+.w-clear-after::after, .w-clear { clear: both; height: 0; visibility: hidden; display: block; content:" "; } //'use to clear floats'
+
+@mixin border($width: 1px) { border: $width solid $border; }
+
+@mixin fixed-color-text($color: $brand-color) {
+	color:$color;
+	a, a:hover, a:active, a:visited, .w-false-link, .w-false-link:hover{ color: $color;}
+}
+
+/*
+ alignment
+*/
+
+.w-left {text-align: left; display: block; margin-left: 0; margin-right: auto;  }
+.w-right {text-align: right; display: block; margin-left: auto; margin-right: 0;  }
+.w-center {text-align: center; display: block; margin-left: auto; margin-right: auto; }
+
+.w-inline { display: inline; }
+
+/*
+ misc. entities
+*/
+
+#w-browser-warning { text-align: center; }
+
+
+
+

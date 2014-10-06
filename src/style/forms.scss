@@ -1,0 +1,305 @@
+
+/*
+ form configuration
+*/
+
+$form-width: 600px;
+$form-vertical-padding: 20px;
+$form-horizontal-padding: 40px;
+
+$form-font-size: 14px;
+$input-height: 20px;
+$input-vertical-padding: 4px;
+$input-horizontal-padding: 6px;
+
+/*
+ input width - do not edit this!
+*/
+
+$input-width: $form-width - ( (2 * $input-horizontal-padding) + 2); //'exclude horizontal input padding and border width'
+$select-input-width: $input-width + 14;
+$file-input-width: $input-width - 105; //'exclude file input button width'
+
+/*
+ input elements
+*/
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+{
+	height: $input-height;
+	line-height: $input-height;
+	font-size: $form-font-size;
+	border: 1px solid $border;
+		
+	&:hover {
+		border: 1px solid $focus; 
+	}
+	
+	&.w-form-error {
+		background-color: $error; 
+		border: 1px solid darken($error, 60%); 
+	}
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="radio"],
+input[type="checkbox"]
+{
+	vertical-align: middle;
+	padding: $input-vertical-padding $input-horizontal-padding;
+}
+
+textarea {
+	height: auto;
+	resize: vertical;
+}
+
+select { //'make select input match the other input heights'
+	height: $input-height + 10;
+	line-height: $input-height + 10;
+}
+
+input[type="radio"]+label, 
+input[type="checkbox"]+label { 
+	padding: 0 10px 0 4px;
+	vertical-align: middle;
+}
+
+//'hide the file input because a fake file input implementation is used instead'
+//'can't use display: none; because some browsers disable the file input when it is not visible. Instead position off screen'
+input[type="file"] {
+	position: absolute;
+	tabindex: -1;
+	top: -9999px;
+	left: -9999px;
+}
+
+.w-file-input {
+	margin-right: 10px;
+}
+
+/*
+ vertical forms
+*/
+
+.w-vertical-form {
+	
+	width: $form-width;
+	
+	form {
+
+		width: $form-width; //'inner-box only, may expand with padding'
+		text-align: left; //'explicitly set text-alignment in case in case the parent div has an alignment class set'
+		
+		fieldset {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+		fieldset:not(:first-child) {
+			margin-top: 20px;
+		}
+
+		legend {
+			width: $form-width;
+			padding: 10px 0 10px 0;
+			font-size: 18px;
+			font-weight: bold;
+			border-bottom: 1px solid $border;
+			margin-bottom: 20px;
+		}
+
+		legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
+			-webkit-margin-top-collapse : separate;
+		}
+
+		textarea,
+		input[type="text"],
+		input[type="password"],
+		{
+			display: block;
+			width: $input-width;
+		}
+
+		select {
+			display: block;
+			width: $select-input-width;
+		}
+		
+		label, .w-form-label {
+			display: block;
+			width: $form-width;
+			margin-top: 20px;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
+			display:inline;
+			font-weight: normal;
+			margin: 0;
+		}
+
+		input[type="text"].w-file-input {
+			width: $file-input-width;
+			display: inline;
+		}
+
+		.w-input-description, .w-input-error {
+			font-size: 11px;
+			font-style: italic;
+			margin: 0;
+			padding: 0;
+			text-align: right;
+			position: relative;
+			top: 4px;
+		}
+
+		.w-input-error {
+			color: darken($error, 60%) 
+		}
+
+		input[type="submit"] {
+			margin-top: 20px;
+		}
+
+	}
+
+}
+
+.w-background-form {
+	padding: 20px 40px 20px 40px;
+	background-color: $light;
+}
+
+/*
+ recaptcha
+*/
+
+#recaptcha_image {
+	background-color: white;
+	border: 1px solid $border; 
+	float: left;
+	margin-top: 5px!important;
+	padding: 5px;
+}
+#recaptcha_links { 
+	float: left; 
+	margin-top: 5px;
+	padding-left: 10px;
+
+	a {
+		font-style:italic;
+		font-size:11px;
+		line-height: 9px;
+		color: #666;
+	}
+}
+
+/* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
+iframe { 
+	display:none !important;
+}
+header iframe, section iframe, footer iframe, div iframe { 
+	display:inline; 
+}
+
+/*
+ datepicker
+*/
+
+.Zebra_DatePicker { line-height:15px; } /*override defaults for body*/
+.w-datepicker{ width:150px; /*background-image: url('images/zebra_datepicker/calendar.png'); background-position:98% 50%!important; background-repeat:no-repeat;*/ cursor: pointer; }
+.w-datepicker{ border: 1px solid $border;  height: 24px; line-height: 24px; font: 14px verdana;} .w-datepicker:focus{ border: 1px solid $brand-color;}  /*match with form styles*/
+.w-datepicker:hover { /*background-image: url('images/zebra_datepicker/calendar-hovered.png');*/ }
+.w-datepicker.w-disabled, .w-datepicker.w-disabled:hover { /*background-image: url('images/zebra_datepicker/calendar-disabled.png');*/ }
+
+/*
+
+    Zebra_DatePicker: a lightweight jQuery date picker plugin
+
+    default stylesheet
+    copyright (c) 2011 - 2012 Stefan Gabos
+    http://stefangabos.ro/jquery/zebra-datepicker/
+
+*/
+
+.Zebra_DatePicker *                          { margin: 0; padding: 0; color: #000 }
+.Zebra_DatePicker                            { position: absolute; background: #666; border: 3px solid #666; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; display: none; z-index: 100; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 13px }
+
+/* = GLOBALS
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker table                      { border-collapse: collapse; border-spacing: 0 }
+
+.Zebra_DatePicker td,
+.Zebra_DatePicker th                         { text-align: center; padding: 5px 0 }
+
+.Zebra_DatePicker td                         { cursor: pointer }
+
+.Zebra_DatePicker .dp_daypicker,
+.Zebra_DatePicker .dp_monthpicker,
+.Zebra_DatePicker .dp_yearpicker             { margin-top: 3px }
+
+.Zebra_DatePicker .dp_daypicker td,
+.Zebra_DatePicker .dp_daypicker th,
+.Zebra_DatePicker .dp_monthpicker td,
+.Zebra_DatePicker .dp_yearpicker td         { background: #E8E8E8; width: 30px; border: 1px solid #385691 }
+
+/* = HEADER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_header td             { color: #FFF }
+
+.Zebra_DatePicker .dp_header .dp_previous,
+.Zebra_DatePicker .dp_header .dp_next       { width: 30px }
+
+.Zebra_DatePicker .dp_header .dp_caption    { font-weight: bold }
+.Zebra_DatePicker .dp_header .dp_hover      { background: #888; color: #FFF; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px }
+.Zebra_DatePicker .dp_header .dp_blocked    { color: #888; cursor: default }
+
+/* = DATEPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_daypicker th          { background: #AAA }
+.Zebra_DatePicker td.dp_not_in_month        { background: #F3F3F3; color: #CDCDCD; cursor: default }
+.Zebra_DatePicker td.dp_weekend             { background: #D8D8D8 }
+.Zebra_DatePicker td.dp_weekend_disabled    { color: #CCC; cursor: default }
+.Zebra_DatePicker td.dp_selected            { background: #385691; color: #FFF !important }
+.Zebra_DatePicker td.dp_week_number         { background: #FFCC33; color: #555; cursor: text; font-style: italic }
+
+/* = MONTHPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_monthpicker td        { width: 33% }
+
+/* = YEARPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_yearpicker td         { width: 33% }
+
+/* = FOOTER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_footer                { margin-top: 3px }
+.Zebra_DatePicker .dp_footer td             { color: #FFF; padding: 2px; font-weight: bold }
+.Zebra_DatePicker .dp_footer .dp_hover      { background: #888; color: #FFF; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px }
+
+/* = SOME MORE GLOBALS (MUST BE LAST IN ORDER TO OVERWRITE PREVIOUS PROPERTIES)
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker td.dp_current             { color: #C40000 }
+.Zebra_DatePicker td.dp_disabled_current    { color: #E38585 }
+.Zebra_DatePicker td.dp_disabled            { background: #F3F3F3; color: #CDCDCD; cursor: default }
+.Zebra_DatePicker td.dp_hover               { background: #385691; color: #FFF }
+
+/* = ICON
+----------------------------------------------------------------------------------------------------------------------*/
+button.Zebra_DatePicker_Icon                { position: absolute; width: 16px; height: 16px; background: url('calendar.png') no-repeat left top; text-indent: -9000px; border: none; cursor: pointer; margin: 0 0 0 5px; padding: 0; line-height: 0 }
+button.Zebra_DatePicker_Icon_Disabled       { background-image: url('calendar-disabled.png') }
+button.Zebra_DatePicker_Icon_Inside         { margin: 0 3px 0 0 }
+
+/* Fix icon position in Chrome & Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    button.Zebra_DatePicker_Icon_Inside     { margin: 0 5px 0 0 }
+}
