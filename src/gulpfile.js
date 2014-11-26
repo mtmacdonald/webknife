@@ -7,6 +7,7 @@ var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var sprite = require("css-sprite").stream;
 var gulpif = require("gulp-if");
+var svgicons2svgfont = require('gulp-svgicons2svgfont');
 
 //for processing JavaScript
 var browserify = require('browserify');
@@ -40,6 +41,20 @@ gulp.task('css', function() {
         .pipe(minifyCSS())
         .pipe(concat('framework.min.css'))
         .pipe(gulp.dest(config.build_directory));
+
+});
+
+gulp.task('icons', function() {
+
+  gulp.src("./images/svg/*.svg")
+    .pipe(svgicons2svgfont({
+      fontName: 'icons'
+     }))
+    .on('codepoints', function(codepoints) {
+      console.log(codepoints);
+      // Here generate CSS/SCSS  for your codepoints ...
+    })
+    .pipe(gulp.dest(config.build_directory));
 
 });
 
