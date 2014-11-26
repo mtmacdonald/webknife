@@ -1,5 +1,11 @@
 var gulp = require('gulp');
+var replace = require('gulp-replace');
+var insert = require('gulp-insert');
+var file = require('gulp-file');
 var concat = require('gulp-concat');
+
+var svgmin = require('gulp-svgmin');
+var svgstore = require('gulp-svgstore');
 
 //for processing styles
 var sass = require('gulp-sass');
@@ -22,7 +28,7 @@ var config = {
     'build_directory' : '../framework/'
 };
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', ['css', 'js', 'icon']);
 
 gulp.task('css', function() {
 
@@ -43,6 +49,14 @@ gulp.task('css', function() {
 
 });
 
+gulp.task('icon', function() {
+    gulp.src('./images/svg/*.svg')
+        .pipe(svgmin())
+        .pipe(insert.wrap("var foo='", "';"))
+        .pipe(concat('framework.icons.js'))
+        .pipe(gulp.dest(config.build_directory));
+});
+
 gulp.task('js', function() {
 
     gulp.src('./js/*.js')
@@ -60,7 +74,6 @@ gulp.task('js', function() {
 });
 
 gulp.task('sniff', function() {
-	//for correct way to use browserify in gulp see https://www.npmjs.org/package/vinyl-source-stream
     return gulp.src('./js/*.js')
         .pipe(jscs({
             rc: '.jscsrc',
