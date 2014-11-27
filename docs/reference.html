@@ -23,7 +23,8 @@
 		this.inject = function () {
 			$('.w-svg-icon').each(function () {
 				var name = $(this).data('name');
-    			$(this).html(window[name]);
+				console.log(name);
+    			$(this).html(w_icons[name]);
 			});
 		};
 
@@ -75,8 +76,8 @@
  <section>
  <div class="w-fixed-width">
  
- <div class="w-svg-icon" data-name="w_icon_chatbubble_working" style="width:25px; height:25px;"></div>
- <div class="w-svg-icon" data-name="w_icon_earth" style="width:50px; height:50px;"></div>
+ <div class="w-svg-icon" data-name="chatbubble_working" style="width:25px; height:25px;"></div>
+ <div class="w-svg-icon" data-name="earth" style="width:50px; height:50px;"></div>
 
  <h1>Reference for breadcrumbs</h1>
 
