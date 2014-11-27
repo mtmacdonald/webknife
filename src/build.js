@@ -14,7 +14,6 @@ fs.readdir(svg_dir, function (err, files) {
             $ = cheerio.load(content, { xmlMode: true });
             var svg = $('svg');
             var viewBox = '';
-            //console.log(svg.text());
             var image = svg.html().replace(/\r?\n|\r/g, ''); //remove line breaks
             var name = file.split('.')[0].replace(/-/g, '_');
             var attributes = 'viewBox="0 0 512 512"';

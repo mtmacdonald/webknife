@@ -21,12 +21,18 @@
 	function svgInject() {
 
 		this.inject = function () {
-			$('.w-svg-icon').html(w_icon_chatbubble_working);
+			$('.w-svg-icon').each(function () {
+				var name = $(this).data('name');
+    			$(this).html(window[name]);
+			});
 		};
 
 	};
 
 	$(document).ready(function() {
+
+		var injector = new svgInject();
+		injector.inject();
 
 		//bind the datepicker plugin
 		$('#datepicker').Zebra_DatePicker(datePickerOptions);
@@ -41,9 +47,6 @@
 		$('#modal').click(function(){
 			$(this).modal(modalOptions);
 		});
-
-		var injector = new svgInject();
-		injector.inject();
 
 	});
   </script>
@@ -67,8 +70,8 @@
  <section>
  <div class="w-fixed-width">
  
- <div class="w-svg-icon" style="width:25px; height:25px;"></div>
- <div class="w-svg-icon" style="width:50px; height:50px;"></div>
+ <div class="w-svg-icon" data-name="w_icon_chatbubble_working" style="width:25px; height:25px;"></div>
+ <div class="w-svg-icon" data-name="w_icon_earth" style="width:50px; height:50px;"></div>
 
  <h1>Reference for breadcrumbs</h1>
 
