@@ -50,11 +50,18 @@ gulp.task('css', function() {
 });
 
 gulp.task('icon', function() {
+
+    gulp.src('./images/svg/*.svg')
+        .pipe(svgmin())
+        .pipe(svgstore({ fileName: 'icons.svg', prefix: 'icon-' }))
+        .pipe(gulp.dest(config.build_directory))
+/*
     gulp.src('./images/svg/*.svg')
         .pipe(svgmin())
         .pipe(insert.wrap("var foo='", "';"))
         .pipe(concat('framework.icons.js'))
         .pipe(gulp.dest(config.build_directory));
+*/
 });
 
 gulp.task('js', function() {
