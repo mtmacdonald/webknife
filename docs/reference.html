@@ -23,7 +23,6 @@
 		this.inject = function () {
 			$('.w-svg-icon').each(function () {
 				var name = $(this).data('name');
-				console.log(name);
     			$(this).html(w_icons[name]);
 			});
 		};
@@ -52,6 +51,7 @@
 	});
   </script>
   <style>
+  .w-svg-icon {width:25px; height:25px; display:inline-block;}
   .w-svg-icon svg {
   	fill: steelblue;
   }
@@ -75,9 +75,6 @@
  
  <section>
  <div class="w-fixed-width">
- 
- <div class="w-svg-icon" data-name="chatbubble_working" style="width:25px; height:25px;"></div>
- <div class="w-svg-icon" data-name="earth" style="width:50px; height:50px;"></div>
 
  <h1>Reference for breadcrumbs</h1>
 
@@ -184,6 +181,85 @@
 
  <h1>Reference for icons</h1>
  
+<div class="w-svg-icon" data-name="alert_circled"></div>
+<div class="w-svg-icon" data-name="arrow_down_a"></div>
+<div class="w-svg-icon" data-name="arrow_resize"></div>
+<div class="w-svg-icon" data-name="arrow_left_a"></div>
+<div class="w-svg-icon" data-name="arrow_up_a"></div>
+<div class="w-svg-icon" data-name="arrow_right_a"></div>
+<div class="w-svg-icon" data-name="calendar"></div>
+<div class="w-svg-icon" data-name="camera"></div>
+<div class="w-svg-icon" data-name="card"></div>
+<div class="w-svg-icon" data-name="chatbox"></div>
+<div class="w-svg-icon" data-name="chatboxes"></div>
+<div class="w-svg-icon" data-name="chatbubble_working"></div>
+<div class="w-svg-icon" data-name="checkmark_circled"></div>
+<div class="w-svg-icon" data-name="checkmark"></div>
+<div class="w-svg-icon" data-name="chevron_down"></div>
+<div class="w-svg-icon" data-name="archive"></div>
+<div class="w-svg-icon" data-name="chevron_right"></div>
+<div class="w-svg-icon" data-name="chevron_up"></div>
+<div class="w-svg-icon" data-name="chevron_left"></div>
+<div class="w-svg-icon" data-name="clock"></div>
+<div class="w-svg-icon" data-name="close_circled"></div>
+<div class="w-svg-icon" data-name="close"></div>
+<div class="w-svg-icon" data-name="code"></div>
+<div class="w-svg-icon" data-name="compose"></div>
+<div class="w-svg-icon" data-name="document_text"></div>
+<div class="w-svg-icon" data-name="connection_bars"></div>
+<div class="w-svg-icon" data-name="document"></div>
+<div class="w-svg-icon" data-name="edit"></div>
+<div class="w-svg-icon" data-name="earth"></div>
+<div class="w-svg-icon" data-name="email"></div>
+<div class="w-svg-icon" data-name="flash"></div>
+<div class="w-svg-icon" data-name="folder"></div>
+<div class="w-svg-icon" data-name="gear_a"></div>
+<div class="w-svg-icon" data-name="grid"></div>
+<div class="w-svg-icon" data-name="help_buoy"></div>
+<div class="w-svg-icon" data-name="help"></div>
+<div class="w-svg-icon" data-name="help_circled"></div>
+<div class="w-svg-icon" data-name="home"></div>
+<div class="w-svg-icon" data-name="image"></div>
+<div class="w-svg-icon" data-name="images"></div>
+<div class="w-svg-icon" data-name="information_circled"></div>
+<div class="w-svg-icon" data-name="ios7_cart"></div>
+<div class="w-svg-icon" data-name="ios7_printer"></div>
+<div class="w-svg-icon" data-name="levels"></div>
+<div class="w-svg-icon" data-name="link"></div>
+<div class="w-svg-icon" data-name="locked"></div>
+<div class="w-svg-icon" data-name="log_in"></div>
+<div class="w-svg-icon" data-name="log_out"></div>
+<div class="w-svg-icon" data-name="loop"></div>
+<div class="w-svg-icon" data-name="minus_circled"></div>
+<div class="w-svg-icon" data-name="minus"></div>
+<div class="w-svg-icon" data-name="monitor"></div>
+<div class="w-svg-icon" data-name="clipboard"></div>
+<div class="w-svg-icon" data-name="network"></div>
+<div class="w-svg-icon" data-name="person_group"></div>
+<div class="w-svg-icon" data-name="person_add"></div>
+<div class="w-svg-icon" data-name="person"></div>
+<div class="w-svg-icon" data-name="paperclip"></div>
+<div class="w-svg-icon" data-name="plus"></div>
+<div class="w-svg-icon" data-name="refresh"></div>
+<div class="w-svg-icon" data-name="pie_graph"></div>
+<div class="w-svg-icon" data-name="search"></div>
+<div class="w-svg-icon" data-name="settings"></div>
+<div class="w-svg-icon" data-name="plus_circled"></div>
+<div class="w-svg-icon" data-name="share"></div>
+<div class="w-svg-icon" data-name="social_youtube"></div>
+<div class="w-svg-icon" data-name="speedometer"></div>
+<div class="w-svg-icon" data-name="star"></div>
+<div class="w-svg-icon" data-name="telephone"></div>
+<div class="w-svg-icon" data-name="trash_b"></div>
+<div class="w-svg-icon" data-name="unlocked"></div>
+<div class="w-svg-icon" data-name="stats_bars"></div>
+<div class="w-svg-icon" data-name="upload"></div>
+<div class="w-svg-icon" data-name="social_rss"></div>
+<div class="w-svg-icon" data-name="wifi"></div>
+<div class="w-svg-icon" data-name="wrench"></div>
+<div class="w-svg-icon" data-name="wand"></div>
+
+
  <div style="background-color:#ddd; height:20px; width:600px; text-align:center;">
 	<span class="w-icon w-icon-tick"></span>
 	<span class="w-icon w-icon-cross"></span>

@@ -16,7 +16,8 @@ fs.readdir(svg_dir, function (err, files) {
             var viewBox = '';
             var image = svg.html().replace(/\r?\n|\r/g, '').replace(/\t/g, '') //remove line breaks and tabs
             var name = file.split('.')[0].replace(/-/g, '_'); //replace hyphens with underscores
-            var attributes = 'viewBox="0 0 512 512"';
+            //console.log('<div class="w-svg-icon" data-name="'+name+'"></div>');
+            var attributes = 'viewBox="'+svg.attr('viewBox')+'"';
             var svg = '<svg '+attributes+'>'+image+'</svg>';
             var item = {
                 name: name,
