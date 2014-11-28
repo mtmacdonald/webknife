@@ -35,15 +35,6 @@ gulp.task('default', ['css', 'js', 'icon']);
 
 gulp.task('css', function() {
 
-    gulp.src('./images/icons/*.png')
-        .pipe(sprite({
-          base64: true,
-          style: 'sprite.scss',
-          processor: 'css',
-          prefix: 'w-icon'
-        }))
-        .pipe(gulp.dest('./style'));
-
     gulp.src('./style/main.scss')
         .pipe(sass())
         .pipe(minifyCSS())
