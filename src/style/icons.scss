@@ -2,6 +2,17 @@
  icons
 */
 
+.w-icon {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	margin: 0;
+}
+
+.w-icon svg {
+  	fill: $brand-color;
+}
+
 .w-icon {display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat; }
 #content .fixed_width .w-icon { margin: 0; } /*undo default div margin*/
 td.center {display: table-cell;}

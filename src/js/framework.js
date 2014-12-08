@@ -63,7 +63,7 @@ if (window.attachEvent) {
  function svgInject() {
   this.inject = function (container) {
     container = typeof container !== 'undefined' ? container : ''; //default value
-    $(container+' .w-svg-icon').each(function () {
+    $(container+' .w-icon').each(function () {
       var name = $(this).data('name');
       $(this).html(w_icons[name]);
     });
@@ -112,7 +112,5 @@ $(document).ready(function() {
 	fileName = fileName.split('/').pop(); //split path by forward slash and select the last segment (filename). This is done to remove "C:\fakepath\ inserted by the browser.
 	$(this).next('input[type=text]').val(fileName);
  });
-
-
 
 });

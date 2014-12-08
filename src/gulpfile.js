@@ -11,8 +11,11 @@ var svgstore = require('gulp-svgstore');
 var sass = require('gulp-sass');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
-var sprite = require("css-sprite").stream;
 var gulpif = require("gulp-if");
+
+//for svg icon processing
+var fs = require('fs');
+var cheerio = require('cheerio');
 
 //for processing JavaScript
 var browserify = require('browserify');
@@ -23,8 +26,7 @@ var uglify = require('gulp-uglify');
 //for static analysis
 var jscs = require('gulp-jscodesniffer');
 
-var fs = require('fs');
-var cheerio = require('cheerio');
+
 
 //config
 var config = {
@@ -59,7 +61,7 @@ gulp.task('icon', function() {
                 var viewBox = '';
                 var image = svg.html().replace(/\r?\n|\r/g, '').replace(/\t/g, '') //remove line breaks and tabs
                 var name = file.split('.')[0].replace(/-/g, '_'); //replace hyphens with underscores
-                //console.log('<div class="w-svg-icon" data-name="'+name+'"></div>');
+                //console.log('<div class="w-icon" data-name="'+name+'"></div>');
                 var attributes = 'viewBox="'+svg.attr('viewBox')+'"';
                 var svg = '<svg '+attributes+'>'+image+'</svg>';
                 var item = {
