@@ -1,17 +1,9 @@
 var gulp = require('gulp');
-var replace = require('gulp-replace');
-var insert = require('gulp-insert');
-var file = require('gulp-file');
 var concat = require('gulp-concat');
-
-var svgmin = require('gulp-svgmin');
-var svgstore = require('gulp-svgstore');
 
 //for processing styles
 var sass = require('gulp-sass');
-var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
-var gulpif = require("gulp-if");
 
 //for svg icon processing
 var fs = require('fs');
@@ -26,16 +18,14 @@ var uglify = require('gulp-uglify');
 //for static analysis
 var jscs = require('gulp-jscodesniffer');
 
-
-
 //config
 var config = {
     'build_directory' : '../framework/'
 };
 
-gulp.task('default', ['css', 'js', 'icon']);
+gulp.task('default', ['style', 'icon', 'js']);
 
-gulp.task('css', function() {
+gulp.task('style', function() {
 
     gulp.src('./style/main.scss')
         .pipe(sass())
