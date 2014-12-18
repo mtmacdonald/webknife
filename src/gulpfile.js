@@ -79,7 +79,13 @@ gulp.task('icon', function() {
 
 gulp.task('js', function() {
 
-    gulp.src('./js/*.js')
+    gulp.src([
+            './js/jquery.min.js',
+            './js/moment.min.js',
+            './js/pikaday.js',
+            './js/framework.js',
+            './js/modal.js',
+        ])
         .pipe(uglify())
         .pipe(concat('framework.min.js'))
         .pipe(gulp.dest(config.build_directory));

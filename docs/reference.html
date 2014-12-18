@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
 
   <!--load scripts second-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="../framework/framework.min.js"></script>
   <script src="../framework/framework.icons.js"></script>
 
@@ -25,7 +24,7 @@
 		injector.inject(); //or use injector.inject('#foo') to only inject inside the matching elements
 
 		//bind the datepicker plugin
-		$('#datepicker').Zebra_DatePicker(datePickerOptions);
+		//$('#datepicker').Zebra_DatePicker(datePickerOptions);
 
 		//bind the modal dialog plugin
 		var modalOptions = {
@@ -38,9 +37,42 @@
 			$(this).modal(modalOptions);
 		});
 
+    var datepicker = $('#datepicker').pikaday({
+        showTime: false,
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
+    var datetimepicker = $('#datetimepicker').pikaday({
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
+    var datetimepicker_from = $('#datepicker-from').pikaday({
+        showTime: false,
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
+    var datetimepicker_to = $('#datepicker-to').pikaday({
+        showTime: false,
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
 	});
 
   </script>
+
+
   <style>
   /*
    Optionally style SVG icons using CSS
@@ -274,10 +306,20 @@
   
   <input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
   
-  <h2>Datepicker input</h2>
+  <h2>Date and time</h2>
   
+  <p>Date input:</p>  
+
   <input id="datepicker" class="w-datepicker" type="text">
+
+  <p>Datetime input:</p>
+
+  <input id="datetimepicker" class="w-datepicker" type="text">
   
+  <p>Paired date input:</p>
+
+  <input id="datepicker-from" class="w-datepicker" type="text"> to <input id="datepicker-to" class="w-datepicker" type="text">
+
   <h2>Forms</h2>
  
   <div class="w-vertical-form"><form action="#">
@@ -435,7 +477,7 @@ int main()
 	<div><p class="w-fixed-width">Optional footnote&nbsp;</p></div>
 	<div class="w-fixed-width">
 		<p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
-		<p><a href="../LICENSE">Code license</a></p>
+		<p><a href="../LICENSE">MIT license</a></p>
 	</div>
  </footer>
  
