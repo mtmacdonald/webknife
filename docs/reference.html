@@ -23,9 +23,6 @@
 		var injector = new svgInject();
 		injector.inject(); //or use injector.inject('#foo') to only inject inside the matching elements
 
-		//bind the datepicker plugin
-		//$('#datepicker').Zebra_DatePicker(datePickerOptions);
-
 		//bind the modal dialog plugin
 		var modalOptions = {
 			'width' : 350,
@@ -38,30 +35,6 @@
 		});
 
     var datepicker = $('#datepicker').pikaday({
-        showTime: false,
-        firstDay: 1,
-        minDate: new Date('2000-01-01'),
-        maxDate: new Date('2020-12-31'),
-        yearRange: [2000,2020]
-    });
-
-    var datetimepicker = $('#datetimepicker').pikaday({
-        firstDay: 1,
-        minDate: new Date('2000-01-01'),
-        maxDate: new Date('2020-12-31'),
-        yearRange: [2000,2020]
-    });
-
-    var datetimepicker_from = $('#datepicker-from').pikaday({
-        showTime: false,
-        firstDay: 1,
-        minDate: new Date('2000-01-01'),
-        maxDate: new Date('2020-12-31'),
-        yearRange: [2000,2020]
-    });
-
-    var datetimepicker_to = $('#datepicker-to').pikaday({
-        showTime: false,
         firstDay: 1,
         minDate: new Date('2000-01-01'),
         maxDate: new Date('2020-12-31'),
@@ -306,19 +279,9 @@
   
   <input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
   
-  <h2>Date and time</h2>
-  
-  <p>Date input:</p>  
+  <h2>Datepicker</h2>
 
   <input id="datepicker" class="w-datepicker" type="text">
-
-  <p>Datetime input:</p>
-
-  <input id="datetimepicker" class="w-datepicker" type="text">
-  
-  <p>Paired date input:</p>
-
-  <input id="datepicker-from" class="w-datepicker" type="text"> to <input id="datepicker-to" class="w-datepicker" type="text">
 
   <h2>Forms</h2>
  

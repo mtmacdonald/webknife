@@ -195,6 +195,8 @@ http://nicolasgallagher.com/micro-clearfix-hack/
     border-radius: 3px !important;
 }
 
-.pika-time {
-    margin: 7px auto 7px;
+/* styling for abbr */
+.pika-table abbr {
+    border-bottom: none;
+    cursor: help;
 }
