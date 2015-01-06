@@ -211,8 +211,11 @@ header iframe, section iframe, footer iframe, div iframe {
 	display:inline; 
 }
 
-/* fix Pikaday/Webknife select height clash */
+/* fix pikaday/webknife select height clash */
 .pika-title select {
 	height: 19px;
 	line-height: normal;
 }
+
+/* fix pikaday/normilize font-weight clash */
+.pika-select, .pika-button {font-weight: normal;}
