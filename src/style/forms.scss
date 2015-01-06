@@ -219,3 +219,8 @@ header iframe, section iframe, footer iframe, div iframe {
 
 /* fix pikaday/normilize font-weight clash */
 .pika-select, .pika-button {font-weight: normal;}
+
+/* fix pikaday cursor style that makes no sense */
+.pika-table abbr {
+    cursor: default;
+}
