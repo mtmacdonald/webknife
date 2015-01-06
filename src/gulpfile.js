@@ -82,6 +82,7 @@ gulp.task('js', function() {
     gulp.src([
             './js/jquery.min.js',
             './js/moment.min.js',
+            './js/chosen.jquery.js',
             './js/pikaday.js',
             './js/framework.js',
             './js/modal.js',

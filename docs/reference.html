@@ -19,27 +19,31 @@
 
 	$(document).ready(function() {
 
-    //instantiate an svg injector to show SVG icons
-		var injector = new svgInject();
-		injector.inject(); //or use injector.inject('#foo') to only inject inside the matching elements
+    //multiselect
+    $(".chosen-select").chosen(); //activate the jQuery Chosen controls
 
-		//bind the modal dialog plugin
-		var modalOptions = {
-			'width' : 350,
-			'height' : 310,
-			'title' : 'Test modal dialog',
-			'html' : '<span>Example modal dialog content</span>'
-		};
-		$('#modal').click(function(){
-			$(this).modal(modalOptions);
-		});
+    //bind the modal dialog plugin
+    var modalOptions = {
+      'width' : 350,
+      'height' : 310,
+      'title' : 'Test modal dialog',
+      'html' : '<span>Example modal dialog content</span>'
+    };
+    $('#modal').click(function(){
+      $(this).modal(modalOptions);
+    });
 
+    //datepicker
     var datepicker = $('#datepicker').pikaday({
         firstDay: 1,
         minDate: new Date('2000-01-01'),
         maxDate: new Date('2020-12-31'),
         yearRange: [2000,2020]
     });
+
+    //instantiate an svg injector to show SVG icons
+		var injector = new svgInject();
+		injector.inject(); //or use injector.inject('#foo') to only inject inside the matching elements
 
 	});
 
@@ -268,7 +272,7 @@
 
  <h1>Reference for forms</h1>
 
-  <h2>Styled inputs</h2>
+  <h2>Styled inputs</h2> 
  
   <label for="name">Inline text: </label><input type="text" name="inline-text" id="inline-text" />
   <label for="inline-choices">Inline select: </label><select name="inline-choices" id="inline-choices"><option>Choice 1</option></select>
@@ -282,6 +286,16 @@
   <h2>Datepicker</h2>
 
   <input id="datepicker" class="w-datepicker" type="text">
+
+  <h2>Styled multiselect</h2>
+
+  <select multiple="multiple" class="chosen-select chosen-filter" data-placeholder="Select some fruit" style="width:170px">
+    <option value=""></option>
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>Orange</option>
+    <option>Pear</option>
+  </select>
 
   <h2>Forms</h2>
  
