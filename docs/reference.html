@@ -42,14 +42,16 @@
       if ($(this).text() === 'Show Code') {
         //show code sample
         var selector = $(this).parent().nextAll('.code').attr('id'); //get the id of the closest code block
-        var code = initial_dom.find('#'+selector); //fetch the actual code sample from the initial dom
+        var code = initial_dom.find('#'+selector).html(); //fetch the actual code sample from the initial dom
+        code = escapeHtml(code);
+        code = $.trim(code); //remove the whitespace from the beginning and end of string
 
         var block = $('<div><div class="demo-code-block"><pre><code></code></pre></div></div>');
-        block.find('code').append(escapeHtml(code.html()));
+        block.find('code').append(code);
 
         $(this).parent().after(block);
-hljs.initHighlighting.called = false;
-hljs.initHighlighting();
+        hljs.initHighlighting.called = false;
+        hljs.initHighlighting();
         $(this).text('Hide Code');
       } else {
         //hide code sample
