@@ -9,10 +9,12 @@
 
   <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
   <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
+  <link rel="stylesheet" href="../framework/highlight.min.css" type="text/css" />
 
   <!--load scripts second-->
   <script src="../framework/framework.min.js"></script>
   <script src="../framework/framework.icons.js"></script>
+  <script src="../framework/highlight.min.js"></script>
 
   <!--inline scripts last-->
   <script>
@@ -46,6 +48,8 @@
         block.find('code').append(escapeHtml(code.html()));
 
         $(this).parent().after(block);
+hljs.initHighlighting.called = false;
+hljs.initHighlighting();
         $(this).text('Hide Code');
       } else {
         //hide code sample
@@ -509,6 +513,10 @@ $(document).ready(function() {
 
 <h1 class="doc-heading"><span>Code blocks</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
 <div class="code" id="code-sample-code-blocks">
+<script>
+ hljs.initHighlightingOnLoad();
+</script>
+
 <pre>
 <code>//example code block
 #include <iostream>

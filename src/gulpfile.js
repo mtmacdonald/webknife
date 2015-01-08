@@ -23,7 +23,7 @@ var config = {
     'build_directory' : '../framework/'
 };
 
-gulp.task('default', ['style', 'icon', 'js']);
+gulp.task('default', ['style', 'icon', 'js', 'syntax']);
 
 gulp.task('style', function() {
 
@@ -98,6 +98,22 @@ gulp.task('js', function() {
 	//	.pipe(streamify(uglify()))
 	//	.pipe(streamify(concat('app.min.js')))
 	//	.pipe(gulp.dest(config.build_directory));
+});
+
+gulp.task('syntax', function() {
+    gulp.src([
+            './js/highlight.pack.js',
+       ])
+        .pipe(uglify())
+        .pipe(concat('highlight.min.js'))
+        .pipe(gulp.dest(config.build_directory));
+
+    gulp.src('./style/highlight.scss')
+        .pipe(sass())
+        .pipe(minifyCSS())
+        .pipe(concat('highlight.min.css'))
+        .pipe(gulp.dest(config.build_directory));
+
 });
 
 gulp.task('sniff', function() {
