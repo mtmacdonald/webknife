@@ -201,6 +201,10 @@ input[type="file"] {
 		line-height: 9px;
 		color: #666;
 	}
+
+	div {
+		margin: 0;
+	}
 }
 
 /* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
