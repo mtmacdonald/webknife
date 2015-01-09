@@ -3,35 +3,41 @@
  tabs
 */
 
-.w-tab {list-style: none; padding:0; margin:0!important;} /*override defaults for ul*/
+.w-tab {list-style: none; padding:0; margin:0;} /*override defaults for ul*/
 .w-tab li {
- float:left;
- margin-right:5px;
- font-size: 20px;
- display: block;
- padding: 10px 15px 10px 15px;
- background-color: $light;
- margin-bottom: -1px;
- border: 1px solid $border;
- border-width: 1px;
- position:relative;
- color: darken($dark, 10%);
+	float:left;
+	margin-right:5px;
+	font-size: 20px;
+	display: block;
+	background-color: $light;
+	margin-bottom: -1px;
+	border: 1px solid $border;
+	border-width: 1px;
+	position:relative;
+	color: darken($dark, 10%);
 }
 .w-tab li.w-active {
- background-color: $content-background;
- top: 1px;
- border-bottom: 0;
- color: $text;
- font-weight:bold;
+	background-color: $content-background;
+	top: 1px;
+	border-bottom: 0;
+	color: $text;
+	font-weight:bold;
 }
 .w-tab li:hover { cursor: pointer; background-color: $medium; }
 .w-tab li.w-active:hover{ cursor: auto; background-color: $content-background; }
 .w-tab li.w-disabled:hover{ cursor: auto; background-color: $light; }
-.w-tab li a { color: darken($dark, 10%); text-decoration: none; }
+.w-tab li span, .w-tab li a {
+	display: inline-block;
+	padding: 10px 15px 10px 15px;
+}
+.w-tab li a { 
+	color: darken($dark, 10%);
+	text-decoration: none;
+}
 
 .w-tab-content {
- border: 1px solid $border;
- padding: 15px;
- margin: 0;
+	border: 1px solid $border;
+	padding: 15px;
+	margin: 0;
 }
 .w-tab::after { clear: both; height: 0; visibility: hidden; display: block; content:"";}
