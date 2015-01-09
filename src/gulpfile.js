@@ -24,16 +24,23 @@ var config = {
     'build_directory' : '../framework/'
 };
 
+//options
+var uglify_options = {
+    preserveComments: 'some'
+};
+
+var autoprefixer_options = {
+    browsers: ['Explorer >= 9', 'last 2 versions'],
+    cascade: false
+};
+
 gulp.task('default', ['style', 'icon', 'js', 'syntax']);
 
 gulp.task('style', function() {
 
     gulp.src('./style/main.scss')
         .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['Explorer >= 9', 'last 2 versions'],
-            cascade: false
-        }))
+        .pipe(autoprefixer(autoprefixer_options))
         .pipe(minifyCSS())
         .pipe(concat('framework.min.css'))
         .pipe(gulp.dest(config.build_directory));
@@ -70,7 +77,10 @@ gulp.task('icon', function() {
                         result[icon.name] = icon.svg;
                     });
                     //prepare file
-                    var content = "var w_icons = "+JSON.stringify(result, null, 4);
+                    var content = '/*!\n';
+                    content += ' Webknife (c) 2014 The Webknife Project | http://mtmacdonald.github.io/webknife/LICENSE\n'
+                    content += '*/\n';
+                    content += "var w_icons = "+JSON.stringify(result, null, 4);
                     //write file
                     fs.writeFile("../framework/framework.icons.js", content, function(err) {
                         if (err) throw err;
@@ -85,6 +95,7 @@ gulp.task('icon', function() {
 gulp.task('js', function() {
 
     gulp.src([
+            './js/header.js',
             './js/jquery.min.js',
             './js/moment.min.js',
             './js/chosen.jquery.js',
@@ -92,7 +103,7 @@ gulp.task('js', function() {
             './js/framework.js',
             './js/modal.js',
         ])
-        .pipe(uglify())
+        .pipe(uglify(uglify_options))
         .pipe(concat('framework.min.js'))
         .pipe(gulp.dest(config.build_directory));
 
@@ -100,7 +111,7 @@ gulp.task('js', function() {
 	//browserify('./js/app.js')
 	//	.bundle()
 	//	.pipe(source('./js/app.js'))
-	//	.pipe(streamify(uglify()))
+	//	.pipe(streamify(uglify(uglify_options)))
 	//	.pipe(streamify(concat('app.min.js')))
 	//	.pipe(gulp.dest(config.build_directory));
 });
@@ -109,16 +120,13 @@ gulp.task('syntax', function() {
     gulp.src([
             './js/highlight.pack.js',
        ])
-        .pipe(uglify())
+        .pipe(uglify(uglify_options))
         .pipe(concat('highlight.min.js'))
         .pipe(gulp.dest(config.build_directory));
 
     gulp.src('./style/highlight.scss')
         .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['Explorer >= 9', 'last 2 versions'],
-            cascade: false
-        }))
+        .pipe(autoprefixer(autoprefixer_options))
         .pipe(minifyCSS())
         .pipe(concat('highlight.min.css'))
         .pipe(gulp.dest(config.build_directory));

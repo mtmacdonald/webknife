@@ -1,5 +1,3 @@
-/*! @license Webknife (c) 2014 The Webknife Project | http://mtmacdonald.github.io/webknife/LICENSE !*/
-
 /*
 	Warn users of old versions of Internet Explorer about lack of support. This step is performed without jQuery.
 
