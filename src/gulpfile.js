@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 //for processing styles
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 //for svg icon processing
 var fs = require('fs');
@@ -29,6 +30,10 @@ gulp.task('style', function() {
 
     gulp.src('./style/main.scss')
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['Explorer >= 9', 'last 2 versions'],
+            cascade: false
+        }))
         .pipe(minifyCSS())
         .pipe(concat('framework.min.css'))
         .pipe(gulp.dest(config.build_directory));
@@ -110,6 +115,10 @@ gulp.task('syntax', function() {
 
     gulp.src('./style/highlight.scss')
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['Explorer >= 9', 'last 2 versions'],
+            cascade: false
+        }))
         .pipe(minifyCSS())
         .pipe(concat('highlight.min.css'))
         .pipe(gulp.dest(config.build_directory));
