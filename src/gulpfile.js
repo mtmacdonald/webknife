@@ -63,7 +63,7 @@ gulp.task('icon', function() {
                 var viewBox = '';
                 var image = svg.html().replace(/\r?\n|\r/g, '').replace(/\t/g, '') //remove line breaks and tabs
                 var name = file.split('.')[0].replace(/-/g, '_'); //replace hyphens with underscores
-                //console.log('<div class="w-icon" data-name="'+name+'" title="'+name+'"></div>');
+                //console.log('<span class="w-icon" data-name="'+name+'" title="'+name+'"></span>');
                 var attributes = 'viewBox="'+svg.attr('viewBox')+'"';
                 var svg = '<svg '+attributes+'>'+image+'</svg>';
                 var item = {

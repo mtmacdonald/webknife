@@ -15,6 +15,18 @@
   	fill: $brand-color;
 }
 
-.w-icon {display: inline-block; margin: 1px; background-position:center; background-repeat:no-repeat; }
-#content .fixed_width .w-icon { margin: 0; } /*undo default div margin*/
+/*message icons*/
+
+.w-message > .w-icon {
+	width: 22px;
+	height: 22px;
+	float: left;
+	margin-right: 5px;
+}
+
+.w-success > .w-icon svg { fill: darken($success, 60%); }
+.w-warning > .w-icon svg { fill: darken($warning, 60%); }
+.w-error > .w-icon svg { fill: darken($error, 60%); }
+.w-information > .w-icon svg { fill: darken($information, 60%); }
+
 td.center {display: table-cell;}

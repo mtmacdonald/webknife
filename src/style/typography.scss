@@ -34,6 +34,10 @@ a:visited { color: $dark }
 	@include fixed-color-text(darken($color, 60%));
 }
 
+.w-message {
+	border-radius: 5px;
+}
+
 .w-success { @include special-text($success) }
 .w-warning { @include special-text($warning) }
 .w-error { @include special-text($error) }
