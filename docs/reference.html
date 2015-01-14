@@ -396,64 +396,90 @@ $(document).ready(function() {
 
 <h1 class="doc-heading"><span>Vertical form</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
 <div class="code" id="code-sample-vertical-form">
-<div class="w-vertical-form">
- <form action="#">
+<div class="w-form w-vertical-form">
+<p>Form Title</p>
+<div><form action="#">
   <fieldset><legend>Title</legend>
+  <div class="w-form-group">
    <label for="name">Username</label><input type="text" name="name" id="name"/> 
-   <label for="password">Password<input type="password" name="password" id="password"/></label> 
-  </fieldset>  
+  </div>
+  <div class="w-form-group">
+   <label for="password">Password<input type="password" name="password" id="password"/></label>
+  </div>
+  </fieldset>
   <input type="submit" value="Login" />
  </form>
- </div>
+ </div></div>
 </div>
 
 <!-- **************************************************************************************************************- -->
 
 <h1 class="doc-heading"><span>Vertical form (with background)</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
 <div class="code" id="code-sample-vertical-form-background">
-<div class="w-vertical-form w-background-form"><form action="#">
+<div class="w-form w-vertical-form w-background-form">
+<p>Form Title</p>
+<div><form action="#">
  <fieldset><legend>Title</legend>
-  
-  <p class="w-form-description">Describe what this form is about?</p>
 
-  <label for="text">Text input <input type="text" name="text" id="text"/></label>
-  <p class="w-input-description">Describe what this field is about?</p>
+  <div class="w-form-group">
+    <p class="w-form-description">Describe what this form is about?</p>
+  </div>
 
-  <label for="error">Text input (with error) <input type="text" name="error" id="error" class="w-form-error"/></label> 
-  <p class="w-input-error">Describe an error</p>
-  
-  <label for="choices">Selection input</label> 
-  <select name="choices" id="choices">
-   <option>Choice 1</option>
-   <option>Choice 2</option>
-   <option>Choice 3</option>
-  </select>
+  <div class="w-form-group">
+    <label for="text">Text input <input type="text" name="text" id="text"/></label>
+    <p class="w-input-description">Describe what this field is about?</p>
+  </div>
 
-  <label for="description">Textarea input</label>
-  <textarea name="description" id="description" rows="6">Example text</textarea>
+  <div class="w-form-group">
+    <label for="error">Text input (with error) <input type="text" name="error" id="error" class="w-form-error"/></label> 
+    <p class="w-input-error">Describe an error</p>
+  </div>
 
-  <p class="w-form-label">Radio input (horizontal)</p>
-  <input type="radio" name="option-h" value="A" id="A" checked="checked"><label for="A">Choice A</label>
-  <input type="radio" name="option-h" value="B" id="B"><label for="B">Choice B</label>
-  <input type="radio" name="option-h" value="C" id="C"><label for="C">Choice C</label>
-   
-  <p class="w-form-label">Radio input (vertical)</p>
-  <input type="radio" name="option-v" value="D" id="D" checked="checked"><label for="D">Choice D</label><br/>
-  <input type="radio" name="option-v" value="E" id="E"><label for="E">Choice E</label><br/>
-  <input type="radio" name="option-v" value="F" id="F"><label for="F">Choice F</label><br/>
+  <div class="w-form-group">
+    <label for="choices">Selection input</label> 
+    <select name="choices" id="choices">
+    <option>Choice 1</option>
+    <option>Choice 2</option>
+    <option>Choice 3</option>
+    </select>
+  </div>
 
-  <label>File input</label><input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
-  
+  <div class="w-form-group">
+    <label for="description">Textarea input</label>
+    <textarea name="description" id="description" rows="6">Example text</textarea>
+  </div>
+
+  <div class="w-form-group">
+    <p class="w-form-label">Radio input (horizontal)</p>
+    <input type="radio" name="option-h" value="A" id="A" checked="checked"><label for="A">Choice A</label>
+    <input type="radio" name="option-h" value="B" id="B"><label for="B">Choice B</label>
+    <input type="radio" name="option-h" value="C" id="C"><label for="C">Choice C</label>
+  </div>
+
+  <div class="w-form-group">
+    <p class="w-form-label">Radio input (vertical)</p>
+   <input type="radio" name="option-v" value="D" id="D" checked="checked"><label for="D">Choice D</label><br/>
+    <input type="radio" name="option-v" value="E" id="E"><label for="E">Choice E</label><br/>
+    <input type="radio" name="option-v" value="F" id="F"><label for="F">Choice F</label><br/>
+  </div>
+
+  <div class="w-form-group">
+    <label>File input</label><input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
+  </div>
+
   </fieldset>
 
   <fieldset><legend>Example Fieldset 2</legend>
-    
-  <p class="w-form-label">Checkbox input</p>
+   
+  <div class="w-form-group"> 
+    <p class="w-form-label">Checkbox input</p>
    <input type="checkbox" name="selections" value="One" id="One" checked="checked"><label for="One">Choice One</label>
    <input type="checkbox" name="selections" value="Two" id="Two"><label for="Two">Choice Two</label>
    <input type="checkbox" name="selections" value="Three" id="Three"><label for="Three">Choice Three</label>
+  </div>
 
-  <div id="recaptcha_widget" style="display:none"><!--display:none to hide controls until CAPTCHA has loaded-->
+  <div class="w-form-group">
+  <div id="recaptcha_widget" style="display:none" class=w-clear-after><!--display:none to hide controls until CAPTCHA has loaded-->
    <label for="captcha">ReCAPTCHA input</label>
    <input type="text" name="recaptcha_response_field" id="recaptcha_response_field" />
    <p class="w-input-error">Optional ReCAPTCHA error</p>
@@ -467,11 +493,11 @@ $(document).ready(function() {
      <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdHWdsSAAAAANEk8eW-ntkgds5_WwTBFQuJPLP6"></script>
    </div>
   </div>
-
+  </div>
   </fieldset>
   
   <input type="submit" value="Submit" />
-  </form></div>
+</form></div></div>
 </div>
 
 <!-- **************************************************************************************************************- -->

@@ -1,74 +1,64 @@
 
-/*
- form configuration
-*/
+/***********************************************************************************************************************
 
-$form-width: 600px;
-$form-vertical-padding: 20px;
-$form-horizontal-padding: 40px;
+	Inputs
 
-$form-font-size: 14px;
-$input-height: 20px;
-$input-vertical-padding: 4px;
-$input-horizontal-padding: 6px;
+***********************************************************************************************************************/
 
-/*
- input width - do not edit this!
-*/
+$form-font-size: 15px;
+$input-padding: 8px;
 
-$input-width: $form-width - ( (2 * $input-horizontal-padding) + 2); //'exclude horizontal input padding and border width'
-$select-input-width: $input-width + 14;
-$file-input-width: $input-width - 105; //'exclude file input button width'
+label {
+	font-size: $form-font-size;
+}
 
-/*
- input elements
-*/
-
-select,
-textarea,
 input[type="text"],
 input[type="password"],
-{
-	height: $input-height;
-	line-height: $input-height;
-	font-size: $form-font-size;
+select, 
+textarea {
+
+	padding: $input-padding;
+	display: inline-block;
 	border: 1px solid $border;
-		
-	&:hover {
-		border: 1px solid $focus; 
+	box-shadow: inset 0 1px 3px #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: $form-font-size;
+
+	&:focus {
+		outline: 0;
+		border-color: $focus;
 	}
-	
+
 	&.w-form-error {
 		background-color: $error; 
 		border: 1px solid darken($error, 60%); 
 	}
 }
 
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="radio"],
-input[type="checkbox"]
-{
-	vertical-align: middle;
-	padding: $input-vertical-padding $input-horizontal-padding;
+select {
+    background-color: white;
 }
 
 textarea {
-	height: auto;
 	resize: vertical;
 }
 
-select { //'make select input match the other input heights'
-	height: $input-height + 10;
-	line-height: $input-height + 10;
+input[type=checkbox],
+input[type=radio] {
+	width: 17px;
+	height: 17px;
+    position: relative;
+    vertical-align: middle;
+    bottom: 2px;
 }
 
-input[type="radio"]+label, 
-input[type="checkbox"]+label { 
-	padding: 0 10px 0 4px;
-	vertical-align: middle;
+#recaptcha_image {
+	border-radius: 4px;
+}
+
+.chosen-choices {
+	border-radius: 4px;
 }
 
 //'hide the file input because a fake file input implementation is used instead'
@@ -84,104 +74,117 @@ input[type="file"] {
 	margin-right: 10px;
 }
 
+/***********************************************************************************************************************
+
+	Forms
+
+***********************************************************************************************************************/
+
 /*
  vertical forms
 */
 
-.w-vertical-form {
-	
+$form-width: 700px;
+
+.w-form {
+
 	width: $form-width;
-	
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid $dark;
+
+	//form title
+	> p {
+		margin: 0;
+		padding: 10px;
+		border-radius: 5px 5px 0px 0px;
+		background-color: $dark;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	//form container
+	> div {
+		margin: 0;
+		padding: 20px;
+	}
+
 	form {
-
-		width: $form-width; //'inner-box only, may expand with padding'
 		text-align: left; //'explicitly set text-alignment in case in case the parent div has an alignment class set'
-		
-		fieldset {
-			border: 0;
-			margin: 0;
-			padding: 0;
-		}
 
-		fieldset:not(:first-child) {
-			margin-top: 20px;
-		}
-
-		legend {
-			width: $form-width;
-			padding: 10px 0 10px 0;
-			font-size: 18px;
-			font-weight: bold;
-			border-bottom: 1px solid $border;
-			margin-bottom: 20px;
-		}
-
-		legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
-			-webkit-margin-top-collapse : separate;
-		}
-
-		textarea,
-		input[type="text"],
-		input[type="password"],
-		{
-			display: block;
-			width: $input-width;
-		}
-
-		select {
-			display: block;
-			width: $select-input-width;
-		}
-		
-		label, .w-form-label {
-			display: block;
-			width: $form-width;
-			margin-top: 20px;
-			font-weight: bold;
-			margin-bottom: 5px;
-		}
-
-		input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
-			display:inline;
-			font-weight: normal;
+		p {
 			margin: 0;
 		}
+	}
 
-		input[type="text"].w-file-input {
-			width: $file-input-width;
-			display: inline;
-		}
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
 
-		.w-input-description, .w-input-error {
-			font-size: 11px;
-			font-style: italic;
-			margin: 0;
-			padding: 0;
-			text-align: right;
-			position: relative;
-			top: 4px;
-		}
+	legend {
+		width: 100%;
+		font-size: 18px;
+		font-weight: bold;
+		border-bottom: 1px solid $border;
+	}
 
-		.w-input-error {
-			color: darken($error, 60%) 
-		}
+	.w-form-group {
+		margin: 25px 0 25px 0;
+	}
 
-		input[type="submit"] {
-			margin-top: 20px;
-		}
+	label, .w-form-label {
+		display: block;
+		width: 100%;
+		font-weight: bold;
+	}
 
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	select
+	{
+		margin-top: 3px;
+		display: block;
+		width: 100%;
+	}
+
+	input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
+		display:inline;
+		font-weight: normal;
+		margin: 0;
+	}
+
+	.w-input-description, .w-input-error {
+		font-size: 11px;
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+		text-align: right;
+	}
+
+	.w-input-error {
+		color: darken($error, 60%) 
 	}
 
 }
 
+.w-vertical-form {
+
+}
+
 .w-background-form {
-	padding: 20px 40px 20px 40px;
 	background-color: $light;
 }
 
 /*
  recaptcha
 */
+
+#recaptcha_widget {
+	margin: 0;
+}
 
 #recaptcha_image {
 	background-color: white;
