@@ -368,10 +368,12 @@
 <!-- **************************************************************************************************************- -->
 
 <h1 class="doc-heading"><span>File upload input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
-<div class="code" id="code-sample-file-upload-input"> 
-<input type="file" tabindex="-1">
-<input type="text" class="w-file-input">
-<input type="button" value="Choose File" class="w-file-input-button">
+<div class="code" id="code-sample-file-upload-input">
+<div class="w-file-input">
+ <button>Choose File</button>
+ <span></span>
+ <input type="file" tabindex="-1">
+</div>
 </div>
 
 <!-- **************************************************************************************************************- -->
@@ -484,7 +486,12 @@ $(document).ready(function() {
   </div>
 
   <div class="w-form-group">
-    <label>File input</label><input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
+    <label for="choices">Select a file</label> 
+    <div class="w-file-input">
+     <button>Choose File</button>
+     <span></span>
+     <input type="file" tabindex="-1">
+    </div>
   </div>
 
   </fieldset>
@@ -499,7 +506,7 @@ $(document).ready(function() {
   </div>
 
   <div class="w-form-group">
-  <div id="recaptcha_widget" style="display:none" class=w-clear-after><!--display:none to hide controls until CAPTCHA has loaded-->
+  <div id="recaptcha_widget" style="display:none" class="w-clear-after"><!--display:none to hide controls until CAPTCHA has loaded-->
    <label for="captcha">ReCAPTCHA input</label>
    <input type="text" name="recaptcha_response_field" id="recaptcha_response_field" />
    <p class="w-input-error">Optional ReCAPTCHA error</p>

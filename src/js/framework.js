@@ -84,22 +84,18 @@ $(document).ready(function() {
  /*
   Prevent the selected breadcrumb link from being clickable
  */
+
  $('.w-breadcrumb li:last-child a').click(function(event) {
 	event.preventDefault();
  });
 
  /*
-  Trigger the file upload dialog when the 'fake' file upload button is clicked
+  Trigger the file upload dialog when the 'fake' file upload button (or its label) is clicked
  */
- $('.w-file-input-button').click(function() {
-	$(this).prev('input[type=text]').prev('input[type=file]').trigger('click');
- }); 
 
- /*
-  Trigger the file upload dialog when the 'fake' file upload input is clicked
- */
- $('.w-file-input').click(function() {
-	$(this).prev('input[type=file]').trigger('click');
+ $(".w-file-input button, .w-file-input span").on("click", function(event) {
+ 	event.preventDefault();
+  	$(this).siblings('input[type=file]').trigger('click');
  });
 
  /*
@@ -108,7 +104,7 @@ $(document).ready(function() {
  $('input[type=file]').change(function() {
 	var fileName = $(this).val().replace(/\\/g,'/') //replace windows backslashes with forward slashes
 	fileName = fileName.split('/').pop(); //split path by forward slash and select the last segment (filename). This is done to remove "C:\fakepath\ inserted by the browser.
-	$(this).next('input[type=text]').val(fileName);
+	$(this).siblings('span').text(fileName);
  });
 
 });
