@@ -10,6 +10,7 @@ $input-padding: 8px;
 
 label {
 	font-size: $form-font-size;
+	vertical-align: middle;
 }
 
 input[type="text"],
@@ -55,9 +56,9 @@ input[type=checkbox],
 input[type=radio] {
 	width: 17px;
 	height: 17px;
-    position: relative;
+    //position: relative;
     vertical-align: middle;
-    bottom: 2px;
+    //bottom: 2px;
 }
 
 #recaptcha_image {
