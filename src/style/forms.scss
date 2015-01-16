@@ -16,14 +16,13 @@ input[type="text"],
 input[type="password"],
 select, 
 textarea {
-
 	display: inline-block;
 	box-sizing: border-box;
-	padding: $input-padding;
-
+	vertical-align: middle;
+	padding: $input-padding; //note: Safari doesn't apply padding to select inputs (resolved through input height below)
 	border: 1px solid $border;
-	box-shadow: inset 0 1px 3px #ccc;
 	border-radius: 4px;
+	box-shadow: inset 0 1px 3px #ccc;
 	font-size: $form-font-size;
 
 	&:focus {
@@ -37,9 +36,15 @@ textarea {
 	}
 }
 
+input[type="text"],
+input[type="password"],
+select {
+	height: 36px; 
+}
+
 select {
 	background-color: white;
-	height: 36px; //set height because Safari doesn't apply padding to select inputs
+
 }
 
 textarea {
