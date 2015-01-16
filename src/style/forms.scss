@@ -167,9 +167,9 @@ $form-width: 700px;
 	}
 
 	input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
-		display:inline;
+		display: inline;
 		font-weight: normal;
-		margin: 0;
+		margin-left: 4px;
 	}
 
 	.w-input-description, .w-input-error {
