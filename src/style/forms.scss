@@ -56,9 +56,7 @@ input[type=checkbox],
 input[type=radio] {
 	width: 17px;
 	height: 17px;
-    //position: relative;
     vertical-align: middle;
-    //bottom: 2px;
 }
 
 #recaptcha_image {
@@ -136,9 +134,10 @@ $form-width: 700px;
 
 	legend {
 		width: 100%;
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: bold;
-		border-bottom: 1px solid $border;
+		box-sizing: border-box;
+		@include special-text($information);
 	}
 
 	legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'

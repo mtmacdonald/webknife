@@ -22,10 +22,9 @@
 }
 
 button, input[type=submit], input[type=button], a.w-button-link {
-	//'avoid the sizing issues that come with the default border-box model: http://stackoverflow.com/questions/8395349/why-do-a-div-and-a-button-with-the-same-styles-render-at-different-sizes '
-	//-moz-box-sizing: content-box;    
-	box-sizing: box-sizing;
-vertical-align: middle;
+ 
+	box-sizing: border-box;
+	vertical-align: middle;
 	height: 36px; //'set the height and line-height to avoid inconsistency across browsers (noteably IE)'
 	cursor: pointer;
 	padding: 0 9px 0 9px;
