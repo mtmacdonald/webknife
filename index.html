@@ -22,11 +22,53 @@
   }
   </style>
 
+<style>
+
+.features {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.features li {
+  vertical-align: top;
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+
+}
+
+.features li span {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.features li h2 {
+  margin: 0;
+  padding: 0 0 3px 0;
+  border: none;
+}
+
+.features li p {
+  padding-top: 5px;
+  margin: 0;
+
+}
+
+</style>
+
   <!--load scripts second-->
   <script src="framework/framework.min.js"></script>
   <script src="framework/framework.icons.js"></script>
 
   <!--inline scripts last-->
+<script>
+ $(document).ready(function() {
+   //instantiate an svg injector to show SVG icons
+   var injector = new svgInject();
+   injector.inject();//or use injector.inject('#foo') to only inject inside the matching elements
+});
+</script>
  </head>
 
  <body>
@@ -62,6 +104,42 @@
 
  <p class="colored" style="font-size:16px; text-align:center;"><strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side. 
  </p>
+
+<ul class="features">
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
+  <p>Example feature or benefit of framework to highlight.</p>
+</li>
+</ul>
+
 
  <p>Webknife contains:</p>
  
