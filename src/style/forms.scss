@@ -133,6 +133,10 @@ $form-width: 700px;
 		border-bottom: 1px solid $border;
 	}
 
+	legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
+		-webkit-margin-top-collapse : separate;
+	}
+
 	.w-form-group {
 		margin: 25px 0 25px 0;
 	}
