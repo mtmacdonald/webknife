@@ -12,14 +12,8 @@
   <style>
   #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
   #banner img {padding: 25px 0 25px 0;}
-  #banner-buttons {background-color: #f7f7f7; border-bottom: 1px solid #385691;}
-  #banner-buttons a { border-bottom: 1px solid #385691; }
+  #banner-buttons {background-color: #f7f7f7; border-bottom: 2px solid #385691; border-top: 2px solid #385691; padding: 20px 0 20px 0; background-color: #ccc;}
   .spaced {margin-right: 15px;}
-  .lowered
-  {
-	position: relative;
-	top: 6px; /*height difference between large and small buttons*/
-  }
   </style>
 
 <style>
@@ -57,6 +51,15 @@
 
 </style>
 
+<style>
+#howto {
+  background-color: #ccc;
+  padding: 20px 0 20px 0;
+  border-bottom: 2px solid #385691;
+  border-top: 2px solid #385691;
+}
+</style>
+
   <!--load scripts second-->
   <script src="framework/framework.min.js"></script>
   <script src="framework/framework.icons.js"></script>
@@ -67,6 +70,8 @@
    //instantiate an svg injector to show SVG icons
    var injector = new svgInject();
    injector.inject();//or use injector.inject('#foo') to only inject inside the matching elements
+
+  hljs.initHighlightingOnLoad();
 });
 </script>
  </head>
@@ -94,8 +99,8 @@
  
  <div id="banner-buttons"><div class="w-fixed-width">
   <span class="w-center">
-  <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large w-flat spaced">Download</a>
-	<a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark w-flat lowered spaced">Report Issues</a>
+  <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large spaced">Download</a>
+	<a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark spaced">Report Issues</a>
   </span>
  </div></div>
  
@@ -139,8 +144,35 @@
   <p>Example feature or benefit of framework to highlight.</p>
 </li>
 </ul>
+ </div>
 
+<div id="howto"><div class="w-fixed-width">
 
+<h1>Getting started</h1>
+
+</div></div>
+
+<div id="customisation"><div class="w-fixed-width">
+
+<h1>Customisation</h1>
+
+<pre>
+<code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install -y nodejs</code>
+</pre>
+
+<pre>
+<code>cd src
+npm install</code>
+</pre>
+
+<pre>
+<code>gulp</code>
+</pre>
+
+</div></div>
+
+<div class="w-fixed-width">
  <p>Webknife contains:</p>
  
  <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('images/large-logo.png')"></p>
