@@ -206,9 +206,77 @@
 }
 </style>
 
-<div id="howto"><div class="w-fixed-width">
+<style>
 
+.quick-howto {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.quick-howto li {
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+
+}
+
+.quick-howto li span {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.quick-howto li h2 {
+  margin: 0;
+  padding: 0 0 3px 0;
+  font-size: 18px;
+  border: none;
+  color: white;
+}
+
+.quick-howto li a {
+  color: white;
+}
+
+.quick-howto li p {
+  padding-top: 5px;
+  margin: 0;
+
+}
+.quick-howto .w-icon {width: 50px; height: 50px;}
+.quick-howto svg {fill: white;}
+
+</style>
+
+<div id="howto"><div class="w-fixed-width">
 <h1>Getting started</h1>
+<p>Webknife is server-side agnostic and will work with any backend framework.</p>
+
+<ul class="quick-howto">
+<li>
+  <h2><span class="w-icon" data-name="arrow_down_a"></span><span>Download the framework</span></h2>
+  <p>
+    <a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework for each new web project.
+    Keep the <strong>framework</strong> directory as part of your project.
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="compose"></span><span>Edit the template pages</span></h2>
+  <p>
+    Edit <a href="framework/template.html">template.html</a> (a blank canvas for any new web pages).
+    Copy and paste from <a href="docs/reference.html">reference.html</a> (production-tested HTML snippets).
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="gear_a"></span><span>Customize and publish</span></h2>
+  <p>
+    Attach other stylesheets and further customise pages.
+    Publish your web project.
+  </p>
+</li>
+</ul>
+
 
 </div></div>
 
@@ -226,13 +294,32 @@ This gives added confidence when using a framework with only modern browser supp
 
 <h1>Customisation</h1>
 
+Custom builds allow all parts of the framework to be customized for a project. This is entirely optional and only for advanced use.
+
+<h2>Install the build toolchain</h2>
+
+Webknife uses a JavaScript build toolchain based on <strong><a href="http://nodejs.org/">node</a></strong>,  
+<strong><a href="https://www.npmjs.com/">npm</a></strong>, 
+and <strong><a href="http://gulpjs.com/">gulp</a></strong>.
+These tools should be installed by following the vendor's instructions for your operating system.
+For Ubuntu, enter these commands in the terminal:
+
 <pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs</code></pre>
+
+<h2>Install the dependencies</h2>
+
+Use <strong>npm</strong> to install all dependencies required for building Webknife. 
+These dependencies are located in <a href="package.json">package.json<a>.
 
 <pre><code>cd src
 npm install</code></pre>
 
+<h2>Custom build</h2>
+
 <pre><code>gulp</code></pre>
+
+<h2>Customizing the framework</h2>
 
 </div></div>
 
