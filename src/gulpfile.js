@@ -96,11 +96,12 @@ gulp.task('js', function() {
 
     gulp.src([
             './js/header.js',
+            './js/framework.js', //framework must come first (in order to support old browser warnings)
             './js/jquery.min.js',
             './js/moment.min.js',
             './js/chosen.jquery.js',
             './js/pikaday.js',
-            './js/framework.js',
+
             './js/modal.js',
         ])
         .pipe(uglify(uglify_options))
