@@ -8,11 +8,19 @@
 
   <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
   <link rel="stylesheet" href="framework/framework.min.css" type="text/css" />
- 
+  <link rel="stylesheet" href="framework/highlight.min.css" type="text/css" />
+
   <style>
   #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
   #banner img {padding: 25px 0 25px 0;}
-  #banner-buttons {background-color: #f7f7f7; border-bottom: 2px solid #385691; border-top: 2px solid #385691; padding: 20px 0 20px 0; background-color: #ccc;}
+  #banner-buttons {
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #385691;
+    border-top: 2px solid #385691;
+    padding: 20px 0 20px 0;
+    background-color: #999;
+    box-shadow: inset 0px 25px 100px 0px #7b7b7b;
+  }
   .spaced {margin-right: 15px;}
   </style>
 
@@ -53,16 +61,18 @@
 
 <style>
 #howto {
-  background-color: #ccc;
+  background-color: #333;
   padding: 20px 0 20px 0;
   border-bottom: 2px solid #385691;
   border-top: 2px solid #385691;
+  box-shadow: inset 0px 25px 100px 0px #4b4b4b;
 }
 </style>
 
   <!--load scripts second-->
   <script src="framework/framework.min.js"></script>
   <script src="framework/framework.icons.js"></script>
+  <script src="framework/highlight.min.js"></script>
 
   <!--inline scripts last-->
 <script>
@@ -72,6 +82,9 @@
    injector.inject();//or use injector.inject('#foo') to only inject inside the matching elements
 
   hljs.initHighlightingOnLoad();
+
+  $('#fake-browser-warning').html(renderWarning());
+
 });
 </script>
  </head>
@@ -112,39 +125,86 @@
 
 <ul class="features">
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="refresh"></span><span>Browser reset</span></h2>
+  <p>Ships with <a href="http://necolas.github.io/normalize.css">normalize.css</a> for consistent default styles across browsers.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="wand"></span><span>Semantic layout</span></h2>
+  <p>A gridless framework that still provides support for flexible layouts, alignment, and positioning.
+</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="chevron_right"></span><span>Intuitive navigation</span></h2>
+  <p>Structure your site with built-in menus, tabs, breadcrumbs, and pagination.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="clipboard"></span><span>Beautiful forms</span></h2>
+  <p>Consistent inputs, buttons, and forms. Extra inputs, including a
+    <a href="https://github.com/dbushell/Pikaday">datepicker</a>
+    <a href="https://www.google.com/recaptcha/intro/index.html">CAPTCHA</a>, and
+    <a href="http://harvesthq.github.io/chosen/">multiselect</a>.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="grid"></span><span>Flexible tables</span></h2>
+  <p>Fixed or flexible width tables, with word-wrap, zebra shading, and icon cells included.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="star"></span><span>Stylable SVG icons</span></h2>
+  <p>SVG injection allows icons to be scaled and styled with CSS, without the pain of inline SVG.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="images"></span><span>Images</span></h2>
+  <p>Add borders, shadows, corners, and captions to images. Support wrapped and responsive images.</p>
 </li>
 <li>
-  <h2><span class="w-icon" data-name="archive" title="archive"></span><span>Example feature</span></h2>
-  <p>Example feature or benefit of framework to highlight.</p>
+  <h2><span class="w-icon" data-name="monitor"></span><span>Modal dialogs</span></h2>
+  <p>Includes a jQuery plugin that adds animated modal dialog windows for dynamic user interfaces.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="code"></span><span>Code syntax highlighting</span></h2>
+  <p>Use <a href="https://highlightjs.org/">highlight.js</a> for code syntax highlighting, with automatic language detection.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="settings"></span><span>Libraries included</span></h2>
+  <p>Ships with 
+    <a href="http://jquery.com/">jQuery</a>, and 
+    <a href="http://momentjs.com/">Moment.js.</a></p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="levels"></span><span>Configurable</span></h2>
+  <p>
+    Customize styles with
+    <a href="http://sass-lang.com/">sass</a>, configure features, and minify code with a
+    <a href="http://nodejs.org/">node</a> and
+    <a href="http://gulpjs.com/">gulp</a> asset pipeline.
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="checkmark_circled"></span><span>Modern browser support</span></h2>
+  <p>Tested in 
+    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer</a> 9+, and the latest versions of 
+    <a href="http://www.google.com/chrome/">Chrome</a>,
+    <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, and
+    <a href="https://www.apple.com/safari/">Safari</a>.
+  </p>
 </li>
 </ul>
+
+<p class="w-center">Webknife provides an HTML5, CSS3 and JavaScript template and component library for building any modern web application.</p>
+
  </div>
+
+<style>
+#browser-warning {
+  background-color: #385691;
+  padding: 20px 0 20px 0;
+  border-bottom: 2px solid #385691;
+  box-shadow: inset 0px 25px 100px 0px #284681;
+}
+#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p{
+  color: white;
+}
+</style>
 
 <div id="howto"><div class="w-fixed-width">
 
@@ -152,97 +212,30 @@
 
 </div></div>
 
+<div id="browser-warning"><div class="w-fixed-width">
+
+<h1>Warn users with unsupported browsers</h1>
+<p class="warning-intro">Webknife will automatically warn users of old versions of Internet Explorer, providing a link with information on how to upgrade. 
+This gives added confidence when using a framework with only modern browser support. Object detection is used over unreliable user agent strings.
+</p>
+<div id="fake-browser-warning"></div>
+
+</div></div>
+
 <div id="customisation"><div class="w-fixed-width">
 
 <h1>Customisation</h1>
 
-<pre>
-<code>curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install -y nodejs</code>
-</pre>
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install -y nodejs</code></pre>
 
-<pre>
-<code>cd src
-npm install</code>
-</pre>
+<pre><code>cd src
+npm install</code></pre>
 
-<pre>
-<code>gulp</code>
-</pre>
+<pre><code>gulp</code></pre>
 
 </div></div>
 
-<div class="w-fixed-width">
- <p>Webknife contains:</p>
- 
- <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('images/large-logo.png')"></p>
- <ul>
-  <li>A gridless CSS3 and HTML5 framework</li>
-  <li>A <a href="docs/reference.html">reference syntax</a> for production-ready user interface components</li>
-  <li>Extended JavaScript components (requires jQuery)</li>
- </ul>
-
- <p>Webknife makes it easy for any web designer to make high quality interfaces faster, by selecting from predesigned 'components' for common design tasks.</p>
- 
- <h2>Features</h2>
- 
- <ul>
-  <li>Includes <a href="http://necolas.github.com/normalize.css/">normalize.css</a></li>
-  <li>Page layout</li>
-  <li>Breadcrumbs</li>
-  <li>Tabs</li>
-  <li>Buttons</li>
-  <li>Tables</li>
-  <li>Icons</li>  
-  <li>Inputs and Forms</li>
-  <li>ReCAPTCHA</li>  
-  <li>Datepicker</li>
-  <li>Modal dialogs</li>
-  <li>Typography</li>
-  <li>Alignment</li>
- </ul>
-
- <h2>Predictable Browser Support</h2>
- 
- <p>Webknife supports the current and prior major release of Chrome, Firefox, Internet Explorer and Safari on a rolling basis.</p>
- 
- <h2>How to get started</h2>
- 
- <table  class="w-table w-fixed w-stripe" style="text-align:left; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
- <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   1. Download the framework
-  </td>
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   2. Edit the template pages
-  </td>
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   3. Customise and publish
-  </td>
- </tr>
- <tr style="padding:0; margin:0; ">
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li><a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework for each new web project</li>
-	<li>Keep the <strong>framework</strong> directory as part of your project</li>
-   </ul>
-  </td>
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li>Edit <a href="framework/template.html">template.html</a> (a blank canvas for any new web pages)</li>
-	<li>Copy and paste from <a href="docs/reference.html">reference.html</a> (production-tested HTML snippets)</li>
-   </ul>
-  </td>
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li>Attach other stylesheets and further customise pages</li>
-	<li>Publish your web project</li>
-   </ul>
-  </td>
- </tr>
- </table>
- 
- </div>
  </section> 
 
  <footer>

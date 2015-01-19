@@ -20,19 +20,21 @@
 		
 		Since this change the UA string / Browser mode no longer affects the detection. Detection is based solely on document mode.
 */
+function renderWarning() {
+	var browser_warning = new Array(), i = -1;
+	browser_warning[++i] = '<p id="w-browser-warning" class="w-error" style="margin:0;">';
+	browser_warning[++i] = 'You are using an old browser which is unsupported. Some features may not work correctly. ';
+	browser_warning[++i] = 'Consider <a href="http://www.whatbrowser.org/intl/en_uk/">upgrading</a> to a modern browser. ';
+	browser_warning[++i] = '<span id="w-dismiss-browser-warning" class="w-false-link">Dismiss.</span> ';
+	browser_warning[++i] = '</p>';
+	return browser_warning.join('');
+}
+
 function oldBrowserWarning() {
 	if (document.all && !document.addEventListener) { //supported indication test
-	 	//create the warning message
-		var browser_warning = new Array(), i = -1;
-		browser_warning[++i] = '<p id="w-browser-warning" class="w-error" style="margin:0;">';
-	 	browser_warning[++i] = 'You are using an old browser which is unsupported. Some features may not work correctly. ';
-		browser_warning[++i] = 'Consider <a href="http://www.whatbrowser.org/intl/en_uk/">upgrading</a> to a modern browser. ';
-		browser_warning[++i] = '<span id="w-dismiss-browser-warning" class="w-false-link">Dismiss.</span> ';
-		browser_warning[++i] = '</p>';
-
 		//prepend the warning message to body
 	  	var warning = document.createElement('div');
-	  	warning.innerHTML = browser_warning.join('');
+	  	warning.innerHTML = renderWarning();
 	  	document.body.insertBefore(warning, document.body.childNodes[0]);
 	}
 
