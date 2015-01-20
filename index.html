@@ -69,6 +69,62 @@
 }
 </style>
 
+
+<style>
+#browser-warning {
+  background-color: #385691;
+  padding: 20px 0 20px 0;
+  border-bottom: 2px solid #385691;
+  box-shadow: inset 0px 25px 100px 0px #284681;
+}
+#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p{
+  color: white;
+}
+</style>
+
+<style>
+
+.quick-howto {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.quick-howto li {
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+
+}
+
+.quick-howto li span {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.quick-howto li h2 {
+  margin: 0;
+  padding: 0 0 3px 0;
+  font-size: 18px;
+  border: none;
+  color: white;
+}
+
+.quick-howto li a {
+  color: white;
+}
+
+.quick-howto li p {
+  padding-top: 5px;
+  margin: 0;
+
+}
+.quick-howto .w-icon {width: 50px; height: 50px;}
+.quick-howto svg {fill: white;}
+
+</style>
+
   <!--load scripts second-->
   <script src="framework/framework.min.js"></script>
   <script src="framework/framework.icons.js"></script>
@@ -113,12 +169,12 @@
  <div id="banner-buttons"><div class="w-fixed-width">
   <span class="w-center">
   <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large spaced">Download</a>
-	<a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark spaced">Report Issues</a>
+  <a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark spaced">Report Issues</a>
   </span>
  </div></div>
- 
  <section>
- <div class="w-fixed-width">
+
+<div class="w-fixed-width">
 
  <p class="colored" style="font-size:16px; text-align:center;"><strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side. 
  </p>
@@ -194,61 +250,6 @@
 
  </div>
 
-<style>
-#browser-warning {
-  background-color: #385691;
-  padding: 20px 0 20px 0;
-  border-bottom: 2px solid #385691;
-  box-shadow: inset 0px 25px 100px 0px #284681;
-}
-#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p{
-  color: white;
-}
-</style>
-
-<style>
-
-.quick-howto {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.quick-howto li {
-  vertical-align: top;
-  display: inline-block;
-  width: 300px;
-  margin: 10px;
-
-}
-
-.quick-howto li span {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.quick-howto li h2 {
-  margin: 0;
-  padding: 0 0 3px 0;
-  font-size: 18px;
-  border: none;
-  color: white;
-}
-
-.quick-howto li a {
-  color: white;
-}
-
-.quick-howto li p {
-  padding-top: 5px;
-  margin: 0;
-
-}
-.quick-howto .w-icon {width: 50px; height: 50px;}
-.quick-howto svg {fill: white;}
-
-</style>
-
 <div id="howto"><div class="w-fixed-width">
 <h1>Getting started</h1>
 <p>Webknife is server-side agnostic and will work with any backend framework.</p>
@@ -276,22 +277,17 @@
   </p>
 </li>
 </ul>
-
-
 </div></div>
 
 <div id="browser-warning"><div class="w-fixed-width">
-
 <h1>Warn users with unsupported browsers</h1>
 <p class="warning-intro">Webknife will automatically warn users of old versions of Internet Explorer, providing a link with information on how to upgrade. 
 This gives added confidence when using a framework with only modern browser support. Object detection is used over unreliable user agent strings.
 </p>
 <div id="fake-browser-warning"></div>
-
 </div></div>
 
 <div id="customisation"><div class="w-fixed-width">
-
 <h1>Customisation</h1>
 
 Custom builds allow all parts of the framework to be customized for a project. This is entirely optional and only for advanced use.
@@ -310,7 +306,7 @@ sudo apt-get install -y nodejs</code></pre>
 <h2>Install the dependencies</h2>
 
 Use <strong>npm</strong> to install all dependencies required for building Webknife. 
-These dependencies are located in <a href="package.json">package.json<a>.
+These dependencies are located in <a href="package.json">package.json</a>.
 
 <pre><code>cd src
 npm install</code></pre>
@@ -320,13 +316,12 @@ npm install</code></pre>
 <pre><code>gulp</code></pre>
 
 <h2>Customizing the framework</h2>
-
 </div></div>
 
  </section> 
 
  <footer>
-	<div><p class="w-fixed-width">&nbsp;</p></div>
+	<div><p class="w-fixed-width">Foo&nbsp;</p></div>
 	<div class="w-fixed-width">
     <p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
 		<p><a href="LICENSE">MIT license</a></p>
