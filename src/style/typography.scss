@@ -66,6 +66,8 @@ ul { list-style-type: disc; }
 ol { list-style-type: decimal; }
 li.list-heading { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
 
+section > div ul ul, section > div ol ol {margin:0;} /*don't put margin on nested lists*/
+
 /*
  blockquotes
 */

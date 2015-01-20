@@ -10,23 +10,41 @@
   <link rel="stylesheet" href="framework/framework.min.css" type="text/css" />
   <link rel="stylesheet" href="framework/highlight.min.css" type="text/css" />
 
-  <style>
-  #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
-  #banner img {padding: 25px 0 25px 0;}
-  #banner-buttons {
-    background-color: #f7f7f7;
-    border-bottom: 2px solid #385691;
-    border-top: 2px solid #385691;
-    padding: 20px 0 20px 0;
-    background-color: #999;
-    box-shadow: inset 0px 25px 100px 0px #7b7b7b;
-  }
-  .spaced {margin-right: 15px;}
-  </style>
-
 <style>
 
-.features {
+#banner {
+  color: #385691;
+  font-weight: bold;
+  padding-top: 30px;
+  background-color: #f7f7f7;
+  box-shadow: inset 0px 5px 5px 0px #e7e7e7;
+}
+
+#banner img {
+  padding: 25px 0 25px 0;
+}
+
+#banner-buttons {
+  background-color: #f7f7f7;
+  padding: 20px 0 20px 0;
+  background-color: #999;
+}
+
+.spaced {
+  margin-right: 15px;
+}
+
+.heading-text {
+  font-size:16px;
+  text-align:center;
+}
+
+.segment {
+  border-bottom: 2px solid #385691;
+  padding: 20px 0 20px 0;
+}
+
+.features, .quick-howto {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -48,6 +66,7 @@
 .features li h2 {
   margin: 0;
   padding: 0 0 3px 0;
+  font-size: 13px;
   border: none;
 }
 
@@ -57,37 +76,21 @@
 
 }
 
-</style>
-
-<style>
 #howto {
   background-color: #333;
-  padding: 20px 0 20px 0;
-  border-bottom: 2px solid #385691;
-  border-top: 2px solid #385691;
-  box-shadow: inset 0px 25px 100px 0px #4b4b4b;
+  box-shadow: inset 0px 5px 5px 0px #4b4b4b;
 }
-</style>
 
-
-<style>
 #browser-warning {
   background-color: #385691;
-  padding: 20px 0 20px 0;
-  border-bottom: 2px solid #385691;
-  box-shadow: inset 0px 25px 100px 0px #284681;
 }
-#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p{
+
+#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p, #howto ul {
   color: white;
 }
-</style>
 
-<style>
-
-.quick-howto {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+#howto h1, #browser-warning h1 {
+  border: none;
 }
 
 .quick-howto li {
@@ -95,7 +98,6 @@
   display: inline-block;
   width: 300px;
   margin: 10px;
-
 }
 
 .quick-howto li span {
@@ -106,7 +108,7 @@
 .quick-howto li h2 {
   margin: 0;
   padding: 0 0 3px 0;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   color: white;
 }
@@ -118,10 +120,15 @@
 .quick-howto li p {
   padding-top: 5px;
   margin: 0;
-
 }
-.quick-howto .w-icon {width: 50px; height: 50px;}
-.quick-howto svg {fill: white;}
+
+.quick-howto .w-icon {
+  width: 50px; height: 50px;
+}
+
+.quick-howto svg {
+  fill: white;
+}
 
 </style>
 
@@ -140,9 +147,9 @@
   hljs.initHighlightingOnLoad();
 
   $('#fake-browser-warning').html(renderWarning());
-
 });
 </script>
+
  </head>
 
  <body>
@@ -161,23 +168,24 @@
  </div>
  </header>
 
- <div id="banner"><div class="w-fixed-width">
+ <div id="banner" class="segment"><div class="w-fixed-width">
    <h1 class="w-massive w-center w-no-underline">Make elegant web interfaces in minutes.</h1>
    <img class="w-center" src="docs/images/overview.png"  alt="overview" />
  </div></div>
  
- <div id="banner-buttons"><div class="w-fixed-width">
+ <div id="banner-buttons" class="segment"><div class="w-fixed-width">
   <span class="w-center">
   <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large spaced">Download</a>
-  <a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark spaced">Report Issues</a>
+  <a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark">Report Issues</a>
   </span>
  </div></div>
  <section>
 
-<div class="w-fixed-width">
+<div class="segment"><div class="w-fixed-width">
 
- <p class="colored" style="font-size:16px; text-align:center;"><strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side. 
- </p>
+<p class="heading-text">
+ <strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side. 
+</p>
 
 <ul class="features">
 <li>
@@ -191,7 +199,7 @@
 </li>
 <li>
   <h2><span class="w-icon" data-name="chevron_right"></span><span>Intuitive navigation</span></h2>
-  <p>Structure your site with built-in menus, tabs, breadcrumbs, and pagination.</p>
+  <p>Structure your site with built-in tabs, breadcrumbs, and pagination.</p>
 </li>
 <li>
   <h2><span class="w-icon" data-name="clipboard"></span><span>Beautiful forms</span></h2>
@@ -210,7 +218,7 @@
 </li>
 <li>
   <h2><span class="w-icon" data-name="images"></span><span>Images</span></h2>
-  <p>Add borders, shadows, corners, and captions to images. Support wrapped and responsive images.</p>
+  <p>Add borders, shadows, and corners to images. Support for image captions.</p>
 </li>
 <li>
   <h2><span class="w-icon" data-name="monitor"></span><span>Modal dialogs</span></h2>
@@ -246,20 +254,29 @@
 </li>
 </ul>
 
-<p class="w-center">Webknife provides an HTML5, CSS3 and JavaScript template and component library for building any modern web application.</p>
+<p class="heading-text">Webknife provides an <strong>HTML5</strong>, <strong>CSS3</strong> and <strong>JavaScript</strong> component library for building any modern web application.</p>
 
- </div>
+ </div></div>
 
-<div id="howto"><div class="w-fixed-width">
+<div id="howto" class="segment"><div class="w-fixed-width">
 <h1>Getting started</h1>
-<p>Webknife is server-side agnostic and will work with any backend framework.</p>
+<p>Webknife is server-side agnostic and will work with any backend framework.
+There are two ways to use Webknife in a project:
+</p>
+
+<ul>
+<li><strong>Pre-built</strong> (recommended for getting started)</li>
+<li><strong>Custom builds</strong> (full customization, see below)</li>
+</ul>
+
+<p>To use pre-built Webknife:</p>
 
 <ul class="quick-howto">
 <li>
   <h2><span class="w-icon" data-name="arrow_down_a"></span><span>Download the framework</span></h2>
   <p>
-    <a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework for each new web project.
-    Keep the <strong>framework</strong> directory as part of your project.
+    <a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework, and keep 
+    the <strong>framework</strong> directory as part of your project.
   </p>
 </li>
 <li>
@@ -277,51 +294,92 @@
   </p>
 </li>
 </ul>
+
+<p>The key point is to attach the framework CSS and JavaScript files:</p>
+
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;framework/framework.min.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;framework/highlight.min.css&quot; type=&quot;text/css&quot; /&gt;
+</code></pre>
+
+<pre><code>&lt;script src=&quot;framework/framework.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;framework/framework.icons.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;framework/highlight.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li><strong>framework.min.css</strong> and <strong>framework.min.js</strong> are required</li>
+<li><strong>framework.icons.js</strong> is optional (only required for using icons)</li>
+<li><strong>highlight.min.css</strong> and <strong>highlight.min.js</strong> are optional (only required for code syntax highlighting)</li>
+</ul>
+
 </div></div>
 
-<div id="browser-warning"><div class="w-fixed-width">
+<div id="browser-warning" class="segment"><div class="w-fixed-width">
 <h1>Warn users with unsupported browsers</h1>
-<p class="warning-intro">Webknife will automatically warn users of old versions of Internet Explorer, providing a link with information on how to upgrade. 
-This gives added confidence when using a framework with only modern browser support. Object detection is used over unreliable user agent strings.
+<p class="warning-intro">Webknife supports modern browsers only. However, the framework will automatically warn users of 
+old versions of Internet Explorer, providing a link with information on how to upgrade. Example:
 </p>
 <div id="fake-browser-warning"></div>
 </div></div>
 
-<div id="customisation"><div class="w-fixed-width">
-<h1>Customisation</h1>
+<div id="customisation" style="padding-top:20px;"><div class="w-fixed-width">
+<h1>Customization</h1>
 
-Custom builds allow all parts of the framework to be customized for a project. This is entirely optional and only for advanced use.
-
-<h2>Install the build toolchain</h2>
-
+Custom builds allow all parts of the framework to be customized for a project. 
+This is entirely optional and only for advanced use.
 Webknife uses a JavaScript build toolchain based on <strong><a href="http://nodejs.org/">node</a></strong>,  
 <strong><a href="https://www.npmjs.com/">npm</a></strong>, 
 and <strong><a href="http://gulpjs.com/">gulp</a></strong>.
-These tools should be installed by following the vendor's instructions for your operating system.
-For Ubuntu, enter these commands in the terminal:
+
+<h2>Install the build toolchain</h2>
+
+The build step requires node and npm. Follow the <a href="http://nodejs.org/download/">node installation instructions</a> 
+for your platform. For Ubuntu, enter these commands in the terminal:
 
 <pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs</code></pre>
 
 <h2>Install the dependencies</h2>
 
-Use <strong>npm</strong> to install all dependencies required for building Webknife. 
-These dependencies are located in <a href="package.json">package.json</a>.
+Use <strong>npm</strong> to install all dependencies required for building Webknife (including gulp), into your project 
+<strong>src</strong> directory. These dependencies are specified in <a href="src/package.json">src/package.json</a>.
 
 <pre><code>cd src
 npm install</code></pre>
 
 <h2>Custom build</h2>
 
+<p>Run the gulp build script (<a href="src/gulpfile.js">gulpfile</a>):</p>
+
 <pre><code>gulp</code></pre>
 
 <h2>Customizing the framework</h2>
+
+<p>Webknife uses <a href="http://sass-lang.com/">SASS</a> for CSS preprocessing. Styles and JavaScript can be extended by working with 
+the file structure described below:
+</p>
+
+<ul>
+<li><strong>src/</strong> (the source directory)
+ <ul>
+  <li><strong>images/svg/</strong> (icon svg files)</li>
+  <li><strong>js/</strong> (framework and dependency JavaScript)</li>
+  <li><strong>style/</strong> (framework and dependency SASS/CSS styles)</li>
+  <li><strong>gulpfile.js</strong> (the build script with gulp tasks)</li>
+  <li><strong>package.json</strong> (npm package file with build dependencies)</li>
+ </ul>
+</li>
+<li><strong>framework/</strong> (build output directory for minified framework files)</li>
+<li><strong>docs/</strong> (this user guide)</li>
+
+</ul>
+
 </div></div>
 
  </section> 
 
  <footer>
-	<div><p class="w-fixed-width">Foo&nbsp;</p></div>
+	<div><p class="w-fixed-width">&nbsp;</p></div>
 	<div class="w-fixed-width">
     <p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
 		<p><a href="LICENSE">MIT license</a></p>
