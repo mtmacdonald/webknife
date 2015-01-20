@@ -25,7 +25,7 @@ button, input[type=submit], input[type=button], a.w-button-link {
  
 	box-sizing: border-box;
 	vertical-align: middle;
-	height: 36px; //'set the height and line-height to avoid inconsistency across browsers (noteably IE)'
+	height: 36px; //'set the height to avoid inconsistency across browsers (noteably IE)'
 	cursor: pointer;
 	padding: 0 9px 0 9px;
 	font-family: verdana;
@@ -46,16 +46,14 @@ button, input[type=submit], input[type=button], a.w-button-link {
 	}
 
 	&.w-small {
-		height: 20px; 
-		line-height:10px; 
+		height: 22px; 
 		padding: 0 6px 0 6px;
 	}
 
 	&.w-large {
-		height: 48px; 
-		line-height:24px;
+		height: 52px; 
 		font-size: 16px;
-		padding: 0 20px 0 20px; 
+		padding: 0 20px 0 20px;
 		border-width:2px; border-radius: 8px;
 	}
 
@@ -74,14 +72,14 @@ button, input[type=submit], input[type=button], a.w-button-link {
 a.w-button-link {
 	display: inline-block;
 	text-decoration: none;
-	line-height: 36px;	
+	line-height: 34px;
 	
 	&.w-small {
 		line-height:20px;
 	}
 
 	&.w-large {
-		line-height:48px;
+		line-height:45px;
 	}
 }
 
