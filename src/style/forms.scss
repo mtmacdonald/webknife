@@ -266,6 +266,8 @@ header iframe, section iframe, footer iframe, div iframe {
 .chosen-container-multi .chosen-choices {
 	background-image: none;
 	border: 1px solid $border;
+	padding: 4px 8px 4px 8px;
+	vertical-align: middle!important;
 }
 
 .chosen-container-active .chosen-choices {
@@ -277,6 +279,16 @@ header iframe, section iframe, footer iframe, div iframe {
 .chosen-container, .chosen-drop {
 	margin: 0;
 }
+
+/*
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+
+}
+*/
 
 /* base 64 encode the jQuery Chosen png icon so the don'y have to be separately attached*/
 .chosen-container-single .chosen-single abbr,
