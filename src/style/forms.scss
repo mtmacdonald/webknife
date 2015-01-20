@@ -258,6 +258,16 @@ header iframe, section iframe, footer iframe, div iframe {
 	jQuery chosen.
 */
 
+.chosen-container-multi .chosen-choices {
+	background-image: none;
+}
+
+.chosen-container-active .chosen-choices {
+	box-shadow: inset 0 0 8px $focus;
+	outline: 0;
+	border-color: $focus;
+}
+
 .chosen-container, .chosen-drop {
 	margin: 0;
 }
