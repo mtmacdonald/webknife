@@ -22,15 +22,20 @@
 	background-color: $content-background;
 	top: 1px;
 	border-bottom: 0;
-	color: $text;
-	font-weight:bold;
+	span, a {
+		color: $text;
+		font-weight: bold;
+	}
+	.w-icon > svg {
+		fill: $text;
+	}
 }
 .w-tab li:hover { cursor: pointer; background-color: $medium; }
-.w-tab li.w-active:hover{ cursor: auto; background-color: $content-background; }
-.w-tab li.w-disabled:hover{ cursor: auto; background-color: $light; }
-.w-tab li span, .w-tab li a {
+.w-tab li.w-active:hover{ cursor: text; background-color: $content-background; }
+.w-tab li.w-disabled:hover{ cursor: text; background-color: $light; }
+.w-tab li span {
 	display: inline-block;
-	padding: 10px 15px 10px 15px;
+	padding: 10px 8px 10px 8px;
 }
 .w-tab li a { 
 	color: darken($dark, 10%);
@@ -43,3 +48,29 @@
 	margin: 0;
 }
 .w-tab::after { clear: both; height: 0; visibility: hidden; display: block; content:"";}
+
+/*icons*/
+
+.w-tab li a, .w-tab .w-disabled {
+
+	.w-icon {
+		display: inline-block;
+		float: left;
+		width: 28px;
+		height: 28px;
+		padding: 6px 4px 0 6px;
+		margin: 0;
+
+		> svg {
+			fill: darken($dark, 10%);
+		}
+	}
+
+	.w-icon + span, .w-icon + a {
+		padding-left: 0;
+	}
+}
+
+.w-tab .w-disabled .w-icon > svg {
+	cursor: text;
+}
