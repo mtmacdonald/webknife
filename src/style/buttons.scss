@@ -28,7 +28,7 @@ button, input[type=submit], input[type=button], a.w-button-link {
 	height: 36px; //'set the height to avoid inconsistency across browsers (noteably IE)'
 	cursor: pointer;
 	padding: 0 9px 0 9px;
-	font-family: verdana;
+	font-family: $default-font;
 	font-size: 12px;
 	font-weight: bold;
 	border-radius: 4px;

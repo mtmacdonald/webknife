@@ -263,7 +263,7 @@ header iframe, section iframe, footer iframe, div iframe {
 */
 
 .chosen-single span, .chosen-choices .default {
-	font-family: verdana!important; //http://stackoverflow.com/questions/19604874/
+	font-family: $default-font!important; //http://stackoverflow.com/questions/19604874/
 	font-size: $form-font-size!important;
 }
 

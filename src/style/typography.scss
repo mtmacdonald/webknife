@@ -3,10 +3,18 @@
  typography
 */
 
-body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
+$default-font: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$code-font: Consolas, Liberation Mono, Courier, monospace;
+$default-font-size: 14px;
+
+body {
+	font-family: $default-font;
+	font-size: $default-font-size;
+	line-height: 20px;
+}
 
 .w-small { font-size: 11px; }
-.w-large { font-size: 14px; }
+.w-large { font-size: 16px; }
 .w-massive { font-size: 30px; }
 
 .w-bold { font-weight: bold; }
@@ -21,9 +29,9 @@ body { font-family:verdana, sans-serif; font-size:12px;  line-height: 20px;}
 */
 
 a, .w-false-link, .w-link-button { color: $brand-color; }
-a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten($brand-color, 20%); text-decoration: none; }
+a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten($brand-color, 26%); text-decoration: none; }
 a:active { 	background: none; } //'browser normalization'
-a:visited { color: $dark }
+a:visited { color: lighten($brand-color, 26%); }
 
 .w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; }
 
