@@ -437,19 +437,22 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
  //multiselect
- $(".chosen-select").chosen({disable_search_threshold: 10, allow_single_deselect: true}); //activate the jQuery Chosen controls
+ $(".chosen-select").chosen(); //activate the jQuery Chosen controls
 });
 </script>
-
-<select class="chosen-select chosen-filter" data-placeholder="Select some fruit" style="width:170px">
+<label>Select: </label>
+<select class="chosen-select chosen-filter" data-placeholder="Choose a drink" style="width:170px">
  <option value=""></option>
- <option>Apple</option>
- <option>Banana</option>
- <option>Orange</option>
- <option>Pear</option>
+ <option>Coffee</option>
+ <option>Cola</option>
+ <option>Tea</option>
+ <option>Water</option>
 </select>
 
-<select multiple="multiple" class="chosen-select chosen-filter" data-placeholder="Select some fruit" style="width:170px">
+<br/><br/>
+
+<label>Multiselect: </label>
+<select multiple="multiple" class="chosen-select chosen-filter" data-placeholder="Choose some fruit" style="width:170px">
  <option value=""></option>
  <option>Apple</option>
  <option>Banana</option>
