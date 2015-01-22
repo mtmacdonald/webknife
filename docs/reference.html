@@ -647,17 +647,22 @@ $(document).ready(function() {
 <h1 class="doc-heading"><span>Code blocks</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
 <div class="code" id="code-sample-code-blocks">
 <script>
- hljs.initHighlightingOnLoad();
+  $(document).ready(function() {
+    $('pre code, .w-inline-code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
 </script>
 
-<pre>
-<code>//example code block
+<pre><code>//example code block
 #include <iostream>
 int main()
 {
   std::cout << "Hello, world!\n";
-}</code>
-</pre>
+}</code></pre>
+
+<p>Example of inline code: <code class="w-inline-code">rm -rf /</code></p>
+
 </div> 
 
 <!-- **************************************************************************************************************- -->

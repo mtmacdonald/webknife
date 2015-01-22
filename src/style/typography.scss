@@ -91,11 +91,20 @@ blockquote {
  pre-formatted, code
 */
 
+code { font-family: $code-font; }
+
 pre {
- padding: 10px 10px 10px 10px;
- background-color: $light;
+ padding: 12px;
+ background-color: #222;
  border: 1px solid $border;
  line-height: 14px;
+ border-radius: 6px;
 }
 
-code { font-family: courier, monospace }
+.w-inline-code {
+ background-color: #222;
+ vertical-align: middle;
+ display: inline-block!important; //override highlight.js changing code to display: block;
+ padding: 2px!important;
+  border-radius: 2px;
+}
