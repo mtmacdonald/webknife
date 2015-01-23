@@ -99,6 +99,9 @@ input[type=radio] {
 */
 
 $form-width: 700px;
+$form-horizontal-padding: 30px;
+$form-vertical-padding: 30px;
+$form-element-margin: $form-vertical-padding 0 0 0;
 
 .w-form {
 
@@ -110,17 +113,17 @@ $form-width: 700px;
 	//form title
 	> p {
 		margin: 0;
-		padding: 10px;
+		padding: 20px $form-horizontal-padding 20px $form-horizontal-padding;
 		border-radius: 5px 5px 0px 0px;
 		background-color: $dark;
 		font-weight: bold;
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	//form container
 	> div {
 		margin: 0;
-		padding: 20px;
+		padding: 0 $form-horizontal-padding $form-vertical-padding $form-horizontal-padding;
 	}
 
 	form {
@@ -129,6 +132,10 @@ $form-width: 700px;
 		p {
 			margin: 0;
 		}
+	}
+
+	.w-form-group {
+		margin: $form-element-margin 0 0 0;
 	}
 
 	fieldset {
@@ -142,15 +149,13 @@ $form-width: 700px;
 		font-size: 16px;
 		font-weight: bold;
 		box-sizing: border-box;
-		@include special-text($information);
+		border-top: 2px solid $border;
+		border-bottom: 2px solid $border;
+		padding: 6px 0 6px 0;
 	}
 
 	legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
 		-webkit-margin-top-collapse : separate;
-	}
-
-	.w-form-group {
-		margin: 25px 0 25px 0;
 	}
 
 	label, .w-form-label {
@@ -176,6 +181,10 @@ $form-width: 700px;
 		margin-left: 4px;
 	}
 
+	.w-file-input {
+		margin: 0;
+	}
+
 	.w-input-description, .w-input-error {
 		font-size: 11px;
 		font-style: italic;
@@ -187,10 +196,6 @@ $form-width: 700px;
 	.w-input-error {
 		color: darken($error, 60%) 
 	}
-
-}
-
-.w-vertical-form {
 
 }
 
@@ -212,10 +217,11 @@ $form-width: 700px;
 	float: left;
 	margin-top: 5px!important;
 	padding: 5px;
+	margin: 0;
 }
 #recaptcha_links { 
 	float: left; 
-	margin-top: 5px;
+	margin: 5px 0 0 0;
 	padding-left: 10px;
 
 	a {
@@ -235,8 +241,10 @@ iframe {
 	display:none !important;
 }
 header iframe, section iframe, footer iframe, div iframe { 
-	display:inline; 
+	display:inline;
 }
+
+
 
 /* fix pikaday/webknife select height clash */
 .pika-title select {
