@@ -1,4 +1,4 @@
-/*!
+/*
  * Pikaday
  *
  * Copyright © 2014 David Bushell | BSD & MIT license | https://github.com/dbushell/Pikaday
@@ -1015,7 +1015,7 @@
 
 }));
 
-/*!
+/*
  * Pikaday jQuery plugin.
  *
  * Copyright © 2013 David Bushell | BSD & MIT license | https://github.com/dbushell/Pikaday
