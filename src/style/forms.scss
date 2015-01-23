@@ -164,6 +164,10 @@ $form-element-margin: $form-vertical-padding 0 0 0;
 		font-weight: bold;
 	}
 
+	.w-form-label {
+		font-size: $form-font-size;
+	}
+
 	textarea,
 	input[type="text"],
 	input[type="password"],
