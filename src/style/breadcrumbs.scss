@@ -1,0 +1,39 @@
+
+/*
+ breadcrumbs
+*/
+
+.w-breadcrumb-container { border: 1px solid $border; background-color:$medium; height:32px; }
+.w-breadcrumb, .w-breadcrumb-right{
+  background: $medium;
+  overflow: hidden;
+  list-style-type:none; padding:0; /*override defaults for ul*/
+  margin: 0!important;
+}
+.w-breadcrumb, .w-breadcrumb li {float: left; }
+.w-breadcrumb-right, .w-breadcrumb-right li { float:right; }
+.w-breadcrumb a, .w-breadcrumb-right a{
+  float: left;
+  text-decoration: none;
+  color: $text;
+  position: relative;
+}
+.w-breadcrumb a { background-color: $dark; padding: 6px 0 6px 32px;}
+.w-breadcrumb-right a { padding: 6px 12px 6px 12px;}
+
+.w-breadcrumb li:first-child a { padding-left: 12px; }
+.w-breadcrumb li a:hover, .w-breadcrumb-right li a:hover{ background: $light; }
+.w-breadcrumb li a::after , .w-breadcrumb li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  left: 100%;
+}
+.w-breadcrumb li a:after { z-index: 2; border-left: 20px solid $dark;}
+.w-breadcrumb li a:before { border-left: 20px solid $border; margin-left: 1px; z-index: 1; }
+.w-breadcrumb li a:hover::after{ border-left-color: $light;}
+.w-breadcrumb li:last-child a { background: none; font-weight: bold; cursor:default;}
+.w-breadcrumb li:last-child a::after, .w-breadcrumb  li:last-child a::before{content: normal;}

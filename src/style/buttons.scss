@@ -1,0 +1,115 @@
+
+/*
+ buttons
+*/
+
+@mixin button-color($color: $light, $text-color: $text) {
+	border: 1px solid darken($color, 10%);
+	color: $text-color;
+	background-color: $color;
+    box-shadow: inset 0px 1px 4px lighten($color, 10%);
+
+	&:not([disabled]):hover{
+		background-color: saturate($color, 1%);
+		border-color: darken($color, 20%);
+		box-shadow: 0px 1px 1px $dark;
+	}
+
+	&:not([disabled]):active{
+		border-color: darken($color, 40%);
+	}
+
+}
+
+button, input[type=submit], input[type=button], a.w-button-link {
+ 
+	box-sizing: border-box;
+	vertical-align: middle;
+	height: 36px; //'set the height to avoid inconsistency across browsers (noteably IE)'
+	cursor: pointer;
+	padding: 0 9px 0 9px;
+	font-family: $default-font;
+	font-size: 12px;
+	font-weight: bold;
+	border-radius: 4px;
+
+	& {
+		@include button-color;
+	}
+
+	&.w-dark {
+		@include button-color($dark);
+	}
+
+	&.w-colored {
+		@include button-color($brand-color, $light-text);
+	}
+
+	&.w-small {
+		height: 22px; 
+		padding: 0 6px 0 6px;
+	}
+
+	&.w-large {
+		height: 52px; 
+		font-size: 16px;
+		padding: 0 20px 0 20px;
+		border-width:2px; border-radius: 8px;
+	}
+
+	&.w-flat {
+		border-bottom-left-radius: 0; 
+		border-bottom-right-radius: 0; 
+	}
+
+	&:disabled{
+		cursor: default;
+		@include button-color($light, $dark);
+	}
+
+}
+
+a.w-button-link {
+	display: inline-block;
+	text-decoration: none;
+	line-height: 34px;
+	
+	&.w-small {
+		line-height:20px;
+	}
+
+	&.w-large {
+		line-height:45px;
+	}
+}
+
+.w-button-link:hover, .w-button-link:active {
+	color: $text;
+
+	&.w-colored {
+		color: $light-text;
+	}
+}
+
+/*
+ link buttons
+*/
+
+button.w-link-button {
+    display: inline;
+    border: none;
+	border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+	height: auto;
+	line-height: normal; //'Override line-height to avoid spacing issues'
+    -moz-user-select: text; //'Make button text selectable in Gecko'
+	background: none;
+}
+button.w-link-button:hover, button.w-link-button:active {
+	background: none;
+	box-shadow: none;
+}
+
+

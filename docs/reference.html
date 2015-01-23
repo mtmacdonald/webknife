@@ -3,428 +3,718 @@
 <html>
  <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages. Do not put scripts before this line.-->
-  <meta name="viewport" content="initial-scale=1.0" ><!--Prevent iOS scaling-->
+  <meta name="viewport" content="width=device-width, user-scalable=yes"><!--Mobile device scaling-->
   <meta charset="UTF-8">
   <title>HTML reference guide</title>
 
   <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
   <link rel="stylesheet" href="../framework/framework.min.css" type="text/css" />
+  <link rel="stylesheet" href="../framework/highlight.min.css" type="text/css" />
 
   <!--load scripts second-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="../framework/framework.min.js"></script>
+  <script src="../framework/framework.icons.js"></script>
+  <script src="../framework/highlight.min.js"></script>
 
   <!--inline scripts last-->
   <script>
-	$(document).ready(function() {
+  $(document).ready(function() {
 
-		//bind the datepicker plugin
-		$('#datepicker').Zebra_DatePicker(datePickerOptions);
+   var initial_dom = $('body').clone(); //displaying sample code needs the original DOM
 
-		//bind the modal dialog plugin
-		var modalOptions = {
-			'width' : 350,
-			'height' : 310,
-			'title' : 'Test modal dialog',
-			'html' : '<span>Example modal dialog content</span>'
-		};
-		$('#modal').click(function(){
-			$(this).modal(modalOptions);
-		});
+   var entityMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': '&quot;',
+      "'": '&#39;',
+      "/": '&#x2F;'
+    };
 
-	});
+    function escapeHtml(string) {
+      return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+      });
+    }
+
+    $("body").on('click', '.code-toggle', function() {
+
+      if ($(this).text() === 'Show Code') {
+        //show code sample
+        var selector = $(this).parent().nextAll('.code').attr('id'); //get the id of the closest code block
+        var code = initial_dom.find('#'+selector).html(); //fetch the actual code sample from the initial dom
+        code = escapeHtml(code);
+        code = $.trim(code); //remove the whitespace from the beginning and end of string
+
+        var block = $('<div><div class="demo-code-block"><pre><code></code></pre></div></div>');
+        block.find('code').append(code);
+
+        $(this).parent().after(block);
+        hljs.initHighlighting.called = false;
+        hljs.initHighlighting();
+        $(this).text('Hide Code');
+      } else {
+        //hide code sample
+        $(this).parent().next().remove();
+        $(this).text('Show Code');        
+      }
+    });
+  });
+
   </script>
- </head>
+  <style>
+  .doc-heading {
+    background-color: black;
+    color: white;
+    border: 0;
+    margin: 0;
+    padding: 12px;
+  }
 
+  .code-toggle {
+    float:right;
+  }
+  </style>
+ </head>
  <body>
  
  <header>
  <div class="w-fixed-width">
-	<a href="../index.html">
-		<div style="background-image:url('images/logo.png');">
-			HTML reference guide <span style="font-weight:normal;">(version 1.2.0)</span>
-		</div>
-	</a>
-	<div>
-		(Optional header element)
-	</div>
+  <a href="../index.html">
+    <div style="background-image:url('images/logo.png');">
+      HTML reference guide <span style="font-weight:normal;">(version 1.3.0)</span>
+    </div>
+  </a>
+  <div>
+    (Optional header element)
+  </div>
  </div>
  </header>
  
  <section>
  <div class="w-fixed-width">
- 
- <h1>Reference for breadcrumbs</h1>
 
- <div class="w-breadcrumb-container">
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Breadcrumbs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-breadcrumbs">
+<div class="w-breadcrumb-container">
  <ul class="w-breadcrumb">
-	<li><a href="#">Home</a></li>
-    <li><a href="#">Items</a></li>
-    <li><a href="#">Subset</a></li>
-    <li><a href="#">Selection</a></li>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Items</a></li>
+  <li><a href="#">Subset</a></li>
+  <li><a href="#">Selection</a></li>
  </ul>
  <ul class="w-breadcrumb-right">
- 	<li><a href="#">Optional link</a></li>
+  <li><a href="#">Optional link</a></li>
  </ul>
- </div>
+</div>
+</div>
 
- <h1>Reference for tabs</h1>
- 
- <ul class="w-tab">
-	<li class="w-disabled">Disabled</li>
-	<li><a href="#">Selectable</a></li>
-	<li class="w-active">Active</li>
- </ul>
- <div class="w-tab-content">
-	Example tab content.
- </div>
+<!-- **************************************************************************************************************- -->
 
- <h1>Reference for buttons</h1>
- <button type="button">Stardard</button>
- <button class="w-dark" type="button">Dark</button>
+<h1 class="doc-heading"><span>Tabs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-tabs">
+<ul class="w-tab">
+ <li class="w-disabled"><span>Disabled</span></li>
+ <li><a href="#"><span>Selectable</span></a></li>
+ <li>
+  <a href="#">
+    <span class="w-icon" data-name="chatbubble_working"></span>
+    <span>Icon</span>
+  </a>
+ </li>
+ <li class="w-active"><span>Active</span></li>
+</ul>
+<div class="w-tab-content">
+ Example tab content.
+</div>
+</div>
 
- <button class="w-small" type="button">Small</button>
- 
- <button class="w-small w-colored" type="button">1</button>
- <button class="w-small w-colored" type="button">2</button>
- <button class="w-small w-colored" type="button">3</button>
- <button class="w-large" type="button">Large</button>
- <button class="w-large w-colored" type="button">Colored</button>
- <button class="w-large w-colored w-flat" type="button">Flat</button>
- 
- <p>
- <button type="button" disabled="disabled">Disabled button</button>
- </p>
- 
- <p>
- <button class="w-link-button">Link button</button> (a button that looks like a link)
- </p>
- 
- <p>
- <a href="#" class="w-button-link">Button link</a> (a link that looks like a button)
- </p>
+<!-- **************************************************************************************************************- -->
 
- <h1>Reference for modal dialogs</h1>
- 
- <span class="w-false-link" id="modal">Show dialog</span>
+<h1 class="doc-heading"><span>Buttons</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-buttons">
+<button type="button">Stardard</button>
+<button class="w-dark" type="button">Dark</button>
+<button class="w-small" type="button">Small</button>
+<button class="w-small w-colored" type="button">1</button>
+<button class="w-small w-colored" type="button">2</button>
+<button class="w-small w-colored" type="button">3</button>
+<button class="w-large" type="button">Large</button>
+<button class="w-large w-colored" type="button">Colored</button>
+<button class="w-large w-colored w-flat" type="button">Flat</button><br/><br/>
+<button type="button" disabled="disabled">Disabled button</button><br/><br/>
+<button class="w-link-button">Link button</button> (a button that looks like a link)<br/><br/>
+<a href="#" class="w-button-link">Button link</a> (a link that looks like a button)<br/><br/>
+<button class="w-icon-button">
+  <span class="w-icon" data-name="loop"></span>
+  <span>Icon button</span>
+</button>
+</div>
 
- <h1>Reference for tables</h1>
-  
- <table class="w-table w-fixed w-stripe">
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Paginator</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-paginator">
+<ul class="w-paginator">
+    <li><a class="w-button-link" href="#">&#171;</a></li>
+    <li><a class="w-button-link" href="#">1</a></li>
+    <li><a class="w-button-link w-dark" href="#">2</a></li>
+    <li><a class="w-button-link" href="#">3</a></li>
+    <li><a class="w-button-link" href="#">4</a></li>
+    <li><a class="w-button-link" href="#">5</a></li>
+    <li><a class="w-button-link" href="#">&#187;</a></li>
+</ul>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Modal dialogs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-modal-dialogs">
+<script>
+ $(document).ready(function() {
+  //bind the modal dialog plugin
+  var modalOptions = {
+   'width' : 350,
+   'height' : 310,
+   'title' : 'Test modal dialog',
+   'html' : '<span>Example modal dialog content</span>'
+  };
+  $('#modal').click(function(){
+   $(this).modal(modalOptions);
+  });
+ });
+</script>
+
+<span class="w-false-link" id="modal">Show dialog</span>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Tables</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-tables">
+<table class="w-table w-fixed w-stripe">
  <caption>Optional Table Caption</caption>
-  <thead>
-   <tr>
-    <th>Heading</th>
-    <th>Heading</th>
-	<th>Heading</th>
-   </tr>
-  </thead>
-  <tfoot>
-   <!--optional
-   <tr>
-    <td>Footer</td>
-    <td>Footer</td>
-	<td>Footer</td>
-   </tr>
-   -->
-  </tfoot>
-  <tbody>
-   <tr>
-    <td>Lorem ipsum</td>
-    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-	<td>Lorem ipsum</td>
-   </tr>
-   <tr>
-    <td>Lorem ipsum</td>
-    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-    <td>Lorem ipsum</td>
-   </tr>
-   <tr>
-    <td>Lorem ipsum</td>
-    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-    <td>Lorem ipsum</td>
-   </tr>
-   <tr>
-    <td>Lorem ipsum</td>
-    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-    <td class="bold red">Lorem ipsum</td>
-   </tr>
-      <tr>
-    <td>Lorem ipsum</td>
-    <td>Lorem ipsum dolor sit amet</td>
-    <td class="w-center"><span class="w-icon w-icon-tick"></span></td>
-   </tr>
-  </tbody>
- </table>
+ <thead>
+  <tr>
+   <th>Heading</th>
+   <th>Heading</th>
+   <th>Heading</th>
+  </tr>
+ </thead>
+ <tfoot>
+  <!--optional
+  <tr>
+   <td>Footer</td>
+   <td>Footer</td>
+ <td>Footer</td>
+  </tr>
+  -->
+ </tfoot>
+ <tbody>
+  <tr>
+   <td>Lorem ipsum</td>
+   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+   <td>Lorem ipsum</td>
+  </tr>
+  <tr>
+   <td>Lorem ipsum</td>
+   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+   <td>Lorem ipsum</td>
+  </tr>
+  <tr>
+   <td>Lorem ipsum</td>
+   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+   <td>Lorem ipsum</td>
+  </tr>
+  <tr>
+   <td>Lorem ipsum</td>
+   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+   <td ><span class="w-icon" data-name="checkmark" title="checkmark"></span></td>
+  </tr>
+  <tr>
+   <td>Lorem ipsum</td>
+   <td>Lorem ipsum dolor sit amet</td>
+   <td class="w-bold w-error-text">Lorem ipsum</td>
+  </tr>
+ </tbody>
+</table>
+</div>
 
- <h1>Reference for icons</h1>
- 
- <div style="background-color:#ddd; height:20px; width:600px; text-align:center;">
-	<span class="w-icon w-icon-tick"></span>
-	<span class="w-icon w-icon-cross"></span>
-	<span class="w-icon w-icon-add"></span>
-	<span class="w-icon w-icon-accept"></span>
-	<span class="w-icon w-icon-delete"></span>
-	<span class="w-icon w-icon-exclamation"></span>
-	<span class="w-icon w-icon-information"></span>
-	<span class="w-icon w-icon-help"></span>
-	<span class="w-icon w-icon-warning"></span>
-	<span class="w-icon w-icon-search"></span>
-	<span class="w-icon w-icon-feed"></span>	
-	<span class="w-icon w-icon-email"></span>
-	<span class="w-icon w-icon-cart"></span>
-	<span class="w-icon w-icon-arrow-refresh"></span>
-	<span class="w-icon w-icon-arrow-anticlockwise"></span>
-	<span class="w-icon w-icon-arrow-clockwise"></span>
-	<span class="w-icon w-icon-arrow-up"></span>
-	<span class="w-icon w-icon-arrow-down"></span>
-	<span class="w-icon w-icon-arrow-left"></span>
-	<span class="w-icon w-icon-arrow-right"></span>
-	<span class="w-icon w-icon-resultset-first"></span>
-	<span class="w-icon w-icon-resultset-last"></span>
-	<span class="w-icon w-icon-resultset-next"></span>
-	<span class="w-icon w-icon-resultset-previous"></span>
-	<span class="w-icon w-icon-chart-bar"></span>
-	<span class="w-icon w-icon-chart-pie"></span>
-	<span class="w-icon w-icon-calendar"></span>
- </div>
- <div style="background-color:#ddd; height:20px; width:600px; text-align:center;">
-	<span class="w-icon w-icon-text-bold"></span>
-	<span class="w-icon w-icon-text-italic"></span>
-	<span class="w-icon w-icon-text-underline"></span>
-	<span class="w-icon w-icon-text-align-left"></span>
-	<span class="w-icon w-icon-text-align-right"></span>
-	<span class="w-icon w-icon-text-align-center"></span>
-	<span class="w-icon w-icon-text-align-justify"></span>
-	<span class="w-icon w-icon-text-list-bullets"></span>
-	<span class="w-icon w-icon-text-list-numbers"></span>
-	<span class="w-icon w-icon-spellcheck"></span>
-	<span class="w-icon w-icon-page"></span>
-	<span class="w-icon w-icon-page-edit"></span>
-	<span class="w-icon w-icon-page-add"></span>
-	<span class="w-icon w-icon-page-delete"></span>
-	<span class="w-icon w-icon-page-magnify"></span>
-	<span class="w-icon w-icon-page-text"></span>	
-	<span class="w-icon w-icon-page-code"></span>
-	<span class="w-icon w-icon-page-zip"></span>
-	<span class="w-icon w-icon-page-compressed"></span>
-	<span class="w-icon w-icon-page-gear"></span>
-	<span class="w-icon w-icon-page-acrobat"></span>
-	<span class="w-icon w-icon-page-word"></span>
-	<span class="w-icon w-icon-page-excel"></span>
-	<span class="w-icon w-icon-page-powerpoint"></span>
-	<span class="w-icon w-icon-page-copy"></span>
-	<span class="w-icon w-icon-page-paste"></span>
-	<span class="w-icon w-icon-printer"></span>
- </div>
- <div style="background-color:#ddd; height:20px; width:600px; text-align:center;"> 
-	<span class="w-icon w-icon-application"></span>
-	<span class="w-icon w-icon-application-terminal"></span>
-	<span class="w-icon w-icon-picture"></span>
-	<span class="w-icon w-icon-picture-add"></span>
-	<span class="w-icon w-icon-picture-delete"></span>
-	<span class="w-icon w-icon-folder"></span>
-	<span class="w-icon w-icon-folder-add"></span>
-	<span class="w-icon w-icon-folder-delete"></span>	
-	<span class="w-icon w-icon-disk"></span>
-	<span class="w-icon w-icon-attach"></span>
-	<span class="w-icon w-icon-link"></span>
-	<span class="w-icon w-icon-cog"></span>
-	<span class="w-icon w-icon-lock"></span>
-	<span class="w-icon w-icon-lock-open"></span>
-	<span class="w-icon w-icon-database"></span>
-	<span class="w-icon w-icon-database-add"></span>
-	<span class="w-icon w-icon-database-delete"></span>	 
-	<span class="w-icon w-icon-user"></span>
-	<span class="w-icon w-icon-user-add"></span>
-	<span class="w-icon w-icon-user-delete"></span>
-	<span class="w-icon w-icon-group"></span>
-	<span class="w-icon w-icon-comment"></span>
-	<span class="w-icon w-icon-comment-add"></span>
-	<span class="w-icon w-icon-comment-delete"></span>
-	<span class="w-icon w-icon-comments"></span>
-	<span class="w-icon w-icon-color-swatch"></span>
-	<span class="w-icon w-icon-home"></span>
- </div>
- 
- <h1>Reference for forms</h1>
+<!-- **************************************************************************************************************- -->
 
-  <h2>Styled inputs</h2>
- 
-  <label for="name">Inline text: </label><input type="text" name="inline-text" id="inline-text" />
-  <label for="inline-choices">Inline select: </label><select name="inline-choices" id="inline-choices"><option>Choice 1</option></select>
-  <input type="radio" name="radio" value="radio" id="radio"><label for="radio">Inline radio</label>
-  <input type="checkbox" name="checkbox" value="checkbox" id="checkbox"><label for="checkbox">Inline checkbox</label>
-  
-  <h2>File input</h2>  
-  
-  <input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
-  
-  <h2>Datepicker input</h2>
-  
-  <input id="datepicker" class="w-datepicker" type="text">
-  
-  <h2>Forms</h2>
- 
-  <div class="w-vertical-form"><form action="#">
-  <fieldset><legend>Vertical Form</legend>
-    <label for="name">Username</label><input type="text" name="name" id="name"/> 
-    <label for="password">Password<input type="password" name="password" id="password"/></label> 
-  </fieldset>  
-    <input type="submit" value="Login" />
-  </form></div>
+<h1 class="doc-heading"><span>Icons</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-icons">
+<style>
+/*
+ Optionally style SVG icons using CSS
+ In future CSS filter effects will allow drop shadows etc: http://caniuse.com/#feat=css-filters
+  (currently this has poor browser support)
+*/
+.large {width: 50px; height: 50px;}
+.coloured svg {fill: #b30000;}
+.styled svg {stroke: #b30000; stroke-width: 2%; fill: yellow;} 
+</style>
 
-  <div class="w-vertical-form w-background-form"><form action="#">
-  <fieldset><legend>Vertical Form (with background)</legend>
-  
+<script>
+ $(document).ready(function() {
+   //instantiate an svg injector to show SVG icons
+   var injector = new svgInject();
+   injector.inject();//or use injector.inject('#foo') to only inject inside the matching elements
+});
+</script>
+
+<p>Standard icons:</p>
+<span class="w-icon" data-name="archive" title="archive"></span>
+<span class="w-icon" data-name="arrow_down_a" title="arrow_down_a"></span>
+<span class="w-icon" data-name="arrow_right_a" title="arrow_right_a"></span>
+<span class="w-icon" data-name="arrow_left_a" title="arrow_left_a"></span>
+<span class="w-icon" data-name="arrow_resize" title="arrow_resize"></span>
+<span class="w-icon" data-name="arrow_up_a" title="arrow_up_a"></span>
+<span class="w-icon" data-name="cart" title="cart"></span>
+<span class="w-icon" data-name="card" title="card"></span>
+<span class="w-icon" data-name="calendar" title="calendar"></span>
+<span class="w-icon" data-name="camera" title="camera"></span>
+<span class="w-icon" data-name="chatbox" title="chatbox"></span>
+<span class="w-icon" data-name="chatboxes" title="chatboxes"></span>
+<span class="w-icon" data-name="chatbubble_working" title="chatbubble_working"></span>
+<span class="w-icon" data-name="checkmark_circled" title="checkmark_circled"></span>
+<span class="w-icon" data-name="checkmark" title="checkmark"></span>
+<span class="w-icon" data-name="chevron_down" title="chevron_down"></span>
+<span class="w-icon" data-name="chevron_left" title="chevron_left"></span>
+<span class="w-icon" data-name="chevron_right" title="chevron_right"></span>
+<span class="w-icon" data-name="chevron_up" title="chevron_up"></span>
+<span class="w-icon" data-name="clipboard" title="clipboard"></span>
+<span class="w-icon" data-name="clock" title="clock"></span>
+<span class="w-icon" data-name="close_circled" title="close_circled"></span>
+<span class="w-icon" data-name="close" title="close"></span>
+<span class="w-icon" data-name="code" title="code"></span>
+<span class="w-icon" data-name="compose" title="compose"></span>
+<span class="w-icon" data-name="connection_bars" title="connection_bars"></span>
+<span class="w-icon" data-name="earth" title="earth"></span>
+<span class="w-icon" data-name="edit" title="edit"></span>
+<span class="w-icon" data-name="document_text" title="document_text"></span>
+<span class="w-icon" data-name="document" title="document"></span>
+<span class="w-icon" data-name="email" title="email"></span>
+<span class="w-icon" data-name="flash" title="flash"></span>
+<span class="w-icon" data-name="folder" title="folder"></span>
+<span class="w-icon" data-name="gear_a" title="gear_a"></span>
+<span class="w-icon" data-name="grid" title="grid"></span>
+<span class="w-icon" data-name="help_buoy" title="help_buoy"></span>
+<span class="w-icon" data-name="help_circled" title="help_circled"></span>
+<span class="w-icon" data-name="help" title="help"></span>
+<span class="w-icon" data-name="home" title="home"></span>
+<span class="w-icon" data-name="image" title="image"></span>
+<span class="w-icon" data-name="images" title="images"></span>
+<span class="w-icon" data-name="information_circled" title="information_circled"></span>
+<span class="w-icon" data-name="levels" title="levels"></span>
+<span class="w-icon" data-name="locked" title="locked"></span>
+<span class="w-icon" data-name="link" title="link"></span>
+<span class="w-icon" data-name="log_in" title="log_in"></span>
+<span class="w-icon" data-name="log_out" title="log_out"></span>
+<span class="w-icon" data-name="loop" title="loop"></span>
+<span class="w-icon" data-name="minus_circled" title="minus_circled"></span>
+<span class="w-icon" data-name="minus" title="minus"></span>
+<span class="w-icon" data-name="monitor" title="monitor"></span>
+<span class="w-icon" data-name="network" title="network"></span>
+<span class="w-icon" data-name="paperclip" title="paperclip"></span>
+<span class="w-icon" data-name="person_add" title="person_add"></span>
+<span class="w-icon" data-name="person" title="person"></span>
+<span class="w-icon" data-name="person_group" title="person_group"></span>
+<span class="w-icon" data-name="printer" title="printer"></span>
+<span class="w-icon" data-name="pie_graph" title="pie_graph"></span>
+<span class="w-icon" data-name="plus_circled" title="plus_circled"></span>
+<span class="w-icon" data-name="plus" title="plus"></span>
+<span class="w-icon" data-name="refresh" title="refresh"></span>
+<span class="w-icon" data-name="settings" title="settings"></span>
+<span class="w-icon" data-name="social_rss" title="social_rss"></span>
+<span class="w-icon" data-name="share" title="share"></span>
+<span class="w-icon" data-name="search" title="search"></span>
+<span class="w-icon" data-name="social_youtube" title="social_youtube"></span>
+<span class="w-icon" data-name="star" title="star"></span>
+<span class="w-icon" data-name="speedometer" title="speedometer"></span>
+<span class="w-icon" data-name="telephone" title="telephone"></span>
+<span class="w-icon" data-name="trash_b" title="trash_b"></span>
+<span class="w-icon" data-name="unlocked" title="unlocked"></span>
+<span class="w-icon" data-name="stats_bars" title="stats_bars"></span>
+<span class="w-icon" data-name="alert_circled" title="alert_circled"></span>
+<span class="w-icon" data-name="upload" title="upload"></span>
+<span class="w-icon" data-name="wand" title="wand"></span>
+<span class="w-icon" data-name="wifi" title="wifi"></span>
+<span class="w-icon" data-name="wrench" title="wrench"></span>
+
+<p>Styled icons:</p>
+<span class="w-icon large" data-name="alert_circled" title="alert_circled"></span>
+<span class="w-icon large coloured" data-name="alert_circled" title="alert_circled"></span>
+<span class="w-icon large coloured styled" data-name="alert_circled" title="alert_circled"></span>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Images</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-images">
+<img src="images/image.png" alt="basic"> 
+<img src="images/image.png" alt="shadow" class="w-image-shadow">
+<img src="images/image.png" alt="rounded" class="w-image-rounded"> 
+<img src="images/image.png" alt="border" class="w-image-border"> 
+
+<div class="w-caption-image">
+ <img src="images/image.png" alt="caption"> 
+ <div class="w-caption"><span>Image Caption</span></div> 
+</div>
+
+<img src="images/image.png" alt="circle" class="w-image-circle"> 
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Basic inputs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-basic-inputs"> 
+<label for="name">Inline text: </label>
+<input type="text" name="inline-text" id="inline-text" /><button type="button">Search</button>
+
+<br/><br/>
+
+<label for="inline-choices">Inline select: </label>
+<select name="inline-choices" id="inline-choices">
+ <option>Car</option>
+ <option>Train</option>
+ <option>Boat</option>
+</select>
+
+<br/><br/>
+
+<label for="inline-choices">Inline multiselect: </label>
+<select multiple="multiple" name="inline-choices" id="inline-multichoices">
+ <option>Cat</option>
+ <option>Dog</option>
+ <option>Hamster</option>
+</select>
+
+<br/><br/>
+
+<input type="radio" name="radio" value="radio" id="radio">
+<label for="radio">Inline radio</label>
+
+<input type="checkbox" name="checkbox" value="checkbox" id="checkbox">
+<label for="checkbox">Inline checkbox</label>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Switchbutton</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-switchbuttons">
+<label>Inline switchbutton:</label>
+<div class="w-switchbutton">
+ <input type="checkbox" name="w-switchbutton" class="w-switchbutton-checkbox" id="switchbutton" checked>
+ <label class="w-switchbutton-label" for="switchbutton">
+ <span class="w-switchbutton-inner"></span>
+ <span class="w-switchbutton-switch"></span>
+ </label>
+</div>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>File upload input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-file-upload-input">
+<div class="w-file-input">
+ <button>Choose File</button>
+ <span></span>
+ <input type="file" tabindex="-1">
+</div>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Datepicker input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-datepicker-input">
+<script>
+$(document).ready(function() {
+ //datepicker
+ var datepicker = $('#datepicker').pikaday({
+  firstDay: 1,
+  minDate: new Date('2000-01-01'),
+  maxDate: new Date('2020-12-31'),
+  yearRange: [2000,2020]
+ });
+});
+</script>
+<input id="datepicker" class="w-datepicker" type="text">
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Enhanced select inputs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-chosen-inputs">
+<script>
+$(document).ready(function() {
+ //multiselect
+ $(".chosen-select").chosen(); //activate the jQuery Chosen controls
+});
+</script>
+<label>Select: </label>
+<select class="chosen-select chosen-filter" data-placeholder="Choose a drink" style="width:170px">
+ <option value=""></option>
+ <option>Coffee</option>
+ <option>Cola</option>
+ <option>Tea</option>
+ <option>Water</option>
+</select>
+
+<br/><br/>
+
+<label>Multiselect: </label>
+<select multiple="multiple" class="chosen-select chosen-filter" data-placeholder="Choose some fruit" style="width:170px">
+ <option value=""></option>
+ <option>Apple</option>
+ <option>Banana</option>
+ <option>Orange</option>
+ <option>Pear</option>
+</select>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Vertical form</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-vertical-form">
+<div class="w-form w-vertical-form">
+<p>Form Title</p>
+<div><form action="#">
+  <fieldset>
+
+  <legend class="w-invisible"></legend>
+
+  <div class="w-form-group">
+   <label for="name">Username</label><input type="text" name="name" id="name"/> 
+  </div>
+
+  <div class="w-form-group">
+   <label for="password">Password<input type="password" name="password" id="password"/></label>
+  </div>
+
+  </fieldset>
+
+  <div class="w-form-group">
+   <input type="submit" value="Login" />
+  </div>
+
+ </form>
+ </div></div>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Vertical form (with background)</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-vertical-form-background">
+<div class="w-form w-vertical-form w-background-form">
+<p>Form Title</p>
+<div><form action="#">
+ <fieldset>
+
+  <div class="w-form-group">
+    <legend>Fieldset</legend>
+  </div>
+
+  <div class="w-form-group">
     <p class="w-form-description">Describe what this form is about?</p>
+  </div>
 
+  <div class="w-form-group">
     <label for="text">Text input <input type="text" name="text" id="text"/></label>
     <p class="w-input-description">Describe what this field is about?</p>
+  </div>
 
+  <div class="w-form-group">
     <label for="error">Text input (with error) <input type="text" name="error" id="error" class="w-form-error"/></label> 
-	<p class="w-input-error">Describe an error</p>
-	
+    <p class="w-input-error">Describe an error</p>
+  </div>
+
+  <div class="w-form-group">
     <label for="choices">Selection input</label> 
-	<select name="choices" id="choices">
-		<option>Choice 1</option>
-	    <option>Choice 2</option>
-		<option>Choice 3</option>
-	</select>
+    <select name="choices" id="choices">
+    <option>Choice 1</option>
+    <option>Choice 2</option>
+    <option>Choice 3</option>
+    </select>
+  </div>
 
+  <div class="w-form-group">
     <label for="description">Textarea input</label>
-	<textarea name="description" id="description" rows="6">Example text</textarea>
+    <textarea name="description" id="description" rows="6">Example text</textarea>
+  </div>
 
+  <div class="w-form-group">
     <p class="w-form-label">Radio input (horizontal)</p>
     <input type="radio" name="option-h" value="A" id="A" checked="checked"><label for="A">Choice A</label>
     <input type="radio" name="option-h" value="B" id="B"><label for="B">Choice B</label>
     <input type="radio" name="option-h" value="C" id="C"><label for="C">Choice C</label>
-	 
+  </div>
+
+  <div class="w-form-group">
     <p class="w-form-label">Radio input (vertical)</p>
-    <input type="radio" name="option-v" value="D" id="D" checked="checked"><label for="D">Choice D</label><br/>
+   <input type="radio" name="option-v" value="D" id="D" checked="checked"><label for="D">Choice D</label><br/>
     <input type="radio" name="option-v" value="E" id="E"><label for="E">Choice E</label><br/>
     <input type="radio" name="option-v" value="F" id="F"><label for="F">Choice F</label><br/>
+  </div>
 
-	<label>File input</label><input type="file" tabindex="-1"><input type="text" class="w-file-input"><input type="button" value="Choose File" class="w-file-input-button">
-	
+  <div class="w-form-group">
+    <label for="choices">Select a file</label> 
+    <div class="w-file-input">
+     <button>Choose File</button>
+     <span></span>
+     <input type="file" tabindex="-1">
+    </div>
+  </div>
+
   </fieldset>
 
-  <fieldset><legend>Example Fieldset 2</legend>
+  <fieldset><div class="w-form-group"><legend>Fieldset</legend></div>
+   
+  <div class="w-form-group"> 
+   <p class="w-form-label">Checkbox input</p>
+   <input type="checkbox" name="selections" value="One" id="One" checked="checked"><label for="One">Choice One</label>
+   <input type="checkbox" name="selections" value="Two" id="Two"><label for="Two">Choice Two</label>
+   <input type="checkbox" name="selections" value="Three" id="Three"><label for="Three">Choice Three</label>
+  </div>
+
+  <div class="w-form-group">
+  <div id="recaptcha_widget" class="w-clear-after">
+   <label for="captcha">ReCAPTCHA input</label>
+   <input type="text" name="recaptcha_response_field" id="recaptcha_response_field" />
+   <p class="w-input-error">Optional ReCAPTCHA error</p>
     
-	<p class="w-form-label">Checkbox input</p>
-    <input type="checkbox" name="selections" value="One" id="One" checked="checked"><label for="One">Choice One</label>
-    <input type="checkbox" name="selections" value="Two" id="Two"><label for="Two">Choice Two</label>
-    <input type="checkbox" name="selections" value="Three" id="Three"><label for="Three">Choice Three</label>
-
-	<div id="recaptcha_widget" style="display:none"><!--display:none to hide controls until CAPTCHA has loaded-->
-		<label for="captcha">ReCAPTCHA input</label>
-		<input type="text" name="recaptcha_response_field" id="recaptcha_response_field" />
-		<p class="w-input-error">Optional ReCAPTCHA error</p>
-		
-		<div id="recaptcha_image"></div>
-		<div id="recaptcha_links">
-			<div><a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a></div>
-			<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
-			<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
-			<div><a href="javascript:Recaptcha.showhelp()">ReCAPTCHA Help</a></div>
-			<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdHWdsSAAAAANEk8eW-ntkgds5_WwTBFQuJPLP6"></script>
-		</div>
-	</div>
-
+   <div id="recaptcha_image"></div>
+   <div id="recaptcha_links">
+     <div><a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a></div>
+     <div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
+     <div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
+     <div><a href="javascript:Recaptcha.showhelp()">ReCAPTCHA Help</a></div>
+     <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdHWdsSAAAAANEk8eW-ntkgds5_WwTBFQuJPLP6"></script>
+   </div>
+  </div>
+  </div>
   </fieldset>
-  
-  <input type="submit" value="Submit" />
-  </form></div>
- 
- <h1>Reference for typography</h1>
- 
- <div>
-  <a href="">Example Link</a> | <span class="w-false-link">False Link</span> (useful for JavaScript apps)
- </div>
- 
- <div>
-  <span>Standard text</span> | <strong>Strong text</strong> | <em>Emphasised text</em> | <del>Deleted text</del>
- </div>
- 
- <div>
-  <span class="w-information-text">Information text</span> |  <span class="w-success-text">Success text</span> | <span class="w-warning-text">Warning text</span> | <span class="w-error-text">Error text</span> | <span class="w-de-emphasised-text">De-emphasised text</span>
- </div>
- 
- <div>
-  <span class="w-small">Small text</span> | <span>Standard text</span> | <span class="w-large">Large text</span> | <span class="w-massive">Massive text</span>
- </div>
- 
- <h1>Example H1 heading</h1>
- <h2>Example H2 heading</h2>
- <h3>Example H3 heading</h3>
- <h4>Example H4 heading</h4>
- <h5>Example H5 heading</h5>
- <h6>Example H6 heading</h6>
+  <div class="w-form-group">  
+   <input type="submit" value="Submit" />
+  </div>
+</form></div></div>
+</div>
 
- <h3 class="w-no-underline">Example H3 heading with no underline</h3>
-  
- <p>
-  Example paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
- </p>
+<!-- **************************************************************************************************************- -->
 
- <p class="w-success">
-  Example success paragraph.
- </p>
+<h1 class="doc-heading"><span>Typography</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-typography">
+<div>
+ <a href="">Example Link</a> | <span class="w-false-link">False Link</span> (useful for JavaScript apps)
+</div>
  
- <p class="w-warning">
-  Example warning paragraph. 
- </p>
+<div>
+ <span>Standard text</span> | <strong>Strong text</strong> | <em>Emphasised text</em> | <del>Deleted text</del>
+</div>
 
- <p class="w-error">
-  Example error paragraph. 
- </p>
-
- <p class="w-information">
-  Example information paragraph. 
- </p>
-
- <blockquote>
- Example block quote.
- </blockquote>
+<div>
+ <span class="w-information-text">Information text</span> |  <span class="w-success-text">Success text</span> | <span class="w-warning-text">Warning text</span> | <span class="w-error-text">Error text</span> | <span class="w-de-emphasised-text">De-emphasised text</span>
+</div>
  
-<pre>
-<code>//example code block
+<div>
+ <span class="w-small">Small text</span> | <span>Standard text</span> | <span class="w-large">Large text</span> | <span class="w-massive">Massive text</span>
+</div>
+
+<p>
+ Example paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+</p>
+</div>
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Headings</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-headings">
+<h1>Example H1 heading</h1>
+<h2>Example H2 heading</h2>
+<h3>Example H3 heading</h3>
+<h4>Example H4 heading</h4>
+<h5>Example H5 heading</h5>
+<h6>Example H6 heading</h6>
+<h3 class="w-no-underline">Example H3 heading with no underline</h3>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Messages</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-messages">
+<p class="w-message w-success">Success</p> 
+<p class="w-message w-warning">Warning</p>
+<p class="w-message w-error">Error</p>
+<p class="w-message w-information">Information</p>
+<blockquote>Example block quote.</blockquote>
+
+<p class="w-message w-success">
+  <span class="w-icon" data-name="checkmark_circled"></span>
+  <span>Success with icon</span>
+</p>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Code blocks</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-code-blocks">
+<script>
+  $(document).ready(function() {
+    $('pre code, .w-inline-code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+<pre><code>//example code block
 #include <iostream>
 int main()
 {
   std::cout << "Hello, world!\n";
-}</code>
-</pre>
-   
- <ul>
-  <li class="list-heading">List with heading</li>
-  <li>Lorem ipsum</li>
-  <li>Lorem ipsum</li>
- </ul>
+}</code></pre>
 
- <ol>
-  <li>Lorem ipsum</li>
-  <li>Lorem ipsum</li>
- </ol>
+<p>Example of inline code: <code class="w-inline-code">rm -rf /</code></p>
 
- <h1>Reference for alignment</h1>
- 
- <div class="w-left" style="padding:10px; border: 1px solid #888; background-color: #eee;">Left</div>
- <div class="w-center" style="padding:10px; border: 1px solid #888; background-color: #eee;">Center</div>
- <div class="w-right" style="padding:10px; border: 1px solid #888; background-color: #eee;">Right</div>
- 
- </div>
+</div> 
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Lists</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-lists">
+<ul>
+ <li class="list-heading">List with heading</li>
+ <li>Lorem ipsum</li>
+ <li>Lorem ipsum</li>
+</ul>
+
+<ol>
+ <li>Lorem ipsum</li>
+ <li>Lorem ipsum</li>
+</ol>
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Alignment</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-alignment">
+<div class="w-left" style="padding:10px; border: 1px solid #888; background-color: #eee;">Left</div>
+<div class="w-center" style="padding:10px; border: 1px solid #888; background-color: #eee;">Center</div>
+<div class="w-right" style="padding:10px; border: 1px solid #888; background-color: #eee;">Right</div>
+</div>
+
+<!-- **************************************************************************************************************- -->
+</div>
  </section>
 
  <footer>
-	<div><p class="w-fixed-width">Optional footnote&nbsp;</p></div>
-	<div class="w-fixed-width">
-		<p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
-		<p><a href="../LICENSE">Code license</a></p>
-	</div>
+  <div><p class="w-fixed-width">Optional footnote&nbsp;</p></div>
+  <div class="w-fixed-width">
+    <p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
+    <p><a href="../LICENSE">MIT license</a></p>
+  </div>
  </footer>
  
  </body>
 </html>
-

@@ -2,31 +2,154 @@
 <!-- saved from url=(0014)about:internet -->
  <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--Prevent IE using compatibility mode on local or intranet pages. Do not put scripts before this line.-->
-  <meta name="viewport" content="initial-scale=1.0" ><!--Prevent iOS scaling-->
+  <meta name="viewport" content="width=device-width, user-scalable=yes"><!--Mobile device scaling-->
   <meta charset="UTF-8">
-  <title>Webknife - a web presentation framework</title>
+  <title>Webknife - a web user interface framework</title>
 
   <!--load stylesheets first (rationale: https://developers.google.com/speed/docs/best-practices/rtt#PutStylesBeforeScripts)-->
   <link rel="stylesheet" href="framework/framework.min.css" type="text/css" />
- 
-  <style>
-  #banner {color: #385691; font-weight: bold; padding-top: 30px; background-color: #f7f7f7 }
-  #banner img {padding: 25px 0 25px 0;}
-  #banner-buttons {background-color: #f7f7f7; border-bottom: 1px solid #385691;}
-  #banner-buttons a { border-bottom: 1px solid #385691; }
-  .spaced {margin-right: 15px;}
-  .lowered
-  {
-	position: relative;
-	top: 6px; /*height difference between large and small buttons*/
-  }
-  </style>
+  <link rel="stylesheet" href="framework/highlight.min.css" type="text/css" />
+
+<style>
+
+#banner {
+  color: #385691;
+  font-weight: bold;
+  padding-top: 30px;
+  background-color: #f7f7f7;
+  box-shadow: inset 0px 5px 5px 0px #e7e7e7;
+}
+
+#banner img {
+  padding: 25px 0 25px 0;
+}
+
+#banner-buttons {
+  background-color: #f7f7f7;
+  padding: 20px 0 20px 0;
+  background-color: #999;
+}
+
+.spaced {
+  margin-right: 15px;
+}
+
+.heading-text {
+  font-size:16px;
+  text-align:center;
+}
+
+.segment {
+  border-bottom: 2px solid #385691;
+  padding: 20px 0 20px 0;
+}
+
+.features, .quick-howto {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.features li {
+  vertical-align: top;
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+
+}
+
+.features li span {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.features li h2 {
+  margin: 0;
+  padding: 0 0 3px 0;
+  font-size: 14px;
+  border: none;
+}
+
+.features li p {
+  padding-top: 5px;
+  margin: 0;
+
+}
+
+#howto {
+  background-color: #333;
+  box-shadow: inset 0px 5px 5px 0px #4b4b4b;
+}
+
+#browser-warning {
+  background-color: #385691;
+}
+
+#browser-warning h1, #browser-warning .warning-intro, #howto h1, #howto p, #howto ul {
+  color: white;
+}
+
+#howto h1, #browser-warning h1 {
+  border: none;
+}
+
+.quick-howto li {
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+}
+
+.quick-howto li span {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.quick-howto li h2 {
+  margin: 0;
+  padding: 0 0 3px 0;
+  font-size: 16px;
+  border: none;
+  color: white;
+}
+
+.quick-howto li a {
+  color: white;
+}
+
+.quick-howto li p {
+  padding-top: 5px;
+  margin: 0;
+}
+
+.quick-howto .w-icon {
+  width: 50px; height: 50px;
+}
+
+.quick-howto svg {
+  fill: white;
+}
+
+</style>
 
   <!--load scripts second-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="framework/framework.min.js"></script>
+  <script src="framework/framework.icons.js"></script>
+  <script src="framework/highlight.min.js"></script>
 
   <!--inline scripts last-->
+<script>
+ $(document).ready(function() {
+   //instantiate an svg injector to show SVG icons
+   var injector = new svgInject();
+   injector.inject();//or use injector.inject('#foo') to only inject inside the matching elements
+
+  hljs.initHighlightingOnLoad();
+
+  $('#fake-browser-warning').html(renderWarning());
+});
+</script>
+
  </head>
 
  <body>
@@ -35,7 +158,7 @@
  <div class="w-fixed-width">
 	<a href="./index.html">
 		<div style="background-image:url('docs/images/logo.png');">
-			Webknife - a web presentation framework <span style="font-weight:normal;">(version 1.2.0)</span>
+			Webknife - a web user interface framework<span style="font-weight:normal;"> (version 1.3.0)</span>
 		</div>
 	</a>
 	<div>
@@ -45,101 +168,221 @@
  </div>
  </header>
 
- <div id="banner"><div class="w-fixed-width">
+ <div id="banner" class="segment"><div class="w-fixed-width">
    <h1 class="w-massive w-center w-no-underline">Make elegant web interfaces in minutes.</h1>
    <img class="w-center" src="docs/images/overview.png"  alt="overview" />
  </div></div>
  
- <div id="banner-buttons"><div class="w-fixed-width">
+ <div id="banner-buttons" class="segment"><div class="w-fixed-width">
   <span class="w-center">
-  <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large w-flat spaced">Download</a>
-	<a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark w-flat lowered spaced">Report Issues</a>
+  <a href="https://github.com/mtmacdonald/webknife/releases" class="w-button-link w-colored w-large spaced">Download</a>
+  <a href="https://github.com/mtmacdonald/webknife/issues" class="w-button-link w-dark">Report Issues</a>
   </span>
  </div></div>
- 
  <section>
- <div class="w-fixed-width">
 
- <p class="colored" style="font-size:16px; text-align:center;"><strong>Webknife</strong> is a <strong>web presentation framework</strong> for rapid user interface design on the client side. 
- </p>
+<div class="segment"><div class="w-fixed-width">
 
- <p>Webknife contains:</p>
- 
- <p style=" display: inline-block; float: right; height: 140px; width: 300px; margin: 0; background-position:center; background-repeat:no-repeat; background-image: url('images/large-logo.png')"></p>
+<p class="heading-text">
+ <strong>Webknife</strong> is a <strong>web user interface framework</strong> for rapid design on the client side. 
+</p>
+
+<ul class="features">
+<li>
+  <h2><span class="w-icon" data-name="refresh"></span><span>Browser reset</span></h2>
+  <p>Ships with <a href="http://necolas.github.io/normalize.css">normalize.css</a> for consistent default styles across browsers.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="wand"></span><span>Semantic layout</span></h2>
+  <p>A gridless framework that still provides support for layouts, alignment, and positioning.
+</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="chevron_right"></span><span>Intuitive navigation</span></h2>
+  <p>Structure your site with built-in tabs, breadcrumbs, and pagination.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="clipboard"></span><span>Beautiful forms</span></h2>
+  <p>Consistent inputs, buttons, and forms. Includes a
+    <a href="https://github.com/dbushell/Pikaday">datepicker</a>,
+    <a href="https://www.google.com/recaptcha/intro/index.html">CAPTCHA</a>, and
+    <a href="http://harvesthq.github.io/chosen/">multiselect</a>.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="grid"></span><span>Flexible tables</span></h2>
+  <p>Fixed or flexible width tables, with word-wrap, zebra shading, and icon cells included.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="star"></span><span>Stylable SVG icons</span></h2>
+  <p>SVG injection allows icons to be scaled and styled with CSS, without the pain of inline SVG.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="images"></span><span>Images</span></h2>
+  <p>Add borders, shadows, and corners to images. Support for image captions.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="monitor"></span><span>Modal dialogs</span></h2>
+  <p>Includes a jQuery plugin that adds animated modal dialog windows for dynamic user interfaces.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="code"></span><span>Code syntax highlighting</span></h2>
+  <p>Use <a href="https://highlightjs.org/">Highlight.js</a> for code syntax highlighting, with automatic language detection.</p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="settings"></span><span>Libraries included</span></h2>
+  <p>Ships with 
+    <a href="http://jquery.com/">jQuery</a>, and 
+    <a href="http://momentjs.com/">Moment.js.</a></p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="levels"></span><span>Configurable</span></h2>
+  <p>
+    Customize, configure, and minify with a 
+    <a href="http://sass-lang.com/">sass</a>,
+    <a href="http://nodejs.org/">node</a> and
+    <a href="http://gulpjs.com/">gulp</a> asset pipeline.
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="checkmark_circled"></span><span>Modern browser support</span></h2>
+  <p>Tested in 
+    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer</a> 9+, and the latest versions of 
+    <a href="http://www.google.com/chrome/">Chrome</a>,
+    <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, and
+    <a href="https://www.apple.com/safari/">Safari</a>.
+  </p>
+</li>
+</ul>
+
+<p class="heading-text">Webknife provides an <strong>HTML5</strong>, <strong>CSS3</strong> and <strong>JavaScript</strong> component library for building any modern web application.</p>
+
+ </div></div>
+
+<div id="howto" class="segment"><div class="w-fixed-width">
+<h1>Getting started</h1>
+<p>Webknife is server-side agnostic and will work with any backend framework.
+There are two ways to use Webknife in a project:
+</p>
+
+<ul>
+<li><strong>Pre-built</strong> (recommended for getting started)</li>
+<li><strong>Custom builds</strong> (full customization, see below)</li>
+</ul>
+
+<p>To use pre-built Webknife:</p>
+
+<ul class="quick-howto">
+<li>
+  <h2><span class="w-icon" data-name="arrow_down_a"></span><span>Download the framework</span></h2>
+  <p>
+    <a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework, and keep 
+    the <strong>framework</strong> directory as part of your project.
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="compose"></span><span>Edit the template pages</span></h2>
+  <p>
+    Edit <a href="framework/template.html">template.html</a> (a blank canvas for any new web pages).
+    Copy and paste from <a href="docs/reference.html">reference.html</a> (production-tested HTML snippets).
+  </p>
+</li>
+<li>
+  <h2><span class="w-icon" data-name="gear_a"></span><span>Customize and publish</span></h2>
+  <p>
+    Attach other stylesheets and further customise pages.
+    Publish your web project.
+  </p>
+</li>
+</ul>
+
+<p>The key point is to attach the framework CSS and JavaScript files:</p>
+
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;framework/framework.min.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;framework/highlight.min.css&quot; type=&quot;text/css&quot; /&gt;
+</code></pre>
+
+<pre><code>&lt;script src=&quot;framework/framework.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;framework/framework.icons.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;framework/highlight.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li><strong>framework.min.css</strong> and <strong>framework.min.js</strong> are required</li>
+<li><strong>framework.icons.js</strong> is optional (only required for using icons)</li>
+<li><strong>highlight.min.css</strong> and <strong>highlight.min.js</strong> are optional (only required for code syntax highlighting)</li>
+</ul>
+
+</div></div>
+
+<div id="browser-warning" class="segment"><div class="w-fixed-width">
+<h1>Warn users with unsupported browsers</h1>
+<p class="warning-intro">Webknife supports modern browsers only. However, the framework will automatically warn users of 
+old versions of Internet Explorer, providing a link with information on how to upgrade. Example:
+</p>
+<div id="fake-browser-warning"></div>
+</div></div>
+
+<div id="customisation" style="padding-top:20px;"><div class="w-fixed-width">
+<h1>Customization</h1>
+
+Custom builds allow all parts of the framework to be customized for a project. 
+This is entirely optional and only for advanced use.
+Webknife uses a JavaScript build toolchain based on <strong><a href="http://nodejs.org/">node</a></strong>,  
+<strong><a href="https://www.npmjs.com/">npm</a></strong>, 
+and <strong><a href="http://gulpjs.com/">gulp</a></strong>.
+
+<h2>Install the build toolchain</h2>
+
+The build step requires node and npm. Follow the <a href="http://nodejs.org/download/">node installation instructions</a> 
+for your platform. For Ubuntu, enter these commands in the terminal:
+
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install -y nodejs</code></pre>
+
+<h2>Install the dependencies</h2>
+
+Use <strong>npm</strong> to install all dependencies required for building Webknife (including gulp), into your project 
+<strong>src</strong> directory. These dependencies are specified in <a href="src/package.json">src/package.json</a>.
+
+<pre><code>cd src
+npm install</code></pre>
+
+<h2>Custom build</h2>
+
+<p>Run the gulp build script (<a href="src/gulpfile.js">gulpfile</a>):</p>
+
+<pre><code>gulp</code></pre>
+
+<h2>Customizing the framework</h2>
+
+<p>Webknife uses <a href="http://sass-lang.com/">SASS</a> for CSS preprocessing. Styles and JavaScript can be extended by working with 
+the file structure described below:
+</p>
+
+<ul>
+<li><strong>src/</strong> (the source directory)
  <ul>
-  <li>A gridless CSS3 and HTML5 framework</li>
-  <li>A <a href="docs/reference.html">reference syntax</a> for production-ready user interface components</li>
-  <li>Extended JavaScript components (requires jQuery)</li>
+  <li><strong>images/svg/</strong> (icon svg files)</li>
+  <li><strong>js/</strong> (framework and dependency JavaScript)</li>
+  <li><strong>style/</strong> (framework and dependency SASS/CSS styles)</li>
+  <li><strong>gulpfile.js</strong> (the build script with gulp tasks)</li>
+  <li><strong>package.json</strong> (npm package file with build dependencies)</li>
  </ul>
+</li>
+<li><strong>framework/</strong> (build output directory for minified framework files)</li>
+<li><strong>docs/</strong> (this user guide)</li>
 
- <p>Webknife makes it easy for any web designer to make high quality interfaces faster, by selecting from predesigned 'components' for common design tasks.</p>
- 
- <h2>Features</h2>
- 
- <ul>
-  <li>Includes <a href="http://necolas.github.com/normalize.css/">normalize.css</a></li>
-  <li>Page layout</li>
-  <li>Breadcrumbs</li>
-  <li>Tabs</li>
-  <li>Buttons</li>
-  <li>Tables</li>
-  <li>Icons</li>  
-  <li>Inputs and Forms</li>
-  <li>ReCAPTCHA</li>  
-  <li>Datepicker</li>
-  <li>Modal dialogs</li>
-  <li>Typography</li>
-  <li>Alignment</li>
- </ul>
+</ul>
 
- <h2>Predictable Browser Support</h2>
- 
- <p>Webknife supports the current and prior major release of Chrome, Firefox, Internet Explorer and Safari on a rolling basis.</p>
- 
- <h2>How to get started</h2>
- 
- <table  class="w-table w-fixed w-stripe" style="text-align:left; width:100%; border: none; border-collapse: separate; border-spacing: 10px 0px; padding:0;">
- <tr style="color:white; font-weight:bold; font-style:italic; font-size:14px;">
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   1. Download the framework
-  </td>
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   2. Edit the template pages
-  </td>
-  <td style="background-color:#999; height:30px; padding:5px; width:33%;text-align:center;">
-   3. Customise and publish
-  </td>
- </tr>
- <tr style="padding:0; margin:0; ">
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li><a href="https://github.com/mtmacdonald/webknife/releases">Download</a> a copy of the framework for each new web project</li>
-	<li>Keep the <strong>framework</strong> directory as part of your project</li>
-   </ul>
-  </td>
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li>Edit <a href="framework/template.html">template.html</a> (a blank canvas for any new web pages)</li>
-	<li>Copy and paste from <a href="docs/reference.html">reference.html</a> (production-tested HTML snippets)</li>
-   </ul>
-  </td>
-  <td style="padding:10px; margin:0;" >
-   <ul>
-    <li>Attach other stylesheets and further customise pages</li>
-	<li>Publish your web project</li>
-   </ul>
-  </td>
- </tr>
- </table>
- 
- </div>
+</div></div>
+
  </section> 
 
  <footer>
 	<div><p class="w-fixed-width">&nbsp;</p></div>
 	<div class="w-fixed-width">
     <p>&copy; 2014 <a href="https://github.com/mtmacdonald/webknife">The Webknife Project</a></p>
-		<p><a href="LICENSE">Code license</a></p>
+		<p><a href="LICENSE">MIT license</a></p>
 	</div>
  </footer>
  

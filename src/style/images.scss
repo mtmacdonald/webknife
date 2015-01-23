@@ -1,0 +1,44 @@
+.w-image-shadow {
+	box-shadow: 0 0 8px black;
+}
+
+.w-image-border {
+	border: 1px solid #333;
+}
+
+.w-image-rounded {
+	border-radius: 5px;
+}
+
+.w-image-circle {
+	border-radius: 100%;
+}
+
+.w-caption-image img {
+	float: right;
+}
+
+.w-caption {
+	float: left;
+}
+
+.w-caption-image {
+ 	position: relative;
+ 	display:inline-block;
+ 	margin: 0;
+} 
+
+.w-caption {
+ 	position: absolute;
+ 	background-color: rgba(0, 0, 0, 0.6);
+ 	bottom: 0;
+ 	margin: 0;
+ 	width: 100%;
+ 	color: white;
+ 	overflow: hidden;
+}
+
+.w-caption span {
+	display: block;
+	padding: 5px;
+}

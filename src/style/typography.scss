@@ -1,0 +1,110 @@
+
+/*
+ typography
+*/
+
+$default-font: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$code-font: Consolas, Liberation Mono, Courier, monospace;
+$default-font-size: 14px;
+
+body {
+	font-family: $default-font;
+	font-size: $default-font-size;
+	line-height: 20px;
+}
+
+.w-small { font-size: 11px; }
+.w-large { font-size: 16px; }
+.w-massive { font-size: 30px; }
+
+.w-bold { font-weight: bold; }
+.w-information-text { color: darken($information, 60%); }
+.w-success-text { color: darken($success, 60%); }
+.w-warning-text { color: darken($warning, 60%); }
+.w-error-text { color: darken($error, 60%); }
+.w-de-emphasised-text { color: $dark; }
+
+/*
+ links
+*/
+
+a, .w-false-link, .w-link-button { color: $brand-color; }
+a:hover, .w-false-link:hover, .w-link-button:hover { color: lighten($brand-color, 26%); text-decoration: none; }
+a:active { 	background: none; } //'browser normalization'
+a:visited { color: lighten($brand-color, 26%); }
+
+.w-false-link, .w-link-button { text-decoration: underline; cursor: pointer; }
+
+@mixin special-text($color: $dark) {
+	background-color: $color; 
+	border: 1px solid darken($color, 60%); 
+	padding: 10px;
+	@include fixed-color-text(darken($color, 60%));
+}
+
+.w-message {
+	border-radius: 5px;
+}
+
+.w-success { @include special-text($success) }
+.w-warning { @include special-text($warning) }
+.w-error { @include special-text($error) }
+.w-information { @include special-text($information) }
+
+/*
+ headings
+*/
+
+h1, h2, h3, h4 , h5, h6 { text-decoration:none; font-weight: bold; color: $brand-color; padding-bottom: 5px; border-bottom: 1px solid $border;  margin: 20px 0 20px 0; }
+h1  { font-size:20px; padding-bottom: 10px; }
+h2  { font-size:14px; padding-bottom: 5px; }
+h3  { font-size:13px; padding-bottom: 4px; }
+h4  { font-size:12px; padding-bottom: 2px; }
+h5  { font-size:11px; padding-bottom: 1px; }
+h6  { font-size:10px; }
+
+.w-no-underline { border-bottom: none; } 
+
+/*
+ lists
+*/
+
+ul , ol { padding-left: 15px; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+li.list-heading { position: relative; left: -15px; list-style-type: none; font-weight: bold; }
+
+section > div ul ul, section > div ol ol {margin:0;} /*don't put margin on nested lists*/
+
+/*
+ blockquotes
+*/
+
+blockquote {
+ padding: 10px 15px 10px 15px;
+ border-left: 5px solid $dark;
+ background-color: $medium;
+ line-height: 15px;
+}
+
+/*
+ pre-formatted, code
+*/
+
+code { font-family: $code-font; }
+
+pre {
+ padding: 12px;
+ background-color: #222;
+ border: 1px solid $border;
+ line-height: 14px;
+ border-radius: 6px;
+}
+
+.w-inline-code {
+ background-color: #222;
+ vertical-align: middle;
+ display: inline-block!important; //override highlight.js changing code to display: block;
+ padding: 2px!important;
+  border-radius: 2px;
+}

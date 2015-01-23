@@ -1,0 +1,360 @@
+
+/***********************************************************************************************************************
+
+	Inputs
+
+***********************************************************************************************************************/
+
+$form-font-size: 15px;
+$input-padding: 8px;
+
+label {
+	font-size: $form-font-size;
+	vertical-align: middle;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+	padding: $input-padding; //note: Safari doesn't apply padding to select inputs (resolved through input height below)
+	border: 1px solid $border;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 3px #ccc;
+	font-size: $form-font-size;
+
+	&:focus {
+		outline: 0;
+		border-color: $focus;
+		box-shadow: inset 0 0 8px $focus;
+	}
+
+	&.w-form-error {
+		background-color: $error; 
+		border: 1px solid darken($error, 60%); 
+	}
+}
+
+input[type="text"],
+input[type="password"],
+select {
+	height: 36px; 
+}
+
+select[multiple] {
+    height: auto;
+}
+
+select {
+	background-color: white;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	width: 17px;
+	height: 17px;
+    vertical-align: middle;
+  	margin-top: 1px;
+
+  	&:focus {
+    	outline: 1px solid $focus;
+  	}
+}
+
+#recaptcha_image {
+	border-radius: 4px;
+}
+
+.w-file-input {
+
+    width: 400px;
+
+	input[type="file"] {
+		//hide offscreen. Can't use display:none because older and mobile browsers disable file input when hidden
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	span {
+	    margin-left: 5px;
+	}
+}
+
+/***********************************************************************************************************************
+
+	Forms
+
+***********************************************************************************************************************/
+
+/*
+ vertical forms
+*/
+
+$form-width: 700px;
+$form-horizontal-padding: 30px;
+$form-vertical-padding: 30px;
+$form-element-margin: $form-vertical-padding 0 0 0;
+
+.w-form {
+
+	width: $form-width;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid $dark;
+
+	//form title
+	> p {
+		margin: 0;
+		padding: 20px $form-horizontal-padding 20px $form-horizontal-padding;
+		border-radius: 5px 5px 0px 0px;
+		background-color: $dark;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	//form container
+	> div {
+		margin: 0;
+		padding: 0 $form-horizontal-padding $form-vertical-padding $form-horizontal-padding;
+	}
+
+	form {
+		text-align: left; //'explicitly set text-alignment in case in case the parent div has an alignment class set'
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.w-form-group {
+		margin: $form-element-margin 0 0 0;
+	}
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	legend {
+		width: 100%;
+		font-size: 16px;
+		font-weight: bold;
+		box-sizing: border-box;
+		border-top: 2px solid $border;
+		border-bottom: 2px solid $border;
+		padding: 6px 0 6px 0;
+	}
+
+	legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
+		-webkit-margin-top-collapse : separate;
+	}
+
+	label, .w-form-label {
+		display: block;
+		width: 100%;
+		font-weight: bold;
+	}
+
+	.w-form-label {
+		font-size: $form-font-size;
+	}
+
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	select,
+	.w-file-input
+	{
+		margin-top: 3px;
+		display: block;
+		width: 100%;
+	}
+
+	input[type="radio"]+label, input[type="checkbox"]+label { //'revert the label styling for radios and checkboxes'
+		display: inline;
+		font-weight: normal;
+		margin-left: 4px;
+	}
+
+	.w-file-input {
+		margin: 0;
+	}
+
+	.w-input-description, .w-input-error {
+		font-size: 11px;
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+		text-align: right;
+	}
+
+	.w-input-error {
+		color: darken($error, 60%) 
+	}
+
+}
+
+.w-background-form {
+	background-color: $light;
+}
+
+/*
+ recaptcha
+*/
+
+#recaptcha_widget {
+	margin: 0;
+}
+
+#recaptcha_image {
+	background-color: white;
+	border: 1px solid $border; 
+	float: left;
+	margin-top: 5px!important;
+	padding: 5px;
+	margin: 0;
+}
+#recaptcha_links { 
+	float: left; 
+	margin: 5px 0 0 0;
+	padding-left: 10px;
+
+	a {
+		font-style:italic;
+		font-size:11px;
+		line-height: 9px;
+		color: #666;
+	}
+
+	div {
+		margin: 0;
+	}
+}
+
+/* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
+iframe { 
+	display:none !important;
+}
+header iframe, section iframe, footer iframe, div iframe { 
+	display:inline;
+}
+
+
+
+/* fix pikaday/webknife select height clash */
+.pika-title select {
+	height: 19px;
+	line-height: normal;
+}
+
+/* fix pikaday/normilize font-weight clash */
+.pika-select, .pika-button {font-weight: normal;}
+
+/* fix pikaday cell height */
+
+.pika-day {
+	height: 28px;
+}
+
+/* fix pikaday cursor style that makes no sense */
+.pika-table abbr {
+    cursor: default;
+}
+
+/*
+	jQuery chosen.
+*/
+
+.chosen-single span, .chosen-choices .default {
+	font-family: $default-font!important; //http://stackoverflow.com/questions/19604874/
+	font-size: $form-font-size!important;
+}
+
+.chosen-container-multi .chosen-choices {
+	box-shadow: inset 0 1px 3px #ccc;
+	border-radius: 4px;
+}
+
+.chosen-container-single .chosen-single {
+	box-shadow: inset 0 1px 3px #ccc;
+	height: 36px;
+	line-height: 26px;
+}
+
+.chosen-container-multi .chosen-choices, .chosen-container-single .chosen-single {
+	background-image: none;
+	border: 1px solid $border;
+	padding: 4px 8px 3px 8px;
+	vertical-align: middle!important;
+}
+
+.chosen-container-active .chosen-choices,
+.chosen-container-active .chosen-single,
+.chosen-container-active.chosen-with-drop .chosen-single  {
+	box-shadow: inset 0 0 8px $focus;
+	outline: 0;
+	border-color: $focus;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+	background-image: none;
+	border-bottom-right-radius: 4px;
+  	border-bottom-left-radius: 4px;
+}
+
+.chosen-container-single .chosen-single div {
+	top: -14px;
+}
+
+.chosen-container, .chosen-drop {
+	margin: 0;
+}
+
+.chosen-container-single .search-choice-close {
+	margin-top: 6px;
+}
+
+.chosen-container .chosen-results {
+	padding: 0;
+	margin: 0;
+}
+
+/*
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+
+}
+*/
+
+/* base 64 encode the jQuery Chosen png icon so the don'y have to be separately attached*/
+.chosen-container-single .chosen-single abbr,
+.chosen-container-single .chosen-single div b,
+.chosen-container-single .chosen-search input[type="text"],
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close,
+.chosen-rtl .chosen-search input[type="text"] {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAlCAQAAACn+wJeAAAB4UlEQVRIx+2XsWtTURTGrwouLQQDwYLFzT3yJBDoYoVvySQoKFShSHe7qAgqiMn9rcUibnVwEARBl0AgUIh/QXBxFIpKJHAhUBz0HQcf4U0xtZwu+r3l8t4758fHPe/jvhBcRIUuWbFuMKAWnEB9jEQWAk0SRt8LtMo+RmKdhDGiHrzEChOMHGPsiAkhBDbIMXKu+2KaJUfZwcsXD4RJrJFKKHaw6fVmRnmNT5ydC9TDSDRCIGOMMfh9u8pegRmzNKP8NUZvzu+oR6NY19mddqVVgG7MKL5SvHPrcJu3g/F2xvMqowKUOHMYUJXhrAa8Ku1j90/dVFFXxaypoYFqfzFR80h9mZKyENRUkskrgrSqfZmS1pVkGskvG7SiiUy5TGP5RpA2lMuUyzeC1Cw5yrwxSWtKrij1ZEpqhKBMY5kGXqCKeioiSHXtain817+k9gLLLD887ozhLl8xjGG86onZxuIe99jCsHjTCRMvYvF9+1QIIcTz8RuTzmkfP0+jdaYJHW9jXPYBvYj5/ZNlf06HxvgEYzoC8Tk5l1xAnXP8IHVam8faC3GTn3x5cMJr6q5h0fjI5+L4suU24PFCfMkHhvExHQyL20eQEfERhsVncdEfdYfvGK2jcPUOK/+A/QJb5yp50uoC6QAAAABJRU5ErkJggg==');
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABKCAQAAAD9cdkXAAACqUlEQVRo3u2av2/TQBTHI8FQCYYguoLCyOY/IQNk6NSF3RNzBmZ04oe/JwFSp0owtSNb/oT8B8mIBIioAyuWrA7pD4fns+vkzvZQ1+3lne57UoZXJfan79333ovT6zGTDGUsg0o0oGjY4yfCWdEykBROFg954hhIJQ4/pI0bL5E0HIryAgpMpGqEW9HpAAktzjg1SNxxGpH44hRIiYaTsMZxDsixknPMFKzaNgSEQwcrBtklMLDW+mBRV5lYtAaaqvdPrTWnGNYCDdtdOtq/+oRo39r4gEkFZ9LusqK/zjcWom9pwKOq1w0xbrsDILR/i7Bmit3cSG4H2icN7CEturIDDWhqD2jYnR1srm6t4XpIk5vYQff2b2oUjuJRxRRGAUXDph0Qt7eD2xbhrGgZSAoni4d31LJ0jGMglTjNSNuqjRsvkTQcivICCkykaoTZ+GAAJLQ449QgccdpROKLUyAlGk7CGsc5IMdKzjFTcMy2nTtY3Wt9XGtOW44PW490vQHPy8vLy8vLy2ubJfrRGHP6RjxVaxaNu31kdseipxdXj93SYq3kP4tPL24mhAqAMHApL+QFvRZQCHlmJ8/MGX7jtXz64Yl8K39hmUOyy5Loq2JLcYoDsVNCPpbfcKqyFDPbS9FYldpSftHjr+7JQ5xnWYrGrIDkLNs5+PnmQSV3OzhR+2jOC0jtn/os4F1uD+yAcPn+Wd3fPr4kz2MK9NwpoMaSkwxLrmh3foiHFVPYxYkCmnGz7fxQ/SruGx53zNK21cGaqoP1WOyWeXskv6uDdYUluyaVWh/V5OAcf+QnvIj28Bl/8+woyzji2JwWranWnK5/YsMPqRgf0o3hgYqNNVI24GVtUL4wzwY8HLFGqi1Gj8QNae4ckiPfCa2Req5I9XyNv1n+D6RKWo1cTsbTAAAAAElFTkSuQmCC') !important;
+  }
+}

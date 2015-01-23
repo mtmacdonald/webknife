@@ -1,0 +1,33 @@
+
+/*
+ modal dialogs
+*/
+
+.wi-modal-background{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	z-index: 3;
+	opacity: 0.2;
+}
+
+.wi-modal{
+	position: fixed;
+	background: white;
+	border: 2px solid $border;
+	z-index: 4;
+	padding: 2px 25px 2px 25px;
+}
+
+.wi-modal-close{
+	cursor: pointer;
+	right: 8px;
+	top: 2px;
+	position: absolute;
+	color: #999;
+	font-weight: bold;
+	display: block;
+}
