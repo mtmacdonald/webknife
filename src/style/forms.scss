@@ -249,7 +249,10 @@ header iframe, section iframe, footer iframe, div iframe {
 	display:inline;
 }
 
-
+#recaptcha_image {
+	width: 300px;
+	height: 57px;
+}
 
 /* fix pikaday/webknife select height clash */
 .pika-title select {
