@@ -112,6 +112,7 @@ $form-element-margin: $form-vertical-padding 0 0 0;
 
 	//form title
 	> p {
+		text-align: left; //'explicitly set text-alignment in case in case the parent div has an alignment class set'
 		margin: 0;
 		padding: 20px $form-horizontal-padding 20px $form-horizontal-padding;
 		border-radius: 5px 5px 0px 0px;
