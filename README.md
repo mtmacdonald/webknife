@@ -1,5 +1,4 @@
 Webknife
 ========
 
-Webknife is a web presentation framework for rapid user interface design on 
-the client side.
+Webknife is a web user interface framework for rapid design on the client side.
