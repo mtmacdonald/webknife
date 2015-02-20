@@ -101,7 +101,6 @@ input[type=radio] {
 $form-width: 700px;
 $form-horizontal-padding: 30px;
 $form-vertical-padding: 30px;
-$form-element-margin: $form-vertical-padding 0 0 0;
 
 .w-form {
 
@@ -136,7 +135,7 @@ $form-element-margin: $form-vertical-padding 0 0 0;
 	}
 
 	.w-form-group {
-		margin: $form-element-margin 0 0 0;
+		margin: 30px 0 0 0;
 	}
 
 	fieldset {
@@ -145,6 +144,10 @@ $form-element-margin: $form-vertical-padding 0 0 0;
 		padding: 0;
 	}
 
+	//The fieldset legend is optional: http://www.w3.org/TR/html-markup/spec.html#fieldset
+	//If the legend is used, it should be inside a .w-form-group container div
+	//This is because fieldset margins still have bugs in Safari:
+	//http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins
 	legend {
 		width: 100%;
 		font-size: 16px;
@@ -153,10 +156,6 @@ $form-element-margin: $form-vertical-padding 0 0 0;
 		border-top: 2px solid $border;
 		border-bottom: 2px solid $border;
 		padding: 6px 0 6px 0;
-	}
-
-	legend + * { //'see http://stackoverflow.com/questions/6063071/getting-webkit-to-pay-attention-to-legend-margins'
-		-webkit-margin-top-collapse : separate;
 	}
 
 	label, .w-form-label {
