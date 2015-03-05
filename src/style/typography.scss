@@ -4,42 +4,52 @@
 
  The Source Sans Pro and Source Code Pro fonts are open source and can be downloaded here:
 
- https://github.com/adobe-fonts/source-sans-pro
- https://github.com/adobe-fonts/source-code-pro
+    https://github.com/adobe-fonts/source-sans-pro
+    https://github.com/adobe-fonts/source-code-pro
+
+ See this service for help with file optimizing (compression) (select 'Expert' and only choose only 'WOFF'):
+
+    http://www.fontsquirrel.com/tools/webfont-generator
 
 */
 
 @font-face {
-    font-family: "source-sans-pro";
-    src: url("fonts/SourceSansPro-Regular.otf.woff") format('woff');
+    font-family: 'source-sans-pro';
+    src: url('fonts/source-sans-pro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: "source-sans-pro";
-    src: url("fonts/SourceSansPro-It.otf.woff") format('woff');
+    font-family: 'source-sans-pro';
+    src: url('fonts/source-sans-pro-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url('fonts/source-sans-pro-italic.woff') format('woff');
+    font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: "source-sans-pro";
-    src: url("fonts/SourceSansPro-Bold.otf.woff") format('woff');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "source-sans-pro";
-    src: url("fonts/SourceSansPro-BoldIt.otf.woff") format('woff');
+    font-family: 'source-sans-pro';
+    src: url('fonts/source-sans-pro-bold-italic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: "source-code-pro";
-    src: url("fonts/SourceCodePro-Regular.otf.woff") format('woff');
+    font-family: 'source-code-pro';
+    src: url('fonts/source-code-pro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-$default-font: "source-sans-pro", Arial, sans-serif;
-$code-font: "source-code-pro", Courier, monospace;
+$default-font: 'source-sans-pro', Arial, sans-serif;
+$code-font: 'source-code-pro', Courier, monospace;
 $default-font-size: 14px;
 
 body {
