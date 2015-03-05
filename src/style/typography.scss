@@ -1,10 +1,45 @@
 
 /*
  typography
+
+ The Source Sans Pro and Source Code Pro fonts are open source and can be downloaded here:
+
+ https://github.com/adobe-fonts/source-sans-pro
+ https://github.com/adobe-fonts/source-code-pro
+
 */
 
-$default-font: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$code-font: Consolas, Liberation Mono, Courier, monospace;
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("fonts/SourceSansPro-Regular.otf.woff") format('woff');
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("fonts/SourceSansPro-It.otf.woff") format('woff');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("fonts/SourceSansPro-Bold.otf.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("fonts/SourceSansPro-BoldIt.otf.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "source-code-pro";
+    src: url("fonts/SourceCodePro-Regular.otf.woff") format('woff');
+}
+
+$default-font: "source-sans-pro", Arial, sans-serif;
+$code-font: "source-code-pro", Courier, monospace;
 $default-font-size: 14px;
 
 body {
