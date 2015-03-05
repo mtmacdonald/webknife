@@ -253,13 +253,21 @@ header iframe, section iframe, footer iframe, div iframe {
 	height: 57px;
 }
 
+/*
+ 	pikaday
+*/
+
+.pika-single {
+	font-family: $default-font;
+}
+
 /* fix pikaday/webknife select height clash */
 .pika-title select {
 	height: 19px;
 	line-height: normal;
 }
 
-/* fix pikaday/normilize font-weight clash */
+/* fix pikaday/normalize font-weight clash */
 .pika-select, .pika-button {font-weight: normal;}
 
 /* fix pikaday cell height */

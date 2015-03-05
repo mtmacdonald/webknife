@@ -1,9 +1,6 @@
 // see https://proto.io/freebies/onoff/
 
-.w-switchbutton {
-    vertical-align: middle;
-    display: inline-block;
-}
+// Overrides at bottom of page
 
 /**********************************************************************************************************************/
 
@@ -65,4 +62,17 @@
 
 .w-switchbutton-checkbox:checked + .w-switchbutton-label .w-switchbutton-switch {
     right: 0px;
+}
+
+/**********************************************************************************************************************/
+
+.w-switchbutton {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.w-switchbutton-inner:before, .w-switchbutton-inner:after {
+    font-family: $default-font;
+    font-size: 16px;
+    line-height: 32px;
 }
