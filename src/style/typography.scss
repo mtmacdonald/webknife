@@ -14,42 +14,42 @@
 */
 
 @font-face {
-    font-family: 'source-sans-pro';
-    src: url('fonts/source-sans-pro.woff') format('woff');
+    font-family: 'open-sans';
+    src: url('fonts/OpenSans.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'source-sans-pro';
-    src: url('fonts/source-sans-pro-bold.woff') format('woff');
+    font-family: 'open-sans';
+    src: url('fonts/OpenSansBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'source-sans-pro';
-    src: url('fonts/source-sans-pro-italic.woff') format('woff');
+    font-family: 'open-sans';
+    src: url('fonts/OpenSansItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'source-sans-pro';
-    src: url('fonts/source-sans-pro-bold-italic.woff') format('woff');
+    font-family: 'open-sans';
+    src: url('fonts/OpenSansBoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'source-code-pro';
-    src: url('fonts/source-code-pro.woff') format('woff');
+    font-family: 'droid-sans-mono';
+    src: url('fonts/DroidSansMono.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-$default-font: 'source-sans-pro', Arial, sans-serif;
-$code-font: 'source-code-pro', Courier, monospace;
+$default-font: 'open-sans', Arial, sans-serif;
+$code-font: 'droid-sans-mono', Courier, monospace;
 $default-font-size: 16px;
 
 body {
