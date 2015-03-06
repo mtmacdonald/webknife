@@ -49,17 +49,17 @@
 
 $default-font: 'open-sans', Arial, sans-serif;
 $code-font: 'droid-sans-mono', Courier, monospace;
-$default-font-size: 16px;
+$default-font-size: 14px;
 
 body {
 	font-family: $default-font;
 	font-size: $default-font-size;
-	line-height: 24px;
+	line-height: 20px;
 }
 
-.w-small { font-size: 14px; }
+.w-small { font-size: 12px; }
 .w-large { font-size: 18px; }
-.w-massive { font-size: 38px; }
+.w-massive { font-size: 34px; }
 
 .w-bold { font-weight: bold; }
 .w-information-text { color: darken($information, 60%); }
@@ -100,11 +100,11 @@ a:visited { color: lighten($brand-color, 26%); }
 */
 
 h1, h2, h3, h4 , h5, h6 { text-decoration:none; font-weight: bold; color: $brand-color; padding-bottom: 5px; border-bottom: 1px solid $border;  margin: 20px 0 20px 0; }
-h1  { font-size: 24px; padding-bottom: 4px; }
-h2  { font-size: 20px; padding-bottom: 4px; }
-h3  { font-size: 18px; padding-bottom: 4px; }
-h4  { font-size: 16px; padding-bottom: 3px; }
-h5  { font-size: 14px; padding-bottom: 2px; }
+h1  { font-size: 20px; padding-bottom: 6px; }
+h2  { font-size: 18px; padding-bottom: 4px; }
+h3  { font-size: 16px; padding-bottom: 4px; }
+h4  { font-size: 14px; padding-bottom: 3px; }
+h5  { font-size: 13px; padding-bottom: 2px; }
 h6  { font-size: 12px; padding-bottom: 2px; }
 
 .w-no-underline { border-bottom: none; } 
