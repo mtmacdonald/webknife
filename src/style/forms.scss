@@ -41,7 +41,7 @@ textarea {
 input[type="text"],
 input[type="password"],
 select {
-	height: 36px; 
+	height: 36px;
 }
 
 select[multiple] {
@@ -50,6 +50,7 @@ select[multiple] {
 
 select {
 	background-color: white;
+	padding-top: 6px;
 }
 
 textarea {
