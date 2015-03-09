@@ -1,7 +1,7 @@
 {
-  "name": "pipeline",
-  "version": "1.0.0",
-  "description": "Random Square",
+  "name": "weknife",
+  "version": "1.4.0",
+  "description": "A web user interface framework",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.7.0",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mtmacdonald/pipeline"
+    "url": "https://github.com/mtmacdonald/webknife"
   },
   "author": "Mark Macdonald",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mtmacdonald/pipeline/issues"
+    "url": "https://github.com/mtmacdonald/webknife/issues"
   },
-  "homepage": "https://github.com/mtmacdonald/pipeline"
+  "homepage": "https://github.com/mtmacdonald/webknife"
 }
