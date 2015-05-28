@@ -78,7 +78,7 @@ gulp.task('icon', function() {
                     });
                     //prepare file
                     var content = '/*!\n';
-                    content += ' Webknife (c) 2014 The Webknife Project | http://mtmacdonald.github.io/webknife/LICENSE\n'
+                    content += ' Webknife (c) 2015 Mark Macdonald | http://mtmacdonald.github.io/webknife/LICENSE\n'
                     content += '*/\n';
                     content += "var w_icons = "+JSON.stringify(result, null, 4);
                     //write file
