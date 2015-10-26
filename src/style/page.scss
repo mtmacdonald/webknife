@@ -33,11 +33,15 @@ header
 	border-top: 2px solid $brand-color;
 	border-bottom: 2px solid $brand-color;
 
+	.header-container {
+		display: table;
+	}
+
 	.header-title {
 
-		border: 1px solid blue;
+		display: table-cell;
+		vertical-align: middle;
 		padding: 30px 0 30px 0;
-		float:left;
 
 		> a { 
 			text-decoration:none;
@@ -53,8 +57,9 @@ header
 	}
 
 	.header-extra {
-		border: 1px solid red;
-		float: right;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
 	}
 
 	&::after {
