@@ -28,15 +28,22 @@ html
 header
 {
 	@include fixed-color-text();
-	
-	padding: 30px 0 30px 0;
+
 	background-color: $content-background;
 	border-top: 2px solid $brand-color;
 	border-bottom: 2px solid $brand-color;
 
-	> div {
+	.header-container {
+		display: table;
+	}
+
+	.header-title {
+
+		display: table-cell;
+		vertical-align: middle;
+		padding: 30px 0 30px 0;
+
 		> a { 
-			float:left;
 			text-decoration:none;
 			font-weight: bold;
 			font-size: 16px;
@@ -47,16 +54,18 @@ header
 				padding-left: $logo-width + 25;
 			}
 		}
+	}
 
-		> div { 
-			float:right;
-			height: $logo-height; line-height: $logo-height; //'vertical center'
-		}
+	.header-extra {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
 	}
 
 	&::after {
 		@extend .w-clear
 	}
+
 }
 
 /*
