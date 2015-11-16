@@ -69,10 +69,6 @@ input[type=radio] {
   	}
 }
 
-#recaptcha_image {
-	border-radius: 4px;
-}
-
 .w-file-input {
 
     width: 400px;
@@ -209,52 +205,6 @@ $form-vertical-padding: 30px;
 }
 
 /*
- recaptcha
-*/
-
-#recaptcha_widget {
-	margin: 0;
-}
-
-#recaptcha_image {
-	background-color: white;
-	border: 1px solid $border; 
-	float: left;
-	margin-top: 5px!important;
-	padding: 5px;
-	margin: 0;
-}
-#recaptcha_links { 
-	float: left; 
-	margin: 5px 0 0 0;
-	padding-left: 10px;
-
-	a {
-		font-style:italic;
-		font-size:11px;
-		line-height: 9px;
-		color: #666;
-	}
-
-	div {
-		margin: 0;
-	}
-}
-
-/* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
-iframe { 
-	display:none !important;
-}
-header iframe, section iframe, footer iframe, div iframe { 
-	display:inline;
-}
-
-#recaptcha_image {
-	width: 300px;
-	height: 57px;
-}
-
-/*
  	pikaday
 */
 
@@ -370,4 +320,22 @@ header iframe, section iframe, footer iframe, div iframe {
   .chosen-container .chosen-results-scroll-up span {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABKCAQAAAD9cdkXAAACqUlEQVRo3u2av2/TQBTHI8FQCYYguoLCyOY/IQNk6NSF3RNzBmZ04oe/JwFSp0owtSNb/oT8B8mIBIioAyuWrA7pD4fns+vkzvZQ1+3lne57UoZXJfan79333ovT6zGTDGUsg0o0oGjY4yfCWdEykBROFg954hhIJQ4/pI0bL5E0HIryAgpMpGqEW9HpAAktzjg1SNxxGpH44hRIiYaTsMZxDsixknPMFKzaNgSEQwcrBtklMLDW+mBRV5lYtAaaqvdPrTWnGNYCDdtdOtq/+oRo39r4gEkFZ9LusqK/zjcWom9pwKOq1w0xbrsDILR/i7Bmit3cSG4H2icN7CEturIDDWhqD2jYnR1srm6t4XpIk5vYQff2b2oUjuJRxRRGAUXDph0Qt7eD2xbhrGgZSAoni4d31LJ0jGMglTjNSNuqjRsvkTQcivICCkykaoTZ+GAAJLQ449QgccdpROKLUyAlGk7CGsc5IMdKzjFTcMy2nTtY3Wt9XGtOW44PW490vQHPy8vLy8vLy2ubJfrRGHP6RjxVaxaNu31kdseipxdXj93SYq3kP4tPL24mhAqAMHApL+QFvRZQCHlmJ8/MGX7jtXz64Yl8K39hmUOyy5Loq2JLcYoDsVNCPpbfcKqyFDPbS9FYldpSftHjr+7JQ5xnWYrGrIDkLNs5+PnmQSV3OzhR+2jOC0jtn/os4F1uD+yAcPn+Wd3fPr4kz2MK9NwpoMaSkwxLrmh3foiHFVPYxYkCmnGz7fxQ/SruGx53zNK21cGaqoP1WOyWeXskv6uDdYUluyaVWh/V5OAcf+QnvIj28Bl/8+woyzji2JwWranWnK5/YsMPqRgf0o3hgYqNNVI24GVtUL4wzwY8HLFGqi1Gj8QNae4ckiPfCa2Req5I9XyNv1n+D6RKWo1cTsbTAAAAAElFTkSuQmCC') !important;
   }
+}
+
+/*
+	Recaptcha
+*/
+
+.w-recaptcha {
+	margin: 0;
+}
+
+.w-recaptcha-widget {
+	min-height: 78px;
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+.g-recaptcha, .g-recaptcha div {
+	margin: 0;
 }

@@ -15,6 +15,7 @@
   <script src="../framework/framework.min.js"></script>
   <script src="../framework/framework.icons.js"></script>
   <script src="../framework/highlight.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 
   <!--inline scripts last-->
   <script>
@@ -77,17 +78,20 @@
   </style>
  </head>
  <body>
- 
+
  <header>
- <div class="w-fixed-width">
+ <div class="w-fixed-width header-container">
+ <div class="header-title">
   <a href="../index.html">
     <div style="background-image:url('images/logo.png');">
-      HTML reference guide <span style="font-weight:normal;">(version 1.4.0)</span>
+      HTML reference guide <span style="font-weight:normal;">(version 1.5.0)</span>
     </div>
   </a>
-  <div>
-    (Optional header element)
-  </div>
+ </div>
+ <div class="header-extra">
+  <p>(Optional header element)</p>
+  <p>(Optional header element)</p>
+ </div>
  </div>
  </header>
  
@@ -344,6 +348,15 @@
 <span class="w-icon" data-name="wifi" title="wifi"></span>
 <span class="w-icon" data-name="wrench" title="wrench"></span>
 
+<span class="w-icon" data-name="facebook" title="facebook"></span>
+<span class="w-icon" data-name="googleplus" title="googleplus"></span>
+<span class="w-icon" data-name="twitter" title="twitter"></span>
+<span class="w-icon" data-name="linkedin" title="linkedin"></span>
+<span class="w-icon" data-name="reddit" title="reddit"></span>
+<span class="w-icon" data-name="github" title="github"></span>
+<span class="w-icon" data-name="skype" title="skype"></span>
+
+
 <p>Styled icons:</p>
 <span class="w-icon large" data-name="alert_circled" title="alert_circled"></span>
 <span class="w-icon large coloured" data-name="alert_circled" title="alert_circled"></span>
@@ -578,20 +591,14 @@ $(document).ready(function() {
   </div>
 
   <div class="w-form-group">
-  <div id="recaptcha_widget" class="w-clear-after">
-   <label for="captcha">ReCAPTCHA input</label>
-   <input type="text" name="recaptcha_response_field" id="recaptcha_response_field" />
-   <p class="w-input-error">Optional ReCAPTCHA error</p>
-    
-   <div id="recaptcha_image"></div>
-   <div id="recaptcha_links">
-     <div><a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a></div>
-     <div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
-     <div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
-     <div><a href="javascript:Recaptcha.showhelp()">ReCAPTCHA Help</a></div>
-     <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LdHWdsSAAAAANEk8eW-ntkgds5_WwTBFQuJPLP6"></script>
+  <label>Prove you're human (ReCAPTCHA)</label>
+  <div class="w-recaptcha">
+   <div class="w-recaptcha-widget">
+    <div class="g-recaptcha" data-sitekey="6LdzEhETAAAAAF24r4NqU0XsItINbM_YhYOCOj4_"></div>
    </div>
+   <p class="w-input-error">Optional ReCAPTCHA error</p>
   </div>
+
   </div>
   </fieldset>
   <div class="w-form-group">  
