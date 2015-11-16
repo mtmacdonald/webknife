@@ -326,9 +326,13 @@ $form-vertical-padding: 30px;
 	Recaptcha
 */
 
+.w-recaptcha {
+	margin: 0;
+}
+
 .w-recaptcha-widget {
 	min-height: 78px;
-	margin: 3px 0 0 0;
+	margin: 5px 0 0 0;
 	padding: 0;
 }
 
