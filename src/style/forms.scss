@@ -69,10 +69,6 @@ input[type=radio] {
   	}
 }
 
-#recaptcha_image {
-	border-radius: 4px;
-}
-
 .w-file-input {
 
     width: 400px;
@@ -206,52 +202,6 @@ $form-vertical-padding: 30px;
 
 .w-background-form {
 	background-color: $light;
-}
-
-/*
- recaptcha
-*/
-
-#recaptcha_widget {
-	margin: 0;
-}
-
-#recaptcha_image {
-	background-color: white;
-	border: 1px solid $border; 
-	float: left;
-	margin-top: 5px!important;
-	padding: 5px;
-	margin: 0;
-}
-#recaptcha_links { 
-	float: left; 
-	margin: 5px 0 0 0;
-	padding-left: 10px;
-
-	a {
-		font-style:italic;
-		font-size:11px;
-		line-height: 9px;
-		color: #666;
-	}
-
-	div {
-		margin: 0;
-	}
-}
-
-/* ReCaptcha iframe fix - see - http://stackoverflow.com/questions/8155645/recaptcha-creates-iframe-on-page-breaks-styling */
-iframe { 
-	display:none !important;
-}
-header iframe, section iframe, footer iframe, div iframe { 
-	display:inline;
-}
-
-#recaptcha_image {
-	width: 300px;
-	height: 57px;
 }
 
 /*
