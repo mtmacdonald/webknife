@@ -436,7 +436,6 @@ $(document).ready(function() {
   - minmax dates
   - date format
   - yearRange (year shortcut)
-  - show/hide time selector
   - hide the home button
   - improve the styles
   - update license
@@ -444,10 +443,11 @@ $(document).ready(function() {
 */
  //datepicker
  $('#datepicker').datetimepicker({
-    format:'DD/MM/YYYY HH:mm',
+    format:'DD/MM/YYYY',
     formatDate:'MM/DD/YYYY',
     formatTime:'HH:mm',
     closeOnWithoutClick: true,
+    timepicker: false,
  });
 });
 
