@@ -437,7 +437,6 @@ $(document).ready(function() {
   - date format
   - yearRange (year shortcut)
   - show/hide time selector
-  - close datepicker when clicked outside
   - hide the home button
   - improve the styles
   - update license
@@ -448,6 +447,7 @@ $(document).ready(function() {
     format:'DD/MM/YYYY HH:mm',
     formatDate:'MM/DD/YYYY',
     formatTime:'HH:mm',
+    closeOnWithoutClick: true,
  });
 });
 
@@ -466,6 +466,7 @@ $(document).ready(function() {
     format:'DD/MM/YYYY HH:mm',
     formatDate:'MM/DD/YYYY',
     formatTime:'HH:mm',
+    closeOnWithoutClick: true,
     step: 15
  });
 });
