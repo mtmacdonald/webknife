@@ -437,11 +437,33 @@ $(document).ready(function() {
   firstDay: 1,
   minDate: new Date('2000-01-01'),
   maxDate: new Date('2020-12-31'),
-  yearRange: [2000,2020]
+  yearRange: [2000,2020],
+  showTime: false,
  });
 });
 </script>
 <input id="datepicker" class="w-datepicker" type="text">
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Date-timepicker input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-datetimepicker-input">
+<script>
+$(document).ready(function() {
+  //datetimepicker
+  var datetimepicker = $('#datetimepicker').pikaday({
+    firstDay: 1,
+    minDate: new Date('2000-01-01'),
+    maxDate: new Date('2020-12-31'),
+    yearRange: [2000,2020],
+    showTime: true,
+    showSeconds: false,
+    use24hour: true
+  });
+});
+</script>
+<input id="datetimepicker" class="w-datepicker" type="text">
 </div>
 
 <!-- **************************************************************************************************************- -->
