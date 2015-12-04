@@ -101,6 +101,7 @@ gulp.task('js', function() {
             './js/moment.min.js',
             './js/chosen.jquery.js',
             './js/datetimepicker.js',
+            './js/datetimemoment.js',
             './js/framework.js',
             './js/modal.js',
         ])
