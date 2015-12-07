@@ -75,6 +75,7 @@
   .code-toggle {
     float:right;
   }
+
   </style>
  </head>
  <body>
@@ -441,20 +442,103 @@
 
 <!-- **************************************************************************************************************- -->
 
-<h1 class="doc-heading"><span>Datepicker input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<h1 class="doc-heading"><span>Date picker input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
 <div class="code" id="code-sample-datepicker-input">
 <script>
 $(document).ready(function() {
- //datepicker
- var datepicker = $('#datepicker').pikaday({
-  firstDay: 1,
-  minDate: new Date('2000-01-01'),
-  maxDate: new Date('2020-12-31'),
-  yearRange: [2000,2020]
+ $('#datepicker').datetimepicker({
+    format:'DD/MM/YYYY',
+    formatDate:'DD/MM/YYYY',
+    formatTime:'HH:mm',
+    dayOfWeekStart : 1, //Monday
+    closeOnWithoutClick: true,
+    timepicker: false,
+    todayButton: false,
+    yearStart: 2010, //minimum selectable year in the year select input
+    yearEnd: 2020, //minimum selectable year in the year select input
+    //minDate: '15/11/2015', //minimum selectable date
+    //maxDate: '15/12/2015', //maximum selectable date
+    //startDate: '17/11/2015' //the default date shown when opening datepicker
  });
 });
+
 </script>
 <input id="datepicker" class="w-datepicker" type="text">
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Paired date picker inputs</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-datepicker-pair">
+<script>
+$(document).ready(function() {
+ var start = $('#datepicker-from').datetimepicker({
+    format:'DD/MM/YYYY',
+    formatDate:'DD/MM/YYYY',
+    formatTime:'HH:mm',
+    dayOfWeekStart : 1, //Monday
+    closeOnWithoutClick: true,
+    timepicker: false,
+    todayButton: false,
+    yearStart: 2010, //minimum selectable year in the year select input
+    yearEnd: 2020, //minimum selectable year in the year select input
+    onShow:function(evt) {
+      var maxDate = false;
+      if (moment($('#datepicker-to').val(), 'DD/MM/YYYY', true).isValid()) {
+        maxDate = moment($('#datepicker-to').val(), 'DD/MM/YYYY', true).format('DD/MM/YYYY');
+      }
+      this.setOptions({
+        maxDate: maxDate
+      })
+    },
+ });
+
+ var end = $('#datepicker-to').datetimepicker({
+    format:'DD/MM/YYYY',
+    formatDate:'DD/MM/YYYY',
+    formatTime:'HH:mm',
+    dayOfWeekStart : 1, //Monday
+    closeOnWithoutClick: true,
+    timepicker: false,
+    todayButton: false,
+    yearStart: 2010, //minimum selectable year in the year select input
+    yearEnd: 2020, //minimum selectable year in the year select input
+    onShow:function(evt) {
+      var minDate = false;
+      if (moment($('#datepicker-from').val(), 'DD/MM/YYYY', true).isValid()) {
+        minDate = moment($('#datepicker-from').val(), 'DD/MM/YYYY', true).format('DD/MM/YYYY');
+      }
+      this.setOptions({
+        minDate: minDate
+      })
+    },
+ });
+});
+
+</script>
+<label>From: </label><input id="datepicker-from" class="w-datepicker" type="text">
+<label>To: </label><input id="datepicker-to" class="w-datepicker" type="text">
+</div>
+
+<!-- **************************************************************************************************************- -->
+
+<h1 class="doc-heading"><span>Datetime picker input</span><button class="w-small w-dark code-toggle" type="button">Show Code</button></h1>
+<div class="code" id="code-sample-datetimepicker-input">
+<script>
+$(document).ready(function() {
+ $('#datetimepicker').datetimepicker({
+    format:'DD/MM/YYYY HH:mm',
+    formatDate:'DD/MM/YYYY',
+    formatTime:'HH:mm',
+    dayOfWeekStart : 1, //Monday
+    closeOnWithoutClick: true,
+    todayButton: false,
+    step: 15, //the time increment
+ });
+});
+
+</script>
+<input id="datetimepicker" class="w-datepicker" type="text">
 </div>
 
 <!-- **************************************************************************************************************- -->

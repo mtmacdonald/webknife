@@ -1,7 +1,7 @@
 ﻿Webknife is licensed under the MIT license
 ------------------------------------------
 
-Copyright (c) 2015 The Webknife Project, http://mtmacdonald.github.io/webknife/
+Copyright (c) 2015 Mark Macdonald, http://mtmacdonald.github.io/webknife/
 
 Webknife includes third-party libraries (see below).
 
@@ -16,7 +16,7 @@ Moment.js: Copyright (c) 2011-2014 Tim Wood, Iskren Chernev, Moment.js contribut
 
 Ionicons: Copyright (c) 2014 Drifty (http://drifty.com/)
 
-Pikaday: Copyright (c) 2014 David Bushell (https://github.com/dbushell/Pikaday/)
+Datetimepicker: Copyright (c) 2013 http://xdsoft.net (https://github.com/xdan/datetimepicker)
 
 Chosen: Copyright (c) 2011-2015 Harvest, by Patrick Filler for Harvest (https://github.com/harvesthq/chosen)
 

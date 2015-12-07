@@ -205,34 +205,6 @@ $form-vertical-padding: 30px;
 }
 
 /*
- 	pikaday
-*/
-
-.pika-single {
-	font-family: $default-font;
-}
-
-/* fix pikaday/webknife select height clash */
-.pika-title select {
-	height: 19px;
-	line-height: normal;
-}
-
-/* fix pikaday/normalize font-weight clash */
-.pika-select, .pika-button {font-weight: normal;}
-
-/* fix pikaday cell height */
-
-.pika-day {
-	height: 28px;
-}
-
-/* fix pikaday cursor style that makes no sense */
-.pika-table abbr {
-    cursor: default;
-}
-
-/*
 	jQuery chosen.
 */
 
