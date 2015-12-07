@@ -433,8 +433,6 @@
 <script>
 $(document).ready(function() {
 /*
-  - minmax dates
-  - yearRange (year shortcut)
   - handle seconds when required
   - improve the styles
   - update license
@@ -444,11 +442,16 @@ $(document).ready(function() {
  //datepicker
  $('#datepicker').datetimepicker({
     format:'DD/MM/YYYY',
-    formatDate:'MM/DD/YYYY',
+    formatDate:'DD/MM/YYYY',
     formatTime:'HH:mm',
     closeOnWithoutClick: true,
     timepicker: false,
     todayButton: false,
+    yearStart: 2010, //minimum selectable year in the year select input
+    yearEnd: 2020, //minimum selectable year in the year select input
+    //minDate: '15/11/2015', //minimum selectable date
+    //maxDate: '15/12/2015', //maximum selectable date
+    //startDate: '17/11/2015' //the default date shown when opening datepicker
  });
 });
 
@@ -465,11 +468,11 @@ $(document).ready(function() {
   //datetimepicker
  $('#datetimepicker').datetimepicker({
     format:'DD/MM/YYYY HH:mm',
-    formatDate:'MM/DD/YYYY',
+    formatDate:'DD/MM/YYYY',
     formatTime:'HH:mm',
     closeOnWithoutClick: true,
     todayButton: false,
-    step: 15,
+    step: 15, //the time increment
  });
 });
 
